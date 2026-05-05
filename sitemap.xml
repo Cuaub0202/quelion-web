@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://quelion.ai/blog</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -33,6 +33,12 @@
   <url>
     <loc>https://quelion.ai/blog/automatizar-seguimiento-carga-whatsapp</loc>
     <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quelion.ai/blog/freight-coordinator-software-mexico</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

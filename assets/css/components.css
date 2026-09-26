@@ -382,6 +382,15 @@
   .metric-value { font-size: 48px; }
 }
 
+/* ── CONTENEDOR DE SECCIÓN: mismo borde izquierdo que el héroe y el nav ── */
+.section-inner {
+  max-width: calc(1280px + 2 * var(--grid-margin));
+  margin: 0 auto;
+  padding: 0 var(--grid-margin);
+}
+.section-inner > * { max-width: 860px; }
+.section-inner-narrow > * { max-width: 720px; }
+
 /* ── REJILLAS DE COLUMNAS ── */
 .cols-2 { grid-template-columns: 1fr 1fr; }
 .cols-3 { grid-template-columns: 1fr 1fr 1fr; }

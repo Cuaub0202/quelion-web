@@ -32,6 +32,9 @@
   --text-secondary:    #AEAEB6;
   --text-tertiary:     #7A7A82;
   --text-quiet:        #7A7A82;
+  --status-ok:         #6FCF97;
+  --status-ok-bg:      rgba(111,207,151,0.08);
+  --status-ok-line:    rgba(111,207,151,0.25);
 
   /* ── Typography ── */
   --font-sans:    Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;

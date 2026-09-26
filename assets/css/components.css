@@ -391,6 +391,10 @@
 .section-inner > * { max-width: 860px; }
 .section-inner-narrow > * { max-width: 720px; }
 
+/* ── LISTA DE PRODUCTO ── */
+.feature-list { list-style: none; padding: 0; margin: 0 0 var(--sp-32); border-top: 1px solid var(--border-divider); }
+.feature-list li { font-size: 13px; color: var(--text-secondary); padding: 10px 0; border-bottom: 1px solid var(--border-hairline); }
+
 /* ── REJILLAS DE COLUMNAS ── */
 .cols-2 { grid-template-columns: 1fr 1fr; }
 .cols-3 { grid-template-columns: 1fr 1fr 1fr; }

@@ -96,11 +96,7 @@
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
   position: relative;
-  overflow: hidden;
   padding: 64px var(--grid-margin) 0;
 }
 .hero-content {
@@ -117,6 +113,46 @@
 .hero-headline {
   max-width: 760px;
   margin-bottom: var(--sp-32);
+  font-weight: var(--weight-regular);
+  text-wrap: balance;
+}
+@media (min-width: 1025px) {
+  .hero-headline { font-size: 60px; line-height: 1.06; letter-spacing: -0.03em; max-width: 15ch; }
+}
+.hero-contact {
+  margin-top: var(--sp-20);
+  font-size: var(--text-small-size);
+  color: var(--text-tertiary);
+}
+.hero-split {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sp-32);
+  align-items: start;
+}
+.hero-main { grid-column: 1 / span 7; }
+.hero-main .hero-headline { max-width: 15ch; }
+.hero-side { grid-column: 9 / span 4; padding-top: 10px; }
+.hero-steps-title {
+  font-size: var(--text-small-size);
+  font-weight: var(--weight-medium);
+  color: var(--text-tertiary);
+  margin-bottom: var(--sp-16);
+}
+.hero-steps { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border-divider); }
+.hero-steps li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 var(--sp-12);
+  padding: var(--sp-20) 0;
+  border-bottom: 1px solid var(--border-hairline);
+}
+.hero-steps .n { font-size: var(--text-small-size); color: var(--text-tertiary); font-variant-numeric: tabular-nums; line-height: 1.5; }
+.hero-steps .t { font-size: 16px; font-weight: var(--weight-medium); color: var(--text-primary); line-height: 1.5; letter-spacing: -0.01em; }
+.hero-steps .d { grid-column: 2; font-size: var(--text-small-size); color: var(--text-secondary); line-height: 1.55; margin-top: 4px; }
+@media (max-width: 1024px) {
+  .hero-main, .hero-side { grid-column: 1 / -1; }
+  .hero-side { padding-top: var(--sp-56); }
 }
 .hero-lede {
   max-width: 540px;
@@ -129,23 +165,7 @@
   gap: var(--sp-24);
   flex-wrap: wrap;
 }
-.hero-bg-q {
-  position: absolute;
-  right: -80px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-display);
-  font-size: 600px;
-  font-weight: var(--weight-light);
-  line-height: 1;
-  color: rgba(255,255,255,0.03);
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
-  letter-spacing: var(--tracking-tight);
-}
 @media (max-width: 768px) {
-  .hero-bg-q { font-size: 320px; right: -40px; }
   .hero-content { padding: var(--sp-80) 0 var(--sp-64); }
 }
 

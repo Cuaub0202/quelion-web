@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 40" fill="none" role="img" aria-label="Quelion">
+  <rect width="192" height="40" fill="#000000"/>
+  <!-- Q monogram: geometric circle + horizontal tail -->
+  <circle cx="19" cy="20" r="12.5" stroke="#FFFFFF" stroke-width="0.75"/>
+  <line x1="27.8" y1="20" x2="37" y2="20" stroke="#FFFFFF" stroke-width="0.75"/>
+  <!-- Wordmark: QUELION -->
+  <text
+    x="50"
+    y="24.5"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif"
+    font-size="14"
+    font-weight="300"
+    letter-spacing="2.52"
+    fill="#FFFFFF"
+  >QUELION</text>
+</svg>

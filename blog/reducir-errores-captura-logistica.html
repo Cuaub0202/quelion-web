@@ -294,11 +294,11 @@
         que el coordinador lo toque en el camino.
       </p>
       <p>
-        Así es como funciona con un agente de IA integrado en WhatsApp: en cada punto clave del
-        recorrido, el agente envía un mensaje al chofer con una pregunta concreta. "¿Ya saliste
-        de Monterrey?" El chofer responde en lenguaje natural, como lo haría en cualquier chat:
+        Así es como funciona con un agente de IA integrado en WhatsApp: cuando una carga lleva en
+        una etapa más tiempo del que ajustaste sin noticias, el agente le escribe al chofer para
+        pedirle el estado. El chofer responde en lenguaje natural, como lo haría en cualquier chat:
         "Sí, ya salí." El agente interpreta la respuesta, una regla fija decide si el cambio de
-        etapa procede y el cambio queda registrado con su hora. No hay intermediario humano. No hay
+        etapa procede y el cambio queda registrado con la hora en que el chofer lo reporta. No hay intermediario humano. No hay
         re-captura. El estado que queda en el sistema es el que el chofer reportó.
       </p>
       <p>
@@ -313,8 +313,8 @@
         Eliminar la re-captura reduce los errores de transcripción, que son los más comunes.
         Pero también existen errores de origen: el chofer reporta una hora que no tiene sentido
         dado el recorrido, o confirma un cruce que debería haber tomado cuatro horas en dos.
-        Aquí el agente interpreta el mensaje, una regla fija decide si el cambio de etapa procede
-        y cada cambio queda registrado con su hora. Cuando algo no cuadra, el coordinador lo puede
+        Ruta no revisa si la hora o la duración tienen sentido: cada cambio queda registrado con
+        la hora en que el chofer lo reporta. Cuando algo no cuadra, el coordinador lo puede
         revisar en el historial de la carga y corregir el estado desde el panel.
       </p>
       <p>
@@ -348,7 +348,8 @@
         <li>
           <strong>Identifica los puntos de captura con más errores.</strong> Revisa los últimos
           diez embarques con discrepancias. ¿Los errores están en la hora de salida, en el número
-          de sello, en el pedimento? Empezar por ahí da el mayor impacto.
+          de sello, en el pedimento? Empezar por ahí da el mayor impacto. Ruta cubre la etapa y la
+          hora; el sello y el número de pedimento los sigue capturando tu equipo.
         </li>
         <li>
           <strong>Revisa las etapas por tipo de ruta.</strong> Para rutas nacionales: recogida,

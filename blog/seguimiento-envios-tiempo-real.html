@@ -68,7 +68,7 @@
         "name": "¿Cómo recibe el cliente final el seguimiento?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A través de tu equipo: el agente le escribe al chofer, no al cliente. Con el estado de cada carga al día en el panel, tu equipo le responde al cliente sin tener que preguntarle al chofer. Para el coordinador, esto reduce las llamadas al chofer y la presión de reconstruir cada actualización a mano."
+          "text": "A través de tu equipo. Con el estado de cada carga al día en el panel, tu equipo le responde al cliente sin tener que preguntarle al chofer. Para el coordinador, esto reduce las llamadas al chofer y la presión de reconstruir cada actualización a mano."
         }
       }
     ]
@@ -292,18 +292,18 @@
 
       <h2>Checkpoints automáticos: el seguimiento que se hace solo</h2>
       <p>
-        El enfoque que aporta el contexto operativo que le falta al GPS es el
+        El enfoque que te dice en qué etapa va cada carga, cosa que el GPS no da, es el
         modelo de checkpoints automáticos por WhatsApp. En lugar de esperar a que el chofer mande
         una actualización cuando se le ocurra, el agente toma la iniciativa: le pregunta al
         chofer en qué etapa va y, si no reporta a tiempo, le vuelve a escribir.
       </p>
       <p>
-        El flujo funciona así para una ruta Monterrey–Laredo–Dallas: cuando toca confirmar la
-        salida, el agente le escribe al chofer: "¿Ya saliste de Monterrey?" El chofer responde en
-        lenguaje natural (por ejemplo, "ya salí") y el agente registra el cambio de etapa con su
-        hora. Más adelante pregunta si ya llegó a la frontera y si ya está cruzando. También
-        pregunta y registra si el pedimento se emitió y si la aduana de Estados Unidos ya liberó
-        la carga. Al final, pregunta si la carga ya se entregó y registra la entrega.
+        El flujo funciona así para una ruta Monterrey–Laredo–Dallas: cuando la carga lleva en una
+        etapa más tiempo del que ajustaste sin noticias, el agente le escribe al chofer para pedirle
+        el estado. El chofer responde en lenguaje natural (por ejemplo, "ya salí") y el agente
+        registra el cambio de etapa con la hora en que lo reporta. Así quedan registradas etapas
+        como la salida, la emisión del pedimento, la llegada a la frontera, el cruce y la liberación
+        en la aduana de Estados Unidos. La entrega la confirma tu equipo en el panel.
       </p>
       <p>
         El coordinador ve cada uno de esos estados actualizarse en el panel en cuanto el chofer
@@ -326,7 +326,7 @@
       <p>
         Del lado del cliente, con el estado de cada carga al día en el panel, tu equipo le responde
         sin tener que preguntarle al chofer. Las preguntas que hace cualquier importador o
-        destinatario sobre un embarque cross-border, como si ya cruzó o si ya se entregó, tienen
+        destinatario sobre un embarque cross-border, como si ya cruzó o si ya llegó a destino, tienen
         respuesta en el historial de la carga, con la hora de cada cambio. Y el coordinador ya no
         tiene que llamarle al chofer cada vez que el cliente repite la misma pregunta.
       </p>
@@ -369,8 +369,7 @@
         <li>
           <strong>Decide cómo le vas a responder al cliente.</strong> No todas las etapas internas
           le interesan al cliente. Con el estado de cada carga al día en el panel, tu equipo le
-          responde sin tener que preguntarle al chofer, y quien solo necesita consultar puede
-          entrar con un perfil de solo lectura. En general, salida, cruce fronterizo (si aplica)
+          responde sin tener que preguntarle al chofer. En general, salida, cruce fronterizo (si aplica)
           y entrega son las etapas por las que más preguntan.
         </li>
         <li>
@@ -422,7 +421,7 @@
         <div class="faq-item">
           <p class="faq-question">¿Cómo recibe el cliente final el seguimiento?</p>
           <p class="faq-answer">
-            A través de tu equipo: el agente le escribe al chofer, no al cliente. Con el estado de
+            A través de tu equipo. Con el estado de
             cada carga al día en el panel, tu equipo le responde al cliente sin tener que preguntarle
             al chofer. Para el coordinador, esto reduce las llamadas al chofer y la presión de
             reconstruir cada actualización a mano.

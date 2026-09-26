@@ -16,6 +16,6 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: root
           key: ${{ secrets.VPS_SSH_KEY }}
-          source: "index.html,ruta.html,ruta-en.html,robots.txt,sitemap.xml,blog/"
+          source: "index.html,ruta.html,ruta-en.html,robots.txt,sitemap.xml,blog/,assets/"
           target: /var/www/quelion/
           strip_components: 0

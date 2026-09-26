@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   /* ── Ink scale (dark surfaces) ── */
@@ -31,7 +31,10 @@
   --text-primary:      #FFFFFF;
   --text-secondary:    #AEAEB6;
   --text-tertiary:     #7A7A82;
-  --text-quiet:        #5A5A62;
+  --text-quiet:        #7A7A82;
+  --status-ok:         #6FCF97;
+  --status-ok-bg:      rgba(111,207,151,0.08);
+  --status-ok-line:    rgba(111,207,151,0.25);
 
   /* ── Typography ── */
   --font-sans:    Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
@@ -42,6 +45,7 @@
   --weight-light:   300;
   --weight-regular: 400;
   --weight-medium:  500;
+  --weight-semibold: 600;
 
   /* Tracking */
   --tracking-tight:   -0.04em;

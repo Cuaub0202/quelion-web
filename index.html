@@ -7,14 +7,14 @@
   <meta name="description" content="Quelion construye productos de IA para equipos de logística en México. Ruta le da seguimiento a tus choferes por WhatsApp y Telegram y avisa a tu equipo solo cuando algo se atora.">
   <link rel="canonical" href="https://quelion.ai/">
   <meta property="og:title" content="Quelion · Productos de IA para operaciones de logística">
-  <meta property="og:description" content="IA que hace el seguimiento operativo que hoy vive en el chat. Empezamos por Ruta, para coordinación de cargas.">
+  <meta property="og:description" content="Tu coordinador deja de perseguir choferes. Quelion construye productos de IA para logística en México; el primero es Ruta, para coordinación de cargas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quelion.ai/">
   <meta property="og:locale" content="es_MX">
   <link rel="icon" href="assets/svg/quelion-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/tokens.css">
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20260926">
+  <link rel="stylesheet" href="assets/css/global.css?v=20260926">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260926">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,11 +52,11 @@
         <a href="/ruta" class="nav-link">Ruta</a>
         <a href="/blog" class="nav-link">Blog</a>
         <a href="/ruta-en" class="nav-link" hreflang="en" lang="en">English</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
       </div>
       <div class="nav-right">
-        <a href="https://ruta.quelion.ai" class="btn btn-outline" style="font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:8px 16px;">
-          Iniciar sesión
-        </a>
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="mailto:cuauh@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
         <button class="nav-mobile-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navLinks">
           <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
             <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
@@ -70,27 +70,33 @@
 
   <!-- ── HERO ── -->
   <section class="hero" aria-labelledby="hero-headline">
-    <div class="hero-content">
-      <p class="eyebrow hero-eyebrow">Quelion</p>
-      <h1 id="hero-headline" class="hero-headline">
-        IA que hace el seguimiento<br>que hoy vive en el chat.
-      </h1>
-      <p class="lede hero-lede">
-        Construimos productos de IA para equipos de logística en México y la frontera.
-        El primero es Ruta, que le da seguimiento a cada carga por WhatsApp y Telegram
-        y avisa a tu equipo solo cuando algo se atora.
-      </p>
-      <div class="hero-ctas">
-        <a href="mailto:cuauh@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="btn btn-primary" style="padding:14px 28px;font-size:15px;">
-          Agenda 20 minutos
-        </a>
-        <a href="/ruta" class="btn btn-ghost" style="font-size:15px;color:var(--text-secondary);">
-          Conoce Ruta&nbsp;&nbsp;→
-        </a>
+    <div class="hero-content hero-split">
+      <div class="hero-main">
+        <h1 id="hero-headline" class="hero-headline">Tu coordinador deja de perseguir choferes.</h1>
+        <p class="lede hero-lede">
+          Construimos productos de IA para equipos de logística en México y la frontera.
+          El primero es Ruta, que le da seguimiento a cada carga por WhatsApp y Telegram
+          y avisa a tu equipo solo cuando algo se atora.
+        </p>
+        <div class="hero-ctas">
+          <a href="mailto:cuauh@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="btn btn-primary" style="padding:14px 28px;font-size:15px;">
+            Agenda 20 minutos
+          </a>
+          <a href="/ruta" class="btn btn-ghost" style="font-size:15px;color:var(--text-secondary);">
+            Conoce Ruta&nbsp;&nbsp;→
+          </a>
+        </div>
+        <p class="hero-contact">o escríbenos a cuauh@quelion.ai</p>
       </div>
-      <p style="font-size:12px;color:var(--text-quiet);margin-top:16px;font-family:var(--font-mono);">o escríbenos a cuauh@quelion.ai</p>
+      <div class="hero-side">
+        <p class="hero-steps-title">Cómo funciona Ruta</p>
+        <ol class="hero-steps">
+          <li><span class="n">1</span> <span class="t">El chofer contesta como siempre</span> <span class="d">Escribe «ya salí de la planta, voy a Monterrey» o manda una nota de voz por WhatsApp o Telegram. Sin formularios ni app.</span></li>
+          <li><span class="n">2</span> <span class="t">El estado se actualiza con reglas</span> <span class="d">La IA interpreta el mensaje y una regla fija decide si el cambio de estado procede.</span></li>
+          <li><span class="n">3</span> <span class="t">Si nadie contesta, Ruta insiste y escala</span> <span class="d">Si un chofer no reporta a tiempo en una etapa, Ruta le vuelve a escribir en horario de operación. Si sigue sin contestar, le avisa a tu coordinador.</span></li>
+        </ol>
+      </div>
     </div>
-    <div class="hero-bg-q" aria-hidden="true">Q</div>
   </section>
 
   <!-- ── PRODUCTOS ── -->
@@ -107,7 +113,7 @@
         <div style="background:var(--surface-primary);padding:40px;">
           <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;">
             <p class="feature-number" style="margin:0;">Ruta</p>
-            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:#6FCF97;background:rgba(111,207,151,0.08);border:0.5px solid rgba(111,207,151,0.25);padding:3px 10px;">En producción</span>
+            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--status-ok);background:var(--status-ok-bg);border:0.5px solid var(--status-ok-line);padding:3px 10px;">En producción</span>
           </div>
           <h3 class="feature-title" style="margin:0 0 16px;">Seguimiento de choferes para equipos de logística</h3>
           <p class="feature-body text-secondary" style="margin:0 0 20px;">
@@ -115,11 +121,11 @@
             y actualiza el estado de cada carga. Si alguien deja de contestar, insiste
             y le avisa a tu coordinador.
           </p>
-          <ul style="list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:8px;">
-            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Conversación con choferes por WhatsApp y Telegram</li>
-            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Entiende texto y notas de voz</li>
-            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Seguimiento y escalamiento por etapa</li>
-            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Historial de cada carga con sus cambios de estado</li>
+          <ul class="feature-list">
+            <li>Conversación con choferes por WhatsApp y Telegram</li>
+            <li>Entiende texto y notas de voz</li>
+            <li>Seguimiento y escalamiento por etapa</li>
+            <li>Historial de cada carga con sus cambios de estado</li>
           </ul>
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <a href="/ruta" class="btn btn-primary" style="font-size:13px;padding:10px 20px;">
@@ -137,12 +143,12 @@
 
   <!-- ── CÓMO TRABAJAMOS ── -->
   <section style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="why-heading">
-    <div style="max-width:860px;margin:0 auto;padding:0 40px;">
+    <div class="section-inner">
       <p class="eyebrow" style="margin-bottom:20px;">Cómo trabajamos</p>
       <h2 id="why-heading" style="max-width:600px;margin-bottom:40px;">
         Productos verticales, no plataformas horizontales.
       </h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);">
+      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);">
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Un trabajo, a fondo</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cada producto resuelve un problema operativo concreto. No hacemos chatbots genéricos.</p>
@@ -206,6 +212,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20260926"></script>
 </body>
 </html>

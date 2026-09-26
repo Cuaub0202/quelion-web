@@ -338,10 +338,19 @@
   .metric-value { font-size: 48px; }
 }
 
+/* ── REJILLAS DE COLUMNAS ── */
+.cols-2 { grid-template-columns: 1fr 1fr; }
+.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 768px) {
+  .cols-2, .cols-3 { grid-template-columns: 1fr; }
+}
+
 /* ── CTA SECTION ── */
 .cta-section {
   background: var(--surface-inverse);
   padding: var(--sp-128) var(--grid-margin);
+  --text-secondary: var(--color-ink-500);
+  --shadow-focus: 0 0 0 2px var(--color-ink-900), 0 0 0 4px var(--color-ink-0);
 }
 .cta-inner {
   max-width: 1280px;

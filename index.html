@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quelion — AI products that run real operations</title>
-  <meta name="description" content="Quelion builds focused AI products for operational teams. Ruta automates freight coordination — driver check-ins, milestone tracking, and client notifications via WhatsApp and Telegram.">
+  <title>Quelion · Productos de IA para operaciones de logística</title>
+  <meta name="description" content="Quelion construye productos de IA para equipos de logística en México. Ruta le da seguimiento a tus choferes por WhatsApp y Telegram y avisa a tu equipo solo cuando algo se atora.">
   <link rel="canonical" href="https://quelion.ai/">
-  <meta property="og:title" content="Quelion — AI products that run real operations">
-  <meta property="og:description" content="We build focused AI products for logistics teams — starting with freight. Tools that actually work in the field.">
+  <meta property="og:title" content="Quelion · Productos de IA para operaciones de logística">
+  <meta property="og:description" content="IA que hace el seguimiento operativo que hoy vive en el chat. Empezamos por Ruta, para coordinación de cargas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quelion.ai/">
+  <meta property="og:locale" content="es_MX">
   <link rel="icon" href="assets/svg/quelion-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/global.css">
@@ -21,24 +22,18 @@
     "name": "Quelion",
     "url": "https://quelion.ai",
     "logo": "https://quelion.ai/assets/svg/quelion-logo.svg",
-    "description": "Quelion builds focused AI products for operational teams, starting with logistics and freight.",
-    "email": "hola@quelion.ai",
-    "foundingDate": "2025",
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Zeltar Applied",
-      "url": "https://zeltar.ai"
-    },
+    "description": "Quelion construye productos de IA para equipos de operaciones de logística, empezando por la coordinación de cargas en México.",
+    "email": "cuauh@quelion.ai",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Quelion Products",
+      "name": "Productos de Quelion",
       "itemListElement": [
         {
           "@type": "SoftwareApplication",
           "name": "Ruta",
           "url": "https://quelion.ai/ruta",
           "applicationCategory": "BusinessApplication",
-          "description": "AI operations agent for freight coordinators. Automates driver communication and shipment tracking via WhatsApp and Telegram."
+          "description": "Seguimiento de choferes por WhatsApp y Telegram para equipos de coordinación de cargas."
         }
       ]
     }
@@ -48,21 +43,20 @@
 <body>
 
   <!-- ── NAV ── -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
     <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Quelion home">
+      <a href="/" class="nav-logo" aria-label="Quelion, inicio">
         <img src="assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="#products" class="nav-link">Products</a>
-        <a href="/ruta#pricing" class="nav-link">Pricing</a>
-        <a href="/blog" class="nav-link">Blog</a>
+        <a href="/ruta" class="nav-link">Ruta</a>
+        <a href="/ruta-en" class="nav-link" hreflang="en" lang="en">English</a>
       </div>
       <div class="nav-right">
         <a href="https://ruta.quelion.ai" class="btn btn-outline" style="font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:8px 16px;">
-          Log in
+          Iniciar sesión
         </a>
-        <button class="nav-mobile-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <button class="nav-mobile-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navLinks">
           <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
             <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
             <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
@@ -78,98 +72,87 @@
     <div class="hero-content">
       <p class="eyebrow hero-eyebrow">Quelion</p>
       <h1 id="hero-headline" class="hero-headline">
-        AI products that run<br>real operations.
+        IA que hace el seguimiento<br>que hoy vive en el chat.
       </h1>
       <p class="lede hero-lede">
-        We build focused AI products for operational teams —
-        starting with freight. No dashboards for dashboards' sake.
-        Tools that actually work in the field.
+        Construimos productos de IA para equipos de logística en México y la frontera.
+        El primero es Ruta, que le da seguimiento a cada carga por WhatsApp y Telegram
+        y avisa a tu equipo solo cuando algo se atora.
       </p>
       <div class="hero-ctas">
-        <a href="https://ruta.quelion.ai/signup" class="btn btn-primary" style="padding:14px 28px;font-size:15px;">
-          Start free — 14 days
+        <a href="mailto:cuauh@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="btn btn-primary" style="padding:14px 28px;font-size:15px;">
+          Agenda 20 minutos
         </a>
-        <a href="#products" class="btn btn-ghost" style="font-size:15px;color:var(--text-secondary);">
-          See products&nbsp;&nbsp;→
+        <a href="/ruta" class="btn btn-ghost" style="font-size:15px;color:var(--text-secondary);">
+          Conoce Ruta&nbsp;&nbsp;→
         </a>
       </div>
+      <p style="font-size:12px;color:var(--text-quiet);margin-top:16px;font-family:var(--font-mono);">o escríbenos a cuauh@quelion.ai</p>
     </div>
     <div class="hero-bg-q" aria-hidden="true">Q</div>
   </section>
 
-  <!-- ── PRODUCTS ── -->
-  <section class="features" id="products" aria-labelledby="products-heading" style="border-top:0.5px solid var(--border-hairline);">
+  <!-- ── PRODUCTOS ── -->
+  <section class="features" id="productos" aria-labelledby="products-heading" style="border-top:0.5px solid var(--border-hairline);">
     <div class="features-inner">
       <div class="features-header">
-        <p class="eyebrow" style="margin-bottom:20px;">Products</p>
+        <p class="eyebrow" style="margin-bottom:20px;">Productos</p>
         <h2 id="products-heading" style="max-width:560px;">
-          AI tools for logistics and<br>operational teams.
+          Hechos para un trabajo<br>operativo concreto.
         </h2>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);max-width:860px;">
+      <div style="display:grid;grid-template-columns:1fr;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);max-width:640px;">
 
         <div style="background:var(--surface-primary);padding:40px;">
           <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;">
             <p class="feature-number" style="margin:0;">Ruta</p>
-            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:#6FCF97;background:rgba(111,207,151,0.08);border:0.5px solid rgba(111,207,151,0.25);padding:3px 10px;">Live</span>
+            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:#6FCF97;background:rgba(111,207,151,0.08);border:0.5px solid rgba(111,207,151,0.25);padding:3px 10px;">En producción</span>
           </div>
-          <h3 class="feature-title" style="margin:0 0 16px;">AI ops agent for freight coordinators</h3>
+          <h3 class="feature-title" style="margin:0 0 16px;">Seguimiento de choferes para equipos de logística</h3>
           <p class="feature-body text-secondary" style="margin:0 0 20px;">
-            Ruta handles driver check-ins, milestone updates, and client notifications
-            automatically — via WhatsApp and Telegram. Your coordinators stop chasing
-            follow-ups and start managing exceptions.
+            Ruta le escribe a tus choferes por WhatsApp y Telegram, entiende sus respuestas
+            y actualiza el estado de cada carga. Si alguien deja de contestar, insiste
+            y le avisa a tu coordinador.
           </p>
           <ul style="list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:8px;">
-            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> WhatsApp &amp; Telegram AI agent</li>
-            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Automatic client notifications</li>
-            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Real-time operations dashboard</li>
-            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Auto follow-ups &amp; escalations</li>
+            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Conversación con choferes por WhatsApp y Telegram</li>
+            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Entiende lo que escribe cada chofer</li>
+            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Seguimiento y escalamiento por etapa</li>
+            <li style="font-size:13px;display:flex;gap:10px;color:var(--text-secondary);"><span style="color:#6FCF97;">✓</span> Historial de cada carga con sus cambios de estado</li>
           </ul>
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <a href="/ruta" class="btn btn-primary" style="font-size:13px;padding:10px 20px;">
-              Learn more
+              Conoce Ruta
             </a>
-            <a href="https://ruta.quelion.ai/signup" class="btn btn-outline" style="font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:10px 16px;display:inline-flex;align-items:center;gap:8px;">
-              Start free&nbsp;&nbsp;→
+            <a href="mailto:cuauh@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="btn btn-outline" style="font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:10px 16px;display:inline-flex;align-items:center;gap:8px;">
+              Agenda 20 minutos&nbsp;&nbsp;→
             </a>
           </div>
-        </div>
-
-        <div style="background:var(--surface-secondary);padding:40px;opacity:0.4;">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;">
-            <p class="feature-number" style="margin:0;">—</p>
-            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--text-quiet);background:var(--surface-elevated);border:0.5px solid var(--border-divider);padding:3px 10px;">Coming soon</span>
-          </div>
-          <h3 class="feature-title" style="margin:0 0 16px;">Next product</h3>
-          <p class="feature-body text-secondary" style="margin:0;">
-            The next Quelion product is in development.
-            It will be available at quelion.ai.
-          </p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ── WHY QUELION ── -->
+  <!-- ── CÓMO TRABAJAMOS ── -->
   <section style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="why-heading">
     <div style="max-width:860px;margin:0 auto;padding:0 40px;">
-      <p class="eyebrow" style="margin-bottom:20px;">Our approach</p>
+      <p class="eyebrow" style="margin-bottom:20px;">Cómo trabajamos</p>
       <h2 id="why-heading" style="max-width:600px;margin-bottom:40px;">
-        Vertical AI products, not horizontal platforms.
+        Productos verticales, no plataformas horizontales.
       </h2>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);">
         <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Built for one job</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Each product solves a specific operational problem — deeply, not broadly. No generic chatbots. No all-in-one platforms.</p>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Un trabajo, a fondo</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cada producto resuelve un problema operativo concreto. No hacemos chatbots genéricos.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Works where your team works</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Ruta works on WhatsApp and Telegram — no new app for your drivers to install. Future products follow the same principle.</p>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Donde ya trabaja tu equipo</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Ruta funciona en WhatsApp y Telegram. Tus choferes no instalan nada.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Self-serve, no sales call</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Sign up, import your data, and go. 14-day free trial included. If you need help, we're one email away.</p>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empezamos por una llamada</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Antes de configurar nada, entendemos cómo trabaja tu operación. Después lo configuramos contigo.</p>
         </div>
       </div>
     </div>
@@ -178,10 +161,13 @@
   <!-- ── CTA ── -->
   <section class="cta-section" aria-labelledby="cta-heading">
     <div class="cta-inner">
-      <p class="eyebrow">Start today</p>
-      <h2 id="cta-heading" style="max-width:480px;">14-day free trial. No credit card.</h2>
-      <a href="https://ruta.quelion.ai/signup" class="btn-inverse">
-        Try Ruta for free
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo das seguimiento hoy.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos cuántas cargas mueves, por qué canal y si Ruta te sirve. Escríbenos a cuauh@quelion.ai.
+      </p>
+      <a href="mailto:cuauh@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="btn-inverse">
+        Agenda 20 minutos
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
         </svg>
@@ -195,34 +181,26 @@
       <div class="footer-brand">
         <img src="assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
         <p class="footer-tagline">
-          AI products for logistics operations.<br>
-          Built by Zeltar Applied.
+          Productos de IA para operaciones de logística.
         </p>
       </div>
       <div>
-        <p class="footer-col-title">Products</p>
-        <nav class="footer-links" aria-label="Products links">
-          <a href="/ruta"                         class="footer-link">Ruta</a>
-          <a href="/ruta#pricing"                 class="footer-link">Pricing</a>
-          <a href="https://ruta.quelion.ai/signup" class="footer-link">Start free trial</a>
+        <p class="footer-col-title">Productos</p>
+        <nav class="footer-links" aria-label="Enlaces de productos">
+          <a href="/ruta"    class="footer-link">Ruta</a>
+          <a href="/ruta-en" class="footer-link" hreflang="en" lang="en">Ruta (English)</a>
         </nav>
       </div>
       <div>
-        <p class="footer-col-title">Account</p>
-        <nav class="footer-links" aria-label="Account links">
-          <a href="https://ruta.quelion.ai"        class="footer-link">Log in</a>
-          <a href="https://ruta.quelion.ai/signup" class="footer-link">Sign up</a>
-        </nav>
-      </div>
-      <div>
-        <p class="footer-col-title">Company</p>
-        <nav class="footer-links" aria-label="Company links">
-          <a href="mailto:hola@quelion.ai" class="footer-link">Contact</a>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:cuauh@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">cuauh@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
         </nav>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Quelion / Zeltar Applied. All rights reserved.</span>
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
     </div>
   </footer>
 

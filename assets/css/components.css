@@ -70,6 +70,30 @@
   .nav-right .btn { display: none; }
 }
 
+/* ── NAV: acceso de clientes y siguiente paso ── */
+.nav-link { white-space: nowrap; }
+.nav-login {
+  font-size: var(--text-small-size);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: color var(--dur-base) var(--ease);
+}
+.nav-login:hover { color: var(--text-primary); }
+.nav-cta { padding: var(--sp-8) var(--sp-16); white-space: nowrap; }
+.nav-link-login { display: none; }
+@media (max-width: 1024px) {
+  .nav-links { gap: var(--sp-20); }
+  .nav-right { gap: var(--sp-16); }
+}
+@media (max-width: 768px) {
+  .nav-login { display: none; }
+  .nav-right .btn.nav-cta { display: inline-flex; }
+  .nav-link-login { display: block; }
+}
+@media (max-width: 480px) {
+  .nav-right .btn.nav-cta { display: none; }
+}
+
 /* ── HERO ── */
 .hero {
   min-height: 100vh;

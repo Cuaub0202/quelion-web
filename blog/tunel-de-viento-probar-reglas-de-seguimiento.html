@@ -9,6 +9,7 @@
   <meta property="og:title" content="Túnel de viento: probar las reglas de seguimiento antes de activarlas">
   <meta property="og:description" content="Cuánto esperar antes de preguntar a un conductor, cuántas veces insistir y a quién avisar son decisiones. Así las probamos en un día simulado antes de que Ruta escriba a nadie.">
   <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_ES">
   <meta property="og:url" content="https://quelion.ai/blog/tunel-de-viento-probar-reglas-de-seguimiento">
   <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
@@ -191,12 +192,12 @@
 
       <p>
         Son las 9:00. El conductor escribe «ya he salido» y el envío figura en ruta. A las 10:00 se
-        detiene: va a lo suyo o no tiene cobertura, y no avisa. A las 13:00 vuelve a moverse. Nadie en
+        detiene: para a comer o se queda sin cobertura, y no avisa. A las 13:00 vuelve a moverse. Nadie en
         la oficina se ha enterado. No es descuido: el equipo de tráfico tiene treinta envíos más y
         pregunta por los que puede.
       </p>
       <p>
-        Un agente que pregunta por ti resuelve buena parte de eso. Pero antes de que escriba al primer
+        Ruta, nuestro agente de WhatsApp, pregunta por ti y resuelve buena parte de eso. Pero antes de que escriba al primer
         conductor hay que decidir cómo va a trabajar. Para eso usamos lo que llamamos
         <strong>túnel de viento</strong>.
       </p>
@@ -241,28 +242,27 @@
       <h2>Lo que enseñó un caso</h2>
       <p>
         Simulamos dos veces el día del principio: un conductor deja de contestar y el camión se detiene
-        de la hora 1 a la 4 del viaje. Con reglas genéricas, de esperas largas y varios intentos, el
-        primer aviso a una persona llegó a las 7 h 45 min, cuando el camión ya había vuelto a moverse.
-        Con reglas calibradas, esperar 90 minutos y avisar al primer intento sin respuesta, el aviso
-        llegó a las 3 h 10 min, con el camión todavía parado, y con el mismo número de avisos en la
-        jornada.
+        de 10:00 a 13:00. Con reglas genéricas (preguntar tras dos horas y media sin noticias y avisar a
+        la oficina solo después de dos intentos sin respuesta), el primer aviso a una persona llegó a las
+        16:45, casi cuatro horas después de que el camión volviera a moverse. Con reglas ajustadas
+        (preguntar tras 90 minutos y avisar a la oficina si el conductor no contesta a ese primer
+        mensaje), el aviso llegó a las 12:10, con el camión todavía parado, y la oficina recibió el mismo
+        número de avisos en el día.
       </p>
       <p>
-        Y una sorpresa: con un conductor que contesta «ok» a todo, acortar las esperas no adelantó el
-        aviso. Cada «ok» contaba como respuesta, y el aviso salió cuando venció la hora estimada de
+        Y una sorpresa: con un conductor que contesta «ok» a todo, acortar las esperas apenas adelantó el aviso: 4 minutos. Cada «ok» contaba como respuesta, y el aviso salió cuando venció la hora estimada de
         llegada. La pregunta de fondo no es técnica: ¿qué cuenta como noticia en tu operación? Esa
         decisión es de quien opera, y se toma antes de activar nada.
       </p>
-      <p><em>Simulación con datos de demostración, una corrida por variante.</em></p>
+      <p><em>Simulación con datos de demostración y conductores simulados, una corrida por variante.</em></p>
 
       <h2>La IA también se prueba</h2>
       <p>
-        Cuando un mensaje no decía la hora de llegada, el modelo se la inventaba: 16 de 18 veces en
-        nuestras pruebas. No lo arreglamos con un modelo más grande, sino con una regla verificable: la
-        hora tiene que estar escrita en el mensaje. Después de la regla, 0 de 18. El modelo propone, una
-        regla decide y una persona valida lo que tiene consecuencias.
+        Cuando el conductor no decía a qué hora llegaba, la IA apuntaba igualmente una hora de llegada
+        que nadie había dicho: 16 de 18 veces. Lo cortamos con una comprobación en el código: si la hora
+        no está escrita en el mensaje, no se guarda. Después, 0 de 18.
       </p>
-      <p><em>Pruebas en simulación, muestra pequeña.</em></p>
+      <p><em>Pruebas con frases de ejemplo y un solo modelo de IA; muestra pequeña.</em></p>
 
       <h2>Cómo empezamos con un equipo</h2>
       <p>

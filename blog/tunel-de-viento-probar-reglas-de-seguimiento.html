@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Túnel de viento: probar las reglas de seguimiento antes de activarlas | Quelion Blog</title>
+  <meta name="description" content="Cuánto esperar antes de preguntar a un conductor, cuántas veces insistir y a quién avisar son decisiones. Así las probamos en un día simulado antes de que Ruta escriba a nadie.">
+  <link rel="canonical" href="https://quelion.ai/blog/tunel-de-viento-probar-reglas-de-seguimiento">
+  <meta property="og:title" content="Túnel de viento: probar las reglas de seguimiento antes de activarlas">
+  <meta property="og:description" content="Cuánto esperar antes de preguntar a un conductor, cuántas veces insistir y a quién avisar son decisiones. Así las probamos en un día simulado antes de que Ruta escriba a nadie.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://quelion.ai/blog/tunel-de-viento-probar-reglas-de-seguimiento">
+  <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20260926">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Túnel de viento: probar las reglas de seguimiento antes de activarlas",
+    "datePublished": "2026-10-08",
+    "dateModified": "2026-10-08",
+    "inLanguage": "es-ES",
+    "author": { "@type": "Organization", "name": "Equipo Quelion", "url": "https://quelion.ai" },
+    "publisher": { "@type": "Organization", "name": "Quelion", "url": "https://quelion.ai" },
+    "description": "Cuánto esperar antes de preguntar a un conductor, cuántas veces insistir y a quién avisar son decisiones. Así las probamos en un día simulado antes de que Ruta escriba a nadie."
+  }
+  </script>
+  <style>
+    .post-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .post-header {
+      padding: 80px 0 56px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-meta-row {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .post-body {
+      padding: 56px 0 80px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-body h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+      line-height: 1.4;
+    }
+    .post-body h2:first-child { margin-top: 0; }
+    .post-body p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .post-body ul {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+    .post-body ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .post-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .inline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 0.5px solid var(--text-primary);
+      padding: 12px 20px;
+      margin: 32px 0 48px;
+      transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+    }
+    .inline-cta:hover {
+      background: var(--text-primary);
+      color: var(--surface-primary);
+    }
+    .faq-section {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 56px 0 0;
+      margin-top: 0;
+    }
+    .faq-item {
+      border-bottom: 0.5px solid var(--border-hairline);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .author-box {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 40px 0 0;
+      margin-top: 56px;
+    }
+    .author-box p {
+      font-size: 13px;
+      color: var(--text-quiet);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .author-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .post-wrap { padding: 0 20px; }
+      .post-header { padding: 56px 0 40px; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Quelion home">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/ruta" class="nav-link">Ruta</a>
+        <a href="/ruta#pricing" class="nav-link">Cómo empezar</a>
+        <a href="/blog" class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
+        <button class="nav-mobile-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="post-header">
+    <div class="post-wrap">
+      <p class="eyebrow" style="margin-bottom:20px;">Túnel de viento</p>
+      <h1 style="max-width:660px;line-height:1.25;margin-bottom:0;">
+        Túnel de viento: probar las reglas de seguimiento antes de activarlas
+      </h1>
+      <div class="post-meta-row">
+        <span>8 Oct 2026</span>
+        <span>5 min de lectura</span>
+        <span>Por el Equipo Quelion</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="post-body" aria-label="Contenido del artículo">
+    <div class="post-wrap">
+
+      <p>
+        Son las 9:00. El conductor escribe «ya he salido» y el envío figura en ruta. A las 10:00 se
+        detiene: va a lo suyo o no tiene cobertura, y no avisa. A las 13:00 vuelve a moverse. Nadie en
+        la oficina se ha enterado. No es descuido: el equipo de tráfico tiene treinta envíos más y
+        pregunta por los que puede.
+      </p>
+      <p>
+        Un agente que pregunta por ti resuelve buena parte de eso. Pero antes de que escriba al primer
+        conductor hay que decidir cómo va a trabajar. Para eso usamos lo que llamamos
+        <strong>túnel de viento</strong>.
+      </p>
+
+      <h2>Una regla de seguimiento es una decisión, no un ajuste</h2>
+      <p>
+        Ruta trabaja por etapas. En cada una hay tres preguntas: cuánto esperar sin noticias antes de
+        preguntar al conductor, cuántas veces volver a preguntar y a quién avisar si no contesta. Con
+        esperas largas, el equipo se entera tarde. Con esperas cortas, se molesta a conductores que van
+        conduciendo y llegan avisos que no hacían falta.
+      </p>
+      <p>
+        Cada operación tiene su punto. No es el mismo para un tránsito largo que para una descarga, ni
+        para un equipo que trabaja de noche que para uno que cierra a las nueve.
+      </p>
+
+      <h2>¿Dónde está el viento?</h2>
+      <p>
+        El nombre viene de la planificación por escenarios: en inglés se llama «wind tunnelling» a
+        someter una estrategia a escenarios difíciles para ver si aguanta. Los escenarios son el viento
+        y la estrategia, el prototipo. Igual que en la Fórmula 1, donde cada pieza pasa por el túnel
+        antes de salir a pista.
+      </p>
+      <p>
+        En nuestro caso, el prototipo son las reglas de seguimiento y el viento son los casos difíciles:
+        el conductor que no contesta, el que solo dice «ok», la noche sin respuesta.
+      </p>
+
+      <h2>Qué hacemos en el túnel</h2>
+      <p>
+        Ponemos la lógica de Ruta a prueba en un día simulado. Hay conductores con distintos hábitos: el
+        puntual, el que conduce y tarda en contestar, el que solo dice «ok», el que dice «ya casi llego»
+        y el que no contesta. Y hay algo que Ruta no ve: lo que pasa de verdad con el camión. Así
+        medimos cuánto tarda alguien del equipo en enterarse y cuántos avisos recibe por el camino, sin
+        escribir a nadie de verdad.
+      </p>
+      <p>
+        Cambiamos una sola regla, repetimos el mismo día y vemos qué se mueve. Las reglas quedan por
+        escrito, con versión.
+      </p>
+
+      <h2>Lo que enseñó un caso</h2>
+      <p>
+        Simulamos dos veces el día del principio: un conductor deja de contestar y el camión se detiene
+        de la hora 1 a la 4 del viaje. Con reglas genéricas, de esperas largas y varios intentos, el
+        primer aviso a una persona llegó a las 7 h 45 min, cuando el camión ya había vuelto a moverse.
+        Con reglas calibradas, esperar 90 minutos y avisar al primer intento sin respuesta, el aviso
+        llegó a las 3 h 10 min, con el camión todavía parado, y con el mismo número de avisos en la
+        jornada.
+      </p>
+      <p>
+        Y una sorpresa: con un conductor que contesta «ok» a todo, acortar las esperas no adelantó el
+        aviso. Cada «ok» contaba como respuesta, y el aviso salió cuando venció la hora estimada de
+        llegada. La pregunta de fondo no es técnica: ¿qué cuenta como noticia en tu operación? Esa
+        decisión es de quien opera, y se toma antes de activar nada.
+      </p>
+      <p><em>Simulación con datos de demostración, una corrida por variante.</em></p>
+
+      <h2>La IA también se prueba</h2>
+      <p>
+        Cuando un mensaje no decía la hora de llegada, el modelo se la inventaba: 16 de 18 veces en
+        nuestras pruebas. No lo arreglamos con un modelo más grande, sino con una regla verificable: la
+        hora tiene que estar escrita en el mensaje. Después de la regla, 0 de 18. El modelo propone, una
+        regla decide y una persona valida lo que tiene consecuencias.
+      </p>
+      <p><em>Pruebas en simulación, muestra pequeña.</em></p>
+
+      <h2>Cómo empezamos con un equipo</h2>
+      <p>
+        Primero, una llamada de 20 minutos para entender tu operación. Si tiene sentido, lo ensayamos
+        con casos de ejemplo del sector; tus casos reales entran solo cuando firmamos un acuerdo de
+        datos. Ruta sigue evolucionando y toma el input de quienes operan para definir cómo trabaja.
+      </p>
+
+      <!-- ── AUTHOR BOX ── -->
+      <div class="author-box">
+        <p>
+          Escrito por el Equipo Quelion — construimos productos de IA para equipos de logística.
+          Preguntas: <a href="mailto:hola@quelion.ai">hola@quelion.ai</a>
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo haces hoy el seguimiento de tus conductores.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos cuántas cargas mueves, por qué canal y si Ruta te sirve. Escríbenos a hola@quelion.ai.
+      </p>
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
+        Agenda 20 minutos
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
+        <p class="footer-tagline">
+          Productos de IA para operaciones de logística.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Productos</p>
+        <nav class="footer-links" aria-label="Enlaces de productos">
+          <a href="/ruta"    class="footer-link">Ruta</a>
+          <a href="/ruta-en" class="footer-link" hreflang="en" lang="en">Ruta (English)</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Recursos</p>
+        <nav class="footer-links" aria-label="Enlaces de recursos">
+          <a href="/blog" class="footer-link">Blog</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js?v=20260926"></script>
+</body>
+</html>

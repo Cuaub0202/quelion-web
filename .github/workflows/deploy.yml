@@ -6,12 +6,14 @@ on:
   workflow_dispatch:
     inputs:
       indexnow_all:
-        description: 'Enviar todo el sitemap a IndexNow (Bing) después del deploy'
+        description: 'Enviar todo el sitemap a IndexNow (Bing y otros buscadores) después del deploy'
         type: boolean
         default: false
 
 jobs:
   deploy:
+    # El disparador manual deja elegir rama: solo main llega a producción.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,8 +30,9 @@ jobs:
           target: /var/www/quelion/
           strip_components: 0
 
-      # Avisa a Bing de las páginas publicadas o cambiadas. Si falla, el deploy ya está hecho.
-      - name: Avisar a IndexNow (Bing)
+      # Avisa a los buscadores de IndexNow (Bing y otros) de las páginas publicadas o cambiadas.
+      # Si falla, el deploy ya está hecho: el paso deja un aviso en el resumen del run.
+      - name: Avisar a IndexNow (Bing y otros)
         continue-on-error: true
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.indexnow_all }}" = "true" ]; then

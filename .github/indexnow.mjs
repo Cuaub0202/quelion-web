@@ -1,5 +1,5 @@
-// .github/indexnow.mjs — avisa a Bing (y a los buscadores que usan IndexNow) de las páginas
-// publicadas o cambiadas en un deploy. Solo envía URLs que están en sitemap.xml.
+// .github/indexnow.mjs — avisa a los buscadores que usan IndexNow (Bing, Yandex, Seznam, Naver, Yep)
+// de las páginas publicadas o cambiadas en un deploy. Solo envía URLs que están en sitemap.xml.
 //
 // Uso:
 //   node .github/indexnow.mjs changed <sha-antes> <sha-después>   páginas tocadas en el push
@@ -40,11 +40,24 @@ export function fileToUrl(file) {
     return normalize(`${ORIGIN}/${path}`);
 }
 
+function exists(sha) {
+    try { execFileSync('git', ['cat-file', '-e', `${sha}^{commit}`], { stdio: 'ignore' }); return true; } catch { return false; }
+}
+
 function changedFiles(from, to) {
-    // Primer push o historia reescrita: sin un «antes» válido no se adivina y no se envía nada.
-    if (!from || /^0+$/.test(from)) return [];
-    const out = execFileSync('git', ['diff', '--name-only', '--diff-filter=AM', from, to], { encoding: 'utf8' });
+    // Primer push o historia reescrita (force-push): sin un «antes» válido no se adivina y no se envía nada.
+    if (!from || /^0+$/.test(from) || !exists(from)) {
+        console.log(`IndexNow: no hay un commit anterior válido (${from || 'vacío'}); no se envía nada.`);
+        return [];
+    }
+    // --no-renames: un archivo renombrado cuenta como nuevo, y su URL nueva se envía.
+    const out = execFileSync('git', ['diff', '--name-only', '--no-renames', '--diff-filter=AM', from, to], { encoding: 'utf8' });
     return out.split('\n').filter(Boolean);
+}
+
+// En GitHub Actions, una línea ::warning:: aparece en el resumen del run aunque el paso no lo tumbe.
+function warn(msg) {
+    console.log(process.env.GITHUB_ACTIONS ? `::warning title=IndexNow::${msg}` : `IndexNow: ${msg}`);
 }
 
 let urls;
@@ -68,7 +81,7 @@ if (dryRun) process.exit(0);
 // La clave tiene que estar ya servida; si no, IndexNow responde 403 y no hay nada que hacer.
 const served = await fetch(body.keyLocation).then((r) => (r.ok ? r.text() : null)).catch(() => null);
 if (served?.trim() !== key) {
-    console.log(`IndexNow: ${body.keyLocation} todavía no devuelve la clave; no se envía.`);
+    warn(`${body.keyLocation} no devuelve la clave; no se envió nada.`);
     process.exit(1);
 }
 
@@ -79,4 +92,7 @@ const res = await fetch(ENDPOINT, {
 });
 console.log(`IndexNow: respuesta ${res.status}`);
 // 200 y 202 son aceptación; cualquier otra cosa se marca como fallo del paso (no del deploy).
-process.exit(res.status === 200 || res.status === 202 ? 0 : 1);
+if (res.status !== 200 && res.status !== 202) {
+    warn(`api.indexnow.org respondió ${res.status}; las URLs no se aceptaron.`);
+    process.exit(1);
+}

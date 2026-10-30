@@ -19,7 +19,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quelion.ai/blog</loc>
+    <loc>https://quelion.ai/blog/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -97,7 +97,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quelion.ai/mx/blog</loc>
+    <loc>https://quelion.ai/mx/blog/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

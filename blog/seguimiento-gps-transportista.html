@@ -200,10 +200,11 @@
         eso fue a las 02:15.
       </p>
       <p>
-        Muchos transportistas ya llevan GPS en sus unidades y pueden dar a quien les contrata una
-        <strong>cuenta espejo</strong>: un acceso de solo lectura a la posición de sus camiones. Ruta, nuestro agente de WhatsApp,
-        se guía por esa posición en lugar de por las respuestas a sus preguntas. Las cifras que siguen están medidas en
-        simulación.
+        Casi todos los transportistas llevan ya un localizador GPS en sus camiones, y su plataforma de
+        gestión de flotas permite compartir la posición con quien les contrata, por ejemplo con un
+        <strong>usuario de solo lectura</strong>. Con ese acceso, Ruta, nuestro agente de WhatsApp, se guía
+        por la posición del camión en lugar de por las respuestas a sus preguntas. Las cifras que siguen
+        están medidas en simulación.
       </p>
 
       <h2>Preguntar tiene un límite: necesita silencio para saber que algo va mal</h2>
@@ -214,27 +215,23 @@
         equipo se entera tarde.
       </p>
       <p>
-        Con el GPS, la señal deja de ser el silencio y pasa a ser el hecho: la unidad está parada, se ha
-        salido de la ruta o ha dejado de emitir.
+        Con el GPS, la señal deja de ser el silencio y pasa a ser el hecho: el camión está parado, se ha salido de la ruta o ha dejado de emitir.
       </p>
 
       <h2>Lo que medimos en simulación</h2>
       <p>
-        Repetimos la misma noche con los dos modos. La unidad se detiene a las 00:04, fuera de la ruta,
+        Repetimos la misma noche con los dos modos. El camión se detiene a las 00:04, fuera de la ruta,
         y el conductor no contesta.
       </p>
       <ul>
         <li><strong>Solo con mensajes:</strong> la primera alerta al equipo llegó a las 02:15, después de
         dos horas de preguntas sin respuesta.</li>
-        <li><strong>Con el GPS:</strong> la alerta llegó a las 00:45, tras 40 minutos detenida a 3 km de
-        la ruta, sin una sola pregunta al transportista. El aviso decía dónde estaba la unidad, cuánto
-        llevaba parada y a qué distancia de la ruta, en lugar de «sin noticias desde las 22:05».</li>
+        <li><strong>Con el GPS:</strong> la alerta llegó a las 00:45, tras 40 minutos detenido a 3 km de la ruta, sin una sola pregunta al transportista. El aviso decía dónde estaba el camión, cuánto llevaba parado y a qué distancia de la ruta, en lugar de «sin noticias desde las 22:05».</li>
       </ul>
       <p>
         En un viaje que sale bien, el cambio va en el otro sentido. Con mensajes, Ruta cruzó 15 mensajes
         con el transportista. Con el GPS, ninguna pregunta: los hitos (salida, paso por cada ciudad,
-        llegada) salieron de la posición sobre la ruta, y al equipo solo le llegaron la salida, el paso
-        clave y la llegada.
+        llegada) salieron de la posición sobre la ruta, y al equipo solo le llegaron la salida, el paso por el punto clave y la llegada.
       </p>
       <p>
         Y una noche normal, con el conductor descansando en un área de servicio sobre su ruta, no
@@ -255,23 +252,20 @@
         No todo lo que ve el GPS es un problema. Un camión que se desvía dos kilómetros puede estar
         repostando. Por eso, ante algo leve (un desvío corto o una parada larga de día), Ruta pregunta
         primero al responsable del transportista, con el dato del GPS en el mensaje. Si contesta, no se
-        avisa a nadie. Si no contesta en 20 minutos, o la unidad se aleja otros 3 km, Ruta abre la
+        avisa a nadie. Si no contesta en 20 minutos, o el camión se aleja otros 3 km, Ruta abre la
         guardia y llama a tu equipo por orden hasta que alguien la atiende.
       </p>
       <p>
         Lo grave no espera: un desvío de 10 km que sigue alejándose va directo a la guardia. En la
         simulación, un desvío para repostar se aclaró en 7 minutos sin avisar a nadie. El mismo desvío sin
-        respuesta abrió la guardia a los 20 minutos, y la guardia se cerró sola cuando el GPS vio la unidad
-        de vuelta en su ruta.
+        respuesta abrió la guardia a los 20 minutos, y la guardia se cerró sola cuando el GPS vio el camión de vuelta en su ruta.
       </p>
 
-      <h2>Cada mes, lo planeado contra lo que pasó</h2>
+      <h2>Cada mes, lo previsto frente a lo que pasó</h2>
       <p>
-        Leer cada viaje deja algo más que alertas, y es lo que estamos construyendo ahora: comparar la
-        hora estimada y la ruta planeada con lo que ocurrió, por corredor y por transportista. Qué
-        transportista llega tarde en cada corredor y por cuánto. Si el tiempo se pierde en carretera o
-        esperando en la carga y la descarga. Dónde se para fuera de lo acordado. Y qué tan fiable es la
-        hora que le das a tu cliente.
+        Leer cada viaje deja algo más que alertas, y es lo que estamos construyendo ahora: comparar la hora estimada y la ruta prevista con lo que ocurrió, por trayecto y por transportista. Qué
+        transportista llega tarde en cada trayecto y cuánto. Si el tiempo se pierde en carretera o
+        esperando en la carga y la descarga. Dónde se para fuera de lo acordado. Y hasta qué punto es fiable la hora que le das a tu cliente.
       </p>
       <p>
         Cada hallazgo dirá de cuántos viajes sale; con pocos viajes no afirmaremos nada. Y se atribuye al
@@ -280,8 +274,8 @@
 
       <h2>Cuánto tiempo devuelve a tu equipo</h2>
       <p>
-        Un ejemplo de cálculo: 35 servicios al mes, de tres días cada uno, con un estatus cada dos horas de
-        día y de noche, son 36 estatus por servicio y 1.260 al mes. Si cada uno lleva 3 minutos de escribir,
+        Un ejemplo de cálculo: 35 servicios al mes, de tres días cada uno, con una actualización de estado cada dos horas de día y de noche, son 36 actualizaciones por
+        servicio y 1.260 al mes. Si cada uno lleva 3 minutos de escribir,
         esperar, leer, apuntar y avisar (una estimación), son 63 horas al mes: el 40 % de una persona a
         tiempo completo. Con tus cifras el resultado cambia, y por eso lo calculamos contigo.
       </p>
@@ -298,13 +292,13 @@
         desconectado se ven igual.</li>
         <li><strong>El GPS no sabe de citas.</strong> Ve que el camión llegó, no si llegó a tiempo a su
         franja de descarga.</li>
-        <li><strong>«Entregado» no lo da el GPS.</strong> Lo da el comprobante de entrega que manda el
+        <li><strong>«Entregado» no lo da el GPS.</strong> Lo da el albarán o el CMR firmado que manda el
         transportista.</li>
-        <li><strong>Depende del transportista.</strong> Si no da la cuenta espejo, o caduca, Ruta vuelve a
-        hacer el seguimiento por mensajes.</li>
+        <li><strong>Depende del transportista.</strong> Si no comparte la posición, o retira el acceso, Ruta
+        vuelve a hacer el seguimiento por mensajes.</li>
       </ul>
       <p>
-        Por eso, al conectar la cuenta espejo de cada transportista, contrastamos lo que ve Ruta con tus
+        Por eso, al conectar el GPS de cada transportista, contrastamos lo que ve Ruta con tus
         viajes y ajustamos los umbrales contigo. Ruta sigue
         evolucionando y toma el input de quienes operan para definir cómo trabaja.
       </p>

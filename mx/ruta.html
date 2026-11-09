@@ -78,6 +78,22 @@
       },
       {
         "@type": "Question",
+        "name": "¿Da seguimiento de noche y en fin de semana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El horario, la frecuencia del seguimiento y la escalación se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono al coordinador, que confirma pulsando 1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Sirve si no tengo flota propia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Ruta le escribe por WhatsApp o Telegram al chofer de cada embarque, aunque sea de un transportista subcontratado. Es el caso de un broker de carga o un 3PL."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "¿Usa GPS?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -134,7 +150,7 @@
         Tu coordinador deja de perseguir choferes.
       </h1>
       <p class="lede hero-lede">
-        Ruta le da seguimiento a cada carga por WhatsApp y Telegram. Le pregunta al chofer,
+        Ruta le da seguimiento a cada embarque por WhatsApp y Telegram, de día o 24/7. Le pregunta al chofer,
         entiende la respuesta, actualiza el estado y avisa a tu equipo solo cuando alguien
         deja de contestar.
       </p>
@@ -207,7 +223,7 @@
           <div style="padding:32px 28px 32px 0;">
             <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">Si nadie contesta, Ruta insiste y escala</h3>
             <p style="font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-              Si un chofer no reporta a tiempo en una etapa, Ruta le vuelve a escribir en horario de operación.
+              Si un chofer no reporta a tiempo en una etapa, Ruta le vuelve a escribir en el horario que definas, de día o las 24 horas.
               Si sigue sin contestar, le avisa a tu coordinador. Los tiempos se configuran por etapa.
             </p>
           </div>
@@ -264,11 +280,39 @@
         <div style="background:var(--surface-primary);padding:36px 32px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Carga de órdenes por CSV</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Tus órdenes activas entran desde una hoja de cálculo exportada a CSV.
+            Tus órdenes activas entran desde tu hoja de Excel exportada a CSV.
           </p>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ── PARA QUIÉN ── -->
+  <section id="brokers" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="brokers-heading">
+    <div class="section-inner">
+      <p class="eyebrow" style="margin-bottom:20px;">Para quién</p>
+      <h2 id="brokers-heading" style="max-width:640px;margin-bottom:20px;">
+        Para brokers de carga y 3PL sin flota propia.
+      </h2>
+      <p class="text-secondary" style="max-width:640px;font-size:15px;line-height:1.7;margin:0 0 40px;">
+        Cuando el transporte es subcontratado, tu servicio depende de choferes que no son tuyos. Ruta le da seguimiento a cada embarque sin que el chofer instale nada. Cuánto seguimiento da en cada etapa, cuándo escala y cuándo llama se configura a tu operación y se ensaya en el túnel de viento antes de activarlo.
+      </p>
+      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);margin-bottom:32px;">
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Transportistas subcontratados</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Das de alta el embarque con el teléfono del chofer y Ruta le escribe por WhatsApp o Telegram. Con la cuenta espejo de tu transportista, Ruta también lee la posición de la unidad.</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Noches y fines de semana</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El horario y los días de seguimiento se definen por etapa y pueden ser 24/7. Tu equipo recibe aviso por WhatsApp solo cuando un chofer deja de contestar o algo necesita atención. Si nadie lo confirma, Ruta llama por teléfono al coordinador y, si tampoco contesta, a su respaldo.</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">De Excel a un tablero</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus embarques entran desde tu hoja de Excel exportada a CSV. Cada uno queda con su estatus y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
+        </div>
+      </div>
+      <p class="text-secondary" style="max-width:640px;font-size:13px;line-height:1.7;margin:0;">Sobre cubrir la noche: <a href="/blog/monitoreo-nocturno-embarques-24-7" style="color:var(--text-primary);text-decoration:underline;">monitoreo nocturno de embarques</a>. Sobre la cuenta espejo: <a href="/mx/blog/seguimiento-gps-transportista" style="color:var(--text-primary);text-decoration:underline;">seguimiento con la cuenta espejo del transportista</a>.</p>
     </div>
   </section>
 
@@ -343,6 +387,26 @@
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
             Hoy no. Ruta conversa uno a uno con cada chofer.
+          </p>
+        </details>
+
+        <details style="border-bottom:0.5px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Da seguimiento de noche y en fin de semana?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Sí. El horario, la frecuencia del seguimiento y la escalación se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono al coordinador, que confirma pulsando 1.
+          </p>
+        </details>
+
+        <details style="border-bottom:0.5px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Sirve si no tengo flota propia?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Sí. Ruta le escribe por WhatsApp o Telegram al chofer de cada embarque, aunque sea de un transportista subcontratado. Es el caso de un broker de carga o un 3PL.
           </p>
         </details>
 

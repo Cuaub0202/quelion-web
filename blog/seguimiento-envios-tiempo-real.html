@@ -47,7 +47,7 @@
         "name": "¿Se puede tener seguimiento de envíos en tiempo real sin GPS dedicado?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el chofer contesta. El seguimiento basado en checkpoints por WhatsApp no es rastreo continuo y no depende de un dispositivo GPS instalado en el camión. El agente le pregunta al chofer en qué etapa va y registra cada cambio con su hora. Para muchas operaciones de flete en México, este modelo da visibilidad operativa real sin la infraestructura de un TMS."
+          "text": "Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el chofer contesta. El seguimiento basado en checkpoints por WhatsApp no es rastreo continuo y no depende de un dispositivo GPS instalado en el camión. El agente le pregunta al chofer en qué etapa va y registra cada cambio con su hora. Para muchas operaciones de flete en México, este modelo da visibilidad operativa real sin la infraestructura de un TMS. Y si el transportista te da una cuenta espejo, Ruta también lee la posición del GPS y solo pregunta lo que el GPS no dice."
         }
       },
       {
@@ -269,7 +269,7 @@
         depender de la iniciativa humana en ambos extremos de la cadena.
       </p>
 
-      <h2>La trampa del GPS: visibilidad sin contexto operativo</h2>
+      <h2>El GPS solo no basta: visibilidad sin contexto operativo</h2>
       <p>
         Cuando las operaciones logísticas quieren resolver el problema de seguimiento sin un TMS
         completo, lo primero que consideran es instalar rastreadores GPS en las unidades. Es una
@@ -288,9 +288,13 @@
         Para operaciones cross-border que cruzan por Laredo, El Paso o Nogales, la limitación
         es más evidente todavía: el GPS puede decirte que el camión está en la zona del cruce
         fronterizo, pero no puede decirte en qué etapa del proceso aduanal está, cuánto lleva
-        esperando, ni si el agente aduanal ya tiene el pedimento liberado. Esa información sólo
-        viene del chofer — y para que llegue de forma confiable, tiene que haber un proceso que
-        la solicite activamente.
+        esperando, ni si el agente aduanal ya tiene el pedimento liberado. Esa información sólo viene del chofer — y para que llegue de forma confiable, tiene que haber un
+        proceso que la solicite activamente.
+      </p>
+      <p>
+        Por eso Ruta junta las dos cosas. Si el transportista te da una cuenta espejo, Ruta lee la
+        posición de la unidad, detecta paradas y desvíos, y solo le pregunta al chofer o al transportista
+        lo que el GPS no dice. Sin cuenta espejo, el seguimiento sale de los checkpoints por WhatsApp.
       </p>
 
       <h2>Checkpoints automáticos: el seguimiento que se hace solo</h2>
@@ -395,7 +399,7 @@
             El seguimiento basado en checkpoints por WhatsApp no es rastreo continuo y no depende de
             un dispositivo GPS instalado en el camión. El agente le pregunta al chofer en qué etapa
             va y registra cada cambio con su hora. Para muchas operaciones de flete en México, este
-            modelo da visibilidad operativa real sin la infraestructura de un TMS.
+            modelo da visibilidad operativa real sin la infraestructura de un TMS. Y si el transportista te da una cuenta espejo, Ruta también lee la posición del GPS y solo pregunta lo que el GPS no dice.
           </p>
         </div>
 

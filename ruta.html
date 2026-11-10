@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ruta · Seguimiento de conductores por WhatsApp y Telegram | Quelion</title>
-  <meta name="description" content="Ruta hace el seguimiento de cada carga por WhatsApp y Telegram: le pregunta al conductor, entiende la respuesta, actualiza el estado y avisa a tu coordinador solo cuando alguien deja de contestar.">
+  <title>Ruta: seguimiento 24/7 de conductores por WhatsApp | Quelion</title>
+  <meta name="description" content="Ruta pregunta al conductor por WhatsApp, lee el GPS del camión y avisa solo de lo que se atasca; si nadie confirma, llama. Flota propia o subcontratada.">
   <link rel="canonical" href="https://quelion.ai/ruta">
   <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/ruta">
   <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/ruta">
   <link rel="alternate" hreflang="en" href="https://quelion.ai/ruta-en">
   <link rel="alternate" hreflang="x-default" href="https://quelion.ai/ruta">
-  <meta property="og:title" content="Ruta · Tu coordinador deja de perseguir conductores">
-  <meta property="og:description" content="Seguimiento de cada carga por WhatsApp y Telegram, con escalado a tu equipo cuando alguien deja de contestar.">
+  <meta property="og:title" content="Ruta · Entérate antes que tu cliente">
+  <meta property="og:description" content="Seguimiento de cada carga por WhatsApp, Telegram y GPS, de día o 24/7, con escalado a tu equipo cuando algo se sale de lo normal.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quelion.ai/ruta">
   <meta property="og:locale" content="es_ES">
@@ -31,7 +31,7 @@
     "operatingSystem": "Web",
     "url": "https://quelion.ai/ruta",
     "inLanguage": "es",
-    "description": "Seguimiento de conductores por WhatsApp y Telegram para equipos de coordinación de cargas. Actualiza el estado de cada carga y escala al coordinador cuando un conductor deja de contestar.",
+    "description": "Seguimiento de cargas por WhatsApp, Telegram y GPS, con horario configurable hasta 24/7, para transportistas, agencias de transporte y operadores logísticos. Actualiza el estado de cada carga y escala a tu equipo de tráfico cuando un conductor deja de contestar o el GPS ve algo fuera de lo normal.",
     "publisher": {
       "@type": "Organization",
       "name": "Quelion",
@@ -57,7 +57,7 @@
         "name": "¿Ruta reemplaza mi TMS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Ruta se ocupa de la conversación con el conductor y del estado de cada carga. Tus órdenes activas entran desde un archivo CSV."
+          "text": "No. Ruta se ocupa de la conversación con el conductor y del estado de cada carga. Tus cargas en curso entran desde un archivo CSV."
         }
       },
       {
@@ -65,7 +65,7 @@
         "name": "¿Qué pasa si la IA entiende mal un mensaje?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La IA interpreta el mensaje y una regla fija decide si el cambio de estado procede. Tu coordinador puede corregir el estado de una carga desde el panel."
+          "text": "La IA interpreta el mensaje y una regla fija decide si el cambio de estado procede. Tu equipo de tráfico puede corregir el estado de una carga desde el panel."
         }
       },
       {
@@ -78,10 +78,18 @@
       },
       {
         "@type": "Question",
+        "name": "¿Hace el seguimiento de noche y en fin de semana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El horario, la frecuencia del seguimiento y el escalado se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue de noche y avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "¿Usa GPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, si tu transportista comparte la posición de sus camiones: Ruta la lee de su GPS, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Si no la comparte, el estado de cada carga sale de lo que reporta el conductor y de las reglas de seguimiento de cada etapa."
+          "text": "Sí. Ruta lee la posición del GPS del camión, sea de tu flota o de un transportista, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Sin GPS, el estado de cada carga sale de lo que dice el conductor y de las reglas de seguimiento de cada etapa."
         }
       },
       {
@@ -89,7 +97,7 @@
         "name": "¿Cuánto cuesta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Depende de cuántas operaciones manejas al mes. Te damos el precio en la llamada, antes de configurar nada."
+          "text": "Depende de cuántas cargas mueves al mes. Te damos el precio en la llamada, antes de configurar nada."
         }
       }
     ]
@@ -131,12 +139,12 @@
     <div class="hero-content">
       <p class="eyebrow hero-eyebrow">Ruta · de Quelion</p>
       <h1 id="hero-headline" class="hero-headline">
-        Tu coordinador deja de perseguir conductores.
+        Entérate antes que tu cliente.
       </h1>
       <p class="lede hero-lede">
-        Ruta hace el seguimiento de cada carga por WhatsApp y Telegram. Le pregunta al conductor,
-        entiende la respuesta, actualiza el estado y avisa a tu equipo solo cuando alguien
-        deja de contestar.
+        Ruta pregunta a cada conductor por WhatsApp cómo va, entiende la respuesta, lee el GPS del camión
+        y actualiza el estado. Tu equipo de tráfico deja de perseguir conductores: solo se entera cuando algo se atasca y,
+        si nadie atiende el aviso, Ruta llama por teléfono. De día o 24/7.
       </p>
       <div class="hero-ctas">
         <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary" style="padding:14px 28px;font-size:15px;">
@@ -155,7 +163,7 @@
     <div class="section-inner">
       <p class="eyebrow" style="margin-bottom:20px;">El problema</p>
       <h2 id="problem-heading" style="max-width:640px;margin-bottom:32px;">
-        El seguimiento de cada carga vive en el chat de tu coordinador.
+        El seguimiento de cada carga vive en el chat de tu jefe de tráfico.
       </h2>
       <p style="font-size:15px;color:var(--text-secondary);max-width:640px;line-height:1.7;">
         «¿Ya has salido?», «¿cómo vas?», «el cliente pregunta por su carga». Cada pregunta la escribe
@@ -192,10 +200,10 @@
             <span style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;">02</span>
           </div>
           <div style="padding:32px 28px 32px 0;">
-            <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">El estado se actualiza con reglas</h3>
+            <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">La IA lee; la regla decide</h3>
             <p style="font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
               La IA interpreta el mensaje y una regla fija decide si el cambio de estado procede.
-              Cada cambio queda registrado con su hora, y tu coordinador puede corregir el estado de una carga desde el panel.
+              Cada cambio queda registrado con su hora, y tu equipo de tráfico puede corregir el estado de una carga desde el panel.
             </p>
           </div>
         </div>
@@ -207,8 +215,8 @@
           <div style="padding:32px 28px 32px 0;">
             <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">Si nadie contesta, Ruta insiste y escala</h3>
             <p style="font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-              Si un conductor no reporta a tiempo en una etapa, Ruta vuelve a escribirle en el horario que definas, de día o las 24 horas.
-              Si sigue sin contestar, avisa a tu coordinador. Los tiempos se configuran por etapa.
+              Si un conductor no da novedades a tiempo en una etapa, Ruta vuelve a escribirle en el horario que definas, de día o las 24 horas.
+              Si sigue sin contestar, avisa a tu equipo de tráfico. Los tiempos se configuran por etapa.
             </p>
           </div>
         </div>
@@ -222,7 +230,7 @@
     <div class="section-inner">
       <p class="eyebrow" style="margin-bottom:20px;">Qué incluye</p>
       <h2 id="features-heading" style="max-width:560px;margin-bottom:56px;">
-        Hecho para coordinadores de carga, no para equipos de software.
+        Hecho para el departamento de tráfico, no para equipos de software.
       </h2>
       <div class="cols-2" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);">
 
@@ -264,10 +272,37 @@
         <div style="background:var(--surface-primary);padding:36px 32px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Carga de órdenes por CSV</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Tus órdenes activas entran desde tu hoja de Excel exportada a CSV.
+            Tus cargas en curso entran desde tu hoja de Excel exportada a CSV.
           </p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PARA QUIÉN ── -->
+  <section id="para-quien" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="para-quien-heading">
+    <div class="section-inner">
+      <p class="eyebrow" style="margin-bottom:20px;">Para quién</p>
+      <h2 id="para-quien-heading" style="max-width:640px;margin-bottom:20px;">
+        Para quien responde por la carga, sea de quien sea el camión.
+      </h2>
+      <p class="text-secondary" style="max-width:640px;font-size:15px;line-height:1.7;margin:0 0 40px;">
+        Transportista, agencia de transporte u operador logístico: tu cliente no distingue si el camión es tuyo o de un tercero, te llama a ti. Ruta hace el seguimiento de cada carga sin que el conductor instale nada. En carga no se pregunta igual que en tránsito ni que en aduana: con la propuesta aceptada, configuramos contigo los tiempos de cada etapa y, antes de escribir a nadie, los vemos correr en un día simulado, el <a href="/#tunel" style="color:var(--text-primary);text-decoration:underline;">túnel de viento</a>.
+      </p>
+      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);">
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">El conductor, sea tuyo o no</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Das de alta la carga con el teléfono del conductor y Ruta le escribe por WhatsApp o Telegram: de tu flota, de un transportista subcontratado o un autónomo. Con el GPS del camión también lee la posición.</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Noches y fines de semana</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El horario y los días de seguimiento se definen por etapa y pueden ser 24/7. Tu equipo de tráfico recibe aviso por WhatsApp solo cuando un conductor deja de contestar o algo necesita atención. Si nadie lo confirma, Ruta llama por teléfono y, si tampoco contesta, a su respaldo.</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empiezas con tu Excel de siempre</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus cargas entran desde tu hoja de Excel exportada a CSV. Cada una queda con su estado y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -281,17 +316,17 @@
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <p style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;margin-bottom:12px;">01</p>
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Nos cuentas tu operación</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cómo haces hoy el seguimiento, cuántas cargas mueves y por qué canal hablas con tus conductores.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cómo haces hoy el seguimiento, cuántas cargas mueves y por qué canal hablas con tus conductores. En la misma llamada te enseñamos Ruta con un caso de ejemplo.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <p style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;margin-bottom:12px;">02</p>
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Te damos el precio</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Depende de cuántas operaciones manejas al mes. Lo sabes antes de configurar nada.</p>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Te enviamos la propuesta</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Con el precio, que depende de cuántas cargas mueves al mes, y lo que incluye. Lo sabes antes de configurar nada.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <p style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;margin-bottom:12px;">03</p>
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Lo configuramos contigo</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus flujos, tus contactos y tus tiempos de seguimiento, antes de que Ruta le escriba al primer conductor.</p>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Con la propuesta aceptada, lo configuramos contigo</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus reglas, tus contactos y tus tiempos de seguimiento, ensayados en el túnel de viento antes de que Ruta escriba al primer conductor. La puesta en marcha va incluida.</p>
         </div>
       </div>
       <p style="font-size:13px;color:var(--text-quiet);margin-top:20px;">¿Prefieres escribir? <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" style="color:var(--text-primary);text-decoration:underline;">hola@quelion.ai</a></p>
@@ -322,7 +357,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            No. Ruta se ocupa de la conversación con el conductor y del estado de cada carga. Tus órdenes activas entran desde un archivo CSV.
+            No. Ruta se ocupa de la conversación con el conductor y del estado de cada carga. Tus cargas en curso entran desde un archivo CSV.
           </p>
         </details>
 
@@ -332,7 +367,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            La IA interpreta el mensaje y una regla fija decide si el cambio de estado procede. Tu coordinador puede corregir el estado de una carga desde el panel.
+            La IA interpreta el mensaje y una regla fija decide si el cambio de estado procede. Tu equipo de tráfico puede corregir el estado de una carga desde el panel.
           </p>
         </details>
 
@@ -348,11 +383,21 @@
 
         <details style="border-bottom:0.5px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Hace el seguimiento de noche y en fin de semana?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Sí. El horario, la frecuencia del seguimiento y el escalado se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue de noche y avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono.
+          </p>
+        </details>
+
+        <details style="border-bottom:0.5px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Usa GPS?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Sí, si tu transportista comparte la posición de sus camiones: Ruta la lee de su GPS, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Si no la comparte, el estado de cada carga sale de lo que reporta el conductor y de las reglas de seguimiento de cada etapa.
+            Sí. Ruta lee la posición del GPS del camión, sea de tu flota o de un transportista, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Sin GPS, el estado de cada carga sale de lo que dice el conductor y de las reglas de seguimiento de cada etapa.
           </p>
         </details>
 
@@ -362,7 +407,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Depende de cuántas operaciones manejas al mes. Te damos el precio en la llamada, antes de configurar nada.
+            Depende de cuántas cargas mueves al mes. Te damos el precio en la llamada, antes de configurar nada.
           </p>
         </details>
 

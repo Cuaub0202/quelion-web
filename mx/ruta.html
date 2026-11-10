@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ruta · Seguimiento de choferes por WhatsApp y Telegram | Quelion</title>
-  <meta name="description" content="Ruta le da seguimiento a cada carga por WhatsApp y Telegram: le pregunta al chofer, entiende la respuesta, actualiza el estado y avisa a tu coordinador solo cuando alguien deja de contestar.">
+  <title>Ruta · Seguimiento a operadores por WhatsApp, 24/7 | Quelion</title>
+  <meta name="description" content="Seguimiento de viajes y embarques por WhatsApp, Telegram y cuenta espejo. Si el chofer no contesta, Ruta insiste; si nadie confirma, llama al coordinador.">
   <link rel="canonical" href="https://quelion.ai/mx/ruta">
   <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/ruta">
   <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/ruta">
   <link rel="alternate" hreflang="en" href="https://quelion.ai/ruta-en">
   <link rel="alternate" hreflang="x-default" href="https://quelion.ai/ruta">
-  <meta property="og:title" content="Ruta · Tu coordinador deja de perseguir choferes">
-  <meta property="og:description" content="Seguimiento de cada carga por WhatsApp y Telegram, con escalamiento a tu equipo cuando alguien deja de contestar.">
+  <meta property="og:title" content="Ruta · Entérate antes que tu cliente">
+  <meta property="og:description" content="Seguimiento de cada embarque por WhatsApp, Telegram y cuenta espejo, de día o 24/7, con escalamiento a tu equipo cuando algo se sale de lo normal.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quelion.ai/mx/ruta">
   <meta property="og:locale" content="es_MX">
@@ -31,7 +31,7 @@
     "operatingSystem": "Web",
     "url": "https://quelion.ai/mx/ruta",
     "inLanguage": "es-MX",
-    "description": "Seguimiento de choferes por WhatsApp y Telegram para equipos de coordinación de cargas. Actualiza el estado de cada carga y escala al coordinador cuando un chofer deja de contestar.",
+    "description": "Seguimiento de choferes por WhatsApp y Telegram, y de unidades por cuenta espejo, con horario configurable hasta 24/7, para transportistas, brokers de carga y 3PL. Actualiza el estatus de cada carga y escala al coordinador cuando un chofer deja de contestar o el GPS ve algo fuera de lo normal.",
     "publisher": {
       "@type": "Organization",
       "name": "Quelion",
@@ -57,7 +57,7 @@
         "name": "¿Ruta reemplaza mi TMS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Ruta se ocupa de la conversación con el chofer y del estado de cada carga. Tus órdenes activas entran desde un archivo CSV."
+          "text": "No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga. Tus órdenes activas entran desde un archivo CSV."
         }
       },
       {
@@ -65,7 +65,7 @@
         "name": "¿Qué pasa si la IA entiende mal un mensaje?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La IA interpreta el mensaje y una regla fija decide si el cambio de estado procede. Tu coordinador puede corregir el estado de una carga desde el panel."
+          "text": "La IA interpreta el mensaje y una regla fija decide si el cambio de estatus procede. Tu coordinador puede corregir el estatus de una carga desde el panel."
         }
       },
       {
@@ -81,15 +81,15 @@
         "name": "¿Da seguimiento de noche y en fin de semana?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. El horario, la frecuencia del seguimiento y la escalación se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono al coordinador, que confirma pulsando 1."
+          "text": "Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono al coordinador, que confirma marcando 1."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Sirve si no tengo flota propia?",
+        "name": "¿Sirve con flota propia y con transporte subcontratado?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Ruta le escribe por WhatsApp o Telegram al chofer de cada embarque, aunque sea de un transportista subcontratado. Es el caso de un broker de carga o un 3PL."
+          "text": "Sí, en los dos casos. Ruta le escribe por WhatsApp o Telegram al chofer de cada embarque, sea de tu flota o de un transportista subcontratado. Funciona igual para un transportista, un broker de carga o un 3PL."
         }
       },
       {
@@ -97,7 +97,7 @@
         "name": "¿Usa GPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, con la cuenta espejo que te da tu transportista: Ruta lee la posición de la unidad, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Sin cuenta espejo, el estado de cada carga sale de lo que reporta el chofer y de las reglas de seguimiento de cada etapa."
+          "text": "Sí, con la cuenta espejo de tu proveedor de GPS o la que te da tu transportista: Ruta lee la posición de la unidad, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Sin cuenta espejo, el estatus de cada carga sale de lo que reporta el chofer y de las reglas de seguimiento de cada etapa."
         }
       },
       {
@@ -147,12 +147,12 @@
     <div class="hero-content">
       <p class="eyebrow hero-eyebrow">Ruta · de Quelion</p>
       <h1 id="hero-headline" class="hero-headline">
-        Tu coordinador deja de perseguir choferes.
+        Entérate antes que tu cliente.
       </h1>
       <p class="lede hero-lede">
-        Ruta le da seguimiento a cada embarque por WhatsApp y Telegram, de día o 24/7. Le pregunta al chofer,
-        entiende la respuesta, actualiza el estado y avisa a tu equipo solo cuando alguien
-        deja de contestar.
+        Ruta le pregunta a cada chofer por WhatsApp cómo va, entiende la respuesta, lee el GPS de la unidad
+        y actualiza el estatus. Tu coordinador deja de perseguir choferes: solo se entera cuando algo se atora y,
+        si nadie atiende el aviso, Ruta le marca por teléfono. De día o 24/7.
       </p>
       <div class="hero-ctas">
         <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary" style="padding:14px 28px;font-size:15px;">
@@ -208,10 +208,10 @@
             <span style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;">02</span>
           </div>
           <div style="padding:32px 28px 32px 0;">
-            <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">El estado se actualiza con reglas</h3>
+            <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">La IA lee; la regla decide</h3>
             <p style="font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-              La IA interpreta el mensaje y una regla fija decide si el cambio de estado procede.
-              Cada cambio queda registrado con su hora, y tu coordinador puede corregir el estado de una carga desde el panel.
+              La IA interpreta el mensaje y una regla fija decide si el cambio de estatus procede.
+              Cada cambio queda registrado con su hora, y tu coordinador puede corregir el estatus de una carga desde el panel.
             </p>
           </div>
         </div>
@@ -289,26 +289,26 @@
   </section>
 
   <!-- ── PARA QUIÉN ── -->
-  <section id="brokers" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="brokers-heading">
+  <section id="para-quien" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="para-quien-heading">
     <div class="section-inner">
       <p class="eyebrow" style="margin-bottom:20px;">Para quién</p>
-      <h2 id="brokers-heading" style="max-width:640px;margin-bottom:20px;">
-        Para brokers de carga y 3PL sin flota propia.
+      <h2 id="para-quien-heading" style="max-width:640px;margin-bottom:20px;">
+        Para quien responde por la carga, sea de quien sea el camión.
       </h2>
       <p class="text-secondary" style="max-width:640px;font-size:15px;line-height:1.7;margin:0 0 40px;">
-        Cuando el transporte es subcontratado, tu servicio depende de choferes que no son tuyos. Ruta le da seguimiento a cada embarque sin que el chofer instale nada. Cuánto seguimiento da en cada etapa, cuándo escala y cuándo llama se configura a tu operación y se ensaya en el túnel de viento antes de activarlo.
+        Transportista, broker o 3PL: tu cliente no distingue si la unidad es tuya o de un tercero, te marca a ti. Ruta le da seguimiento a cada viaje sin que el operador instale nada. En carga no se pregunta igual que en tránsito ni que en aduana: con la propuesta aceptada, configuramos contigo los tiempos de cada etapa y, antes de escribirle a nadie, los vemos correr en un día simulado, el <a href="/mx/#tunel" style="color:var(--text-primary);text-decoration:underline;">túnel de viento</a>.
       </p>
       <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);margin-bottom:32px;">
         <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Transportistas subcontratados</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Das de alta el embarque con el teléfono del chofer y Ruta le escribe por WhatsApp o Telegram. Con la cuenta espejo de tu transportista, Ruta también lee la posición de la unidad.</p>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">El operador, sea tuyo o de una línea</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Das de alta el viaje con el teléfono del chofer y Ruta le escribe por WhatsApp o Telegram: de tu flota, de una línea transportista o un hombre-camión. Con la cuenta espejo de tu proveedor de GPS también lee la posición; si aún no está conectada, la integramos contigo.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Noches y fines de semana</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El horario y los días de seguimiento se definen por etapa y pueden ser 24/7. Tu equipo recibe aviso por WhatsApp solo cuando un chofer deja de contestar o algo necesita atención. Si nadie lo confirma, Ruta llama por teléfono al coordinador y, si tampoco contesta, a su respaldo.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">De Excel a un tablero</h3>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empiezas con tu Excel de siempre</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus embarques entran desde tu hoja de Excel exportada a CSV. Cada uno queda con su estatus y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
         </div>
       </div>
@@ -325,17 +325,17 @@
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <p style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;margin-bottom:12px;">01</p>
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Nos cuentas tu operación</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cómo das seguimiento hoy, cuántas cargas mueves y por qué canal hablas con tus choferes.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cómo das seguimiento hoy, cuántos viajes mueves y por qué canal hablas con tus choferes. En la misma llamada te enseñamos Ruta con un caso de ejemplo.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <p style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;margin-bottom:12px;">02</p>
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Te damos el precio</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Depende de cuántas operaciones manejas al mes. Lo sabes antes de configurar nada.</p>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Te mandamos la propuesta</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Con el precio, que depende de cuántas operaciones manejas al mes, y lo que incluye. Lo sabes antes de configurar nada.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <p style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;margin-bottom:12px;">03</p>
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Lo configuramos contigo</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus flujos, tus contactos y tus tiempos de seguimiento, antes de que Ruta le escriba al primer chofer.</p>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Con la propuesta aceptada, lo configuramos contigo</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus reglas, tus contactos y tus tiempos de seguimiento, ensayados en el túnel de viento antes de que Ruta le escriba al primer chofer. La puesta en marcha va incluida.</p>
         </div>
       </div>
       <p style="font-size:13px;color:var(--text-quiet);margin-top:20px;">¿Prefieres escribir? <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" style="color:var(--text-primary);text-decoration:underline;">hola@quelion.ai</a></p>
@@ -366,7 +366,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            No. Ruta se ocupa de la conversación con el chofer y del estado de cada carga. Tus órdenes activas entran desde un archivo CSV.
+            No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga. Tus órdenes activas entran desde un archivo CSV.
           </p>
         </details>
 
@@ -376,7 +376,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            La IA interpreta el mensaje y una regla fija decide si el cambio de estado procede. Tu coordinador puede corregir el estado de una carga desde el panel.
+            La IA interpreta el mensaje y una regla fija decide si el cambio de estatus procede. Tu coordinador puede corregir el estatus de una carga desde el panel.
           </p>
         </details>
 
@@ -396,17 +396,17 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Sí. El horario, la frecuencia del seguimiento y la escalación se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono al coordinador, que confirma pulsando 1.
+            Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono al coordinador, que confirma marcando 1.
           </p>
         </details>
 
         <details style="border-bottom:0.5px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
-            ¿Sirve si no tengo flota propia?
+            ¿Sirve con flota propia y con transporte subcontratado?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Sí. Ruta le escribe por WhatsApp o Telegram al chofer de cada embarque, aunque sea de un transportista subcontratado. Es el caso de un broker de carga o un 3PL.
+            Sí, en los dos casos. Ruta le escribe por WhatsApp o Telegram al chofer de cada embarque, sea de tu flota o de un transportista subcontratado. Funciona igual para un transportista, un broker de carga o un 3PL.
           </p>
         </details>
 
@@ -416,7 +416,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Sí, con la cuenta espejo que te da tu transportista: Ruta lee la posición de la unidad, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Sin cuenta espejo, el estado de cada carga sale de lo que reporta el chofer y de las reglas de seguimiento de cada etapa.
+            Sí, con la cuenta espejo de tu proveedor de GPS o la que te da tu transportista: Ruta lee la posición de la unidad, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Sin cuenta espejo, el estatus de cada carga sale de lo que reporta el chofer y de las reglas de seguimiento de cada etapa.
           </p>
         </details>
 

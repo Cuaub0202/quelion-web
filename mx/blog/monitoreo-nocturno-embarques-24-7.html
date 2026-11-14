@@ -116,6 +116,22 @@
         "@type": "Answer",
         "text": "Depende de cuántas operaciones manejas al mes. Te damos el precio en la llamada, antes de configurar nada."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si una unidad se queda sin señal de GPS en la noche?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ruta lee la cuenta espejo cada pocos minutos. Si la unidad deja de reportar más tiempo del que definiste, le avisa por WhatsApp a quien esté de guardia y le marca: desde qué hora no reporta y cuál fue su último punto. Con eso decides si le marcas al operador, a la línea o a tu central. Cuando la unidad vuelve a reportar en movimiento, Ruta cierra el aviso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Me va a marcar cada vez que la unidad pase por un tramo sin cobertura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El margen se fija con tus rutas, por encima de lo que tardan en cruzar esos tramos, y se prueba en el túnel de viento antes de que Ruta le marque a nadie."
+      }
     }
   ]
 }
@@ -373,10 +389,19 @@
       <h2>Tu protocolo, y el nuestro</h2>
       <p>
         Lo que hoy hace tu equipo de noche lo hace Ruta. Y sumamos lo nuestro. Nuestro protocolo de noche
-        parte de cinco reglas: el descanso en su paradero no despierta a nadie; la parada donde no toca,
-        con el operador sin contestar, va directo a llamada; la unidad que no sale a su hora es alarma; de
-        madrugada se avisa con llamada, no con mensaje; y lo entregado deja de preguntar. Sobre esas van
-        las tuyas.
+        parte de seis reglas: el descanso en su paradero no despierta a nadie; la parada donde no toca,
+        con el operador sin contestar, va directo a llamada; la unidad que deja de reportar más tiempo
+        del que tú defines va a llamada, con la hora y su último punto; la unidad que no sale a su hora
+        es alarma; de madrugada se avisa con llamada, no con mensaje; y lo entregado deja de preguntar.
+        Sobre esas van las tuyas.
+      </p>
+      <p>
+        Una unidad que deja de reportar de madrugada muchas veces es un tramo sin cobertura o un equipo
+        que se durmió con el motor apagado. Pero así también empieza un robo, y desde lejos se ven igual.
+        Por eso el margen lo defines tú, con las rutas que corres: lo que es normal cruzando la sierra no
+        lo es en la México–Querétaro. Pasado ese margen, Ruta le marca a quien esté de guardia con la
+        hora del último reporte y dónde venía la unidad; cuando vuelve a reportar en movimiento, cierra
+        el aviso.
       </p>
       <p>
         En la llamada vemos contigo a quién se le pregunta en cada etapa, cuánto silencio es alarma y a
@@ -438,6 +463,16 @@
         <div class="faq-item">
           <p class="faq-question">¿Cuánto cuesta?</p>
           <p class="faq-answer">Depende de cuántas operaciones manejas al mes. Te damos el precio en la llamada, antes de configurar nada.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué pasa si una unidad se queda sin señal de GPS en la noche?</p>
+          <p class="faq-answer">Ruta lee la cuenta espejo cada pocos minutos. Si la unidad deja de reportar más tiempo del que definiste, le avisa por WhatsApp a quien esté de guardia y le marca: desde qué hora no reporta y cuál fue su último punto. Con eso decides si le marcas al operador, a la línea o a tu central. Cuando la unidad vuelve a reportar en movimiento, Ruta cierra el aviso.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Me va a marcar cada vez que la unidad pase por un tramo sin cobertura?</p>
+          <p class="faq-answer">El margen se fija con tus rutas, por encima de lo que tardan en cruzar esos tramos, y se prueba en el túnel de viento antes de que Ruta le marque a nadie.</p>
         </div>
       </section>
 

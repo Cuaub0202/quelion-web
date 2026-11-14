@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://quelion.ai/blog/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -86,6 +86,12 @@
   </url>
   <url>
     <loc>https://quelion.ai/mx/blog/monitoreo-nocturno-embarques-24-7</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://quelion.ai/blog/monitoreo-nocturno-embarques-24-7</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

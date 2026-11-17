@@ -74,7 +74,15 @@
       "name": "¿A quién llama Ruta?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A tu equipo. Primero le avisa por WhatsApp a quien esté de guardia; si no lo confirma, llama a tu respaldo y después a tu gerente, hasta que alguien confirma marcando 1. Si la alerta viene del GPS, como una unidad detenida de noche fuera de su ruta, llama desde el primer aviso."
+        "text": "A tu equipo. Primero le avisa por WhatsApp a quien esté de guardia; si no lo confirma, le marca por teléfono a él, después a su respaldo y después a tu gerente, hasta que alguien confirma marcando 1. Si la alerta viene del GPS, como una unidad detenida de noche fuera de su ruta, llama desde el primer aviso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Le avisa a mi cliente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, si lo activas. Ruta le escribe por WhatsApp a los contactos de tu cliente como el asistente de tu empresa: le avisa cuando la unidad sale, cruza, llega y se entrega, le manda un estatus con la última ubicación y la llegada estimada cada cierto tiempo (cada dos horas si no defines otro) y le da el botón «Ver envío» para ver su embarque en vivo. Si hay un retraso, le dice que la hora está por confirmarse y no le da una hora nueva que tu equipo no haya visto."
       }
     },
     {
@@ -312,15 +320,29 @@
       <p>
         Si el operador o la línea no contestan, Ruta insiste. Si siguen sin contestar, le avisa por WhatsApp a
         quien esté de guardia: qué viaje es, para qué cliente, a qué hora es la cita, dónde va la unidad, cuánto
-        lleva sin estatus y a quién se le preguntó. Si no lo confirma, se lo vuelve a mandar. Si sigue sin
-        confirmar, Ruta sube por tu cadena de guardia y empieza a llamar por teléfono: a tu respaldo y después a
-        tu gerente, sin dejar de avisar, hasta que alguien confirma marcando 1.
+        lleva sin estatus y a quién se le preguntó. Si no lo confirma, Ruta le marca por teléfono. Si sigue sin
+        confirmar, sube por tu cadena de guardia y llama a su respaldo y después a tu gerente, sin dejar de
+        avisar, hasta que alguien confirma marcando 1.
       </p>
       <p>
         Cuando la alerta viene del GPS (una unidad detenida de noche fuera de su ruta, una que deja de reportar,
         un desvío grave) no hay escalera: Ruta le marca a tu guardia desde el primer aviso. La guardia, el
         respaldo y el gerente los defines tú. Pueden ser tu gerente de tráfico, un coordinador que rota o tu
         central de monitoreo.
+      </p>
+
+      <h2>Tu cliente ve su carga sin que tu equipo le escriba</h2>
+      <p>
+        Ruta también le escribe a tu cliente por WhatsApp, como el asistente de tu empresa. Le avisa cuando la
+        unidad sale, cuando cruza, cuando llega a destino y cuando se entrega, y cada cierto tiempo le manda un
+        estatus con la última ubicación y la hora estimada de llegada: cada dos horas si no defines otra cosa, en
+        el horario que tú decidas o toda la noche. Con el botón «Ver envío» abre la página de su embarque y lo ve
+        en vivo.
+      </p>
+      <p>
+        Las malas noticias las das tú. Si el operador reporta un retraso, a tu cliente le llega «la hora de
+        llegada está por confirmarse», no una hora nueva que tu equipo no haya visto, y un retén o una falla no se los cuenta Ruta.
+        Cada mensaje queda en el historial del embarque, para que sepas qué se le dijo.
       </p>
 
       <h2>Viernes, 3:30: el tracto de Lagos de Moreno</h2>
@@ -393,7 +415,12 @@
 
         <div class="faq-item">
           <p class="faq-question">¿A quién llama Ruta?</p>
-          <p class="faq-answer">A tu equipo. Primero le avisa por WhatsApp a quien esté de guardia; si no lo confirma, llama a tu respaldo y después a tu gerente, hasta que alguien confirma marcando 1. Si la alerta viene del GPS, como una unidad detenida de noche fuera de su ruta, llama desde el primer aviso.</p>
+          <p class="faq-answer">A tu equipo. Primero le avisa por WhatsApp a quien esté de guardia; si no lo confirma, le marca por teléfono a él, después a su respaldo y después a tu gerente, hasta que alguien confirma marcando 1. Si la alerta viene del GPS, como una unidad detenida de noche fuera de su ruta, llama desde el primer aviso.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Le avisa a mi cliente?</p>
+          <p class="faq-answer">Sí, si lo activas. Ruta le escribe por WhatsApp a los contactos de tu cliente como el asistente de tu empresa: le avisa cuando la unidad sale, cruza, llega y se entrega, le manda un estatus con la última ubicación y la llegada estimada cada cierto tiempo (cada dos horas si no defines otro) y le da el botón «Ver envío» para ver su embarque en vivo. Si hay un retraso, le dice que la hora está por confirmarse y no le da una hora nueva que tu equipo no haya visto.</p>
         </div>
 
         <div class="faq-item">

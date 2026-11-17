@@ -81,7 +81,7 @@
         "name": "¿Da seguimiento de noche y en fin de semana?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono a tu cadena de guardia, empezando por tu respaldo, hasta que alguien confirma marcando 1."
+          "text": "Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta le llama por teléfono a quien esté de guardia y después a su respaldo, hasta que alguien confirma marcando 1."
         }
       },
       {
@@ -98,6 +98,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Sí, con la cuenta espejo de tu proveedor de GPS o la que te da la línea que subcontratas: Ruta lee la posición de la unidad, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Sin cuenta espejo, el estatus de cada carga sale de lo que reporta el chofer y de las reglas de seguimiento de cada etapa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Le avisa a mi cliente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, si lo activas. Ruta le escribe por WhatsApp a los contactos de tu cliente como el asistente de tu empresa: le avisa cuando la unidad sale, cruza, llega y se entrega, le manda un estatus con la última ubicación y la llegada estimada cada cierto tiempo (cada dos horas si no defines otro) y le da el botón «Ver envío» para ver su embarque en vivo. Si hay un retraso, le dice que la hora está por confirmarse y no le da una hora nueva que tu equipo no haya visto."
         }
       },
       {
@@ -245,7 +253,7 @@
         <div style="background:var(--surface-primary);padding:36px 32px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">WhatsApp y Telegram</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Conversa uno a uno con cada chofer. Entiende texto y notas de voz en español.
+            Conversa uno a uno con cada chofer y entiende texto y notas de voz en español. Si lo activas, también le avisa a tu cliente: salida, cruce, llegada, entrega y un enlace para ver su embarque en vivo.
           </p>
         </div>
 
@@ -305,7 +313,7 @@
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Noches y fines de semana</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El horario y los días de seguimiento se definen por etapa y pueden ser 24/7. Tu equipo recibe aviso por WhatsApp solo cuando un chofer deja de contestar o algo necesita atención. Si nadie lo confirma, Ruta llama por teléfono a tu respaldo y después a tu gerente, hasta que alguien confirma marcando 1.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El horario y los días de seguimiento se definen por etapa y pueden ser 24/7. Tu equipo recibe aviso por WhatsApp solo cuando un chofer deja de contestar o algo necesita atención. Si nadie lo confirma, Ruta le llama por teléfono, después a su respaldo y luego a tu gerente, hasta que alguien confirma marcando 1.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empiezas con tu Excel de siempre</h3>
@@ -396,7 +404,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta llama por teléfono a tu cadena de guardia, empezando por tu respaldo, hasta que alguien confirma marcando 1.
+            Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta le llama por teléfono a quien esté de guardia y después a su respaldo, hasta que alguien confirma marcando 1.
           </p>
         </details>
 
@@ -417,6 +425,16 @@
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
             Sí, con la cuenta espejo de tu proveedor de GPS o la que te da la línea que subcontratas: Ruta lee la posición de la unidad, detecta paradas y desvíos y solo pregunta cuando algo no cuadra. Sin cuenta espejo, el estatus de cada carga sale de lo que reporta el chofer y de las reglas de seguimiento de cada etapa.
+          </p>
+        </details>
+
+        <details style="border-bottom:0.5px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Le avisa a mi cliente?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Sí, si lo activas. Ruta le escribe por WhatsApp a los contactos de tu cliente como el asistente de tu empresa: le avisa cuando la unidad sale, cruza, llega y se entrega, le manda un estatus con la última ubicación y la llegada estimada cada cierto tiempo (cada dos horas si no defines otro) y le da el botón «Ver envío» para ver su embarque en vivo. Si hay un retraso, le dice que la hora está por confirmarse y no le da una hora nueva que tu equipo no haya visto.
           </p>
         </details>
 

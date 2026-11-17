@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Túnel de viento: probar reglas de seguimiento | Quelion</title>
+  <meta name="description" content="Cuánto esperar antes de pedirle estatus al operador y a quién marcarle si no contesta. Lo probamos en un día simulado antes de escribirle al primer chofer.">
+  <link rel="canonical" href="https://quelion.ai/mx/blog/tunel-de-viento-probar-reglas-de-seguimiento">
+  <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/tunel-de-viento-probar-reglas-de-seguimiento">
+  <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/tunel-de-viento-probar-reglas-de-seguimiento">
+  <link rel="alternate" hreflang="x-default" href="https://quelion.ai/blog/tunel-de-viento-probar-reglas-de-seguimiento">
+  <meta property="og:title" content="Túnel de viento: probar las reglas de seguimiento antes de que Ruta le escriba al primer chofer">
+  <meta property="og:description" content="Cuánto esperar antes de pedirle estatus al operador y a quién marcarle si no contesta. Lo probamos en un día simulado antes de escribirle al primer chofer.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://quelion.ai/mx/blog/tunel-de-viento-probar-reglas-de-seguimiento">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon-192.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20260926">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Túnel de viento: probar las reglas de seguimiento antes de que Ruta le escriba al primer chofer",
+    "datePublished": "2026-11-17",
+    "dateModified": "2026-11-17",
+    "inLanguage": "es-MX",
+    "author": { "@type": "Organization", "name": "Equipo Quelion", "url": "https://quelion.ai" },
+    "publisher": { "@type": "Organization", "name": "Quelion", "url": "https://quelion.ai" },
+    "description": "Cuánto esperar antes de pedirle estatus al operador y a quién marcarle si no contesta. Lo probamos en un día simulado antes de escribirle al primer chofer.",
+    "mainEntityOfPage": "https://quelion.ai/mx/blog/tunel-de-viento-probar-reglas-de-seguimiento"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es el túnel de viento de Ruta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un día o una noche simulada con tus reglas de seguimiento y las nuestras, con operadores simulados. Ahí se ve cuándo se entera tu equipo de un viaje atorado y cuántos avisos recibe, antes de que Ruta, el agente de Quelion, le escriba al primer chofer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué momento se hace?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con la propuesta aceptada, como parte de la puesta en marcha, que va incluida. Antes hay una llamada de 20 minutos y una propuesta con precio, que depende de cuántas operaciones manejas al mes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué reglas se prueban?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A quién se le pregunta en cada viaje, al operador o al tráfico o monitoreo de su línea; cada cuánto, por etapa; en qué horario, de día o 24/7, y cuándo se avisa a tu guardia y quién sigue en tu cadena si no confirma."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Mis operadores reciben mensajes durante la prueba?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. En el túnel todo corre con operadores simulados y nadie recibe un mensaje real. Ruta empieza a escribirle a tus operadores cuando las reglas ya pasaron por ahí."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .post-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .post-header {
+      padding: 80px 0 56px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-meta-row {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .post-body {
+      padding: 56px 0 80px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-body h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+      line-height: 1.4;
+    }
+    .post-body h2:first-child { margin-top: 0; }
+    .post-body p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .post-body ul {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+    .post-body ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .post-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .inline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 0.5px solid var(--text-primary);
+      padding: 12px 20px;
+      margin: 32px 0 48px;
+      transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+    }
+    .inline-cta:hover {
+      background: var(--text-primary);
+      color: var(--surface-primary);
+    }
+    .faq-section {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 56px 0 0;
+      margin-top: 0;
+    }
+    .faq-item {
+      border-bottom: 0.5px solid var(--border-hairline);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .author-box {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 40px 0 0;
+      margin-top: 56px;
+    }
+    .author-box p {
+      font-size: 13px;
+      color: var(--text-quiet);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .author-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .post-wrap { padding: 0 20px; }
+      .post-header { padding: 56px 0 40px; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/mx/" class="nav-logo" aria-label="Quelion, inicio">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/mx/ruta#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="/mx/ruta#pricing"       class="nav-link">Cómo empezar</a>
+        <a href="/mx/ruta#faq"           class="nav-link">Preguntas</a>
+        <a href="/mx/blog/"         class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="/ruta-en"       class="nav-link" hreflang="en" lang="en">English</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
+        <button class="nav-mobile-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="post-header">
+    <div class="post-wrap">
+      <p class="eyebrow" style="margin-bottom:20px;">Túnel de viento</p>
+      <h1 style="max-width:660px;line-height:1.25;margin-bottom:0;">
+        Túnel de viento: probar las reglas de seguimiento antes de que Ruta le escriba al primer chofer
+      </h1>
+      <div class="post-meta-row">
+        <span>17 Nov 2026</span>
+        <span>5 min de lectura</span>
+        <span>Por el Equipo Quelion</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="post-body" aria-label="Contenido del artículo">
+    <div class="post-wrap">
+
+      <p>
+        El operador sale de Querétaro rumbo a Saltillo a las 9:00, manda «ya salí» y el embarque queda en
+        tránsito. A las 10:00 se detiene en un paradero de la 57 y no avisa. A las 13:00 la unidad vuelve
+        a moverse. En tráfico nadie se enteró: el coordinador trae treinta embarques más y le pregunta a
+        quien alcanza.
+      </p>
+      <p>
+        Ruta, el agente de IA de Quelion, hace esas preguntas por tu equipo. En cada viaje le pide estatus
+        por WhatsApp al operador o, si así trabajas con esa línea transportista, a su coordinador de
+        tráfico o su monitoreo, y si nadie contesta avisa a quien tengas de guardia. Pero antes de que le
+        escriba al primer chofer hay que decidir cómo va a trabajar en tu operación. Eso lo ensayamos en
+        lo que llamamos <strong>túnel de viento</strong>.
+      </p>
+
+      <h2>Cada regla de seguimiento es una decisión de operación</h2>
+      <p>
+        Ruta trabaja por etapas: carga, tránsito, cruce, cita en planta. En cada una hay que contestar
+        lo mismo: cuánto esperar sin estatus antes de preguntarle al operador, cuántas veces volver a
+        preguntar y a quién avisar si no contesta. Con esperas largas, tu equipo se entera tarde. Con
+        esperas cortas, se le escribe a un operador que va manejando y te llegan avisos que no hacían falta.
+      </p>
+      <p>
+        Cada operación tiene su punto. Un tránsito largo por la 57 no se sigue igual que una descarga en
+        planta, ni un equipo que trabaja 24/7 igual que uno que cierra a las nueve. El horario también
+        lo defines tú, por etapa: de día, o toda la noche si tus viajes corren de noche.
+      </p>
+
+      <h2>Qué hacemos en el túnel</h2>
+      <p>
+        Lo que pasa por el túnel son tus reglas, y lo que sopla son los casos difíciles: el operador que
+        no contesta, el que a todo dice «ok», la noche sin respuesta.
+      </p>
+      <p>
+        Ponemos la lógica de Ruta a prueba en un día simulado. Hay operadores con distintas mañas: el
+        puntual, el que va manejando y tarda en contestar, el que solo dice «ok», el que dice «ya casi
+        llego» y el que no contesta. Y hay algo que Ruta no ve por mensajes: lo que de verdad pasa con la
+        unidad. Así medimos cuánto tarda alguien de tu equipo en enterarse y cuántos avisos le llegan en
+        el camino, sin escribirle a nadie de verdad.
+      </p>
+      <p>
+        Cambiamos una sola regla, repetimos el mismo día y vemos qué se mueve. Las reglas quedan por
+        escrito, con versión.
+      </p>
+
+      <h2>Lo que enseñó un caso</h2>
+      <p>
+        Simulamos dos veces el día del principio: el operador deja de contestar y la unidad se detiene de
+        10:00 a 13:00. Con reglas genéricas (preguntar tras dos horas y media sin estatus y avisar a la
+        oficina solo después de dos intentos sin respuesta), el primer aviso a una persona llegó a las
+        16:45, casi cuatro horas después de que la unidad volviera a moverse.
+      </p>
+      <p>
+        La misma escena, con reglas ajustadas: Ruta le escribe al operador a los 90 minutos sin estatus;
+        como no contesta ese primer mensaje, avisa a tu equipo. El aviso llegó a las 12:10, con la unidad
+        todavía parada, y la oficina recibió el mismo número de avisos en el día. A esa hora todavía le
+        marcas a la línea y le das a tu cliente una nueva hora de llegada.
+      </p>
+      <p>
+        Y una sorpresa: con un operador que contesta «ok» a todo, acortar las esperas apenas adelantó el
+        aviso: 4 minutos. Cada «ok» contaba como respuesta, y el aviso salió cuando venció la hora
+        estimada de llegada. La pregunta de fondo la contesta quien opera: ¿qué cuenta como estatus en tu
+        operación? Esa decisión se toma antes de activar nada.
+      </p>
+      <p><em>Simulación con datos de demostración y operadores simulados, una corrida por variante.</em></p>
+      <p>
+        En esa simulación Ruta solo tenía los mensajes. Si conectas la cuenta espejo de tu proveedor de
+        GPS o la que te da la línea, Ruta lee la posición de la unidad, ve la parada fuera de lo normal sin
+        esperar al silencio y solo pregunta cuando algo no cuadra. Si aún no está conectada, la integramos
+        contigo. Lo contamos en
+        <a href="/mx/blog/seguimiento-gps-transportista">seguimiento con la cuenta espejo del transportista</a>.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Entérate antes que tu cliente · 20 minutos
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+
+      <h2>El aviso a tu guardia también pasa por el túnel</h2>
+      <p>
+        Si el operador sigue sin contestar, Ruta avisa por WhatsApp a tu guardia y, si no confirma, le
+        marca por teléfono a tu respaldo y luego a tu gerente hasta que alguien confirma marcando 1
+        (<a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7">así funciona la llamada de guardia</a>).
+        En el túnel ves a qué hora sonaría ese teléfono, cuántas veces en el día y por qué viajes. Si
+        suena de más, la regla se ajusta antes de activar nada.
+      </p>
+
+      <h2>La IA también se prueba</h2>
+      <p>
+        Cuando el operador no decía a qué hora llegaba, la IA apuntaba de todos modos una hora de llegada
+        que nadie había dicho: 16 de 18 veces. Lo cortamos con una revisión en el código: si la hora no
+        está escrita en el mensaje, no se guarda. Después, 0 de 18. La IA lee lo que dijo el operador,
+        pero el estatus solo cambia si pasa una regla fija; cada cambio queda en el historial con su hora
+        y tu coordinador lo puede corregir desde el panel.
+      </p>
+      <p><em>Pruebas con frases de ejemplo y un solo modelo de IA; muestra pequeña.</em></p>
+
+      <h2>Cómo empezamos con tu equipo</h2>
+      <p>
+        Primero, una llamada de 20 minutos para ver cómo das hoy el seguimiento: a quién le preguntas,
+        cada cuánto, a quién le avisas de noche. Luego te mandamos una propuesta con precio, que depende de cuántas
+        operaciones manejas al mes. Con la propuesta aceptada configuramos Ruta contigo y lo primero es el
+        túnel de viento: un día o una noche simulada con tus reglas y nuestro protocolo, antes de que Ruta
+        le escriba al primer chofer. Ves cómo va a hablar y cuándo te va a marcar, y se ajusta lo que no
+        encaje. La puesta en marcha va incluida. Más sobre el producto en <a href="/mx/ruta">Ruta</a>.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Agenda 20 minutos
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <p class="eyebrow" id="faq-heading" style="margin-bottom:32px;">Preguntas frecuentes</p>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué es el túnel de viento de Ruta?</p>
+          <p class="faq-answer">Un día o una noche simulada con tus reglas de seguimiento y las nuestras, con operadores simulados. Ahí se ve cuándo se entera tu equipo de un viaje atorado y cuántos avisos recibe, antes de que Ruta, el agente de Quelion, le escriba al primer chofer.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿En qué momento se hace?</p>
+          <p class="faq-answer">Con la propuesta aceptada, como parte de la puesta en marcha, que va incluida. Antes hay una llamada de 20 minutos y una propuesta con precio, que depende de cuántas operaciones manejas al mes.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué reglas se prueban?</p>
+          <p class="faq-answer">A quién se le pregunta en cada viaje, al operador o al tráfico o monitoreo de su línea; cada cuánto, por etapa; en qué horario, de día o 24/7, y cuándo se avisa a tu guardia y quién sigue en tu cadena si no confirma.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Mis operadores reciben mensajes durante la prueba?</p>
+          <p class="faq-answer">No. En el túnel todo corre con operadores simulados y nadie recibe un mensaje real. Ruta empieza a escribirle a tus operadores cuando las reglas ya pasaron por ahí.</p>
+        </div>
+      </section>
+
+      <!-- ── AUTHOR BOX ── -->
+      <div class="author-box">
+        <p>
+          Escrito por el Equipo Quelion. Construimos productos de IA para equipos de logística.
+          Preguntas: <a href="mailto:hola@quelion.ai">hola@quelion.ai</a>
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo le das hoy seguimiento a tus operadores.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos cuántos embarques mueves, por qué canal y si Ruta te sirve. O escríbenos a hola@quelion.ai.
+      </p>
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
+        Agenda 20 minutos
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
+        <p class="footer-tagline">
+          Productos de IA para operaciones de logística.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Ruta</p>
+        <nav class="footer-links" aria-label="Enlaces de Ruta">
+          <a href="/mx/ruta#como-funciona" class="footer-link">Cómo funciona</a>
+          <a href="/mx/ruta#pricing"       class="footer-link">Cómo empezar</a>
+          <a href="/mx/ruta#faq"           class="footer-link">Preguntas</a>
+          <a href="/ruta-en"       class="footer-link" hreflang="en" lang="en">English</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
+          <a href="/mx/" class="footer-link">Quelion</a>
+          <a href="/blog/tunel-de-viento-probar-reglas-de-seguimiento" class="footer-link" hreflang="es-ES" lang="es-ES">España</a>
+          <a href="/mx/blog/" class="footer-link">Blog</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js?v=20260926"></script>
+</body>
+</html>

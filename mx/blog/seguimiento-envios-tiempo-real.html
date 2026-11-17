@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguimiento de embarques en tiempo real sin TMS | Quelion</title>
+  <meta name="description" content="Seguimiento de embarques en tiempo real sin TMS: Ruta pide estatus al operador por WhatsApp, lee la cuenta espejo y avisa a tu guardia antes que tu cliente.">
+  <link rel="canonical" href="https://quelion.ai/mx/blog/seguimiento-envios-tiempo-real">
+  <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/seguimiento-envios-tiempo-real">
+  <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/seguimiento-envios-tiempo-real">
+  <link rel="alternate" hreflang="x-default" href="https://quelion.ai/blog/seguimiento-envios-tiempo-real">
+  <meta property="og:title" content="Seguimiento de embarques en tiempo real sin TMS">
+  <meta property="og:description" content="Seguimiento de embarques en tiempo real sin TMS: Ruta pide estatus al operador por WhatsApp, lee la cuenta espejo y avisa a tu guardia antes que tu cliente.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://quelion.ai/mx/blog/seguimiento-envios-tiempo-real">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon-192.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20260926">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Seguimiento de embarques en tiempo real sin TMS",
+    "datePublished": "2026-11-17",
+    "dateModified": "2026-11-17",
+    "inLanguage": "es-MX",
+    "author": { "@type": "Organization", "name": "Equipo Quelion", "url": "https://quelion.ai" },
+    "publisher": { "@type": "Organization", "name": "Quelion", "url": "https://quelion.ai" },
+    "description": "Seguimiento de embarques en tiempo real sin TMS: Ruta pide estatus al operador por WhatsApp, lee la cuenta espejo y avisa a tu guardia antes que tu cliente."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Se puede tener seguimiento de embarques en tiempo real sin un TMS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Ruta, el agente de IA de Quelion, pide estatus por WhatsApp o Telegram en cada etapa del viaje y registra cada cambio con su hora en un panel. Con la cuenta espejo de la unidad también lee su posición. Tus embarques entran desde tu Excel exportado a CSV; Ruta no se conecta a tu TMS ni lo reemplaza."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿El operador tiene que instalar una app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Ruta le escribe uno a uno por WhatsApp o Telegram y él contesta como siempre, con texto o nota de voz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ruta le escribe al operador de una línea subcontratada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Si la línea lo autoriza, sí, a nombre de tu empresa y desde el inicio del viaje. Si no, Ruta le pregunta a su coordinador de tráfico o a su monitoreo. Lo defines por viaje."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ruta usa el GPS de la unidad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, con la cuenta espejo de tu proveedor de GPS o la que te da la línea. Ruta lee la posición, detecta paradas fuera de lo normal, desvíos y unidades que dejan de reportar, y solo pregunta cuando algo no cuadra. Si la cuenta espejo aún no está conectada, la integramos contigo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si nadie contesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ruta vuelve a preguntar en el horario que definas. Si sigue sin respuesta, avisa por WhatsApp a quien esté de guardia en tu equipo y, si no confirma, le marca por teléfono."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende de cuántas operaciones manejas al mes. Después de una llamada de 20 minutos te mandamos la propuesta con precio. La puesta en marcha va incluida."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .post-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .post-header {
+      padding: 80px 0 56px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-meta-row {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .post-body {
+      padding: 56px 0 80px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-body h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+      line-height: 1.4;
+    }
+    .post-body h2:first-child { margin-top: 0; }
+    .post-body p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .post-body ul {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+    .post-body ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .post-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .inline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 0.5px solid var(--text-primary);
+      padding: 12px 20px;
+      margin: 32px 0 48px;
+      transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+    }
+    .inline-cta:hover {
+      background: var(--text-primary);
+      color: var(--surface-primary);
+    }
+    .faq-section {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 56px 0 0;
+      margin-top: 0;
+    }
+    .faq-item {
+      border-bottom: 0.5px solid var(--border-hairline);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .author-box {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 40px 0 0;
+      margin-top: 56px;
+    }
+    .author-box p {
+      font-size: 13px;
+      color: var(--text-quiet);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .author-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .post-wrap { padding: 0 20px; }
+      .post-header { padding: 56px 0 40px; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/mx/" class="nav-logo" aria-label="Quelion, inicio">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/mx/ruta#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="/mx/ruta#pricing"       class="nav-link">Cómo empezar</a>
+        <a href="/mx/ruta#faq"           class="nav-link">Preguntas</a>
+        <a href="/mx/blog/"         class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="/ruta-en"       class="nav-link" hreflang="en" lang="en">English</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
+        <button class="nav-mobile-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="post-header">
+    <div class="post-wrap">
+      <p class="eyebrow" style="margin-bottom:20px;">Operaciones</p>
+      <h1 style="max-width:680px;line-height:1.25;margin-bottom:0;">
+        Seguimiento de embarques en tiempo real sin TMS
+      </h1>
+      <div class="post-meta-row">
+        <span>17 Nov 2026</span>
+        <span>6 min de lectura</span>
+        <span>Por el Equipo Quelion</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="post-body" aria-label="Contenido del artículo">
+    <div class="post-wrap">
+
+      <p>
+        La caja con autopartes salió de Querétaro a las 22:00, rumbo al patio de Nuevo Laredo, donde la
+        espera un transfer para cruzarla. A la 1:40 de la tarde el cliente escribe: «¿ya llegó a Laredo?
+        El transfer pregunta por ella». Tu coordinador abre el chat del operador y el último mensaje es de
+        las 6:50: «voy pasando Saltillo». Le marca y no contesta. Le escribe al tráfico de la línea, que le
+        dice «déjame checar». Y eso mismo, «déjame checar», es lo que acaba leyendo el cliente.
+      </p>
+      <p>
+        Ruta, el agente de IA de Quelion, hace ese seguimiento por tu equipo. En cada viaje le pide
+        estatus por WhatsApp o Telegram al operador o, si así trabajas con esa línea, a su coordinador de
+        tráfico o su monitoreo. Lee la cuenta espejo de la unidad y registra cada cambio de estatus con su
+        hora en un panel. No necesitas TMS: tus embarques entran desde tu Excel exportado a CSV. Entérate
+        antes que tu cliente, también de lo que pasa mientras tu oficina está cerrada.
+      </p>
+
+      <h2>Qué quiere decir «tiempo real» cuando no tienes TMS</h2>
+      <p>
+        Si tu operación se mueve con Excel, WhatsApp y llamadas, como tantas en México, el estatus de un
+        embarque vale lo que vale el último mensaje del operador. A veces llega al minuto. A veces tres
+        horas después, porque iba manejando, porque no había señal en la sierra o porque nadie le
+        preguntó. Y de noche, cuando el tráfico ya cerró a las 8, depende de que el de guardia se acuerde
+        de revisar el celular.
+      </p>
+      <p>
+        Un TMS completo resuelve parte de eso, pero pide integración, que los operadores usen una app y
+        un presupuesto que no todas las operaciones quieren o pueden cargar. Y si la mitad de tus viajes
+        los mueve una línea subcontratada o un hombre-camión, la app del TMS no llega hasta ellos. El
+        WhatsApp, sí.
+      </p>
+      <p>
+        Ruta no reemplaza un TMS ni se conecta a él. Se ocupa de la parte que hoy hace tu coordinador a
+        mano: preguntar, esperar, leer la respuesta, actualizar el estatus y avisar cuando algo se atora.
+      </p>
+
+      <h2>El punto en el mapa no cuenta toda la historia</h2>
+      <p>
+        Muchas líneas traen GPS en sus tractos y pueden darte una cuenta espejo. Con ella, Ruta lee la
+        posición de la unidad, detecta paradas fuera de lo normal, desvíos y unidades que dejan de
+        reportar, y solo pregunta cuando algo no cuadra. Una unidad que avanza sobre su ruta no necesita
+        que le pregunten «¿cómo vas?» cada dos horas. Si la cuenta espejo todavía no está conectada a
+        Ruta, la integramos contigo. Lo contamos a detalle en
+        <a href="/mx/blog/seguimiento-gps-transportista" style="color:var(--text-primary);">seguimiento con la cuenta espejo del transportista</a>.
+      </p>
+      <p>
+        Lo que el GPS no ve son los hechos de la operación. Sabe que la unidad está en el patio de Nuevo
+        Laredo, pero no si el operador ya entregó la caja. Sabe que llegó a la planta, pero no si llegó a
+        tiempo a su cita ni si ya la descargaron. Eso lo cuenta quien va en el viaje, y para que llegue
+        sin que tu coordinador lo persiga, alguien tiene que pedirlo en cada hito. Ruta junta los dos: la
+        posición para saber cuándo preguntar y los hitos por WhatsApp para darle contexto a ese punto.
+      </p>
+
+      <h2>Hitos que se reportan sin que nadie marque</h2>
+      <p>
+        Ruta trae flujos con sus etapas ya armados para viaje nacional, importación y exportación
+        terrestre (con las etapas del cruce: llegada a la frontera, cruce, aduana, pedimento), aéreo y
+        marítimo. En cada etapa pregunta lo que toca. El operador contesta con texto o con una nota de
+        voz, como le contestaría a tu coordinador, y no instala nada.
+      </p>
+      <p>
+        Lo que contesta lo lee la IA, pero el estatus solo cambia si pasa una regla fija: «ya llegué al
+        patio» no se registra igual que «ya dejé la caja». Cada cambio queda en el historial del embarque
+        con su hora, y si algo quedó mal, tu coordinador lo corrige desde el panel.
+      </p>
+      <p>
+        Cuando nadie reporta a tiempo, Ruta vuelve a preguntar en el horario que definas, de día o 24/7.
+        Si sigue sin respuesta, avisa a tu guardia y, si no confirma, le marca por teléfono; de noche, una
+        unidad detenida fuera de su ruta hace que le marque desde el primer aviso
+        (<a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7" style="color:var(--text-primary);">así funciona la llamada de guardia</a>).
+      </p>
+
+      <h2>Querétaro–Nuevo Laredo, con la cuenta espejo leyendo toda la noche</h2>
+      <p>
+        El mismo viaje. A las 22:00 la unidad sale de la planta en Querétaro y Ruta registra la salida.
+        A las 3:10 se detiene en una parada habitual sobre su ruta, pasando San Luis Potosí, y nadie se
+        despierta: la cuenta espejo la ve donde debe estar. A las 7:00 pasa Saltillo sin que nadie le
+        pregunte nada. A las 12:30 la cuenta espejo la marca en el patio de Nuevo Laredo.
+      </p>
+      <p>
+        Que la caja quedó entregada el GPS no lo sabe, así que ahí sí pregunta: «¿ya te recibieron la caja
+        en el patio?». A las 12:50 llega una nota de voz del operador: ya la dejó y va a cargar diésel. El
+        embarque pasa a «Caja entregada en patio» con esa hora.
+      </p>
+      <p>
+        A la 1:40, cuando el cliente escribe, tu coordinador abre el panel y le contesta en un minuto: la
+        caja está en el patio desde las 12:50, lista para el transfer. No le marcó a nadie. Los tiempos de
+        esta escena son un ejemplo; cuánto espera Ruta en cada etapa lo defines tú.
+      </p>
+
+      <a href="/mx/ruta#como-funciona" class="inline-cta">
+        Conoce cómo funciona Ruta
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/>
+        </svg>
+      </a>
+
+      <h2>El panel, para el que le contesta al cliente</h2>
+      <p>
+        Las preguntas del cliente son casi siempre las mismas: si ya salió, si ya llegó al patio, a qué
+        hora llega a planta, si ya descargaron. Tu equipo le contesta con el dato del panel y la hora de
+        cada cambio, sin pedirle antes al operador que se reporte.
+      </p>
+      <p>
+        Quien atiende a tus clientes puede entrar con su propio usuario. Hay roles de administrador, de
+        operaciones y de solo lectura, así que tu ejecutivo de servicio ve el estatus sin poder cambiar
+        nada.
+      </p>
+
+      <h2>Cómo se arma en tu operación</h2>
+      <p>
+        Empezamos por cómo das seguimiento hoy. Hay quien le escribe directo al operador y quien solo
+        habla con el tráfico de la línea. Hay quien da seguimiento solo de día y quien necesita la noche
+        cubierta. Todo eso se configura por cliente y por etapa: a quién se le pregunta en cada viaje,
+        cada cuánto, en qué horario, cuándo se escala, quién está de guardia y quién es su respaldo.
+      </p>
+      <p>
+        Con una línea subcontratada, lo normal es que Ruta le pregunte a su tráfico o a su monitoreo,
+        porque muchas líneas no quieren que el cliente hable con su operador. Si la línea lo autoriza,
+        Ruta le escribe al operador a nombre de tu empresa desde el inicio del viaje. Si hay relevo, tu
+        coordinador cambia el teléfono en el viaje y Ruta sigue con el nuevo operador.
+      </p>
+      <p>
+        Lo que hoy hace tu equipo lo hace Ruta, y encima va nuestro protocolo. Por ejemplo, que un
+        embarque entregado deja de preguntar, o que el descanso en una parada habitual no despierta a
+        nadie. Tu protocolo más el nuestro. Sirve con flota propia, subcontratada o una mezcla, y lo usan
+        transportistas, brokers y 3PL. Ruta habla uno a uno, no en grupos de WhatsApp.
+      </p>
+      <p>
+        El proceso es corto. Una llamada de 20 minutos para ver cuántas operaciones manejas al mes y cómo
+        das seguimiento. Después, una propuesta con precio. Con la propuesta aceptada configuramos Ruta
+        contigo y lo ensayamos en el túnel de viento: un día o una noche simulada con tus reglas y las
+        nuestras, antes de que Ruta le escriba al primer operador. Ahí ves cómo pregunta, cuándo avisa y
+        cuándo le marcaría a tu guardia, y se ajusta lo que no encaje. La puesta en marcha va incluida.
+        Más sobre el producto en <a href="/mx/ruta" style="color:var(--text-primary);">Ruta</a>.
+      </p>
+
+      <!-- ── FAQ ── -->
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <p class="eyebrow" id="faq-heading" style="margin-bottom:32px;">Preguntas frecuentes</p>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Se puede tener seguimiento de embarques en tiempo real sin un TMS?</p>
+          <p class="faq-answer">Sí. Ruta, el agente de IA de Quelion, pide estatus por WhatsApp o Telegram en cada etapa del viaje y registra cada cambio con su hora en un panel. Con la cuenta espejo de la unidad también lee su posición. Tus embarques entran desde tu Excel exportado a CSV; Ruta no se conecta a tu TMS ni lo reemplaza.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿El operador tiene que instalar una app?</p>
+          <p class="faq-answer">No. Ruta le escribe uno a uno por WhatsApp o Telegram y él contesta como siempre, con texto o nota de voz.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Ruta le escribe al operador de una línea subcontratada?</p>
+          <p class="faq-answer">Si la línea lo autoriza, sí, a nombre de tu empresa y desde el inicio del viaje. Si no, Ruta le pregunta a su coordinador de tráfico o a su monitoreo. Lo defines por viaje.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Ruta usa el GPS de la unidad?</p>
+          <p class="faq-answer">Sí, con la cuenta espejo de tu proveedor de GPS o la que te da la línea. Ruta lee la posición, detecta paradas fuera de lo normal, desvíos y unidades que dejan de reportar, y solo pregunta cuando algo no cuadra. Si la cuenta espejo aún no está conectada, la integramos contigo.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué pasa si nadie contesta?</p>
+          <p class="faq-answer">Ruta vuelve a preguntar en el horario que definas. Si sigue sin respuesta, avisa por WhatsApp a quien esté de guardia en tu equipo y, si no confirma, le marca por teléfono.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Cuánto cuesta?</p>
+          <p class="faq-answer">Depende de cuántas operaciones manejas al mes. Después de una llamada de 20 minutos te mandamos la propuesta con precio. La puesta en marcha va incluida.</p>
+        </div>
+
+      </section>
+
+      <!-- ── AUTHOR BOX ── -->
+      <div class="author-box">
+        <p>
+          Escrito por el Equipo Quelion — construimos productos de IA para equipos de logística.
+          Preguntas: <a href="mailto:hola@quelion.ai">hola@quelion.ai</a>
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo das seguimiento hoy a tus embarques.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos cuántas cargas mueves, por qué canal y si Ruta te sirve. Escríbenos a hola@quelion.ai.
+      </p>
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
+        Agenda 20 minutos
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
+        <p class="footer-tagline">
+          Productos de IA para operaciones de logística.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Ruta</p>
+        <nav class="footer-links" aria-label="Enlaces de Ruta">
+          <a href="/mx/ruta#como-funciona" class="footer-link">Cómo funciona</a>
+          <a href="/mx/ruta#pricing"       class="footer-link">Cómo empezar</a>
+          <a href="/mx/ruta#faq"           class="footer-link">Preguntas</a>
+          <a href="/ruta-en"       class="footer-link" hreflang="en" lang="en">English</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
+          <a href="/mx/" class="footer-link">Quelion</a>
+          <a href="/blog/seguimiento-envios-tiempo-real" class="footer-link" hreflang="es-ES" lang="es-ES">España</a>
+          <a href="/mx/blog/" class="footer-link">Blog</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js?v=20260926"></script>
+</body>
+</html>

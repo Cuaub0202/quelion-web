@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agente de IA para el coordinador de tráfico | Quelion</title>
+  <meta name="description" content="Qué le quita un agente de IA al coordinador de tráfico: Ruta, de Quelion, pide estatus al operador por WhatsApp, lee la cuenta espejo y avisa a tu guardia.">
+  <link rel="canonical" href="https://quelion.ai/mx/blog/agente-ia-coordinadores-flete">
+  <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/agente-ia-coordinadores-flete">
+  <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/agente-ia-coordinadores-flete">
+  <link rel="alternate" hreflang="x-default" href="https://quelion.ai/blog/agente-ia-coordinadores-flete">
+  <meta property="og:title" content="Qué hace un agente de IA en el día de un coordinador de tráfico">
+  <meta property="og:description" content="Qué le quita un agente de IA al coordinador de tráfico: Ruta, de Quelion, pide estatus al operador por WhatsApp, lee la cuenta espejo y avisa a tu guardia.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://quelion.ai/mx/blog/agente-ia-coordinadores-flete">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon-192.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20260926">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Qué hace un agente de IA en el día de un coordinador de tráfico",
+    "datePublished": "2026-11-17",
+    "dateModified": "2026-11-17",
+    "inLanguage": "es-MX",
+    "author": { "@type": "Organization", "name": "Equipo Quelion", "url": "https://quelion.ai" },
+    "publisher": { "@type": "Organization", "name": "Quelion", "url": "https://quelion.ai" },
+    "description": "Qué le quita un agente de IA al coordinador de tráfico: Ruta, de Quelion, pide estatus al operador por WhatsApp, lee la cuenta espejo y avisa a tu guardia.",
+    "mainEntityOfPage": "https://quelion.ai/mx/blog/agente-ia-coordinadores-flete"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Un agente de IA reemplaza a mi coordinador de tráfico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Ruta se queda con las preguntas de rutina: pedir estatus en cada etapa, volver a escribir cuando el operador no contesta y registrar cada cambio con su hora. Tu coordinador se queda con lo que pide criterio: mover una cita, cambiar una unidad, hablar con la línea o con el agente aduanal y contestarle al cliente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ruta le escribe al operador o a la línea transportista?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende de cómo trabajes con cada línea. Con tu flota, Ruta le escribe por WhatsApp o Telegram a tu operador, que contesta con texto o nota de voz y no instala nada. Con una línea, le pregunta a su tráfico o a su monitoreo; si la línea lo autoriza, le escribe al operador a nombre de tu empresa desde el inicio del viaje."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si nadie contesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ruta vuelve a escribir en el horario que definas, de día o 24/7. Si sigue sin respuesta, avisa por WhatsApp a quien esté de guardia en tu equipo y, si no lo confirma, le marca por teléfono hasta que alguien confirma marcando 1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si la IA entiende mal un mensaje?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cada cambio de estatus queda en el historial con su hora, y tu coordinador puede corregir el de cualquier viaje desde el panel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Sirve para importación y exportación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Ruta trae flujos con etapas para nacional, importación y exportación terrestre, aéreo y marítimo. Los terrestres incluyen las etapas del cruce: llegada a la frontera, cruce, aduana, pedimento. A quién se le pregunta en cada viaje, cada cuánto y cuándo se escala se configura con tu operación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo empiezo y cuánto cuesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con una llamada de 20 minutos. Después te mandamos una propuesta con precio, que depende de cuántas operaciones manejas al mes. Con la propuesta aceptada lo configuramos contigo y lo ensayamos en el túnel de viento, un día o una noche simulada con tus reglas, antes de que Ruta le escriba al primer operador. La puesta en marcha va incluida."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .post-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .post-header {
+      padding: 80px 0 56px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-meta-row {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .post-body {
+      padding: 56px 0 80px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-body h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+      line-height: 1.4;
+    }
+    .post-body h2:first-child { margin-top: 0; }
+    .post-body p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .post-body ul {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+    .post-body ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .post-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .inline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 0.5px solid var(--text-primary);
+      padding: 12px 20px;
+      margin: 32px 0 48px;
+      transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+    }
+    .inline-cta:hover {
+      background: var(--text-primary);
+      color: var(--surface-primary);
+    }
+    .faq-section {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 56px 0 0;
+      margin-top: 0;
+    }
+    .faq-item {
+      border-bottom: 0.5px solid var(--border-hairline);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .author-box {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 40px 0 0;
+      margin-top: 56px;
+    }
+    .author-box p {
+      font-size: 13px;
+      color: var(--text-quiet);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .author-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .post-wrap { padding: 0 20px; }
+      .post-header { padding: 56px 0 40px; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/mx/" class="nav-logo" aria-label="Quelion, inicio">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/mx/ruta#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="/mx/ruta#pricing"       class="nav-link">Cómo empezar</a>
+        <a href="/mx/ruta#faq"           class="nav-link">Preguntas</a>
+        <a href="/mx/blog/"         class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="/ruta-en"       class="nav-link" hreflang="en" lang="en">English</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
+        <button class="nav-mobile-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="post-header">
+    <div class="post-wrap">
+      <p class="eyebrow" style="margin-bottom:20px;">Coordinación de tráfico</p>
+      <h1 style="max-width:660px;line-height:1.25;margin-bottom:0;">
+        Qué hace un agente de IA en el día de un coordinador de tráfico
+      </h1>
+      <div class="post-meta-row">
+        <span>17 Nov 2026</span>
+        <span>6 min de lectura</span>
+        <span>Por el Equipo Quelion</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="post-body" aria-label="Contenido del artículo">
+    <div class="post-wrap">
+
+      <p>
+        Martes, 7:10 de la mañana. Tu coordinador de tráfico abre WhatsApp con 31 viajes activos y más
+        de cuarenta chats sin leer. La unidad 214 recogió anoche su caja en el patio de Nuevo Laredo y
+        va rumbo a Celaya, con cita en planta el miércoles a primera hora. Lo último que tiene de ella es
+        un «ya me entregaron la caja, voy saliendo» de las 21:30. Hay una nota de voz de dos minutos que
+        nadie ha escuchado. A las 7:25 le marca el cliente de Celaya para preguntar cómo viene su carga, y
+        la respuesta es la de siempre: «déjame checar con la línea».
+      </p>
+      <p>
+        Ruta, el agente de IA de Quelion, se encarga de esa parte del día que consiste en preguntar. En
+        cada viaje le escribe uno a uno por WhatsApp o Telegram al operador o, si así trabajas con esa
+        línea, a su coordinador de tráfico o su monitoreo. Entiende lo que le contestan, con texto o nota
+        de voz, y actualiza el estatus del viaje. Si nadie contesta, avisa a tu guardia y, si no confirma,
+        le marca por teléfono
+        (<a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7">así funciona la llamada de guardia</a>).
+      </p>
+
+      <h2>Dónde se va el día de un coordinador de tráfico</h2>
+      <p>
+        Pregúntale a cualquier coordinador de tráfico, o de fletes, como le dicen en algunas empresas,
+        qué hizo ayer. Pocas veces la respuesta empieza por una decisión. Empieza por mensajes: confirmar
+        que la unidad salió a su hora, preguntar si ya cargó, si ya le entregaron la caja en el patio, si
+        ya modularon, si ya está formada en planta. Cada etapa es un «¿cómo vas?» escrito a mano, y cada
+        respuesta hay que leerla, pasarla al Excel o al sistema y, muchas veces, reenviarla al cliente.
+      </p>
+      <p>
+        Con importación y exportación el trabajo crece, porque entre la salida y la entrega están las
+        etapas del cruce (llegada a la frontera, cruce, aduana, pedimento) y en cualquiera se puede atorar
+        el viaje. Si mueves con líneas transportistas, súmale que muchas no te dejan hablar con su
+        operador: hay que preguntarle a su tráfico, que a su vez le pregunta al operador, y la respuesta
+        tarda el doble.
+      </p>
+      <p>
+        Y luego está la noche. La oficina cierra a las ocho y la noche queda en el celular del de guardia,
+        que a las tres de la mañana no sabe cuál de sus chats es urgente. Lo explicamos con más detalle en
+        <a href="/mx/blog/monitoreo-nocturno-embarques-24-7">monitoreo nocturno de unidades</a>.
+      </p>
+
+      <h2>Lo que Ruta le quita</h2>
+      <p>
+        <strong>Pedir estatus en cada etapa.</strong> Ruta pregunta cuando le toca reportar al operador,
+        según el flujo del viaje: nacional, importación o exportación terrestre, aéreo o marítimo. El
+        operador contesta como siempre y no instala nada. Si escribe «ya pasé Saltillo, voy bien», la IA
+        lee el mensaje, pero el estatus solo avanza si cumple la regla de esa etapa. El cambio queda en el
+        historial del viaje con su hora.
+      </p>
+      <p>
+        <strong>Insistir.</strong> Si el operador no reporta a tiempo, Ruta le vuelve a escribir en el
+        horario que definas, de día o 24/7. Tu coordinador deja de llevar en la cabeza a quién le escribió
+        hace una hora y todavía no contesta.
+      </p>
+      <p>
+        <strong>Estar viendo la cuenta espejo.</strong> Con la cuenta espejo de tu proveedor de GPS, o la
+        que te da la línea, Ruta lee la posición de la unidad, detecta paradas fuera de lo normal, desvíos
+        y unidades que dejan de reportar, y solo pregunta cuando algo no cuadra. Si esa cuenta espejo aún
+        no está conectada, la integramos contigo. Más en
+        <a href="/mx/blog/seguimiento-gps-transportista">seguimiento con la cuenta espejo del transportista</a>.
+      </p>
+      <p>
+        <strong>Seguir los relevos.</strong> Si la línea cambia de operador a medio viaje, tu coordinador
+        cambia el teléfono en el viaje y Ruta sigue la conversación con el nuevo.
+      </p>
+
+      <h2>2:10 de la mañana, pasando Saltillo</h2>
+      <p>
+        El mismo viaje, con Ruta. A las 21:30 el operador avisa que ya tiene la caja y Ruta lo registra.
+        La cuenta espejo lo ve pasar la garita del kilómetro 26 y Monterrey sin que nadie le pregunte
+        nada. A las 2:10 la unidad lleva veinte minutos detenida pasando Saltillo, rumbo a la 57, en un
+        punto que no es ninguna de sus paradas habituales. De noche eso no espera: Ruta abre la guardia y
+        le marca al de guardia desde el primer aviso, con el número económico, dónde está la unidad y
+        cuánto lleva detenida. Contesta, confirma marcando 1 y le habla al monitoreo de la línea, que
+        localiza al operador: un retén, ya lo dejaron seguir.
+      </p>
+      <p>
+        A las 7:10 tu coordinador abre el panel y ve los 31 viajes en su etapa. La 214 va por la 57 rumbo
+        a San Luis Potosí, con la parada de la madrugada anotada en su historial y el aviso cerrado. A las
+        7:25, cuando marca el cliente, le contesta con lo que tiene en pantalla.
+      </p>
+      <p>
+        Los tiempos de esta escena son un ejemplo. Cuánto tiempo detenida es alarma, a quién se le
+        pregunta en cada viaje, cada cuánto, en qué horario y quién está de guardia se configura por
+        cliente.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Entérate antes que tu cliente · 20 minutos
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/>
+        </svg>
+      </a>
+
+      <h2>Lo que le deja</h2>
+      <p>
+        Renegociar una cita cuando el viaje viene tarde. Decidir si se manda otra unidad. Hablar con el
+        agente aduanal cuando el cruce se complica. Ponerle un alto a la línea que falla dos veces en el
+        mismo corredor. Para eso no hay regla que valga: hace falta alguien que conozca al cliente y a la
+        línea.
+      </p>
+      <p>
+        También le deja la relación con el cliente. Tu equipo le contesta con el estatus del panel y la
+        hora de cada cambio a la mano, sin tener que preguntarle antes al operador. Si la IA entendió mal
+        un mensaje, tu coordinador corrige el estatus desde el panel y queda registrado. Cada quien entra
+        con su usuario y su rol: administradores, operaciones o solo lectura, para el que nada más
+        necesita consultar.
+      </p>
+
+      <h2>Qué queda fuera de Ruta</h2>
+      <p>
+        Ruta se ocupa de la conversación con el operador y del estatus de cada viaje. No sustituye tu TMS
+        ni se conecta a él o a tu ERP: tus órdenes activas entran desde un CSV, el mismo Excel que ya
+        llevas, exportado. Por eso puedes empezar sin tocar tus sistemas.
+      </p>
+      <p>
+        Habla uno a uno con cada operador o con el tráfico de cada línea. En los grupos de WhatsApp de
+        siempre no participa. Y las decisiones de qué hacer cuando un viaje se atora siguen siendo de tu
+        equipo: Ruta se asegura de que alguien se entere a tiempo, con los datos para decidir.
+      </p>
+
+      <h2>Se arma a cómo trabajas tú</h2>
+      <p>
+        Cada operación da seguimiento a su modo. Hay quien le escribe directo al operador y quien solo
+        habla con el tráfico de la línea. Hay quien quiere estatus cada dos horas y quien solo en la
+        salida, el cruce y la llegada. Por eso la primera pregunta en la llamada es «¿tú cómo lo manejas
+        hoy?». Lo que hoy hace tu equipo lo hace Ruta, y sobre eso sumamos nuestro protocolo: tu protocolo
+        más el nuestro.
+      </p>
+      <p>
+        Sirve con flota propia, subcontratada o una mezcla, y para transportistas, brokers y 3PL. Con tu
+        flota, Ruta le escribe a tu operador. Con una línea, le pregunta a su tráfico o a su monitoreo; si
+        la línea lo autoriza, le escribe al operador a nombre de tu empresa desde el inicio del viaje.
+      </p>
+      <p>
+        El camino es corto. Una llamada de 20 minutos para entender tu operación. Una propuesta con
+        precio, que depende de cuántas operaciones manejas al mes. Con la propuesta aceptada, lo
+        configuramos contigo y lo ensayamos en el <a href="/mx/#tunel">túnel de viento</a>: un día o una
+        noche simulada con tus reglas y las nuestras, antes de que Ruta le escriba al primer operador. Ahí
+        ves cómo pregunta, cuándo avisa y cuándo marca, y se ajusta lo que no encaje. La puesta en marcha
+        va incluida. Más sobre el producto en <a href="/mx/ruta">Ruta</a>.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Agenda 20 minutos
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/>
+        </svg>
+      </a>
+
+      <!-- ── FAQ ── -->
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <p class="eyebrow" id="faq-heading" style="margin-bottom:32px;">Preguntas frecuentes</p>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Un agente de IA reemplaza a mi coordinador de tráfico?</p>
+          <p class="faq-answer">No. Ruta se queda con las preguntas de rutina: pedir estatus en cada etapa, volver a escribir cuando el operador no contesta y registrar cada cambio con su hora. Tu coordinador se queda con lo que pide criterio: mover una cita, cambiar una unidad, hablar con la línea o con el agente aduanal y contestarle al cliente.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Ruta le escribe al operador o a la línea transportista?</p>
+          <p class="faq-answer">Depende de cómo trabajes con cada línea. Con tu flota, Ruta le escribe por WhatsApp o Telegram a tu operador, que contesta con texto o nota de voz y no instala nada. Con una línea, le pregunta a su tráfico o a su monitoreo; si la línea lo autoriza, le escribe al operador a nombre de tu empresa desde el inicio del viaje.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué pasa si nadie contesta?</p>
+          <p class="faq-answer">Ruta vuelve a escribir en el horario que definas, de día o 24/7. Si sigue sin respuesta, avisa por WhatsApp a quien esté de guardia en tu equipo y, si no lo confirma, le marca por teléfono hasta que alguien confirma marcando 1.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué pasa si la IA entiende mal un mensaje?</p>
+          <p class="faq-answer">Cada cambio de estatus queda en el historial con su hora, y tu coordinador puede corregir el de cualquier viaje desde el panel.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Sirve para importación y exportación?</p>
+          <p class="faq-answer">Sí. Ruta trae flujos con etapas para nacional, importación y exportación terrestre, aéreo y marítimo. Los terrestres incluyen las etapas del cruce: llegada a la frontera, cruce, aduana, pedimento. A quién se le pregunta en cada viaje, cada cuánto y cuándo se escala se configura con tu operación.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Cómo empiezo y cuánto cuesta?</p>
+          <p class="faq-answer">Con una llamada de 20 minutos. Después te mandamos una propuesta con precio, que depende de cuántas operaciones manejas al mes. Con la propuesta aceptada lo configuramos contigo y lo ensayamos en el túnel de viento, un día o una noche simulada con tus reglas, antes de que Ruta le escriba al primer operador. La puesta en marcha va incluida.</p>
+        </div>
+      </section>
+
+      <!-- ── AUTHOR BOX ── -->
+      <div class="author-box">
+        <p>
+          Escrito por el Equipo Quelion. Construimos productos de IA para equipos de logística.
+          Preguntas: <a href="mailto:hola@quelion.ai">hola@quelion.ai</a>
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo das seguimiento hoy.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos cuántos viajes mueves, cómo hablas con tus operadores y si Ruta te sirve. O escríbenos a hola@quelion.ai.
+      </p>
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
+        Agenda 20 minutos
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
+        <p class="footer-tagline">
+          Productos de IA para operaciones de logística.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Ruta</p>
+        <nav class="footer-links" aria-label="Enlaces de Ruta">
+          <a href="/mx/ruta#como-funciona" class="footer-link">Cómo funciona</a>
+          <a href="/mx/ruta#pricing"       class="footer-link">Cómo empezar</a>
+          <a href="/mx/ruta#faq"           class="footer-link">Preguntas</a>
+          <a href="/ruta-en"       class="footer-link" hreflang="en" lang="en">English</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
+          <a href="/mx/" class="footer-link">Quelion</a>
+          <a href="/blog/agente-ia-coordinadores-flete" class="footer-link" hreflang="es-ES" lang="es-ES">España</a>
+          <a href="/mx/blog/" class="footer-link">Blog</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js?v=20260926"></script>
+</body>
+</html>

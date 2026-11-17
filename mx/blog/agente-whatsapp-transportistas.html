@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agente de WhatsApp para transportistas | Quelion</title>
+  <meta name="description" content="Qué hace un agente de WhatsApp en una transportista y siete preguntas para cualquier proveedor antes de contratarlo: voz, guardia, cuenta espejo y pruebas.">
+  <link rel="canonical" href="https://quelion.ai/mx/blog/agente-whatsapp-transportistas">
+  <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/agente-whatsapp-transportistas">
+  <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/agente-whatsapp-transportistas">
+  <link rel="alternate" hreflang="x-default" href="https://quelion.ai/blog/agente-whatsapp-transportistas">
+  <meta property="og:title" content="Agente de WhatsApp para transportistas: qué hace y qué preguntarle antes de contratarlo">
+  <meta property="og:description" content="Qué hace un agente de WhatsApp en una transportista y siete preguntas para cualquier proveedor antes de contratarlo: voz, guardia, cuenta espejo y pruebas.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://quelion.ai/mx/blog/agente-whatsapp-transportistas">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon-192.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20260926">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Agente de WhatsApp para transportistas: qué hace y qué preguntarle antes de contratarlo",
+  "datePublished": "2026-11-17",
+  "dateModified": "2026-11-17",
+  "inLanguage": "es-MX",
+  "author": {
+    "@type": "Organization",
+    "name": "Equipo Quelion",
+    "url": "https://quelion.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Quelion",
+    "url": "https://quelion.ai"
+  },
+  "description": "Qué hace un agente de WhatsApp en una transportista y siete preguntas para cualquier proveedor antes de contratarlo: voz, guardia, cuenta espejo y pruebas."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es un agente de WhatsApp para transportistas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un sistema de IA que conversa con cada operador por WhatsApp, entiende lo que contesta y lo convierte en el estatus del viaje. Ruta, el de Quelion, además le avisa a tu equipo y le marca por teléfono a tu guardia cuando algo se atora y nadie confirma el aviso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mis operadores necesitan capacitación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Reciben un mensaje y contestan con sus palabras, por texto o nota de voz, en WhatsApp o Telegram. No instalan nada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve para una transportista con flota propia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Sirve con flota propia, subcontratada o las dos, y también para brokers y 3PL. Con unidades de una línea, Ruta le pregunta a su tráfico o a su monitoreo, o a su operador si la línea lo autoriza."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona en grupos de WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoy no. Ruta conversa uno a uno con cada operador."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de cuántas operaciones manejas al mes. Te damos el precio en la llamada, antes de configurar nada."
+      }
+    }
+  ]
+}
+  </script>
+  <style>
+    .post-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .post-header {
+      padding: 80px 0 56px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-meta-row {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .post-body {
+      padding: 56px 0 80px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-body h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+      line-height: 1.4;
+    }
+    .post-body h2:first-child { margin-top: 0; }
+    .post-body p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .post-body ul {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+    .post-body ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .post-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .inline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 0.5px solid var(--text-primary);
+      padding: 12px 20px;
+      margin: 32px 0 48px;
+      transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+    }
+    .inline-cta:hover {
+      background: var(--text-primary);
+      color: var(--surface-primary);
+    }
+    .faq-section {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 56px 0 0;
+      margin-top: 0;
+    }
+    .faq-item {
+      border-bottom: 0.5px solid var(--border-hairline);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .author-box {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 40px 0 0;
+      margin-top: 56px;
+    }
+    .author-box p {
+      font-size: 13px;
+      color: var(--text-quiet);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .author-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .post-wrap { padding: 0 20px; }
+      .post-header { padding: 56px 0 40px; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/mx/" class="nav-logo" aria-label="Quelion, inicio">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/mx/ruta#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="/mx/ruta#pricing"       class="nav-link">Cómo empezar</a>
+        <a href="/mx/ruta#faq"           class="nav-link">Preguntas</a>
+        <a href="/mx/blog/"         class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="/ruta-en"       class="nav-link" hreflang="en" lang="en">English</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
+        <button class="nav-mobile-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="post-header">
+    <div class="post-wrap">
+      <p class="eyebrow" style="margin-bottom:20px;">Guía de compra</p>
+      <h1 style="max-width:660px;line-height:1.25;margin-bottom:0;">
+        Agente de WhatsApp para transportistas: qué hace y qué preguntarle antes de contratarlo
+      </h1>
+      <div class="post-meta-row">
+        <span>17 Nov 2026</span>
+        <span>5 min de lectura</span>
+        <span>Por el Equipo Quelion</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="post-body" aria-label="Contenido del artículo">
+    <div class="post-wrap">
+
+      <p>
+        Un coordinador con quince unidades en ruta trae quince chats abiertos, revueltos con fotos de
+        remisiones, audios y el grupo de la familia. «¿Ya saliste?», «¿cómo va?», «mándame tu ubicación». El
+        trabajo no es difícil. Es repetitivo, y después de las ocho de la noche nadie lo está haciendo.
+      </p>
+      <p>
+        Un agente de WhatsApp para transportistas toma esa conversación. Ruta, el de Quelion, le escribe uno a
+        uno a cada operador, entiende lo que contesta y actualiza el estatus del viaje. Cuando algo se atora y
+        nadie de tu equipo confirma el aviso, le marca por teléfono a tu guardia. Antes de contratar este o
+        cualquier otro, conviene saber qué preguntarle.
+      </p>
+
+      <h2>Un agente no es un bot de menús</h2>
+      <p>
+        El bot de menús manda «responde 1 si ya saliste, 2 si vas en camino». A la tercera vez el operador deja
+        de contestar, o contesta «ya» y el bot no sabe qué hacer con eso.
+      </p>
+      <p>
+        Un agente de IA entiende lo que el operador escribe como lo escribe: «ya sali oye voy x la 57», veinte
+        minutos tarde, o en nota de voz. Para él sigue siendo un chat de WhatsApp más. Para tu equipo, ese
+        mensaje se vuelve una etapa con su hora en el historial del viaje.
+      </p>
+
+      <h2>Siete preguntas para cualquier proveedor</h2>
+      <ul>
+        <li><strong>¿Habla uno a uno con cada operador o necesita un grupo?</strong> En un grupo nadie contesta
+        lo que le toca. Ruta habla uno a uno.</li>
+        <li><strong>¿Entiende notas de voz y mensajes mal escritos?</strong> Medio país contesta con audio
+        manejando.</li>
+        <li><strong>¿Quién decide el cambio de estatus?</strong> Si la IA sola puede marcar «entregado», un mal
+        entendido llega a tu cliente. En Ruta la IA lee el mensaje y una regla fija decide si el cambio procede;
+        tu coordinador lo corrige desde el panel si hace falta.</li>
+        <li><strong>¿Qué pasa a las 3:00 si nadie contesta?</strong> Otro mensaje no despierta a nadie. Ruta le
+        avisa a tu guardia y, si nadie lo confirma, le marca por teléfono hasta que alguien confirma
+        (<a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7">así funciona la llamada de guardia</a>).</li>
+        <li><strong>¿Se ajusta a cómo trabajas?</strong> Tiempos distintos por etapa, horario de día o 24/7, y a
+        quién se le pregunta en cada viaje: al operador o, con una línea, a su tráfico o su monitoreo.</li>
+        <li><strong>¿Lee la cuenta espejo de tu proveedor de GPS?</strong> Si la lee, solo pregunta cuando algo
+        no cuadra. Si la tuya no está conectada a Ruta, la integramos contigo.</li>
+        <li><strong>¿Puedes verlo funcionar con tus reglas antes de que le escriba a tus operadores?</strong></li>
+      </ul>
+      <p>
+        La última casi nadie la pregunta, y es la que evita el primer mes de ajustes con operadores molestos.
+        En Quelion, con la propuesta aceptada, corremos tus reglas y las nuestras en el túnel de viento, un día
+        simulado, para ver cuántos mensajes recibiría cada operador y cuándo le marcaría Ruta a tu guardia,
+        antes de escribirle a nadie.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Hazle estas preguntas a Ruta · 20 minutos
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/>
+        </svg>
+      </a>
+
+      <h2>Qué necesitas para empezar</h2>
+      <p>
+        El teléfono de cada operador y tus embarques activos, que entran desde tu Excel exportado a CSV. No hay
+        que integrarse con tu TMS. Las etapas de nacional, importación, exportación, aéreo y marítimo ya vienen
+        armadas. Lo que se configura contigo es cómo coordinas hoy: a quién le preguntas, cada cuánto, quién
+        está de guardia de noche y quién lo respalda. Lo que hoy hace tu equipo lo hace Ruta, y le sumamos
+        nuestro protocolo. Si tienes flota propia y subcontratas, lo contamos en
+        <a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7">seguimiento 24/7 de operadores por WhatsApp</a>.
+      </p>
+
+      <!-- ── FAQ ── -->
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <p class="eyebrow" id="faq-heading" style="margin-bottom:32px;">Preguntas frecuentes</p>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué es un agente de WhatsApp para transportistas?</p>
+          <p class="faq-answer">Un sistema de IA que conversa con cada operador por WhatsApp, entiende lo que contesta y lo convierte en el estatus del viaje. Ruta, el de Quelion, además le avisa a tu equipo y le marca por teléfono a tu guardia cuando algo se atora y nadie confirma el aviso.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Mis operadores necesitan capacitación?</p>
+          <p class="faq-answer">No. Reciben un mensaje y contestan con sus palabras, por texto o nota de voz, en WhatsApp o Telegram. No instalan nada.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Sirve para una transportista con flota propia?</p>
+          <p class="faq-answer">Sí. Sirve con flota propia, subcontratada o las dos, y también para brokers y 3PL. Con unidades de una línea, Ruta le pregunta a su tráfico o a su monitoreo, o a su operador si la línea lo autoriza.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Funciona en grupos de WhatsApp?</p>
+          <p class="faq-answer">Hoy no. Ruta conversa uno a uno con cada operador.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Cuánto cuesta?</p>
+          <p class="faq-answer">Depende de cuántas operaciones manejas al mes. Te damos el precio en la llamada, antes de configurar nada.</p>
+        </div>
+
+      </section>
+
+      <!-- ── AUTHOR BOX ── -->
+      <div class="author-box">
+        <p>
+          Escrito por el Equipo Quelion — construimos productos de IA para equipos de logística.
+          Preguntas: <a href="mailto:hola@quelion.ai">hola@quelion.ai</a>
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo haces hoy el seguimiento de tus operadores.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos cuántas cargas mueves, por qué canal y si Ruta te sirve. Escríbenos a hola@quelion.ai.
+      </p>
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
+        Agenda 20 minutos
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
+        <p class="footer-tagline">
+          Productos de IA para operaciones de logística.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Ruta</p>
+        <nav class="footer-links" aria-label="Enlaces de Ruta">
+          <a href="/mx/ruta#como-funciona" class="footer-link">Cómo funciona</a>
+          <a href="/mx/ruta#pricing"       class="footer-link">Cómo empezar</a>
+          <a href="/mx/ruta#faq"           class="footer-link">Preguntas</a>
+          <a href="/ruta-en"       class="footer-link" hreflang="en" lang="en">English</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
+          <a href="/mx/" class="footer-link">Quelion</a>
+          <a href="/blog/agente-whatsapp-transportistas" class="footer-link" hreflang="es-ES" lang="es-ES">España</a>
+          <a href="/mx/blog/" class="footer-link">Blog</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js?v=20260926"></script>
+</body>
+</html>

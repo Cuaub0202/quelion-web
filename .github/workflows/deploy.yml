@@ -3,12 +3,22 @@ name: Deploy to VPS
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      indexnow_all:
+        description: 'Enviar todo el sitemap a IndexNow (Bing y otros buscadores) después del deploy'
+        type: boolean
+        default: false
 
 jobs:
   deploy:
+    # El disparador manual deja elegir rama: solo main llega a producción.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Deploy to VPS
         uses: appleboy/scp-action@v0.1.7
@@ -16,6 +26,17 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: root
           key: ${{ secrets.VPS_SSH_KEY }}
-          source: "index.html,ruta.html,ruta-en.html,robots.txt,favicon.ico,favicon-192.png,sitemap.xml,blog/,assets/,mx/"
+          source: "index.html,ruta.html,ruta-en.html,robots.txt,favicon.ico,favicon-192.png,sitemap.xml,521a449a632e99aa048be26ab72a0b41.txt,blog/,assets/,mx/"
           target: /var/www/quelion/
           strip_components: 0
+
+      # Avisa a los buscadores de IndexNow (Bing y otros) de las páginas publicadas o cambiadas.
+      # Si falla, el deploy ya está hecho: el paso deja un aviso en el resumen del run.
+      - name: Avisar a IndexNow (Bing y otros)
+        continue-on-error: true
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.indexnow_all }}" = "true" ]; then
+            node .github/indexnow.mjs all
+          else
+            node .github/indexnow.mjs changed "${{ github.event.before }}" "${{ github.sha }}"
+          fi

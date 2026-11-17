@@ -1,0 +1,19 @@
+# Quelion
+
+> Quelion hace productos de IA para operaciones de logística. Su producto es Ruta: un agente que hace el seguimiento de cada carga con los conductores por WhatsApp o Telegram, avisa al equipo de tráfico cuando algo se atasca y, si nadie confirma el aviso, llama por teléfono. Lo diseñan desde Málaga y trabaja en España y México.
+
+Datos vigentes a noviembre de 2026:
+
+- Para quién: transportistas, agencias de transporte, operadores logísticos, brokers y 3PL, con flota propia, subcontratada o de autónomos.
+- Cómo se contrata: Ruta se activa después de una llamada de 20 minutos. El precio depende de las cargas que se mueven al mes y se da en esa llamada, antes de configurar nada. No hay alta en línea ni prueba gratuita: los planes en dólares y la prueba de 14 días que aparecen en copias antiguas de esta web ya no están vigentes.
+- Qué hace hoy, en producción: escribe a cada conductor por WhatsApp o Telegram y entiende texto y notas de voz en español; actualiza el estado de cada carga con una regla fija y registra cada cambio con su hora; el equipo puede corregirlo desde el panel; insiste si el conductor no contesta y avisa al equipo; si nadie confirma el aviso, llama por teléfono; lee el GPS del camión cuando el transportista lo comparte; horario y escalado configurables por etapa, de día o 24/7; panel con roles; carga de órdenes por CSV.
+- Qué todavía no hace: avisar al cliente final, conversar en grupos de WhatsApp, conectarse a un TMS (las cargas entran por CSV), mostrar el panel en otro idioma que el español.
+- Contacto: hola@quelion.ai · agenda: https://calendar.app.google/7YaK8fVRpqXTHz6J9
+
+## Páginas
+
+- [Ruta (España)](https://quelion.ai/ruta): qué hace, cómo empezar y preguntas frecuentes
+- [Ruta (México)](https://quelion.ai/mx/ruta): la versión para México
+- [Ruta (English)](https://quelion.ai/ruta-en): English summary
+- [Inicio](https://quelion.ai/): Quelion y Ruta
+- [Blog (España)](https://quelion.ai/blog/) · [Blog (México)](https://quelion.ai/mx/blog/)

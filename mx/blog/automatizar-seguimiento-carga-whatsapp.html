@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatizar el seguimiento de carga por WhatsApp | Quelion</title>
+  <meta name="description" content="Automatiza el seguimiento de embarques por WhatsApp sin app para el operador: Ruta pide estatus, registra cada etapa y le marca a tu guardia si algo se atora.">
+  <link rel="canonical" href="https://quelion.ai/mx/blog/automatizar-seguimiento-carga-whatsapp">
+  <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/automatizar-seguimiento-carga-whatsapp">
+  <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/automatizar-seguimiento-carga-whatsapp">
+  <link rel="alternate" hreflang="x-default" href="https://quelion.ai/blog/automatizar-seguimiento-carga-whatsapp">
+  <meta property="og:title" content="Cómo automatizar el seguimiento de carga por WhatsApp sin cambiarle nada al operador">
+  <meta property="og:description" content="Automatiza el seguimiento de embarques por WhatsApp sin app para el operador: Ruta pide estatus, registra cada etapa y le marca a tu guardia si algo se atora.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://quelion.ai/mx/blog/automatizar-seguimiento-carga-whatsapp">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon-192.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20260926">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cómo automatizar el seguimiento de carga por WhatsApp sin cambiarle nada al operador",
+  "datePublished": "2026-11-17",
+  "dateModified": "2026-11-17",
+  "inLanguage": "es-MX",
+  "author": {
+    "@type": "Organization",
+    "name": "Equipo Quelion",
+    "url": "https://quelion.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Quelion",
+    "url": "https://quelion.ai"
+  },
+  "description": "Automatiza el seguimiento de embarques por WhatsApp sin app para el operador: Ruta pide estatus, registra cada etapa y le marca a tu guardia si algo se atora."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué hace falta para automatizar el seguimiento de carga por WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El teléfono de cada operador y tus embarques activos en un CSV, que sale de tu Excel. No hace falta integrarse con tu TMS ni con tu ERP. Las etapas, los tiempos y quién está de guardia los configuramos contigo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si el operador no contesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ruta le vuelve a escribir en el horario que definas, que puede ser 24/7. Si sigue sin contestar, avisa por WhatsApp a quien esté de guardia en tu equipo y, si nadie lo confirma, le marca por teléfono a tu cadena de guardia hasta que alguien confirma el aviso con una tecla, ahí mismo en la llamada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El operador tiene que instalar algo o aprender comandos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Contesta por WhatsApp o Telegram con texto o nota de voz, como le contestaría a tu coordinador."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve si mis operadores son de una línea transportista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Sirve con flota propia, subcontratada o las dos. Con una línea, Ruta le pregunta a su tráfico o a su monitoreo, o a su operador si la línea lo autoriza."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Le avisa a mi cliente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, si lo activas. Ruta le escribe por WhatsApp a los contactos de tu cliente como el asistente de tu empresa: le avisa cuando la unidad sale, cruza, llega y se entrega, le manda un estatus con la última ubicación y la llegada estimada cada cierto tiempo (cada dos horas si no defines otro) y le da el botón «Ver envío» para ver su embarque en vivo. Con la cuenta espejo, la ubicación que ve sale del GPS («pasó Monterrey», «llegó a Querétaro») sin que el operador escriba nada. Si hay un retraso, le dice que la hora está por confirmarse y no le da una hora nueva que tu equipo no haya visto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona en rutas nacionales y en cruces de frontera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Hay flujos para nacional, para importación y exportación terrestre con etapas de frontera, cruce, aduana y pedimento, y para carga aérea y marítima."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada."
+      }
+    }
+  ]
+}
+  </script>
+  <style>
+    .post-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .post-header {
+      padding: 80px 0 56px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-meta-row {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .post-body {
+      padding: 56px 0 80px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-body h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+      line-height: 1.4;
+    }
+    .post-body h2:first-child { margin-top: 0; }
+    .post-body p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .post-body ul {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+    .post-body ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .post-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .inline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 0.5px solid var(--text-primary);
+      padding: 12px 20px;
+      margin: 32px 0 48px;
+      transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+    }
+    .inline-cta:hover {
+      background: var(--text-primary);
+      color: var(--surface-primary);
+    }
+    .faq-section {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 56px 0 0;
+      margin-top: 0;
+    }
+    .faq-item {
+      border-bottom: 0.5px solid var(--border-hairline);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .author-box {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 40px 0 0;
+      margin-top: 56px;
+    }
+    .author-box p {
+      font-size: 13px;
+      color: var(--text-quiet);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .author-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .post-wrap { padding: 0 20px; }
+      .post-header { padding: 56px 0 40px; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/mx/" class="nav-logo" aria-label="Quelion, inicio">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/mx/ruta#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="/mx/ruta#pricing"       class="nav-link">Cómo empezar</a>
+        <a href="/mx/ruta#faq"           class="nav-link">Preguntas</a>
+        <a href="/mx/blog/"         class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="/ruta-en"       class="nav-link" hreflang="en" lang="en">English</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
+        <button class="nav-mobile-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="post-header">
+    <div class="post-wrap">
+      <p class="eyebrow" style="margin-bottom:20px;">Automatización</p>
+      <h1 style="max-width:660px;line-height:1.25;margin-bottom:0;">
+        Cómo automatizar el seguimiento de carga por WhatsApp sin cambiarle nada al operador
+      </h1>
+      <div class="post-meta-row">
+        <span>17 Nov 2026</span>
+        <span>5 min de lectura</span>
+        <span>Por el Equipo Quelion</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="post-body" aria-label="Contenido del artículo">
+    <div class="post-wrap">
+
+      <p>
+        A las 11 de la mañana tu coordinador ya mandó cuarenta mensajes. «¿Ya saliste de planta?», «¿cómo
+        vas?», «el cliente pregunta si ya dejaste la caja en el patio». Cada respuesta llega a su celular, se
+        queda en su chat y, con suerte, alguien la pasa a la hoja. Cuando un operador no contesta, el
+        seguimiento de ese embarque se detiene hasta que alguien se acuerda de volver a preguntar.
+      </p>
+      <p>
+        Ruta, el agente de IA de Quelion, hace esas preguntas por WhatsApp en lugar de tu coordinador: le
+        escribe al operador, o al tráfico de su línea si así trabajas con ella, entiende lo que contesta y
+        registra la etapa con su hora. Si alguien deja de contestar, insiste en el horario que tú definas,
+        también de noche, y le avisa a quien esté de guardia en tu equipo. Si nadie confirma el aviso, le marca
+        por teléfono. Entérate antes que tu cliente.
+      </p>
+
+      <h2>Lo que de verdad cuesta el seguimiento a mano</h2>
+      <p>
+        WhatsApp ganó porque todos los operadores lo traen y funciona con poca señal. Lo que no escala es que
+        cada estatus dependa de que una persona escriba, espere, lea y capture.
+      </p>
+      <p>
+        Con diez embarques activos son diez chats que abrir varias veces al día. Con cuarenta, el coordinador
+        ya no da seguimiento: apaga incendios. Y cada quien pregunta a su manera y a su hora, así que el
+        historial de un viaje depende de quién lo llevó ese día.
+      </p>
+      <p>
+        En importación y exportación por Nuevo Laredo, Ciudad Juárez o Nogales hay más puntos que confirmar:
+        llegada al patio, entrega de la caja al transfer, pedimento, módulo, cruce. Si uno se queda sin
+        registrar, quien contesta la llamada del cliente lo hace a ciegas.
+      </p>
+
+      <h2>Cómo funciona: la IA lee, la regla decide</h2>
+      <p>
+        Das de alta los embarques con el teléfono del operador; tus órdenes activas entran desde tu Excel
+        exportado a CSV. Si la línea cambia de operador o hay relevo, tu coordinador cambia el teléfono en el
+        viaje y Ruta sigue con el nuevo. Cada tipo de operación trae sus etapas armadas, y en cada etapa
+        defines cuánto espera Ruta antes de preguntar.
+      </p>
+      <p>
+        Cuando un embarque lleva en una etapa más tiempo del que pusiste sin reportar, Ruta le escribe al
+        operador por WhatsApp o Telegram. Él contesta como siempre: «ya cargué, voy saliendo», «ya dejé la caja
+        en el patio», o una nota de voz. La IA lo lee, pero el cambio de estatus lo decide una regla fija; si
+        procede, queda en el historial con su hora. Si la IA entendió mal, tu coordinador corrige el estatus
+        desde el panel.
+      </p>
+      <p>
+        Si tienes la cuenta espejo del GPS, Ruta además lee la posición de la unidad y solo pregunta cuando algo
+        no cuadra: una parada fuera de lo normal, un desvío o una unidad que deja de reportar. Lo contamos en
+        <a href="/mx/blog/seguimiento-gps-transportista">seguimiento con la cuenta espejo del transportista</a>.
+      </p>
+
+      <h2>Las etapas, según el tipo de operación</h2>
+      <ul>
+        <li><strong>Nacional</strong> (Monterrey–CDMX, Guadalajara–Querétaro): recolección, en tránsito, en
+        ciudad destino, en planta, descargando, entregado y evidencia de entrega.</li>
+        <li><strong>Importación y exportación terrestre</strong> por Nuevo Laredo, Ciudad Juárez o Nogales:
+        además, las etapas de frontera, cruce, aduana y pedimento.</li>
+        <li><strong>Aérea y marítima:</strong> despacho de exportación e importación, salida y llegada en
+        aeropuerto o puerto.</li>
+      </ul>
+      <p>
+        En carga no se pregunta igual que en tránsito ni que en aduana. La fila del puente se te puede ir media
+        jornada; una hora sin salir de planta después de la cita, quizá no. Cuánto es normal en cada etapa lo
+        pones tú, por cruce y por horario.
+      </p>
+
+      <h2>Cuando el operador no contesta</h2>
+      <p>
+        Un embarque que va bien casi no necesita a nadie. El que se atora necesita que alguien se entere a
+        tiempo. Si el operador no reporta, Ruta le vuelve a escribir. Si sigue sin contestar, le avisa por
+        WhatsApp a quien tengas de guardia con el viaje, la etapa, cuánto lleva sin estatus y a quién se le
+        preguntó, y si nadie lo confirma, le marca por teléfono
+        (<a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7">así funciona la llamada de guardia</a>).
+        El horario de seguimiento puede ser 24/7: la unidad que se detiene a las 2:00 no espera a que alguien
+        abra el chat a las 8:00.
+      </p>
+
+      <h2>Martes, 9:40: dos embarques que se atoran</h2>
+      <p>
+        Un embarque de Saltillo a Nuevo Laredo lleva más de lo previsto en planta. Ruta le pregunta al
+        operador, que contesta que siguen cargando, y la etapa queda registrada sin que tu coordinador abra el
+        chat. A las 11:15 otro operador, que debía dejar la caja en el patio a las 10:30, no ha dado estatus y
+        no contesta. Ruta le insiste y, como sigue sin respuesta, le avisa a tu coordinador de guardia con el
+        viaje y la hora del último estatus. Él lo confirma y le marca a la línea. Cuando el cliente pregunta,
+        quien contesta abre el panel y le dice en qué etapa va y desde qué hora.
+      </p>
+      <p>
+        Los otros treinta y ocho embarques no le quitaron un solo mensaje a tu coordinador. Las horas son un
+        ejemplo.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Cuéntanos cómo das seguimiento hoy · 20 minutos
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/>
+        </svg>
+      </a>
+
+      <h2>Que tu cliente deje de preguntar «¿dónde viene mi carga?»</h2>
+      <p>
+        Si lo activas, Ruta le escribe a tu cliente por WhatsApp como el asistente de tu empresa: le avisa cuando
+        la unidad sale, cruza, llega y se entrega, y cada cierto tiempo (cada dos horas si no defines otro) le
+        manda la última ubicación y la hora estimada de llegada. Con el botón «Ver envío» ve su embarque en vivo. Con la cuenta espejo, la ubicación que ve sale del GPS («pasó Monterrey», «llegó a Querétaro») sin que el operador escriba nada.
+        Si el operador reporta un retraso, al cliente le llega que la hora está por confirmarse, no una hora nueva
+        que tu equipo no haya visto: las malas noticias las das tú.
+      </p>
+      <p>
+        Y si te marca de todos modos, en el panel se ve si ya dejó la caja, si ya cruzó o si ya llegó a planta, y
+        a qué hora se registró cada cosa. Si luego hay una discusión por tiempos de entrega, cada cambio de etapa
+        está en el historial con su hora.
+      </p>
+
+      <h2>Cómo se empieza</h2>
+      <p>
+        Con una llamada de 20 minutos: cómo das seguimiento hoy, cuántos viajes mueves, si tus operadores son
+        propios, de una línea o de los dos. Te mandamos la propuesta con el precio. Con la propuesta aceptada
+        configuramos contigo etapas, tiempos y guardia: lo que hoy hace tu equipo, más nuestro protocolo. Antes
+        de que Ruta le escriba al primer operador lo corremos en el túnel de viento, un día simulado con tus
+        reglas, para ver cuántos mensajes y cuántos avisos saldrían. Más sobre el producto en
+        <a href="/mx/ruta">Ruta</a>.
+      </p>
+
+      <!-- ── FAQ ── -->
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <p class="eyebrow" id="faq-heading" style="margin-bottom:32px;">Preguntas frecuentes</p>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué hace falta para automatizar el seguimiento de carga por WhatsApp?</p>
+          <p class="faq-answer">El teléfono de cada operador y tus embarques activos en un CSV, que sale de tu Excel. No hace falta integrarse con tu TMS ni con tu ERP. Las etapas, los tiempos y quién está de guardia los configuramos contigo.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué pasa si el operador no contesta?</p>
+          <p class="faq-answer">Ruta le vuelve a escribir en el horario que definas, que puede ser 24/7. Si sigue sin contestar, avisa por WhatsApp a quien esté de guardia en tu equipo y, si nadie lo confirma, le marca por teléfono a tu cadena de guardia hasta que alguien confirma el aviso con una tecla, ahí mismo en la llamada.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿El operador tiene que instalar algo o aprender comandos?</p>
+          <p class="faq-answer">No. Contesta por WhatsApp o Telegram con texto o nota de voz, como le contestaría a tu coordinador.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Sirve si mis operadores son de una línea transportista?</p>
+          <p class="faq-answer">Sí. Sirve con flota propia, subcontratada o las dos. Con una línea, Ruta le pregunta a su tráfico o a su monitoreo, o a su operador si la línea lo autoriza.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Le avisa a mi cliente?</p>
+          <p class="faq-answer">Sí, si lo activas. Ruta le escribe por WhatsApp a los contactos de tu cliente como el asistente de tu empresa: le avisa cuando la unidad sale, cruza, llega y se entrega, le manda un estatus con la última ubicación y la llegada estimada cada cierto tiempo (cada dos horas si no defines otro) y le da el botón «Ver envío» para ver su embarque en vivo. Con la cuenta espejo, la ubicación que ve sale del GPS («pasó Monterrey», «llegó a Querétaro») sin que el operador escriba nada. Si hay un retraso, le dice que la hora está por confirmarse y no le da una hora nueva que tu equipo no haya visto.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Funciona en rutas nacionales y en cruces de frontera?</p>
+          <p class="faq-answer">Sí. Hay flujos para nacional, para importación y exportación terrestre con etapas de frontera, cruce, aduana y pedimento, y para carga aérea y marítima.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Cuánto cuesta?</p>
+          <p class="faq-answer">Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada.</p>
+        </div>
+
+      </section>
+
+      <!-- ── AUTHOR BOX ── -->
+      <div class="author-box">
+        <p>
+          Escrito por el Equipo Quelion — construimos productos de IA para equipos de logística.
+          Preguntas: <a href="mailto:hola@quelion.ai">hola@quelion.ai</a>
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo haces hoy el seguimiento de tus operadores.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos cuántas cargas mueves, por qué canal y si Ruta te sirve. Escríbenos a hola@quelion.ai.
+      </p>
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
+        Agenda 20 minutos
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
+        <p class="footer-tagline">
+          Productos de IA para operaciones de logística.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Ruta</p>
+        <nav class="footer-links" aria-label="Enlaces de Ruta">
+          <a href="/mx/ruta#como-funciona" class="footer-link">Cómo funciona</a>
+          <a href="/mx/ruta#pricing"       class="footer-link">Cómo empezar</a>
+          <a href="/mx/ruta#faq"           class="footer-link">Preguntas</a>
+          <a href="/ruta-en"       class="footer-link" hreflang="en" lang="en">English</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
+          <a href="/mx/" class="footer-link">Quelion</a>
+          <a href="/blog/automatizar-seguimiento-carga-whatsapp" class="footer-link" hreflang="es-ES" lang="es-ES">España</a>
+          <a href="/mx/blog/" class="footer-link">Blog</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js?v=20260926"></script>
+</body>
+</html>

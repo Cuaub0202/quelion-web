@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo reducir errores de captura en logística | Quelion</title>
+  <meta name="description" content="La hora que reclama tu cliente no cuadra con tu hoja. Ruta registra el estatus y su hora desde la respuesta del operador, sin recapturar del chat.">
+  <link rel="canonical" href="https://quelion.ai/mx/blog/reducir-errores-captura-logistica">
+  <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/reducir-errores-captura-logistica">
+  <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/reducir-errores-captura-logistica">
+  <link rel="alternate" hreflang="x-default" href="https://quelion.ai/blog/reducir-errores-captura-logistica">
+  <meta property="og:title" content="Cómo reducir errores de captura en tu operación de transporte: el estatus ya no se pasa del chat a la hoja">
+  <meta property="og:description" content="La hora que reclama tu cliente no cuadra con tu hoja. Ruta registra el estatus y su hora desde la respuesta del operador, sin recapturar del chat.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://quelion.ai/mx/blog/reducir-errores-captura-logistica">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon-192.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20260926">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Cómo reducir errores de captura en tu operación de transporte: el estatus ya no se pasa del chat a la hoja",
+    "datePublished": "2026-11-17",
+    "dateModified": "2026-11-17",
+    "inLanguage": "es-MX",
+    "author": { "@type": "Organization", "name": "Equipo Quelion", "url": "https://quelion.ai" },
+    "publisher": { "@type": "Organization", "name": "Quelion", "url": "https://quelion.ai" },
+    "description": "La hora que reclama tu cliente no cuadra con tu hoja. Ruta registra el estatus y su hora desde la respuesta del operador, sin recapturar del chat.",
+    "mainEntityOfPage": "https://quelion.ai/mx/blog/reducir-errores-captura-logistica"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Se pueden eliminar del todo los errores de captura en logística?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del todo, no. Lo que sí se quita es la recaptura del estatus: con Ruta, el estatus y la hora de cada etapa se registran desde la respuesta del operador y nadie los vuelve a teclear del chat a la hoja. Quedan los errores de origen y los de los datos de la orden. Para los primeros está el historial de cada carga y la corrección desde el panel; para los segundos, validar tu CSV antes de cargarlo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué registra Ruta y qué no?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ruta registra el estatus de cada etapa del viaje con su hora, a partir de lo que contesta el operador, y guarda sus respuestas en el historial de la carga. Las órdenes activas entran desde un CSV que exportas de tu Excel. Ruta no captura pesos, montos, sellos ni números de pedimento: esos datos siguen en tu sistema."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿El operador tiene que instalar algo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Ruta le escribe uno a uno por WhatsApp o Telegram y él contesta con texto o nota de voz, como siempre. Si la línea transportista no deja que le escribas a su operador, Ruta le pregunta a su tráfico o su monitoreo. Si hay relevo, tu coordinador cambia el teléfono en el viaje y Ruta sigue con el nuevo operador."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si Ruta entiende mal una respuesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La IA interpreta la respuesta, pero el estatus solo cambia si pasa una regla. Y cada cambio queda en el historial con su hora, así que tu coordinador ve qué se registró y cuándo, y corrige el estatus desde el panel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ruta se conecta a mi TMS o a mi ERP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, y no reemplaza un TMS. Tus órdenes activas entran desde un archivo CSV y Ruta se ocupa de la conversación con el operador y del estatus de cada carga."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .post-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .post-header {
+      padding: 80px 0 56px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-meta-row {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .post-body {
+      padding: 56px 0 80px;
+      border-top: 0.5px solid var(--border-hairline);
+    }
+    .post-body h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+      line-height: 1.4;
+    }
+    .post-body h2:first-child { margin-top: 0; }
+    .post-body p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .post-body ul {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+    .post-body ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .post-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .inline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 0.5px solid var(--text-primary);
+      padding: 12px 20px;
+      margin: 32px 0 48px;
+      transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+    }
+    .inline-cta:hover {
+      background: var(--text-primary);
+      color: var(--surface-primary);
+    }
+    .faq-section {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 56px 0 0;
+      margin-top: 0;
+    }
+    .faq-item {
+      border-bottom: 0.5px solid var(--border-hairline);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .author-box {
+      border-top: 0.5px solid var(--border-hairline);
+      padding: 40px 0 0;
+      margin-top: 56px;
+    }
+    .author-box p {
+      font-size: 13px;
+      color: var(--text-quiet);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .author-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .post-wrap { padding: 0 20px; }
+      .post-header { padding: 56px 0 40px; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/mx/" class="nav-logo" aria-label="Quelion, inicio">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/mx/ruta#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="/mx/ruta#pricing"       class="nav-link">Cómo empezar</a>
+        <a href="/mx/ruta#faq"           class="nav-link">Preguntas</a>
+        <a href="/mx/blog/"         class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="/ruta-en"       class="nav-link" hreflang="en" lang="en">English</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
+        <button class="nav-mobile-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="post-header">
+    <div class="post-wrap">
+      <p class="eyebrow" style="margin-bottom:20px;">Operaciones</p>
+      <h1 style="max-width:660px;line-height:1.25;margin-bottom:0;">
+        Cómo reducir errores de captura en tu operación de transporte: el estatus ya no se pasa del chat a la hoja
+      </h1>
+      <div class="post-meta-row">
+        <span>17 Nov 2026</span>
+        <span>6 min de lectura</span>
+        <span>Por el Equipo Quelion</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="post-body" aria-label="Contenido del artículo">
+    <div class="post-wrap">
+
+      <p>
+        A las 9:10 te marca el cliente de Silao. La unidad que venía de Altamira tenía cita en planta
+        a las 7:00; según la bitácora de vigilancia de la planta entró a las 7:48, y quiere saber por qué
+        tu reporte de ayer decía 6:55.
+        Abres la hoja de tráfico: 6:55, capturado por el auxiliar a media mañana. Abres el WhatsApp del
+        operador y te toca subir entre fotos, audios y mensajes de otros tres viajes hasta dar con el
+        «ya estoy en planta, jefe» de las 7:46. Nadie quiso engañar a nadie. Alguien leyó el chat con
+        prisa y pasó a la hoja la hora que le pareció.
+      </p>
+      <p>
+        Buena parte de los errores de captura en tráfico nacen en ese paso, del chat a la hoja. Ruta, el
+        agente de IA de Quelion, quita ese paso para el estatus de cada viaje. Le escribe por WhatsApp al
+        operador o, si así trabajas con esa línea, a su coordinador de tráfico o su monitoreo. Interpreta
+        lo que le contestan en texto o nota de voz, y una regla fija decide si el cambio de estatus procede. El cambio queda
+        en el historial de la carga con su hora, sin que nadie lo vuelva a teclear. Si algo quedó mal, tu
+        coordinador lo corrige desde el panel.
+      </p>
+
+      <h2>Dónde nacen los errores de captura en una operación de transporte</h2>
+      <p>
+        Sigue el camino de un estatus cualquiera. El operador avisa por WhatsApp que ya cargó. El
+        coordinador lo lee entre dos llamadas y lo apunta en la hoja «ahorita que pueda». A veces se lo
+        dicta a un auxiliar. A fin de mes, alguien arma el reporte del cliente con esa hoja. En cada paso
+        la hora se redondea, se apunta la hora en que se leyó el mensaje y no la hora en que llegó, o el
+        estatus cae en la fila del viaje de al lado porque los números económicos se parecen.
+      </p>
+      <p>
+        En importación y exportación terrestre hay más casillas que llenar, las de las etapas del cruce:
+        llegada a la frontera, cruce, aduana, pedimento. Y se llenan cuando el coordinador está al teléfono con la agencia
+        aduanal y tiene otros cinco viajes encima.
+      </p>
+      <p>
+        El error casi nunca se ve el día que se comete. Aparece cuando alguien usa el dato: la hora
+        estimada que le das al cliente, el reporte mensual, la discusión por una cita perdida. Y el
+        cliente no piensa «se equivocaron al capturar». Piensa que no tienes control de tus viajes.
+      </p>
+
+      <h2>Lo que puedes hacer esta semana, con Ruta o sin ella</h2>
+      <ul>
+        <li>
+          <strong>Revisa los últimos diez viajes con reclamo</strong> y separa qué falló: la hora de una
+          etapa, el estatus, o los datos de la orden (destino, cita, referencia del cliente). Cada uno se
+          arregla distinto.
+        </li>
+        <li>
+          <strong>Un solo origen de verdad por dato.</strong> Si la hora de llegada vive en el chat, en la
+          hoja y en el correo al cliente, decide cuál manda y que los demás copien de ahí.
+        </li>
+        <li>
+          <strong>Valida la hoja de órdenes antes de que arranque el viaje:</strong> columnas obligatorias,
+          un solo formato de fecha y hora, número de viaje único y sin filas repetidas. Un error en la
+          orden se arrastra el viaje completo.
+        </li>
+        <li>
+          <strong>Nombres de etapa fijos.</strong> «En planta» quiere decir lo mismo para todo tu equipo,
+          en lugar de que cada quien escriba a su modo.
+        </li>
+        <li>
+          <strong>Apunta la hora en que reportó el operador</strong>, no la hora en que lo leíste.
+        </li>
+      </ul>
+
+      <h2>El viaje a Silao, con el estatus tomado de la respuesta del operador</h2>
+      <p>
+        Las órdenes del día entraron temprano desde el CSV que exportas de tu Excel. A las 6:30 el viaje
+        a Silao lleva en «en ruta» más tiempo del que definiste para esa etapa, y Ruta le escribe al
+        operador: «¿Cómo vas?». Él contesta con una nota de voz: «Voy pasando San Felipe, como una hora».
+        La respuesta queda en el historial de la carga, y tu coordinador ve a las 6:35 lo que antes se
+        sabía a las 9:10: no llega a su cita de las 7:00. Avisa a la planta y le da la nueva hora al
+        cliente antes de que él te marque.
+      </p>
+      <p>
+        A las 7:46 el operador escribe «ya estoy en planta» y el viaje pasa a «en planta» con la hora 7:46. Nadie lo copió a ninguna hoja. Si al día
+        siguiente el cliente pregunta, la respuesta está en el panel en un minuto.
+      </p>
+      <p>
+        Ruta registra lo que el operador contesta. Si el operador dice que ya descargó y la planta te
+        dice que sigue formado afuera, el historial te muestra qué se registró y a qué hora, y tu
+        coordinador corrige el estatus desde el panel ese mismo día, antes de que el dato llegue a un
+        reporte.
+      </p>
+      <p>
+        Si nadie contesta, Ruta avisa a tu guardia y, si no confirma, le marca por teléfono
+        (<a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7">así funciona la llamada de guardia</a>).
+      </p>
+
+      <a href="/mx/ruta#como-funciona" class="inline-cta">
+        Conoce cómo funciona Ruta
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/>
+        </svg>
+      </a>
+
+      <h2>Lo que registra Ruta y lo que sigue en manos de tu equipo</h2>
+      <p>
+        Ruta se encarga del estatus de cada etapa y de su hora, y guarda las respuestas del operador en el
+        historial de cada carga. Todo tu equipo ve lo mismo: administradores, operaciones y, si quieres,
+        quien atiende al cliente con un perfil de solo lectura.
+      </p>
+      <p>
+        Lo demás sigue donde está. Ruta no captura pesos, montos, sellos ni números de pedimento. Las
+        órdenes entran por CSV porque Ruta no se conecta a tu TMS ni a tu ERP, ni lo reemplaza. Cuando el
+        cliente pregunta, tu equipo le contesta con el estatus del panel. Y Ruta habla uno a uno, no en
+        grupos de WhatsApp.
+      </p>
+
+      <h2>Se configura a cómo llevas hoy el estatus</h2>
+      <p>
+        Cada operación lleva el estatus a su manera, y Ruta se configura a la tuya: a quién se le pregunta
+        en cada viaje, si al operador o al tráfico de su línea; cada cuánto; en qué horario; cuándo se
+        avisa a la guardia y quién es el respaldo. Los flujos con etapas ya vienen armados para nacional,
+        importación y exportación terrestre, aéreo y marítimo, y sirven igual con flota propia,
+        subcontratada o mezclada, para brokers y para 3PL.
+      </p>
+      <p>
+        Lo que hoy hace tu equipo lo hace Ruta, y le sumamos nuestro protocolo. Empezamos con una llamada
+        de 20 minutos. Después te mandamos una propuesta con precio, que depende de cuántas operaciones
+        manejas al mes. Con la propuesta aceptada configuramos contigo y lo ensayamos en el
+        <a href="/mx/#tunel">túnel de viento</a>: un día o una noche simulada con tus reglas y las nuestras,
+        antes de que Ruta le escriba al primer operador. Más sobre el producto en <a href="/mx/ruta">Ruta</a>.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Agenda 20 minutos
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+
+      <!-- ── FAQ ── -->
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <p class="eyebrow" id="faq-heading" style="margin-bottom:32px;">Preguntas frecuentes</p>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Se pueden eliminar del todo los errores de captura en logística?</p>
+          <p class="faq-answer">Del todo, no. Lo que sí se quita es la recaptura del estatus: con Ruta, el estatus y la hora de cada etapa se registran desde la respuesta del operador y nadie los vuelve a teclear del chat a la hoja. Quedan los errores de origen y los de los datos de la orden. Para los primeros está el historial de cada carga y la corrección desde el panel; para los segundos, validar tu CSV antes de cargarlo.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué registra Ruta y qué no?</p>
+          <p class="faq-answer">Ruta registra el estatus de cada etapa del viaje con su hora, a partir de lo que contesta el operador, y guarda sus respuestas en el historial de la carga. Las órdenes activas entran desde un CSV que exportas de tu Excel. Ruta no captura pesos, montos, sellos ni números de pedimento: esos datos siguen en tu sistema.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿El operador tiene que instalar algo?</p>
+          <p class="faq-answer">No. Ruta le escribe uno a uno por WhatsApp o Telegram y él contesta con texto o nota de voz, como siempre. Si la línea transportista no deja que le escribas a su operador, Ruta le pregunta a su tráfico o su monitoreo. Si hay relevo, tu coordinador cambia el teléfono en el viaje y Ruta sigue con el nuevo operador.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué pasa si Ruta entiende mal una respuesta?</p>
+          <p class="faq-answer">La IA interpreta la respuesta, pero el estatus solo cambia si pasa una regla. Y cada cambio queda en el historial con su hora, así que tu coordinador ve qué se registró y cuándo, y corrige el estatus desde el panel.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Ruta se conecta a mi TMS o a mi ERP?</p>
+          <p class="faq-answer">No, y no reemplaza un TMS. Tus órdenes activas entran desde un archivo CSV y Ruta se ocupa de la conversación con el operador y del estatus de cada carga.</p>
+        </div>
+      </section>
+
+      <!-- ── AUTHOR BOX ── -->
+      <div class="author-box">
+        <p>
+          Escrito por el Equipo Quelion. Construimos productos de IA para equipos de logística.
+          Preguntas: <a href="mailto:hola@quelion.ai">hola@quelion.ai</a>
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Entérate antes que tu cliente.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos cuántos viajes mueves, cómo registras cada estatus y si Ruta te sirve. O escríbenos a hola@quelion.ai.
+      </p>
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
+        Agenda 20 minutos
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
+        <p class="footer-tagline">
+          Productos de IA para operaciones de logística.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Ruta</p>
+        <nav class="footer-links" aria-label="Enlaces de Ruta">
+          <a href="/mx/ruta#como-funciona" class="footer-link">Cómo funciona</a>
+          <a href="/mx/ruta#pricing"       class="footer-link">Cómo empezar</a>
+          <a href="/mx/ruta#faq"           class="footer-link">Preguntas</a>
+          <a href="/ruta-en"       class="footer-link" hreflang="en" lang="en">English</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
+          <a href="/mx/" class="footer-link">Quelion</a>
+          <a href="/blog/reducir-errores-captura-logistica" class="footer-link" hreflang="es-ES" lang="es-ES">España</a>
+          <a href="/mx/blog/" class="footer-link">Blog</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js?v=20260926"></script>
+</body>
+</html>

@@ -57,7 +57,7 @@
         "name": "¿Ruta reemplaza mi TMS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga. Tus órdenes activas entran desde un archivo CSV."
+          "text": "No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga."
         }
       },
       {
@@ -106,6 +106,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Sí, si lo activas. Ruta le escribe por WhatsApp a los contactos de tu cliente como el asistente de tu empresa: le avisa cuando la unidad sale, cruza, llega y se entrega, le manda un estatus con la última ubicación y la llegada estimada cada cierto tiempo (cada dos horas si no defines otro) y le da el botón «Ver envío» para ver su embarque en vivo. Con la cuenta espejo, la ubicación que ve sale del GPS («pasó Monterrey», «llegó a Querétaro») sin que el operador escriba nada. Si hay un retraso, le dice que la hora está por confirmarse y no le da una hora nueva que tu equipo no haya visto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué hace Ruta ya, y qué no?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ruta ya les escribe a tus choferes por WhatsApp o Telegram, sean de tu flota, de una línea subcontratada o permisionarios, y entiende lo que le contestan, también en notas de voz. Con la cuenta espejo de tu proveedor de GPS o la de la línea, le pregunta al chofer cuando algo no cuadra. Si un chofer no reporta, le insiste. Si sigue sin contestar, le avisa a tu equipo y, si nadie confirma el aviso, le marca a quien esté de guardia y después a su respaldo. Al chofer nunca le marca; solo le escribe. Si lo activas, le avisa a tu cliente cuando la unidad sale, cruza, llega y se entrega. Cada etapa tiene su horario, de día o 24/7, y tu coordinador sigue cada carga en un panel. Lo que no hace: no conversa en grupos de WhatsApp, solo uno a uno, y todavía no se conecta a tu TMS; mientras, tus órdenes activas entran desde tu Excel en CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector de Ruta."
         }
       },
       {
@@ -286,9 +294,9 @@
         </div>
 
         <div style="background:var(--surface-primary);padding:36px 32px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Carga de órdenes por CSV</h3>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Cuatro formas de dar de alta órdenes</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Tus órdenes activas entran desde tu hoja de Excel exportada a CSV.
+            Desde tu hoja de Excel exportada a CSV, con las columnas de tu plantilla; a mano en el panel; reenviando a tu dirección de Ruta el PDF de la orden de embarque, que Ruta lee y convierte en orden; o pidiéndoselo a Claude o ChatGPT con el conector de Ruta. Lo que Ruta no puede comprobar en un PDF queda pendiente hasta que tu coordinador lo confirma.
           </p>
         </div>
 
@@ -374,7 +382,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga. Tus órdenes activas entran desde un archivo CSV.
+            No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga.
           </p>
         </details>
 
@@ -435,6 +443,19 @@
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
             Sí, si lo activas. Ruta le escribe por WhatsApp a los contactos de tu cliente como el asistente de tu empresa: le avisa cuando la unidad sale, cruza, llega y se entrega, le manda un estatus con la última ubicación y la llegada estimada cada cierto tiempo (cada dos horas si no defines otro) y le da el botón «Ver envío» para ver su embarque en vivo. Con la cuenta espejo, la ubicación que ve sale del GPS («pasó Monterrey», «llegó a Querétaro») sin que el operador escriba nada. Si hay un retraso, le dice que la hora está por confirmarse y no le da una hora nueva que tu equipo no haya visto.
+          </p>
+        </details>
+
+        <details style="border-bottom:0.5px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Qué hace Ruta ya, y qué no?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 12px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Ruta ya les escribe a tus choferes por WhatsApp o Telegram, sean de tu flota, de una línea subcontratada o permisionarios, y entiende lo que le contestan, también en notas de voz. Con la cuenta espejo de tu proveedor de GPS o la de la línea, le pregunta al chofer cuando algo no cuadra. Si un chofer no reporta, le insiste. Si sigue sin contestar, le avisa a tu equipo y, si nadie confirma el aviso, le marca a quien esté de guardia y después a su respaldo. Al chofer nunca le marca; solo le escribe. Si lo activas, le avisa a tu cliente cuando la unidad sale, cruza, llega y se entrega. Cada etapa tiene su horario, de día o 24/7, y tu coordinador sigue cada carga en un panel.
+          </p>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Lo que no hace: no conversa en grupos de WhatsApp, solo uno a uno, y todavía no se conecta a tu TMS; mientras, tus órdenes activas entran desde tu Excel en CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector de Ruta.
           </p>
         </details>
 

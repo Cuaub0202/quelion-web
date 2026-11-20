@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   /* ── Ink scale (dark surfaces) ── */
-  --color-ink-0:   #000000;
-  --color-ink-50:  #050506;
-  --color-ink-100: #0A0A0C;
-  --color-ink-200: #121215;
-  --color-ink-300: #1C1C20;
-  --color-ink-400: #2A2A30;
-  --color-ink-500: #3A3A42;
-  --color-ink-600: #5A5A62;
-  --color-ink-700: #7A7A82;
-  --color-ink-800: #AEAEB6;
-  --color-ink-900: #FFFFFF;
+  --color-ink-0:   #0C0B0A;
+  --color-ink-50:  #110F0E;
+  --color-ink-100: #151412;
+  --color-ink-200: #1E1C19;
+  --color-ink-300: #2E2B26;
+  --color-ink-400: #4A463E;
+  --color-ink-500: #5E594F;
+  --color-ink-600: #8A857A;
+  --color-ink-700: #8A857A;
+  --color-ink-800: #B8B3A8;
+  --color-ink-900: #F2EFE8;
 
   /* ── Paper scale (light surfaces) ── */
   --color-paper-0:   #FFFFFF;
@@ -22,16 +22,16 @@
   --color-paper-300: #D1D1D4;
 
   /* ── Semantic ── */
-  --surface-primary:   #000000;
-  --surface-secondary: #050506;
-  --surface-elevated:  #0A0A0C;
-  --surface-inverse:   #FFFFFF;
-  --border-hairline:   #1C1C20;
-  --border-divider:    #2A2A30;
-  --text-primary:      #FFFFFF;
-  --text-secondary:    #AEAEB6;
-  --text-tertiary:     #7A7A82;
-  --text-quiet:        #7A7A82;
+  --surface-primary:   #0C0B0A;
+  --surface-secondary: #110F0E;
+  --surface-elevated:  #151412;
+  --surface-inverse:   #F2EFE8;
+  --border-hairline:   #2E2B26;
+  --border-divider:    #4A463E;
+  --text-primary:      #F2EFE8;
+  --text-secondary:    #B8B3A8;
+  --text-tertiary:     #8A857A;
+  --text-quiet:        #8A857A;
   --status-ok:         #6FCF97;
   --status-ok-bg:      rgba(111,207,151,0.08);
   --status-ok-line:    rgba(111,207,151,0.25);
@@ -39,7 +39,7 @@
   /* ── Typography ── */
   --font-sans:    Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   --font-mono:    'JetBrains Mono', ui-monospace, Menlo, 'SF Mono', Consolas, monospace;
-  --font-display: Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --font-display: 'Inter Tight', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 
   /* Weights */
   --weight-light:   300;
@@ -51,9 +51,9 @@
   --tracking-tight:   -0.04em;
   --tracking-snug:    -0.02em;
   --tracking-normal:  -0.005em;
-  --tracking-wide:     0.12em;
-  --tracking-wider:    0.18em;
-  --tracking-widest:   0.22em;
+  --tracking-wide:     0.06em;
+  --tracking-wider:    0.06em;
+  --tracking-widest:   0.06em;
 
   /* ── Type scale ── */
   --text-display-size: 120px; --text-display-lh: 1.05;
@@ -85,7 +85,7 @@
   --radius-xl:  12px;
 
   /* ── Borders ── */
-  --border-hairline-w: 0.5px;
+  --border-hairline-w: 1px;
   --border-thin-w:     1px;
   --border-regular-w:  1.5px;
 
@@ -93,7 +93,7 @@
   --shadow-card:  0 0 0 0.5px rgba(255,255,255,0.06) inset;
   --shadow-panel: 0 1px 0 rgba(255,255,255,0.04) inset,
                   0 0 0 0.5px rgba(255,255,255,0.06) inset;
-  --shadow-focus: 0 0 0 2px #000000, 0 0 0 3px #FFFFFF;
+  --shadow-focus: 0 0 0 2px #0C0B0A, 0 0 0 3px #F2EFE8;
 
   /* ── Motion ── */
   --dur-fast: 120ms;

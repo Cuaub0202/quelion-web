@@ -53,6 +53,7 @@ img[src*="quelion-logo"] { mix-blend-mode: lighten; }
   cursor: pointer;
   padding: 16px 13px;
   margin-right: -13px;
+  flex: none;
   color: var(--text-primary);
 }
 /* Dos líneas que pasan a aspa con el menú abierto. */
@@ -112,7 +113,7 @@ img[src*="quelion-logo"] { mix-blend-mode: lighten; }
   .nav-right { gap: 10px; }
   .nav-right .btn.nav-cta { padding: var(--sp-8) 10px; font-size: 13px; }
 }
-@media (max-width: 340px) {
+@media (max-width: 348px) {
   .nav-right .btn.nav-cta { display: none; }
 }
 

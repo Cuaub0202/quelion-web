@@ -57,7 +57,7 @@
         "name": "¿Un agente de IA sustituye a mi jefe de tráfico?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. El agente se queda con la comunicación repetitiva con los conductores (preguntar en qué etapa va cada carga, volver a escribir cuando no contestan y registrar cada cambio) para que tu jefe de tráfico se dedique a lo que pide criterio: resolver incidencias, hablar con el cliente y coordinar con el transitario cuando un contenedor se queda parado en la aduana."
+          "text": "No. El agente se queda con la comunicación repetitiva con los conductores (escribir cuando una carga lleva demasiado tiempo sin novedades, insistir cuando no contestan y registrar cada cambio) para que tu jefe de tráfico se dedique a lo que pide criterio: resolver incidencias, hablar con el cliente y coordinar con el transitario cuando un contenedor se queda parado en la aduana."
         }
       },
       {
@@ -73,7 +73,7 @@
         "name": "¿Funciona para tráfico internacional y cargas con aduana?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Un viaje a Francia o a Alemania por Irún o La Jonquera va sin aduana y se sigue por sus etapas de carga, tránsito, llegada, descarga y entrega. Donde sí hay aduana (un contenedor por el puerto de Valencia o de Algeciras, carga aérea, o un viaje al Reino Unido, Suiza o Marruecos), el flujo trae ese paso como etapa. El despacho y el levante te los confirma tu transitario; al conductor, Ruta le pregunta lo que él sí sabe. Cada cambio queda con su hora en el historial de la carga y desde el panel ajustas cuánto espera Ruta en cada etapa."
+          "text": "Sí. Un viaje a Francia o a Alemania por Irún o La Jonquera va por el flujo Nacional / UE, sin aduana: carga, tránsito, llegada, descarga y entrega. Los flujos marítimo y aéreo traen la aduana como etapa: la salida y la llegada del buque o del vuelo, la aduana de importación pendiente y despachada, y después la llegada a destino, la descarga y la entrega. El despacho y el levante los sabe tu transitario, y tu equipo marca esa etapa en el panel. Cada cambio queda con su hora en el historial de la carga y desde el panel ajustas cuánto espera Ruta en cada etapa."
         }
       },
       {
@@ -270,11 +270,12 @@
       </p>
       <ul>
         <li>
-          <strong>Seguimiento automático con los conductores.</strong> El agente pregunta al
-          conductor cómo va en cada etapa del viaje (carga, tránsito, llegada, descarga y entrega)
-          y procesa lo que contesta. Si el conductor escribe «ya he cargado en Castellón, salgo
-          para Zaragoza», la IA interpreta el mensaje, una regla fija decide si el cambio de etapa
-          procede y queda registrado con su hora, sin que nadie lo apunte a mano.
+          <strong>Seguimiento automático con los conductores.</strong> Cuando una carga lleva en
+          una etapa (carga, tránsito, llegada, descarga o entrega) más tiempo del que has fijado
+          sin novedades, el agente escribe al conductor y procesa lo que contesta. Si el conductor
+          escribe «ya he cargado en Castellón, salgo para Zaragoza», la IA interpreta el mensaje,
+          una regla fija decide si el cambio de etapa procede y queda registrado con su hora, sin
+          que nadie lo apunte a mano.
         </li>
         <li>
           <strong>Estado de cada carga al día.</strong> Cada cambio de etapa queda con su hora en
@@ -289,11 +290,11 @@
           llega y entrega, con un enlace para ver su carga.
         </li>
         <li>
-          <strong>Escalado al equipo de tráfico.</strong> Si un conductor no da novedades a tiempo
-          en una etapa, el agente le vuelve a escribir en el horario que definas, de día o las 24
-          horas. Si sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el
-          aviso, llama por teléfono a quien esté de guardia. Al conductor solo le escribe. Tú solo
-          entras cuando hay una incidencia.
+          <strong>Escalado al equipo de tráfico.</strong> Si el conductor no contesta, el agente
+          insiste las veces que definas, en el horario que marques, de día o las 24 horas. Si
+          sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el aviso, llama
+          por teléfono a quien esté de guardia y después a su respaldo. Al conductor solo le
+          escribe. Tú solo entras cuando hay una incidencia.
         </li>
       </ul>
 
@@ -376,11 +377,11 @@
         <div class="faq-item">
           <p class="faq-question">¿Un agente de IA sustituye a mi jefe de tráfico?</p>
           <p class="faq-answer">
-            No. El agente se queda con la comunicación repetitiva con los conductores (preguntar
-            en qué etapa va cada carga, volver a escribir cuando no contestan y registrar cada
-            cambio) para que tu jefe de tráfico se dedique a lo que pide criterio: resolver
-            incidencias, hablar con el cliente y coordinar con el transitario cuando un contenedor
-            se queda parado en la aduana.
+            No. El agente se queda con la comunicación repetitiva con los conductores (escribir
+            cuando una carga lleva demasiado tiempo sin novedades, insistir cuando no contestan y
+            registrar cada cambio) para que tu jefe de tráfico se dedique a lo que pide criterio:
+            resolver incidencias, hablar con el cliente y coordinar con el transitario cuando un
+            contenedor se queda parado en la aduana.
           </p>
         </div>
 
@@ -396,13 +397,13 @@
         <div class="faq-item">
           <p class="faq-question">¿Funciona para tráfico internacional y cargas con aduana?</p>
           <p class="faq-answer">
-            Sí. Un viaje a Francia o a Alemania por Irún o La Jonquera va sin aduana y se sigue
-            por sus etapas de carga, tránsito, llegada, descarga y entrega. Donde sí hay aduana
-            (un contenedor por el puerto de Valencia o de Algeciras, carga aérea, o un viaje al
-            Reino Unido, Suiza o Marruecos), el flujo trae ese paso como etapa. El despacho y el
-            levante te los confirma tu transitario; al conductor, Ruta le pregunta lo que él sí
-            sabe. Cada cambio queda con su hora en el historial de la carga y desde el panel
-            ajustas cuánto espera Ruta en cada etapa.
+            Sí. Un viaje a Francia o a Alemania por Irún o La Jonquera va por el flujo Nacional /
+            UE, sin aduana: carga, tránsito, llegada, descarga y entrega. Los flujos marítimo y
+            aéreo traen la aduana como etapa: la salida y la llegada del buque o del vuelo, la
+            aduana de importación pendiente y despachada, y después la llegada a destino, la
+            descarga y la entrega. El despacho y el levante los sabe tu transitario, y tu equipo
+            marca esa etapa en el panel. Cada cambio queda con su hora en el historial de la carga
+            y desde el panel ajustas cuánto espera Ruta en cada etapa.
           </p>
         </div>
 

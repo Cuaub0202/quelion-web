@@ -81,7 +81,7 @@
         "name": "¿Funciona para rutas nacionales además de importación y exportación?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. El flujo nacional, que también sirve para los viajes por la Unión Europea, va sin aduana: por ejemplo Valencia-Madrid, Sevilla-Bilbao o un viaje a Francia por Irún. Además hay flujos de importación y exportación, y para carga aérea y marítima."
+          "text": "Sí. El flujo Nacional / UE va sin aduana: por ejemplo Valencia-Madrid, Sevilla-Bilbao o un viaje a Francia por Irún. Para importación y exportación están los flujos marítimo y aéreo, que traen la aduana como etapa."
         }
       }
     ]
@@ -291,12 +291,12 @@
         de ahí, se encarga él.
       </p>
       <p>
-        El flujo básico es este: el agente escribe a cada conductor, uno a uno, y le pregunta cómo
-        va en cada etapa; si no da novedades a tiempo, le vuelve a escribir. El conductor contesta
-        con sus palabras, «ya he salido de fábrica» o «estoy en la terminal de Valencia, en cola
-        para retirar el contenedor», y la IA interpreta la respuesta. Una regla fija decide si el
-        cambio de etapa procede y lo registra con su hora, sin que nadie de tráfico tenga que leer
-        ni apuntar nada.
+        El flujo básico es este: el agente escribe a cada conductor, uno a uno, cuando su carga
+        lleva en una etapa más tiempo del que has fijado sin novedades; si no contesta, insiste
+        las veces que definas. El conductor contesta con sus palabras, «ya he salido de fábrica» o
+        «estoy en la terminal de Valencia, en cola para retirar el contenedor», y la IA interpreta
+        la respuesta. Una regla fija decide si el cambio de etapa procede y lo registra con su
+        hora, sin que nadie de tráfico tenga que leer ni apuntar nada.
       </p>
       <p>
         Esto funciona porque la IA entiende los mensajes en español tal como los escribe el
@@ -311,27 +311,27 @@
       </p>
       <ul>
         <li>
-          <strong>Nacional y Unión Europea por carretera, por ejemplo Valencia-Madrid,
-          Castellón-Zaragoza o un viaje a Francia por Irún:</strong> carga, tránsito, llegada,
-          descarga y entrega, y al final el comprobante, que es el albarán o el CMR firmado. Va
-          sin aduana.
+          <strong>Nacional / UE, por ejemplo Valencia-Madrid, Castellón-Zaragoza o un viaje a
+          Francia por Irún:</strong> carga, tránsito, llegada, descarga y entrega. Va sin aduana.
+          Tras la entrega, Ruta pide al conductor el comprobante: una foto o la firma de quien
+          recibe.
         </li>
         <li>
-          <strong>Importación por puerto, por ejemplo por Valencia:</strong> el despacho y el
-          levante te los confirma tu transitario, y tu equipo marca el estado desde el panel. Al
-          conductor, el agente le pregunta lo que él sí sabe: si tiene la orden de retirada, si
-          está en cola en la terminal y si ha salido con el contenedor, y después la llegada y la
-          descarga en el almacén del cliente.
+          <strong>Marítimo, por ejemplo una importación por el puerto de Valencia:</strong>
+          recogida y despacho de exportación en origen, salida y llegada del buque, puerto de
+          destino, aduana de importación pendiente y despachada, y después llegada a destino,
+          descarga y entrega. El despacho y el levante los sabe tu transitario, y tu equipo marca
+          esa etapa en el panel. Al conductor, Ruta lo sigue en su tramo con la misma regla de
+          tiempo sin novedades.
         </li>
         <li>
-          <strong>Exportación por puerto, por ejemplo por Algeciras o Barcelona:</strong> la misma
-          lógica en sentido contrario: la carga en el almacén del cliente, el tránsito y la
-          entrada del contenedor en la terminal. Aquí lo que aprieta es el cierre de la terminal
-          para ese buque, y en el historial ves a qué hora confirmó el conductor la entrada.
+          <strong>Exportación por puerto, por ejemplo por Algeciras o Barcelona:</strong> el mismo
+          flujo marítimo, que empieza en la recogida, el almacén de origen, el despacho de
+          exportación y el puerto de origen, antes de la salida del buque.
         </li>
         <li>
-          <strong>Carga aérea:</strong> flujo propio, con el paso por aduana y la salida y la
-          llegada en el aeropuerto.
+          <strong>Aéreo internacional:</strong> las mismas etapas con aeropuerto y vuelo en lugar
+          de puerto y buque, también con la aduana de importación pendiente y despachada.
         </li>
       </ul>
       <p>
@@ -369,9 +369,9 @@
       </p>
       <p>
         Cuando el cliente llama para preguntar «¿dónde está mi carga?», quien contesta abre el
-        panel y ve en qué etapa va: si el conductor ha retirado ya el contenedor, si ha salido de
-        la terminal o si el camión está en el muelle de destino. La respuesta sale del registro y
-        no de otra ronda de mensajes al conductor.
+        panel y ve en qué etapa va: si la aduana está despachada, si el camión ha llegado a
+        destino o si está ya en el muelle del cliente. La respuesta sale del registro y no de otra
+        ronda de mensajes al conductor.
       </p>
       <p>
         Si tienes plazos de entrega comprometidos con el cliente, el registro también sirve de
@@ -421,9 +421,9 @@
         <div class="faq-item">
           <p class="faq-question">¿Funciona para rutas nacionales además de importación y exportación?</p>
           <p class="faq-answer">
-            Sí. El flujo nacional, que también sirve para los viajes por la Unión Europea, va sin
-            aduana: por ejemplo Valencia-Madrid, Sevilla-Bilbao o un viaje a Francia por Irún.
-            Además hay flujos de importación y exportación, y para carga aérea y marítima.
+            Sí. El flujo Nacional / UE va sin aduana: por ejemplo Valencia-Madrid, Sevilla-Bilbao
+            o un viaje a Francia por Irún. Para importación y exportación están los flujos
+            marítimo y aéreo, que traen la aduana como etapa.
           </p>
         </div>
 

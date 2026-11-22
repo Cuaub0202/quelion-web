@@ -81,7 +81,7 @@
         "name": "¿Un agente de IA sirve para tráfico internacional y cargas con aduana?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Un viaje a Francia o a Alemania por Irún o La Jonquera va sin aduana y se sigue por sus etapas de carga, tránsito, llegada, descarga y entrega. Donde sí hay aduana (un contenedor por el puerto de Valencia o de Algeciras, carga aérea, o un viaje al Reino Unido, Suiza o Marruecos), el flujo trae ese paso como etapa. El despacho y el levante te los confirma tu transitario; al conductor, Ruta le pregunta lo que él sí sabe. Cada cambio queda con su hora en el historial de la carga y desde el panel ajustas cuánto espera Ruta en cada etapa."
+          "text": "Sí. Un viaje a Francia o a Alemania por Irún o La Jonquera va por el flujo Nacional / UE, sin aduana: carga, tránsito, llegada, descarga y entrega. Los flujos marítimo y aéreo traen la aduana como etapa: la salida y la llegada del buque o del vuelo, la aduana de importación pendiente y despachada, y después la llegada a destino, la descarga y la entrega. El despacho y el levante los sabe tu transitario, y tu equipo marca esa etapa en el panel. Cada cambio queda con su hora en el historial de la carga y desde el panel ajustas cuánto espera Ruta en cada etapa."
         }
       }
     ]
@@ -320,16 +320,16 @@
       <h2>Qué resuelve un agente de IA para el equipo de tráfico</h2>
       <p>
         Un agente de IA para el equipo de tráfico hace por ti el seguimiento que hoy te lleva
-        horas en WhatsApp: pregunta a cada conductor cómo va en cada etapa y registra cada hito,
-        sin cambiar la forma de trabajar de tus conductores.
+        horas en WhatsApp: escribe al conductor cuando una carga lleva demasiado tiempo sin
+        novedades y registra cada hito, sin cambiar la forma de trabajar de tus conductores.
       </p>
       <p>
         El agente trabaja en los canales que tus conductores ya usan, WhatsApp o Telegram. En
         lugar de que tráfico escriba uno por uno para saber si el camión ya ha cargado en
-        Castellón o si ha llegado al almacén de Zaragoza, el agente pregunta a cada conductor cómo
-        va en cada etapa y, si no da novedades en el tiempo que has fijado, le vuelve a escribir.
-        Recibe la respuesta tal como la escribe («ya he descargado, me han tenido una hora
-        esperando muelle») y actualiza el estado de la carga sin que nadie lo apunte.
+        Castellón o si ha llegado al almacén de Zaragoza, el agente escribe al conductor cuando la
+        carga pasa en una etapa más tiempo del que has fijado sin novedades y, si no contesta,
+        insiste. Recibe la respuesta tal como la escribe («ya he descargado, me han tenido una
+        hora esperando muelle») y actualiza el estado de la carga sin que nadie lo apunte.
       </p>
       <p>
         Para saber cuánto pesaría en tu operación, empieza por tu propio dato: cuántas horas al
@@ -396,7 +396,7 @@
             <tr>
               <td>Internacional, puerto y aduana</td>
               <td>Configurable</td>
-              <td>Viajes por la UE sin aduana; en puerto, aeropuerto y países terceros, el paso por aduana como etapa</td>
+              <td>Viajes nacionales y por la UE sin aduana; en marítimo y aéreo, la aduana como etapa</td>
             </tr>
           </tbody>
         </table>
@@ -441,14 +441,15 @@
         cliente. Son varios mensajes más por carga, todos a mano.
       </p>
       <p>
-        Con un agente de IA, el flujo ya trae sus etapas, con el paso por aduana donde lo hay, y
-        desde el panel ajustas cuánto espera en cada una. El despacho y el levante te los confirma
-        tu transitario, y tu equipo marca el estado desde el panel. Al conductor, Ruta le pregunta
-        lo que él sí sabe: si tiene la orden de retirada, si está en cola en la terminal, si ha
-        salido con el contenedor. La respuesta actualiza la etapa en el panel, con su hora, y tu
-        equipo contesta al cliente sin llamar al conductor. Si el conductor no contesta a tiempo,
-        el agente le vuelve a escribir y, si sigue sin respuesta, avisa a tu equipo de tráfico. Si
-        nadie confirma el aviso, llama por teléfono a quien esté de guardia.
+        Con un agente de IA, el flujo ya trae sus etapas y desde el panel ajustas cuánto espera en
+        cada una. El marítimo trae la salida y la llegada del buque, el puerto de destino, la
+        aduana pendiente y la aduana despachada, y después la llegada a destino, la descarga y la
+        entrega. El despacho y el levante los sabe tu transitario, y tu equipo marca esa etapa en
+        el panel. En su tramo, al conductor se le sigue con la misma regla: si pasa el tiempo
+        fijado sin novedades, Ruta le escribe e insiste; si sigue sin contestar, avisa a tu equipo
+        de tráfico y, si nadie confirma el aviso, llama por teléfono a quien esté de guardia y
+        después a su respaldo. Cada respuesta actualiza la etapa en el panel, con su hora, y tu
+        equipo contesta al cliente sin llamar al conductor.
       </p>
 
       <a href="/ruta#como-funciona" class="inline-cta">
@@ -491,13 +492,13 @@
         <div class="faq-item">
           <p class="faq-question">¿Un agente de IA sirve para tráfico internacional y cargas con aduana?</p>
           <p class="faq-answer">
-            Sí. Un viaje a Francia o a Alemania por Irún o La Jonquera va sin aduana y se sigue
-            por sus etapas de carga, tránsito, llegada, descarga y entrega. Donde sí hay aduana
-            (un contenedor por el puerto de Valencia o de Algeciras, carga aérea, o un viaje al
-            Reino Unido, Suiza o Marruecos), el flujo trae ese paso como etapa. El despacho y el
-            levante te los confirma tu transitario; al conductor, Ruta le pregunta lo que él sí
-            sabe. Cada cambio queda con su hora en el historial de la carga y desde el panel
-            ajustas cuánto espera Ruta en cada etapa.
+            Sí. Un viaje a Francia o a Alemania por Irún o La Jonquera va por el flujo Nacional /
+            UE, sin aduana: carga, tránsito, llegada, descarga y entrega. Los flujos marítimo y
+            aéreo traen la aduana como etapa: la salida y la llegada del buque o del vuelo, la
+            aduana de importación pendiente y despachada, y después la llegada a destino, la
+            descarga y la entrega. El despacho y el levante los sabe tu transitario, y tu equipo
+            marca esa etapa en el panel. Cada cambio queda con su hora en el historial de la carga
+            y desde el panel ajustas cuánto espera Ruta en cada etapa.
           </p>
         </div>
 

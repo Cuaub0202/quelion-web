@@ -57,7 +57,7 @@
         "name": "¿Se puede tener seguimiento de envíos en tiempo real sin GPS dedicado?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el conductor contesta. El seguimiento por WhatsApp no depende de un localizador instalado en el camión: el agente pregunta al conductor en qué etapa va y registra cada cambio con su hora. A muchas empresas de transporte y agencias les da la visibilidad que necesitan sin montar un TMS. Y con acceso de solo lectura al GPS del camión, Ruta también lee la posición y solo pregunta lo que el GPS no dice."
+          "text": "Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el conductor contesta. El seguimiento por WhatsApp no depende de un localizador instalado en el camión: el agente escribe al conductor cuando falta una novedad y registra cada cambio con su hora. A muchas empresas de transporte y agencias les da la visibilidad que necesitan sin montar un TMS. Y con acceso de solo lectura al GPS del camión, Ruta también lee la posición y solo pregunta lo que el GPS no dice."
         }
       },
       {
@@ -73,7 +73,7 @@
         "name": "¿El equipo de tráfico tiene que seguir llamando a los conductores para saber dónde están?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ya no para cada cambio de estado. Los flujos traen las etapas de cada tipo de operación y el agente pregunta al conductor en qué etapa va sin que nadie de tráfico tenga que llamar. Solo hay aviso cuando el conductor no confirma a tiempo y sigue sin contestar después de que el agente insista. Entonces tráfico interviene sabiendo cuál fue la última etapa confirmada y a qué hora."
+          "text": "Ya no para cada cambio de estado. Los flujos traen las etapas de cada tipo de operación y el agente escribe al conductor cuando una carga lleva demasiado tiempo sin novedades, sin que nadie de tráfico tenga que llamar. Solo hay aviso cuando el conductor no confirma a tiempo y sigue sin contestar después de que el agente insista. Entonces tráfico interviene sabiendo cuál fue la última etapa confirmada y a qué hora."
         }
       },
       {
@@ -292,10 +292,10 @@
       </p>
       <p>
         En importación y exportación por puerto se nota todavía más. El GPS te dice que el camión
-        está en la zona del puerto de Valencia o de Algeciras, pero no si el conductor tiene ya la
-        orden de retirada, si está en cola en la terminal o si ha salido con el contenedor. Eso lo
-        sabe el conductor y, para que llegue a tiempo, alguien tiene que preguntárselo. El
-        despacho y el levante los sabe tu transitario.
+        está en la zona del puerto de Valencia o de Algeciras, pero no si lleva dos horas
+        esperando en la terminal o si tiene ya el contenedor cargado. Eso lo sabe el conductor y,
+        para que llegue a tiempo, alguien tiene que preguntárselo. El despacho y el levante los
+        sabe tu transitario.
       </p>
       <p>
         Por eso Ruta junta las dos cosas. Con acceso de solo lectura al GPS del camión, sea de tu
@@ -306,18 +306,20 @@
 
       <h2>Hitos automáticos: el seguimiento que se hace solo</h2>
       <p>
-        En qué etapa va cada carga, que es lo que el GPS no da, se sabe preguntándolo por WhatsApp
-        en cada hito del viaje. En lugar de esperar a que el conductor escriba cuando se acuerde,
-        el agente le pregunta cómo va en cada etapa y, si no da novedades a tiempo, le vuelve a
-        escribir.
+        En qué etapa va cada carga, que es lo que el GPS no da, se sabe preguntándoselo al
+        conductor por WhatsApp. En lugar de esperar a que escriba cuando se acuerde, el agente le
+        escribe cuando la carga lleva en una etapa más tiempo del que has fijado sin novedades y,
+        si no contesta, insiste.
       </p>
       <p>
-        Pongamos un contenedor de importación que se recoge en el puerto de Valencia y se entrega
-        en una plataforma de Zaragoza. El despacho y el levante te los confirma tu transitario. Al
-        conductor, el agente le pregunta cómo va en cada etapa. Contesta como siempre, con un «ya
-        he cargado, salgo del puerto» o con una nota de voz, y el agente registra el cambio de
-        etapa con la hora en que lo comunica. Así quedan apuntadas la retirada del contenedor, la
-        salida del puerto, la llegada a Zaragoza, la descarga y la entrega.
+        Pongamos un contenedor de importación que llega al puerto de Valencia y se entrega en una
+        plataforma de Zaragoza. El flujo marítimo trae la llegada del buque, el puerto de destino,
+        la aduana pendiente y la aduana despachada; el despacho y el levante los sabe tu
+        transitario, y tu equipo marca esa etapa en el panel. A partir de ahí, si el conductor
+        pasa el tiempo fijado sin dar novedades, el agente le escribe. Contesta como siempre, con
+        un «ya tengo el contenedor, salgo del puerto» o con una nota de voz, y el agente registra
+        el cambio de etapa con la hora en que lo comunica. Así quedan apuntadas la llegada a
+        Zaragoza, la descarga y la entrega.
       </p>
       <p>
         Tu equipo de tráfico ve cada estado actualizarse en el panel en cuanto el conductor
@@ -362,10 +364,10 @@
       <ul>
         <li>
           <strong>Revisa las etapas por tipo de operación.</strong> En nacional y en viajes por la
-          Unión Europea: carga, tránsito, llegada, descarga y entrega, sin aduana. La aduana
-          aparece en puerto, en aeropuerto y con países terceros, como el Reino Unido, Suiza o
-          Marruecos; ahí el despacho y el levante te los confirma tu transitario. Lo que conviene
-          es tener claro por cuáles te pregunta más tu cliente.
+          Unión Europea: carga, tránsito, llegada, descarga y entrega, sin aduana. Los flujos
+          marítimo y aéreo traen además la aduana de importación, pendiente y despachada; el
+          despacho y el levante los sabe tu transitario. Lo que conviene es tener claro por cuáles
+          te pregunta más tu cliente.
         </li>
         <li>
           <strong>Fija la tolerancia de cada etapa.</strong> Si el camión sale de Valencia a las
@@ -396,7 +398,7 @@
         <div class="faq-item">
           <p class="faq-question">¿Se puede tener seguimiento de envíos en tiempo real sin GPS dedicado?</p>
           <p class="faq-answer">
-            Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el conductor contesta. El seguimiento por WhatsApp no depende de un localizador instalado en el camión: el agente pregunta al conductor en qué etapa va y registra cada cambio con su hora. A muchas empresas de transporte y agencias les da la visibilidad que necesitan sin montar un TMS. Y con acceso de solo lectura al GPS del camión, Ruta también lee la posición y solo pregunta lo que el GPS no dice.
+            Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el conductor contesta. El seguimiento por WhatsApp no depende de un localizador instalado en el camión: el agente escribe al conductor cuando falta una novedad y registra cada cambio con su hora. A muchas empresas de transporte y agencias les da la visibilidad que necesitan sin montar un TMS. Y con acceso de solo lectura al GPS del camión, Ruta también lee la posición y solo pregunta lo que el GPS no dice.
           </p>
         </div>
 
@@ -410,7 +412,7 @@
         <div class="faq-item">
           <p class="faq-question">¿El equipo de tráfico tiene que seguir llamando a los conductores para saber dónde están?</p>
           <p class="faq-answer">
-            Ya no para cada cambio de estado. Los flujos traen las etapas de cada tipo de operación y el agente pregunta al conductor en qué etapa va sin que nadie de tráfico tenga que llamar. Solo hay aviso cuando el conductor no confirma a tiempo y sigue sin contestar después de que el agente insista. Entonces tráfico interviene sabiendo cuál fue la última etapa confirmada y a qué hora.
+            Ya no para cada cambio de estado. Los flujos traen las etapas de cada tipo de operación y el agente escribe al conductor cuando una carga lleva demasiado tiempo sin novedades, sin que nadie de tráfico tenga que llamar. Solo hay aviso cuando el conductor no confirma a tiempo y sigue sin contestar después de que el agente insista. Entonces tráfico interviene sabiendo cuál fue la última etapa confirmada y a qué hora.
           </p>
         </div>
 

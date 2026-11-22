@@ -63,7 +63,7 @@
         "name": "¿Ruta reemplaza mi TMS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Ruta se ocupa de la conversación con el conductor y del estado de cada carga. Tus cargas en curso entran desde un archivo CSV."
+          "text": "No, trabaja a su lado. Ruta se ocupa de la conversación con el conductor y del estado de cada carga. Las cargas le llegan con la exportación en Excel de tu TMS, por correo con el PDF de la orden o desde tu IA con el conector."
         }
       },
       {
@@ -79,7 +79,7 @@
         "name": "¿Funciona en grupos de WhatsApp?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hoy no. Ruta conversa uno a uno con cada conductor."
+          "text": "Ruta conversa uno a uno con cada conductor, no en grupos: cada respuesta queda en el historial de su carga."
         }
       },
       {
@@ -100,10 +100,10 @@
       },
       {
         "@type": "Question",
-        "name": "¿Qué hace Ruta ya, y qué no?",
+        "name": "¿Qué hace Ruta hoy?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ruta ya escribe a tus conductores por WhatsApp o Telegram, sean de tu flota, subcontratados o autónomos, y entiende lo que contestan, también en notas de voz. Con acceso de solo lectura al GPS del camión, sea tuyo o del transportista, le pregunta al conductor cuando algo no cuadra. Si un conductor no da novedades, le insiste. Si sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el aviso, lo llama por teléfono. Al conductor solo le escribe. Cada etapa tiene su horario, de día o 24/7, y tu equipo sigue cada carga en un panel. Lo que no hace: no conversa en grupos de WhatsApp, solo uno a uno, y todavía no se conecta a tu TMS. Las cargas entran desde tu Excel, exportado a CSV."
+          "text": "Ruta escribe a tus conductores por WhatsApp o Telegram, sean de tu flota, subcontratados o autónomos, y entiende lo que contestan, también en notas de voz. Con acceso de solo lectura al GPS del camión, sea tuyo o del transportista, le pregunta al conductor cuando algo no cuadra. Si un conductor no da novedades, le insiste. Si sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el aviso, llama por teléfono a quien esté de guardia y después a su respaldo. Al conductor solo le escribe. Si lo activas, avisa a tu cliente por WhatsApp cuando el camión sale, llega y entrega, con un enlace para ver su carga. Cada etapa tiene su horario, de día o 24/7, y tu equipo sigue cada carga en un panel. Las cargas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de carga o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus cargas, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada conductor, no en grupos."
         }
       },
       {
@@ -111,7 +111,7 @@
         "name": "¿Cuánto cuesta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Depende de cuántas cargas mueves al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada. Cuando la aceptas, ensayamos tu operación en un día simulado, el túnel de viento, antes de que Ruta escriba a ningún conductor real."
+          "text": "Depende de cuántas cargas mueves al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada. Cuando la aceptas, ensayamos tu operación en un día simulado, el túnel de viento, antes de que Ruta escriba a ningún conductor real. La puesta en marcha se presupuesta aparte, en la misma propuesta."
         }
       }
     ]
@@ -262,7 +262,7 @@
           <div class="rp-chat-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
           <div class="rp-hilo">
             <p class="tu">¿Qué cargas van sin noticias esta mañana?</p>
-            <div class="ella"><span class="usa"><i></i>Consultado en Ruta</span><br>Una: <b>VLC-2041</b>, Cerámicas Levante, en tránsito. Sin noticias del conductor desde las 10:05. Ruta avisó a tráfico a las 12:20.</div>
+            <div class="ella"><span class="usa"><i></i>Consultado en Ruta</span><br>Una: <b>VLC-2041</b>, Castellón a Zaragoza, en tránsito. Sin noticias del conductor desde las 10:05. Ruta avisó a tráfico a las 12:20.</div>
             <p class="tu">Da de alta las 12 cargas de este Excel.</p>
             <div class="ella"><span class="usa"><i></i>Revisado en Ruta</span><br>Revisadas las 12: <b>entran 11</b>. La fila 7 no trae el teléfono del conductor. ¿Confirmo las 11?</div>
           </div>
@@ -315,9 +315,9 @@
         </div>
 
         <div style="background:var(--surface-primary);padding:36px 32px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Carga de órdenes por CSV</h3>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Cuatro formas de dar de alta cargas</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Tus cargas en curso entran desde tu hoja de Excel exportada a CSV.
+            Desde tu Excel o CSV, con las columnas de tu plantilla; a mano en el panel; reenviando a tu dirección de Ruta el PDF de la orden de carga, que Ruta lee y convierte en carga; o pidiéndoselo a Claude o ChatGPT con el conector de Ruta. Lo que Ruta no puede comprobar en un PDF queda pendiente hasta que tu equipo lo confirma.
           </p>
         </div>
 
@@ -345,7 +345,7 @@
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empiezas con tu Excel de siempre</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus cargas entran desde tu hoja de Excel exportada a CSV. Cada una queda con su estado y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus cargas entran desde tu Excel o CSV. Cada una queda con su estado y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
         </div>
       </div>
     </div>
@@ -399,7 +399,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            No. Ruta se ocupa de la conversación con el conductor y del estado de cada carga. Tus cargas en curso entran desde un archivo CSV.
+            No, trabaja a su lado. Ruta se ocupa de la conversación con el conductor y del estado de cada carga. Las cargas le llegan con la exportación en Excel de tu TMS, por correo con el PDF de la orden o desde tu IA con el conector.
           </p>
         </details>
 
@@ -419,7 +419,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Hoy no. Ruta conversa uno a uno con cada conductor.
+            Ruta conversa uno a uno con cada conductor, no en grupos: cada respuesta queda en el historial de su carga.
           </p>
         </details>
 
@@ -445,14 +445,14 @@
 
         <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
-            ¿Qué hace Ruta ya, y qué no?
+            ¿Qué hace Ruta hoy?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 12px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Ruta ya escribe a tus conductores por WhatsApp o Telegram, sean de tu flota, subcontratados o autónomos, y entiende lo que contestan, también en notas de voz. Con acceso de solo lectura al GPS del camión, sea tuyo o del transportista, le pregunta al conductor cuando algo no cuadra. Si un conductor no da novedades, le insiste. Si sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el aviso, lo llama por teléfono. Al conductor solo le escribe. Cada etapa tiene su horario, de día o 24/7, y tu equipo sigue cada carga en un panel.
+            Ruta escribe a tus conductores por WhatsApp o Telegram, sean de tu flota, subcontratados o autónomos, y entiende lo que contestan, también en notas de voz. Con acceso de solo lectura al GPS del camión, sea tuyo o del transportista, le pregunta al conductor cuando algo no cuadra. Si un conductor no da novedades, le insiste. Si sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el aviso, llama por teléfono a quien esté de guardia y después a su respaldo. Al conductor solo le escribe. Si lo activas, avisa a tu cliente por WhatsApp cuando el camión sale, llega y entrega, con un enlace para ver su carga. Cada etapa tiene su horario, de día o 24/7, y tu equipo sigue cada carga en un panel.
           </p>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Lo que no hace: no conversa en grupos de WhatsApp, solo uno a uno, y todavía no se conecta a tu TMS. Las cargas entran desde tu Excel, exportado a CSV.
+            Las cargas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de carga o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus cargas, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada conductor, no en grupos.
           </p>
         </details>
 
@@ -462,7 +462,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Depende de cuántas cargas mueves al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada. Cuando la aceptas, ensayamos tu operación en un día simulado, el túnel de viento, antes de que Ruta escriba a ningún conductor real.
+            Depende de cuántas cargas mueves al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada. Cuando la aceptas, ensayamos tu operación en un día simulado, el túnel de viento, antes de que Ruta escriba a ningún conductor real. La puesta en marcha se presupuesta aparte, en la misma propuesta.
           </p>
         </details>
 

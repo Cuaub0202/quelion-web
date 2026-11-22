@@ -63,7 +63,7 @@
         "name": "¿Ruta reemplaza mi TMS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga. Tus órdenes activas entran desde un archivo CSV."
+          "text": "No, trabaja a su lado. Ruta se ocupa de la conversación con el chofer y del estatus de cada embarque. Los embarques le llegan con la exportación en Excel de tu TMS, por correo con el PDF de la orden o desde tu IA con el conector."
         }
       },
       {
@@ -79,7 +79,7 @@
         "name": "¿Funciona en grupos de WhatsApp?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hoy no. Ruta conversa uno a uno con cada chofer."
+          "text": "Ruta conversa uno a uno con cada chofer, no en grupos: cada respuesta queda en el historial de su embarque."
         }
       },
       {
@@ -116,10 +116,18 @@
       },
       {
         "@type": "Question",
+        "name": "¿Qué hace Ruta hoy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ruta les escribe a tus choferes por WhatsApp o Telegram, sean de tu flota, de una línea subcontratada o permisionarios, y entiende lo que le contestan, también en notas de voz. Con la cuenta espejo de tu proveedor de GPS o la de la línea, le pregunta al chofer cuando algo no cuadra. Si un chofer no reporta, le insiste. Si sigue sin contestar, le avisa a tu equipo y, si nadie confirma el aviso, le marca a quien esté de guardia y después a su respaldo. Al chofer nunca le marca; solo le escribe. Si lo activas, le avisa a tu cliente cuando la unidad sale, cruza, llega y se entrega. Cada etapa tiene su horario, de día o 24/7, y tu coordinador sigue cada carga en un panel. Tus órdenes activas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus embarques, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada chofer, no en grupos."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "¿Cuánto cuesta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada."
+          "text": "Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada. La implementación se cotiza aparte, en la misma propuesta."
         }
       }
     ]
@@ -269,7 +277,7 @@
           <div class="rp-chat-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
           <div class="rp-hilo">
             <p class="tu">¿Qué viajes van sin noticias esta mañana?</p>
-            <div class="ella"><span class="usa"><i></i>Consultado en Ruta</span><br>Uno: <b>NLD-2041</b>, Aceros del Bajío, en tránsito. Sin noticias del chofer desde las 10:05. Ruta le avisó a tu coordinador a las 12:20.</div>
+            <div class="ella"><span class="usa"><i></i>Consultado en Ruta</span><br>Uno: <b>NLD-2041</b>, Nuevo Laredo a Monterrey, en tránsito. Sin noticias del chofer desde las 10:05. Ruta le avisó a tu coordinador a las 12:20.</div>
             <p class="tu">Da de alta los 12 embarques de este Excel.</p>
             <div class="ella"><span class="usa"><i></i>Revisado en Ruta</span><br>Revisados los 12: <b>entran 11</b>. La fila 7 no trae el teléfono del chofer. ¿Confirmo los 11?</div>
           </div>
@@ -322,9 +330,9 @@
         </div>
 
         <div style="background:var(--surface-primary);padding:36px 32px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Carga de órdenes por CSV</h3>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Cuatro formas de dar de alta órdenes</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Tus órdenes activas entran desde tu hoja de Excel exportada a CSV.
+            Desde tu Excel o CSV, con las columnas de tu plantilla; a mano en el panel; reenviando a tu dirección de Ruta el PDF de la orden de embarque, que Ruta lee y convierte en orden; o pidiéndoselo a Claude o ChatGPT con el conector de Ruta. Lo que Ruta no puede comprobar en un PDF queda pendiente hasta que tu coordinador lo confirma.
           </p>
         </div>
 
@@ -352,7 +360,7 @@
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empiezas con tu Excel de siempre</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus embarques entran desde tu hoja de Excel exportada a CSV. Cada uno queda con su estatus y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus embarques entran desde tu Excel o CSV. Cada uno queda con su estatus y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
         </div>
       </div>
       <p class="text-secondary" style="max-width:640px;font-size:13px;line-height:1.7;margin:0;">Sobre cubrir la noche: <a href="/mx/blog/monitoreo-nocturno-embarques-24-7" style="color:var(--text-primary);text-decoration:underline;">monitoreo nocturno de embarques</a>. Sobre la cuenta espejo: <a href="/mx/blog/seguimiento-gps-transportista" style="color:var(--text-primary);text-decoration:underline;">seguimiento con la cuenta espejo del transportista</a>. Con flota propia y subcontratada: <a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7" style="color:var(--text-primary);text-decoration:underline;">seguimiento 24/7 de operadores por WhatsApp</a>.</p>
@@ -407,7 +415,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga. Tus órdenes activas entran desde un archivo CSV.
+            No, trabaja a su lado. Ruta se ocupa de la conversación con el chofer y del estatus de cada embarque. Los embarques le llegan con la exportación en Excel de tu TMS, por correo con el PDF de la orden o desde tu IA con el conector.
           </p>
         </details>
 
@@ -427,7 +435,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Hoy no. Ruta conversa uno a uno con cada chofer.
+            Ruta conversa uno a uno con cada chofer, no en grupos: cada respuesta queda en el historial de su embarque.
           </p>
         </details>
 
@@ -471,13 +479,26 @@
           </p>
         </details>
 
+        <details style="border-bottom:0.5px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Qué hace Ruta hoy?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 12px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Ruta les escribe a tus choferes por WhatsApp o Telegram, sean de tu flota, de una línea subcontratada o permisionarios, y entiende lo que le contestan, también en notas de voz. Con la cuenta espejo de tu proveedor de GPS o la de la línea, le pregunta al chofer cuando algo no cuadra. Si un chofer no reporta, le insiste. Si sigue sin contestar, le avisa a tu equipo y, si nadie confirma el aviso, le marca a quien esté de guardia y después a su respaldo. Al chofer nunca le marca; solo le escribe. Si lo activas, le avisa a tu cliente cuando la unidad sale, cruza, llega y se entrega. Cada etapa tiene su horario, de día o 24/7, y tu coordinador sigue cada carga en un panel.
+          </p>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Tus órdenes activas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus embarques, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada chofer, no en grupos.
+          </p>
+        </details>
+
         <details>
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Cuánto cuesta?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada.
+            Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada. La implementación se cotiza aparte, en la misma propuesta.
           </p>
         </details>
 

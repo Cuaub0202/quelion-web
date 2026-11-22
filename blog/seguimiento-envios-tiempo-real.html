@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seguimiento de envíos en tiempo real sin TMS | Quelion Blog</title>
-  <meta name="description" content="¿Seguimiento de envíos en tiempo real sin pagar un TMS? Cómo los checkpoints por WhatsApp mantienen al día el estado de cada carga para coordinadores en México y LATAM.">
+  <meta name="description" content="Seguimiento de cargas y envíos en tiempo real sin pagar un TMS: las preguntas al conductor por WhatsApp mantienen al día el estado de cada carga.">
   <link rel="canonical" href="https://quelion.ai/blog/seguimiento-envios-tiempo-real">
   <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/seguimiento-envios-tiempo-real">
   <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/seguimiento-envios-tiempo-real">
@@ -15,8 +15,9 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Quelion. Entérate antes que tu cliente.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:description" content="¿Seguimiento de envíos en tiempo real sin pagar un TMS? Cómo los checkpoints por WhatsApp mantienen al día el estado de cada carga para coordinadores en México y LATAM.">
+  <meta property="og:description" content="Seguimiento de cargas y envíos en tiempo real sin pagar un TMS: las preguntas al conductor por WhatsApp mantienen al día el estado de cada carga.">
   <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_ES">
   <meta property="og:url" content="https://quelion.ai/blog/seguimiento-envios-tiempo-real">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
@@ -31,7 +32,8 @@
     "@type": "BlogPosting",
     "headline": "Seguimiento de envíos en tiempo real sin TMS",
     "datePublished": "2026-06-01",
-    "dateModified": "2026-09-26",
+    "dateModified": "2026-11-22",
+    "inLanguage": "es-ES",
     "author": {
       "@type": "Organization",
       "name": "Equipo Quelion",
@@ -42,7 +44,7 @@
       "name": "Quelion",
       "url": "https://quelion.ai"
     },
-    "description": "¿Seguimiento de envíos en tiempo real sin pagar un TMS? Cómo los checkpoints por WhatsApp mantienen al día el estado de cada carga para coordinadores en México y LATAM."
+    "description": "Seguimiento de cargas y envíos en tiempo real sin pagar un TMS: las preguntas al conductor por WhatsApp mantienen al día el estado de cada carga."
   }
   </script>
   <script type="application/ld+json">
@@ -55,7 +57,7 @@
         "name": "¿Se puede tener seguimiento de envíos en tiempo real sin GPS dedicado?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el chofer contesta. El seguimiento basado en checkpoints por WhatsApp no es rastreo continuo y no depende de un dispositivo GPS instalado en el camión. El agente le pregunta al chofer en qué etapa va y registra cada cambio con su hora. Para muchas operaciones de flete en México, este modelo da visibilidad operativa real sin la infraestructura de un TMS. Y si el transportista te da una cuenta espejo, Ruta también lee la posición del GPS y solo pregunta lo que el GPS no dice."
+          "text": "Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el conductor contesta. El seguimiento por WhatsApp no depende de un localizador instalado en el camión: el agente escribe al conductor cuando falta una novedad y registra cada cambio con su hora. A muchas empresas de transporte y agencias les da la visibilidad que necesitan sin montar un TMS. Y con acceso de solo lectura al GPS del camión, Ruta también lee la posición y solo pregunta lo que el GPS no dice."
         }
       },
       {
@@ -63,15 +65,15 @@
         "name": "¿Cómo funciona el seguimiento por WhatsApp sin una app adicional?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El agente de IA opera dentro de WhatsApp Business API. El chofer no descarga nada — recibe mensajes como cualquier contacto. El agente hace la pregunta, el chofer responde en lenguaje natural, y el sistema extrae la información y la registra automáticamente. El coordinador ve el estado actualizado en el panel en cuanto el chofer contesta, sin haber intervenido en la comunicación."
+          "text": "El agente de IA funciona dentro de WhatsApp. El conductor no descarga nada: recibe mensajes como los de cualquier contacto. El agente pregunta, el conductor contesta con sus palabras, por texto o nota de voz, y el sistema registra la etapa con su hora. Tu equipo de tráfico ve el estado actualizado en el panel en cuanto el conductor contesta, sin haber intervenido en la conversación."
         }
       },
       {
         "@type": "Question",
-        "name": "¿El coordinador sigue necesitando llamar a los choferes para saber dónde están?",
+        "name": "¿El equipo de tráfico tiene que seguir llamando a los conductores para saber dónde están?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ya no para cada actualización de estado. Los flujos ya traen las etapas de cada tipo de operación, y el agente le pregunta al chofer en qué etapa va sin que el coordinador tenga que marcar. Solo se genera una alerta activa cuando el chofer no confirma a tiempo y sigue sin contestar después de que el agente le vuelve a escribir. Ahí el coordinador interviene con contexto, no a ciegas."
+          "text": "Ya no para cada cambio de estado. Los flujos traen las etapas de cada tipo de operación y el agente escribe al conductor cuando una carga lleva demasiado tiempo sin novedades, sin que nadie de tráfico tenga que llamar. Solo hay aviso cuando el conductor no confirma a tiempo y sigue sin contestar después de que el agente insista. Entonces tráfico interviene sabiendo cuál fue la última etapa confirmada y a qué hora."
         }
       },
       {
@@ -79,7 +81,7 @@
         "name": "¿Cómo recibe el cliente final el seguimiento?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A través de tu equipo. Con el estado de cada carga al día en el panel, tu equipo le responde al cliente sin tener que preguntarle al chofer. Para el coordinador, esto reduce las llamadas al chofer y la presión de reconstruir cada actualización a mano."
+          "text": "Por dos vías. Con el estado de cada carga al día en el panel, tu equipo contesta al cliente sin preguntar al conductor. Y si lo activas, Ruta avisa a tu cliente por WhatsApp cuando el camión sale, llega y entrega, con un enlace para ver su carga. Tráfico deja de llamar al conductor cada vez que el cliente repite la misma pregunta."
         }
       }
     ]
@@ -246,151 +248,145 @@
     <div class="post-wrap">
 
       <p>
-        Son las 3:40 de la tarde y el cliente escribe por tercera vez: "¿Ya llegó el camión?"
-        El coordinador abre el chat de WhatsApp del chofer, ve que el último mensaje fue a las 11:00
-        diciendo "ya casi en Monterrey", y tiene que decidir en cinco segundos qué responderle al
-        cliente. No tiene certeza. Llama al chofer, no contesta. Manda un mensaje, espera. Mientras
-        tanto el cliente queda en visto. <strong>Ese ciclo (cliente pregunta, coordinador busca,
-        coordinador llama, coordinador espera, coordinador responde) se repite varias veces al día
-        en muchas operaciones de flete medianas en México. ¿Cuántas veces al día pasa en la tuya?</strong> El problema
-        no es la falta de tecnología cara: es que el seguimiento depende de que alguien lo haga
-        manualmente. Y eso no escala, no es confiable, y agota al coordinador.
+        Son las 15:40 y el cliente escribe por tercera vez: «¿Ha llegado ya el camión?». El jefe
+        de tráfico abre el chat de WhatsApp del conductor, ve que el último mensaje es de las
+        11:00, «ya casi en Zaragoza», y tiene que decidir en cinco segundos qué le contesta al
+        cliente. No lo sabe. Llama al conductor y no lo coge. Le escribe y espera. Mientras tanto,
+        el cliente sigue sin respuesta. <strong>Ese ciclo (el cliente pregunta, tráfico busca,
+        llama, espera y contesta) se repite varias veces al día en muchas empresas de transporte y
+        agencias medianas. ¿Cuántas veces al día pasa en la tuya?</strong> El seguimiento depende
+        de que alguien lo haga a mano: se cae en cuanto esa persona está con otra cosa y desgasta
+        al equipo de tráfico.
       </p>
 
       <h2>Por qué el seguimiento en tiempo real parece inalcanzable sin un TMS</h2>
       <p>
-        La promesa del seguimiento en tiempo real existe desde hace años en el mercado logístico.
-        Los TMS de nivel enterprise lo ofrecen, con paneles de control, dashboards en mapa y
-        actualizaciones automáticas. El problema es que esos sistemas cuestan caro cada mes,
-        requieren integración con ERP, y exigen que los choferes instalen una app
-        y la usen de forma consistente. Para una operación mediana en
-        México, esa ecuación no cierra ni en costo ni en adopción.
+        Los TMS grandes llevan años ofreciendo seguimiento en tiempo real, con el mapa en pantalla
+        y actualizaciones automáticas. Tienen una cuota mensual alta, piden integración con el ERP
+        y exigen que cada conductor instale una app y la use siempre. Para una empresa mediana,
+        que además subcontrata parte de los viajes a autónomos y a otros transportistas, ni sale el
+        coste ni los conductores usan la app.
       </p>
       <p>
-        El resultado es que la mayoría de los coordinadores de flete en México operan con Excel,
-        WhatsApp y llamadas telefónicas. El seguimiento "en tiempo real" es en realidad seguimiento
-        en tiempo de respuesta del chofer — que puede ser inmediato o puede ser tres horas después,
-        dependiendo de si el conductor está en zona de cobertura, si tiene cargado el teléfono,
-        o si recuerda mandar la actualización que le pidieron al salir.
+        Por eso muchos equipos de tráfico trabajan con Excel, WhatsApp y teléfono. El «tiempo
+        real» es en la práctica el tiempo que tarda el conductor en contestar: un minuto o tres
+        horas, según tenga cobertura, le quede batería en el móvil o se acuerde de mandar el
+        mensaje que le pidieron al salir.
       </p>
       <p>
-        La brecha entre lo que el cliente espera y lo que el coordinador puede ofrecer no es un
-        problema de inversión — es un problema de modelo operativo. El seguimiento no puede
-        depender de la iniciativa humana en ambos extremos de la cadena.
+        El seguimiento no puede depender de que alguien se acuerde, ni en la oficina ni en la
+        cabina.
       </p>
 
-      <h2>El GPS solo no basta: visibilidad sin contexto operativo</h2>
+      <h2>El GPS solo no basta: dice dónde está el camión, no cómo va la carga</h2>
       <p>
-        Cuando las operaciones logísticas quieren resolver el problema de seguimiento sin un TMS
-        completo, lo primero que consideran es instalar rastreadores GPS en las unidades. Es una
-        solución razonable en papel: la posición del camión está disponible en todo momento, sin
-        depender de que el chofer mande mensajes.
+        Cuando una empresa quiere resolver el seguimiento sin un TMS completo, lo primero que mira
+        es el localizador GPS de los camiones. Sobre el papel es razonable: la posición está
+        disponible en todo momento, sin depender de que el conductor mande mensajes.
       </p>
       <p>
-        En la práctica, el GPS resuelve una parte del problema y crea otra. Saber que el camión
-        está en la carretera 85D a la altura de Linares no es lo mismo que saber si el embarque
-        va bien. El coordinador ve un punto en un mapa pero no sabe si el chofer tiene algún
-        problema, si hubo incidencia en báscula, si el pedimento fue rechazado en la garita, o
-        si la entrega en destino tuvo alguna observación. La posición geográfica es un dato —
-        el contexto operativo es otro.
+        En la práctica, el GPS resuelve una parte. Saber que el camión está en la A-23 a la altura
+        de Teruel no dice si la carga va bien. Tráfico ve un punto en el mapa, pero no sabe si ha
+        habido una incidencia en la carga, si el conductor lleva dos horas esperando muelle o si
+        la entrega se ha firmado con reservas en el albarán. La posición no cuenta nada de eso.
       </p>
       <p>
-        Para operaciones cross-border que cruzan por Laredo, El Paso o Nogales, la limitación
-        es más evidente todavía: el GPS puede decirte que el camión está en la zona del cruce
-        fronterizo, pero no puede decirte en qué etapa del proceso aduanal está, cuánto lleva
-        esperando, ni si el agente aduanal ya tiene el pedimento liberado. Esa información sólo viene del chofer — y para que llegue de forma confiable, tiene que haber un
-        proceso que la solicite activamente.
+        En importación y exportación por puerto se nota todavía más. El GPS te dice que el camión
+        está en la zona del puerto de Valencia o de Algeciras, pero no si lleva dos horas
+        esperando en la terminal o si tiene ya el contenedor cargado. Eso lo sabe el conductor y,
+        para que llegue a tiempo, alguien tiene que preguntárselo. El despacho y el levante los
+        sabe tu transitario.
       </p>
       <p>
-        Por eso Ruta junta las dos cosas. Si el transportista te da una cuenta espejo, Ruta lee la
-        posición de la unidad, detecta paradas y desvíos, y solo le pregunta al chofer o al transportista
-        lo que el GPS no dice. Sin cuenta espejo, el seguimiento sale de los checkpoints por WhatsApp.
+        Por eso Ruta junta las dos cosas. Con acceso de solo lectura al GPS del camión, sea de tu
+        flota o de un transportista, Ruta lee la posición, detecta paradas y desvíos y solo
+        pregunta al conductor lo que el GPS no dice. Sin GPS, el estado de cada carga sale de lo
+        que contesta el conductor por WhatsApp.
       </p>
 
-      <h2>Checkpoints automáticos: el seguimiento que se hace solo</h2>
+      <h2>Hitos automáticos: el seguimiento que se hace solo</h2>
       <p>
-        El enfoque que te dice en qué etapa va cada carga, cosa que el GPS no da, es el
-        modelo de checkpoints automáticos por WhatsApp. En lugar de esperar a que el chofer mande
-        una actualización cuando se le ocurra, el agente toma la iniciativa: le pregunta al
-        chofer en qué etapa va y, si no reporta a tiempo, le vuelve a escribir.
+        En qué etapa va cada carga, que es lo que el GPS no da, se sabe preguntándoselo al
+        conductor por WhatsApp. En lugar de esperar a que escriba cuando se acuerde, el agente le
+        escribe cuando la carga lleva en una etapa más tiempo del que has fijado sin novedades y,
+        si no contesta, insiste.
       </p>
       <p>
-        El flujo funciona así para una ruta Monterrey–Laredo–Dallas: cuando la carga lleva en una
-        etapa más tiempo del que ajustaste sin noticias, el agente le escribe al chofer para pedirle
-        el estado. El chofer responde en lenguaje natural (por ejemplo, "ya salí") y el agente
-        registra el cambio de etapa con la hora en que lo reporta. Así quedan registradas etapas
-        como la salida, la emisión del pedimento, la llegada a la frontera, el cruce y la liberación
-        en la aduana de Estados Unidos. La entrega la confirma tu equipo en el panel.
+        Pongamos un contenedor de importación que llega al puerto de Valencia y se entrega en una
+        plataforma de Zaragoza. El flujo marítimo trae la llegada del buque, el puerto de destino,
+        la aduana pendiente y la aduana despachada; el despacho y el levante los sabe tu
+        transitario, y tu equipo marca esa etapa en el panel. A partir de ahí, si el conductor
+        pasa el tiempo fijado sin dar novedades, el agente le escribe. Contesta como siempre, con
+        un «ya tengo el contenedor, salgo del puerto» o con una nota de voz, y el agente registra
+        el cambio de etapa con la hora en que lo comunica. Así quedan apuntadas la llegada a
+        Zaragoza, la descarga y la entrega.
       </p>
       <p>
-        El coordinador ve cada uno de esos estados actualizarse en el panel en cuanto el chofer
-        contesta, sin haber llamado ni enviado un solo mensaje. Si el chofer no responde a un
-        checkpoint en el tiempo configurado, el agente le vuelve a escribir y, si sigue sin
-        contestar, avisa al coordinador. Así el coordinador interviene con información concreta
-        sobre cuál fue la última etapa confirmada y a qué hora. Eso es
-        radicalmente distinto a llamar a ciegas sin saber en qué parte del recorrido puede
-        estar el problema.
+        Tu equipo de tráfico ve cada estado actualizarse en el panel en cuanto el conductor
+        contesta, sin haber llamado ni escrito. Si el conductor no contesta en el tiempo
+        configurado para esa etapa, el agente insiste y, si sigue sin respuesta, avisa a tráfico.
+        Si nadie confirma el aviso, Ruta llama por teléfono a quien esté de guardia. Quien lo
+        atiende sabe cuál fue la última etapa confirmada y a qué hora, en lugar de llamar a ciegas
+        sin saber en qué tramo del viaje puede estar el problema.
       </p>
 
-      <h2>Lo que puede ver el coordinador y lo que puede responderle al cliente</h2>
+      <h2>Lo que ve tu equipo de tráfico y lo que puede contestar al cliente</h2>
       <p>
-        Con checkpoints automáticos, el coordinador tiene en todo momento una línea de estados
-        por embarque: qué checkpoints ya pasaron, cuál está pendiente, cuánto tiempo lleva cada
-        etapa. No hay que reconstruir la secuencia desde el historial de WhatsApp ni llamar a
-        averiguar. Ese panel de control no requiere un TMS: es la suma de los registros que el
-        agente fue creando en cada confirmación del chofer.
+        Con este seguimiento, tráfico tiene en todo momento la línea de estados de cada carga: qué
+        hitos se han cumplido, cuál está pendiente y cuánto lleva en cada etapa. No hay que
+        reconstruir la secuencia con el historial de WhatsApp ni llamar para averiguarlo. Ese
+        panel no necesita un TMS: es la suma de lo que el agente ha ido registrando con cada
+        respuesta del conductor.
       </p>
       <p>
-        Del lado del cliente, con el estado de cada carga al día en el panel, tu equipo le responde
-        sin tener que preguntarle al chofer. Las preguntas que hace cualquier importador o
-        destinatario sobre un embarque cross-border, como si ya cruzó o si ya llegó a destino, tienen
-        respuesta en el historial de la carga, con la hora de cada cambio. Y el coordinador ya no
-        tiene que llamarle al chofer cada vez que el cliente repite la misma pregunta.
+        De cara al cliente, con el estado de cada carga al día en el panel, tu equipo contesta sin
+        preguntar al conductor. Lo que quiere saber cualquier importador o destinatario, si el
+        contenedor ha salido ya del puerto o si el camión ha llegado, está en el historial de la
+        carga con la hora de cada cambio. Y si lo activas, Ruta avisa a tu cliente por WhatsApp
+        cuando el camión sale, llega y entrega, con un enlace para ver su carga.
       </p>
       <p>
-        Este modelo no elimina la supervisión del coordinador — la transforma. En lugar de
-        operar en modo reactivo (el cliente pregunta, el coordinador busca), el coordinador
-        opera en modo de excepción: solo interviene cuando hay una alerta, y el panel ya
-        le muestra el contexto necesario para actuar rápido.
+        Tu equipo de tráfico sigue supervisando, pero de otra manera. Deja de ir a remolque de
+        cada pregunta del cliente y trabaja por excepción: interviene cuando hay un aviso, y el
+        panel ya le da el contexto para actuar rápido.
       </p>
 
       <a href="/ruta#como-funciona" class="inline-cta">
         Conoce cómo funciona Ruta
       </a>
 
-      <h2>Cómo preparar el seguimiento por checkpoints en tu operación</h2>
+      <h2>Cómo preparar el seguimiento por hitos en tu operación</h2>
       <p>
-        Implementar seguimiento por checkpoints no requiere integrarse con un TMS: en Ruta, las
-        órdenes activas entran desde un archivo CSV y lo configuramos contigo. Estos son los
-        puntos a revisar para una operación de flete mediana en México o cross-border:
+        Para empezar no hace falta integrarse con un TMS: en Ruta, las cargas activas entran desde
+        tu Excel o CSV y lo configuramos contigo. Esto es lo que conviene revisar en una empresa
+        de transporte o una agencia mediana, con tráfico nacional o con importación y exportación:
       </p>
       <ul>
         <li>
-          <strong>Revisa las etapas por tipo de ruta.</strong> Para ruta nacional: recogida,
-          tránsito, llegada a la ciudad destino y entrega. Para cross-border se suman la llegada a
-          la frontera, el cruce, la liberación de aduana y el pedimento emitido. Los flujos de Ruta
-          ya traen las etapas de frontera y aduana; lo que conviene es tener claro por cuáles te
-          pregunta más tu cliente.
+          <strong>Revisa las etapas por tipo de operación.</strong> En nacional y en viajes por la
+          Unión Europea: carga, tránsito, llegada, descarga y entrega, sin aduana. Los flujos
+          marítimo y aéreo traen además la aduana de importación, pendiente y despachada; el
+          despacho y el levante los sabe tu transitario. Lo que conviene es tener claro por cuáles
+          te pregunta más tu cliente.
         </li>
         <li>
-          <strong>Establece tiempos de tolerancia por checkpoint.</strong> Si el camión sale de
-          Monterrey a las 7:00, la confirmación de llegada a la frontera debería llegar a media
-          mañana. Desde el panel ajustas cuánto espera el agente en cada etapa; si no llega
-          confirmación en ese plazo, le vuelve a escribir al chofer y, si sigue sin contestar,
-          avisa al coordinador. Sin tiempos de
-          tolerancia, no hay alertas útiles — solo acumulación de datos.
+          <strong>Fija la tolerancia de cada etapa.</strong> Si el camión sale de Valencia a las
+          7:00 hacia Zaragoza, la llegada debería confirmarse antes de mediodía. Desde el panel
+          ajustas cuánto espera el agente en cada etapa; si en ese plazo no hay confirmación,
+          vuelve a escribir al conductor y, si sigue sin contestar, avisa a tráfico. Sin
+          tolerancias, los avisos llegan tarde o no llegan.
         </li>
         <li>
-          <strong>Decide cómo le vas a responder al cliente.</strong> No todas las etapas internas
-          le interesan al cliente. Con el estado de cada carga al día en el panel, tu equipo le
-          responde sin tener que preguntarle al chofer. En general, salida, cruce fronterizo (si aplica)
-          y entrega son las etapas por las que más preguntan.
+          <strong>Decide qué le cuentas al cliente.</strong> No todas las etapas internas le
+          interesan. Lo que más preguntan es la salida, la aduana si la hay y la entrega. Con el
+          estado de cada carga al día en el panel, tu equipo contesta sin preguntar al conductor,
+          y puedes activar los avisos de Ruta al cliente por WhatsApp.
         </li>
         <li>
-          <strong>Acuerda cómo se reportan las incidencias.</strong> Un chofer que tiene una falla mecánica
-          a las 2:00 am no va a abrir el sistema de TMS para reportarlo. Sí va a mandar un mensaje
-          de WhatsApp. Conviene acordar con tus choferes a quién le escriben en ese caso y quién
-          del equipo lo atiende fuera de horario, para que el reporte no se quede sin leer hasta
+          <strong>Acuerda cómo se comunican las incidencias.</strong> Un conductor con una avería
+          a las 2:00 no va a abrir un TMS para dar parte. Sí va a mandar un WhatsApp o una nota de
+          voz. Conviene acordar con tus conductores a quién escriben en ese caso y quién del
+          equipo está de guardia fuera de horario, para que el mensaje no se quede sin leer hasta
           la mañana.
         </li>
       </ul>
@@ -402,43 +398,28 @@
         <div class="faq-item">
           <p class="faq-question">¿Se puede tener seguimiento de envíos en tiempo real sin GPS dedicado?</p>
           <p class="faq-answer">
-            Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el chofer contesta.
-            El seguimiento basado en checkpoints por WhatsApp no es rastreo continuo y no depende de
-            un dispositivo GPS instalado en el camión. El agente le pregunta al chofer en qué etapa
-            va y registra cada cambio con su hora. Para muchas operaciones de flete en México, este
-            modelo da visibilidad operativa real sin la infraestructura de un TMS. Y si el transportista te da una cuenta espejo, Ruta también lee la posición del GPS y solo pregunta lo que el GPS no dice.
+            Sí, si por tiempo real entiendes que el estado se actualiza en cuanto el conductor contesta. El seguimiento por WhatsApp no depende de un localizador instalado en el camión: el agente escribe al conductor cuando falta una novedad y registra cada cambio con su hora. A muchas empresas de transporte y agencias les da la visibilidad que necesitan sin montar un TMS. Y con acceso de solo lectura al GPS del camión, Ruta también lee la posición y solo pregunta lo que el GPS no dice.
           </p>
         </div>
 
         <div class="faq-item">
           <p class="faq-question">¿Cómo funciona el seguimiento por WhatsApp sin una app adicional?</p>
           <p class="faq-answer">
-            El agente de IA opera dentro de WhatsApp Business API. El chofer no descarga nada —
-            recibe mensajes como cualquier contacto. El agente hace la pregunta, el chofer responde
-            en lenguaje natural, y el sistema extrae la información y la registra automáticamente.
-            El coordinador ve el estado actualizado en el panel en cuanto el chofer contesta, sin
-            haber intervenido en la comunicación.
+            El agente de IA funciona dentro de WhatsApp. El conductor no descarga nada: recibe mensajes como los de cualquier contacto. El agente pregunta, el conductor contesta con sus palabras, por texto o nota de voz, y el sistema registra la etapa con su hora. Tu equipo de tráfico ve el estado actualizado en el panel en cuanto el conductor contesta, sin haber intervenido en la conversación.
           </p>
         </div>
 
         <div class="faq-item">
-          <p class="faq-question">¿El coordinador sigue necesitando llamar a los choferes para saber dónde están?</p>
+          <p class="faq-question">¿El equipo de tráfico tiene que seguir llamando a los conductores para saber dónde están?</p>
           <p class="faq-answer">
-            Ya no para cada actualización de estado. Los flujos ya traen las etapas de cada tipo de
-            operación, y el agente le pregunta al chofer en qué etapa va sin que el coordinador
-            tenga que marcar. Solo se genera una alerta activa cuando el chofer no confirma a tiempo
-            y sigue sin contestar después de que el agente le vuelve a escribir. Ahí el coordinador
-            interviene con contexto, no a ciegas.
+            Ya no para cada cambio de estado. Los flujos traen las etapas de cada tipo de operación y el agente escribe al conductor cuando una carga lleva demasiado tiempo sin novedades, sin que nadie de tráfico tenga que llamar. Solo hay aviso cuando el conductor no confirma a tiempo y sigue sin contestar después de que el agente insista. Entonces tráfico interviene sabiendo cuál fue la última etapa confirmada y a qué hora.
           </p>
         </div>
 
         <div class="faq-item">
           <p class="faq-question">¿Cómo recibe el cliente final el seguimiento?</p>
           <p class="faq-answer">
-            A través de tu equipo. Con el estado de
-            cada carga al día en el panel, tu equipo le responde al cliente sin tener que preguntarle
-            al chofer. Para el coordinador, esto reduce las llamadas al chofer y la presión de
-            reconstruir cada actualización a mano.
+            Por dos vías. Con el estado de cada carga al día en el panel, tu equipo contesta al cliente sin preguntar al conductor. Y si lo activas, Ruta avisa a tu cliente por WhatsApp cuando el camión sale, llega y entrega, con un enlace para ver su carga. Tráfico deja de llamar al conductor cada vez que el cliente repite la misma pregunta.
           </p>
         </div>
 
@@ -459,7 +440,7 @@
   <section class="cta-section" aria-labelledby="cta-heading">
     <div class="cta-inner">
       <p class="eyebrow">Hablemos</p>
-      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo das seguimiento hoy.</h2>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo haces hoy el seguimiento de tus conductores.</h2>
       <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
         En 20 minutos vemos cuántas cargas mueves, por qué canal y si Ruta te sirve. Escríbenos a hola@quelion.ai.
       </p>

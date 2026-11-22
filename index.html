@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500&family=JetBrains+Mono:wght@400&display=swap">
-  <link rel="stylesheet" href="/assets/css/home.css?v=20261125">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20261126">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,7 +63,7 @@
     <button class="menu" id="menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil"><svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true"><line x1="0" y1="1" x2="20" y2="1" stroke="currentColor" stroke-width="1"/><line x1="0" y1="9" x2="20" y2="9" stroke="currentColor" stroke-width="1"/></svg></button>
   </div>
   <nav class="movil" id="menu-movil" aria-label="Menú">
-    <a class="m" href="/ruta">Ruta</a><a class="m" href="#ia">Conéctalo a tu IA</a><a class="m" href="#tunel">Túnel de viento</a><a class="m" href="/blog">Blog</a><a class="m" href="https://ruta.quelion.ai">Iniciar sesión</a>
+    <a class="m" href="/ruta">Ruta</a><a class="m" href="#ia">Conéctalo a tu IA</a><a class="m" href="#tunel">Túnel de viento</a><a class="m" href="/blog">Blog</a><a class="m" href="https://ruta.quelion.ai">Iniciar sesión</a><a class="m" href="/mx/" hreflang="es-MX" lang="es-MX">México</a>
   </nav>
 </header>
 
@@ -188,10 +188,13 @@ const nav = document.getElementById('nav');
 const alBajar = () => nav.classList.toggle('baja', window.scrollY > 48);
 addEventListener('scroll', alBajar, { passive: true }); alBajar();
 const menu = document.getElementById('menu');
+document.documentElement.classList.add('js');
 const abrir = (v) => { nav.classList.toggle('abierta', v); menu.setAttribute('aria-expanded', v ? 'true' : 'false'); menu.setAttribute('aria-label', v ? 'Cerrar menú' : 'Abrir menú'); };
 menu.addEventListener('click', () => abrir(!nav.classList.contains('abierta')));
 document.getElementById('menu-movil').addEventListener('click', (e) => { if (e.target.closest('a')) abrir(false); });
-addEventListener('keydown', (e) => { if (e.key === 'Escape') abrir(false); });
+addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('abierta')) { abrir(false); menu.focus(); } });
+document.addEventListener('click', (e) => { if (nav.classList.contains('abierta') && !nav.contains(e.target)) abrir(false); });
+matchMedia('(min-width: 901px)').addEventListener('change', (e) => { if (e.matches) abrir(false); });
 
 /* Mapa vivo: proyección equirrectangular de las ciudades reales; rutas en línea fina; cargas como puntos. */
 (() => {

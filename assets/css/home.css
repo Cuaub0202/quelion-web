@@ -39,7 +39,10 @@ p{text-wrap:pretty}
 .btn:hover{background:#fff}
 .btn:active{transform:scale(.98)}
 .btn.sm{height:34px;padding:0 14px;font-size:14px;white-space:nowrap;flex-shrink:0}
-.menu{display:none;background:none;border:0;color:var(--text);padding:12px 8px;margin-right:-8px;cursor:pointer}
+.menu{display:none;background:none;border:0;color:var(--text);padding:17px 12px;margin-right:-12px;cursor:pointer}
+.menu line{transform-box:view-box;transform-origin:center;transition:transform 200ms var(--ease)}
+.nav.abierta .menu line:first-child{transform:translateY(4px) rotate(45deg)}
+.nav.abierta .menu line:last-child{transform:translateY(-4px) rotate(-45deg)}
 .movil{display:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--text);outline-offset:3px;border-radius:2px}
 .link{font-size:var(--fs-2);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:var(--text-3);transition:text-decoration-color 160ms var(--ease)}
@@ -144,9 +147,9 @@ footer .fin{grid-column:1/-1;margin-top:var(--s5)}
   .entra .sec-h{position:static}
   .nav ul,.nav .login{display:none}
   .nav .wrap{gap:12px}
-  .menu{display:block}
+  .js .menu{display:block}
   .nav.abierta{background:var(--ink);border-bottom-color:var(--line)}
-  .nav.abierta .movil{display:block;position:absolute;left:0;right:0;top:64px;background:var(--ink);border-bottom:1px solid var(--line);padding:0 var(--m) var(--s2)}
+  .nav.abierta .movil{display:block;position:absolute;left:0;right:0;top:64px;max-height:calc(100vh - 64px);max-height:calc(100svh - 64px);overflow-y:auto;background:var(--ink);border-bottom:1px solid var(--line);padding:0 var(--m) var(--s2)}
   .movil a{display:block;padding:15px 0;border-top:1px solid var(--line);font-size:var(--fs-body);text-decoration:none;color:var(--text)}
   .hero::after{background:linear-gradient(0deg,var(--ink) 36%,rgb(12 11 10/.5) 60%,rgb(12 11 10/0) 100%)}
   .hero .wrap{padding-top:440px}

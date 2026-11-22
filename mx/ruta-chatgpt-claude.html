@@ -47,7 +47,7 @@
     "Ver un viaje: Estatus, alerta, citas, contacto con el teléfono enmascarado, pausa, notas y los últimos mensajes.",
     "Saber qué pasó: La historia completa de un viaje: mensajes con el chofer y la línea, cambios de estatus, avisos, guardias y llamadas al coordinador.",
     "Cifras del periodo: Embarques creados y entregados, entregas antes o después de la cita, respuesta de los operadores, avisos y llamadas, por cliente.",
-    "Dar de alta: Un embarque, o un lote entero (las filas de un Excel): el lote se revisa entero y te dice cuáles entran y por qué no los otros. Al dar de alta un embarque, Ruta empieza a escribirle al chofer por WhatsApp según las reglas de tu cuenta.",
+    "Dar de alta: Un embarque, o un lote entero (las filas de un Excel): el lote se revisa entero y te dice cuáles entran y por qué no los otros. Al dar de alta un embarque, Ruta empieza a escribirle al chofer por WhatsApp o Telegram según las reglas de tu cuenta.",
     "Corregir: Las citas de carga y de entrega, la referencia de tu cliente o el teléfono del chofer. También puede agregar una nota interna sin tocar las de tu equipo.",
     "Pausar y reanudar: El seguimiento de un viaje, con motivo y fecha de fin, hasta 72 horas. Una pausa puesta desde el chat se reanuda desde el chat; la del panel, en el panel."
   ],
@@ -108,7 +108,7 @@
       "name": "¿Qué pasa si la IA entiende mal lo que le pido?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Antes de cambiar algo te muestra lo que va a hacer. Un lote se valida con las mismas reglas que el panel y te dice qué filas no entran. Cada llamada queda registrada y el coordinador corrige desde el panel."
+        "text": "Claude y ChatGPT te piden permiso antes de cada acción que cambia algo, y puedes pedirle que te muestre antes cómo quedará. Un lote se valida con las mismas reglas que el panel y te dice qué filas no entran. Cada llamada queda registrada y el coordinador corrige desde el panel."
       }
     },
     {
@@ -203,7 +203,7 @@
         <div>
           <p style="font-size:13px;color:var(--text-tertiary);margin:0 0 18px;"><a href="/mx/ruta" style="color:var(--text-tertiary);">Ruta</a> · Conector para Claude y ChatGPT</p>
           <h1 id="hero-headline" style="max-width:560px;margin-bottom:24px;">Pregúntale a tu IA cómo van tus viajes.</h1>
-          <p style="font-size:17px;color:var(--text-secondary);max-width:560px;line-height:1.65;margin:0 0 32px;">Ruta da seguimiento a cada viaje con los choferes por WhatsApp y, si nadie confirma un aviso, le llama al coordinador. Con su conector, Claude o ChatGPT te dicen qué viajes van mal antes de que llame tu cliente, dan de alta embarques y corrigen citas. Antes de usar una acción que cambia algo en Ruta, te piden permiso.</p>
+          <p style="font-size:17px;color:var(--text-secondary);max-width:560px;line-height:1.65;margin:0 0 32px;">Ruta da seguimiento a cada viaje con los choferes por WhatsApp y, si nadie confirma un aviso, le llama al coordinador de guardia y después a su respaldo. Con su conector, Claude o ChatGPT te dicen qué viajes van mal antes de que llame tu cliente, dan de alta embarques y corrigen citas. Antes de usar una acción que cambia algo en Ruta, te piden permiso, salvo que elijas permitir siempre.</p>
           <div class="hero-ctas">
             <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary" style="padding:14px 28px;font-size:15px;">Agenda 20 minutos</a>
             <a href="#preguntar" class="btn btn-ghost" style="font-size:15px;color:var(--text-secondary);">Qué le puedes pedir</a>
@@ -255,7 +255,7 @@
         </div>
         <div style="background:var(--surface-primary);padding:28px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:8px;">Dar de alta</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;line-height:1.7;">Un embarque, o un lote entero (las filas de un Excel): el lote se revisa entero y te dice cuáles entran y por qué no los otros. Al dar de alta un embarque, Ruta empieza a escribirle al chofer por WhatsApp según las reglas de tu cuenta.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;line-height:1.7;">Un embarque, o un lote entero (las filas de un Excel): el lote se revisa entero y te dice cuáles entran y por qué no los otros. Al dar de alta un embarque, Ruta empieza a escribirle al chofer por WhatsApp o Telegram según las reglas de tu cuenta.</p>
           <p style="font-size:13px;color:var(--text-primary);margin:0;line-height:1.6;">«Da de alta los 12 embarques de este Excel.»</p>
         </div>
         <div style="background:var(--surface-primary);padding:28px 28px;">
@@ -289,7 +289,7 @@
         </div>
         <div style="background:var(--surface-primary);padding:28px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:8px;">Teléfonos enmascarados</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Los teléfonos de las fichas van ocultos salvo el prefijo del país y los cuatro últimos dígitos. En los mensajes se ocultan los teléfonos de tus contactos, los escritos con + o junto a «cel» o «WhatsApp», y los correos.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Los teléfonos de las fichas van ocultos salvo el prefijo del país y los cuatro últimos dígitos. En los mensajes se ocultan los teléfonos de tus contactos, los escritos con + o junto a «cel» o «WhatsApp», y los correos. Un número escrito sin + y sin ninguna de esas palabras puede pasar sin ocultar.</p>
         </div>
         <div style="background:var(--surface-primary);padding:28px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:8px;">Cada consulta queda registrada</h3>
@@ -383,7 +383,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Antes de cambiar algo te muestra lo que va a hacer. Un lote se valida con las mismas reglas que el panel y te dice qué filas no entran. Cada llamada queda registrada y el coordinador corrige desde el panel.
+            Claude y ChatGPT te piden permiso antes de cada acción que cambia algo, y puedes pedirle que te muestre antes cómo quedará. Un lote se valida con las mismas reglas que el panel y te dice qué filas no entran. Cada llamada queda registrada y el coordinador corrige desde el panel.
           </p>
         </details>
         <details style="border-bottom:1px solid var(--border-hairline);">

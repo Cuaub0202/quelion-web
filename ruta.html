@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css?v=20261121">
   <link rel="stylesheet" href="assets/css/global.css?v=20261121">
   <link rel="stylesheet" href="assets/css/components.css?v=20261121">
+  <link rel="stylesheet" href="assets/css/ruta.css?v=20261121">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -149,7 +150,8 @@
   </nav>
 
   <!-- ── HERO ── -->
-  <section class="hero" aria-labelledby="hero-headline">
+  <section class="hero rp-hero" aria-labelledby="hero-headline">
+    <canvas id="mapa" aria-hidden="true"></canvas>
     <div class="hero-content">
       <p class="eyebrow hero-eyebrow">Ruta · de Quelion</p>
       <h1 id="hero-headline" class="hero-headline">
@@ -169,6 +171,10 @@
         </a>
       </div>
       <p class="hero-contact">Sin app para tus conductores &nbsp;·&nbsp; o escríbenos a hola@quelion.ai</p>
+    </div>
+    <div class="rp-ficha" id="ficha" aria-hidden="true">
+      <div class="h"><span>Aviso a tráfico</span><span>12:20</span></div>
+      <b>VLC-2041, Castellón a Zaragoza</b><span class="q">Sin noticias del conductor desde las 10:05.</span>
     </div>
   </section>
 
@@ -317,6 +323,33 @@
     </div>
   </section>
 
+  <!-- ── CONECTOR PARA TU IA ── -->
+  <section id="ia" class="rp-ia" aria-labelledby="ia-heading">
+    <div class="section-inner">
+      <div class="rp-ia-grid">
+        <div>
+          <h2 id="ia-heading">Ruta se conecta a la IA que ya usas.</h2>
+          <p class="rp-lede">Con el conector de Ruta, Claude o ChatGPT consultan tu operación y actúan sobre ella con tu permiso. Y si tu IA ya tiene conectados tu correo, tu calendario o tus hojas, puedes pedirle cosas que lo cruzan todo: «da de alta las cargas del correo de esta mañana y dime cuáles llegan después de su cita».</p>
+          <ul class="rp-puede">
+            <li><b>Consultar</b>Qué cargas van en riesgo, el historial de una y las cifras del periodo.</li>
+            <li><b>Dar de alta</b>Una carga o un lote entero, con las mismas validaciones que el panel.</li>
+            <li><b>Corregir</b>Las citas de carga y de entrega, o el teléfono del conductor.</li>
+            <li><b>Pausar y reanudar</b>El seguimiento de una carga, con motivo y fecha de fin.</li>
+          </ul>
+        </div>
+        <div class="rp-chat" role="img" aria-label="Conversación de ejemplo con una IA conectada a Ruta.">
+          <div class="rp-chat-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
+          <div class="rp-hilo">
+            <p class="tu">¿Qué cargas van sin noticias esta mañana?</p>
+            <div class="ella"><span class="usa"><i></i>Ruta, resumen de la operación</span><br>Una: <b>VLC-2041</b>, Cerámicas Levante, en tránsito. Sin noticias del conductor desde las 10:05. Ruta avisó a tráfico a las 12:20.</div>
+            <p class="tu">Da de alta las 12 cargas de este Excel.</p>
+            <div class="ella"><span class="usa"><i></i>Ruta, revisar un lote</span><br>Revisadas las 12: <b>entran 11</b>. La fila 7 no trae el teléfono del conductor. ¿Confirmo las 11?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CÓMO EMPEZAR (ancla #pricing conservada para enlaces antiguos) ── -->
   <section id="pricing" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="pricing-heading">
     <div class="section-inner">
@@ -335,7 +368,7 @@
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <p style="font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--text-tertiary);font-variant-numeric:tabular-nums;margin-bottom:12px;">03</p>
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Con la propuesta aceptada, lo configuramos contigo</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus reglas, tus contactos y tus tiempos de seguimiento, ensayados en el túnel de viento antes de que Ruta escriba al primer conductor. La puesta en marcha va incluida.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus reglas, tus contactos y tus tiempos de seguimiento, ensayados en el túnel de viento antes de que Ruta escriba al primer conductor. La puesta en marcha se cotiza aparte, en la misma propuesta.</p>
         </div>
       </div>
       <p style="font-size:13px;color:var(--text-quiet);margin-top:20px;">¿Prefieres escribir? <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" style="color:var(--text-primary);text-decoration:underline;">hola@quelion.ai</a></p>
@@ -483,6 +516,8 @@
     </div>
   </footer>
 
+  <script>window.MAPA_REGION = {"lat0":40,"C":{"Madrid":[40.42,-3.7],"Barcelona":[41.39,2.17],"Valencia":[39.47,-0.38],"Sevilla":[37.39,-5.98],"Zaragoza":[41.65,-0.89],"Bilbao":[43.26,-2.93],"Málaga":[36.72,-4.42],"Murcia":[37.99,-1.13],"Valladolid":[41.65,-4.72],"A Coruña":[43.36,-8.41],"Lisboa":[38.72,-9.14],"Oporto":[41.15,-8.61],"Castellón":[39.99,-0.04],"Lleida":[41.62,0.62],"Vigo":[42.24,-8.72],"Alicante":[38.35,-0.48],"Burgos":[42.34,-3.7],"Irún":[43.34,-1.79],"Algeciras":[36.13,-5.45],"Badajoz":[38.88,-6.97]},"R":[["Madrid","Barcelona"],["Madrid","Valencia"],["Madrid","Sevilla"],["Madrid","Bilbao"],["Madrid","Lisboa"],["Madrid","Valladolid"],["Barcelona","Valencia"],["Valencia","Murcia"],["Murcia","Málaga"],["Sevilla","Málaga"],["Zaragoza","Barcelona"],["Zaragoza","Madrid"],["Castellón","Zaragoza"],["Lleida","Barcelona"],["Bilbao","Valladolid"],["Bilbao","Irún"],["Burgos","Irún"],["Valladolid","A Coruña"],["Vigo","Oporto"],["Oporto","Lisboa"],["Sevilla","Badajoz"],["Badajoz","Lisboa"],["Algeciras","Sevilla"],["Alicante","Madrid"],["Burgos","Madrid"],["Zaragoza","Bilbao"]],"rotulos":["Madrid","Barcelona","Valencia","Sevilla","Zaragoza","Bilbao","Málaga","Lisboa","A Coruña","Castellón"],"rotulosMovil":["Madrid","Barcelona","Valencia","Sevilla","Bilbao","Lisboa","A Coruña","Castellón","Málaga"],"foco":["Castellón","Zaragoza"]};</script>
+  <script src="assets/js/mapa-vivo.js?v=20261121" defer></script>
   <script src="assets/js/main.js?v=20260926"></script>
 </body>
 </html>

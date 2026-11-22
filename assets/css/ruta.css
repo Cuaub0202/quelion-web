@@ -1,0 +1,58 @@
+/* Página de Ruta: mapa vivo en la cabecera y sección del conector. Solo tokens de tokens.css. */
+
+/* ── Cabecera con mapa ── */
+.rp-hero { overflow: hidden; }
+.rp-hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.rp-hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--surface-primary) 0%, rgb(12 11 10 / .88) 32%, rgb(12 11 10 / 0) 62%),
+    linear-gradient(0deg, var(--surface-primary) 0%, rgb(12 11 10 / 0) 24%);
+}
+.rp-hero .hero-headline { font-weight: var(--weight-medium); }
+.rp-ficha {
+  position: absolute; z-index: 3; right: var(--grid-margin); bottom: var(--sp-64); width: 310px;
+  background: rgb(21 20 18 / .86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-divider); border-radius: var(--radius-sm);
+  padding: 14px 16px; font-size: 14px; line-height: 1.4;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 500ms cubic-bezier(.2,0,0,1), transform 500ms cubic-bezier(.2,0,0,1);
+}
+.rp-ficha.ver { opacity: 1; transform: none; }
+.rp-ficha .h { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-tertiary); margin-bottom: 4px; font-variant-numeric: tabular-nums; }
+.rp-ficha b { font-weight: var(--weight-medium); display: block; }
+.rp-ficha .q { display: block; color: var(--text-secondary); }
+
+/* ── Conector para la IA ── */
+.rp-ia { border-top: 1px solid var(--border-hairline); padding: 80px 0; background: var(--surface-secondary); }
+.rp-ia-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-64); align-items: start; }
+.section-inner > .rp-ia-grid { max-width: none; }
+.rp-ia h2 { max-width: 14em; margin-bottom: var(--sp-24); }
+.rp-ia .rp-lede { font-size: 15px; line-height: 1.7; color: var(--text-secondary); max-width: 34em; margin: 0; }
+.rp-puede { list-style: none; padding: 0; margin: var(--sp-48) 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-16) var(--sp-40); font-size: 14px; line-height: 1.6; color: var(--text-secondary); }
+.rp-puede li { padding-top: var(--sp-16); border-top: 1px solid var(--border-hairline); }
+.rp-puede b { display: block; color: var(--text-primary); font-weight: var(--weight-medium); }
+.rp-chat { background: var(--surface-elevated); border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); overflow: hidden; }
+.rp-chat-cab { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-16); padding: 14px 20px; border-bottom: 1px solid var(--border-hairline); }
+.rp-chat-cab b { font-size: 14px; font-weight: var(--weight-semibold); letter-spacing: -0.01em; }
+.rp-chat-cab span { font-size: 13px; color: var(--text-tertiary); }
+.rp-hilo { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.rp-hilo .tu { align-self: flex-end; max-width: 86%; margin: 0; background: var(--color-ink-300); border-radius: 14px 14px 3px 14px; padding: 10px 14px; font-size: 15px; line-height: 1.45; }
+.rp-hilo .ella { max-width: 92%; font-size: 15px; line-height: 1.5; color: var(--text-secondary); }
+.rp-hilo .ella b { color: var(--text-primary); font-weight: var(--weight-medium); }
+.rp-hilo .usa { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); border: 1px solid var(--border-hairline); border-radius: 999px; padding: 3px 10px; margin-bottom: 8px; }
+.rp-hilo .usa i { width: 6px; height: 6px; border-radius: 50%; background: var(--text-secondary); }
+
+@media (max-width: 859px) {
+  .rp-hero .hero-content { padding-top: 460px; }
+  .rp-hero::after { background: linear-gradient(0deg, var(--surface-primary) 50%, rgb(12 11 10 / .5) 68%, rgb(12 11 10 / 0) 100%); }
+  .rp-ficha { left: var(--grid-margin); right: var(--grid-margin); width: auto; top: 360px; bottom: auto; }
+  .rp-ia-grid { grid-template-columns: minmax(0, 1fr); gap: var(--sp-40); }
+  .rp-puede { margin-top: var(--sp-32); }
+}
+@media (max-width: 520px) {
+  .rp-puede { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rp-ficha { transition: none; }
+}

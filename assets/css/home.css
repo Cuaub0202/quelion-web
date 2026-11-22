@@ -38,7 +38,9 @@ p{text-wrap:pretty}
 .btn{display:inline-flex;align-items:center;height:46px;padding:0 22px;background:var(--paper);color:var(--on-paper);text-decoration:none;font-size:var(--fs-2);font-weight:500;border-radius:2px;transition:background 160ms var(--ease),transform 160ms var(--ease)}
 .btn:hover{background:#fff}
 .btn:active{transform:scale(.98)}
-.btn.sm{height:34px;padding:0 14px;font-size:14px}
+.btn.sm{height:34px;padding:0 14px;font-size:14px;white-space:nowrap;flex-shrink:0}
+.menu{display:none;background:none;border:0;color:var(--text);padding:12px 8px;margin-right:-8px;cursor:pointer}
+.movil{display:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--text);outline-offset:3px;border-radius:2px}
 .link{font-size:var(--fs-2);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:var(--text-3);transition:text-decoration-color 160ms var(--ease)}
 .link:hover{text-decoration-color:currentColor}
@@ -141,6 +143,11 @@ footer .fin{grid-column:1/-1;margin-top:var(--s5)}
   .sec-h,.dia,.dia-pie,.vias,.chat,.puede,.hoja,.preg,.firma .frase,.firma .quien,.firma .cond,.cta h2,.cta .lead,footer .a,footer .b,footer .c,.entra .sec-h,.ia .sec-h{grid-column:1/-1}
   .entra .sec-h{position:static}
   .nav ul,.nav .login{display:none}
+  .nav .wrap{gap:12px}
+  .menu{display:block}
+  .nav.abierta{background:var(--ink);border-bottom-color:var(--line)}
+  .nav.abierta .movil{display:block;position:absolute;left:0;right:0;top:64px;background:var(--ink);border-bottom:1px solid var(--line);padding:0 var(--m) var(--s2)}
+  .movil a{display:block;padding:15px 0;border-top:1px solid var(--line);font-size:var(--fs-body);text-decoration:none;color:var(--text)}
   .hero::after{background:linear-gradient(0deg,var(--ink) 36%,rgb(12 11 10/.5) 60%,rgb(12 11 10/0) 100%)}
   .hero .wrap{padding-top:440px}
   .ficha{left:var(--m);right:var(--m);width:auto;top:336px;bottom:auto}
@@ -155,3 +162,5 @@ footer .fin{grid-column:1/-1;margin-top:var(--s5)}
   .hoja .pie{padding:12px 16px}
   footer .b,footer .c{margin-top:var(--s4)}
 }
+@media(max-width:400px){.btn.sm{padding:0 10px;font-size:13px}.nav .wrap{gap:10px}}
+@media(max-width:374px){.logo span{display:none}}

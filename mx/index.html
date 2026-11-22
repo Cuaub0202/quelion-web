@@ -10,6 +10,11 @@
   <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/">
   <link rel="alternate" hreflang="x-default" href="https://quelion.ai/">
   <meta property="og:title" content="Quelion · Entérate antes que tu cliente">
+  <meta property="og:image" content="https://quelion.ai/assets/og/og-quelion-mx.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Quelion. Entérate antes que tu cliente.">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:description" content="Ruta le pregunta al operador por WhatsApp, lee el GPS de la unidad y, si nadie atiende el aviso, le marca a tu coordinador. De día o 24/7.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quelion.ai/mx/">
@@ -18,9 +23,10 @@
   <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="/favicon-192.png">
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
-  <link rel="stylesheet" href="/assets/css/global.css?v=20260926">
-  <link rel="stylesheet" href="/assets/css/components.css?v=20260926">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500&family=JetBrains+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20261123">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,237 +54,182 @@
 </head>
 <body>
 
-  <!-- ── NAV ── -->
-  <nav class="nav" role="navigation" aria-label="Navegación principal">
-    <div class="nav-inner">
-      <a href="/mx/" class="nav-logo" aria-label="Quelion, inicio">
-        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="/mx/ruta" class="nav-link">Ruta</a>
-        <a href="/mx/blog/" class="nav-link">Blog</a>
-        <a href="/ruta-en" class="nav-link" hreflang="en" lang="en">English</a>
-        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
-      </div>
-      <div class="nav-right">
-        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
-        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
-        <button class="nav-mobile-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navLinks">
-          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
-            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
-            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
-            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </nav>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="/mx/" aria-label="Quelion, inicio"><svg width="48" height="43" viewBox="4 4 36 32" fill="none" aria-hidden="true"><circle cx="19" cy="20" r="12.5" stroke="currentColor" stroke-width="0.75"/><line x1="27.8" y1="20" x2="37" y2="20" stroke="currentColor" stroke-width="0.75"/></svg><span>QUELION</span></a>
+    <ul><li><a class="t" href="/mx/ruta">Ruta</a></li><li><a class="t" href="#ia">Conéctalo a tu IA</a></li><li><a class="t" href="#tunel">Túnel de viento</a></li><li><a class="t" href="/mx/blog/">Blog</a></li></ul>
+    <a class="t login" href="https://ruta.quelion.ai">Iniciar sesión</a>
+    <a class="btn sm" href="https://calendar.app.google/7YaK8fVRpqXTHz6J9">Agenda 20&nbsp;minutos</a>
+  </div>
+</header>
 
-  <!-- ── HERO ── -->
-  <section class="hero" aria-labelledby="hero-headline">
-    <div class="hero-content hero-split">
-      <div class="hero-main">
-        <h1 id="hero-headline" class="hero-headline">Entérate antes que tu cliente.</h1>
-        <p class="lede hero-lede">
-          Ruta le pregunta a cada chofer por WhatsApp cómo va, lee el GPS de la unidad
-          y solo molesta a tu equipo cuando algo se atora. Si nadie atiende el aviso,
-          le marca por teléfono a tu coordinador. De día o 24/7.
-        </p>
-        <div class="hero-ctas">
-          <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary" style="padding:14px 28px;font-size:15px;">
-            Agenda 20 minutos
-          </a>
-          <a href="/mx/ruta" class="btn btn-ghost" style="font-size:15px;color:var(--text-secondary);">
-            Conoce Ruta&nbsp;&nbsp;→
-          </a>
-        </div>
-        <p class="hero-contact">o escríbenos a hola@quelion.ai</p>
-      </div>
-      <div class="hero-side">
-        <p class="hero-steps-title">Cómo funciona Ruta</p>
-        <ol class="hero-steps">
-          <li><span class="n">1</span> <span class="t">El chofer contesta como siempre</span> <span class="d">Escribe «ya salí de la planta, voy a Monterrey» o manda una nota de voz por WhatsApp o Telegram. Sin formularios ni app.</span></li>
-          <li><span class="n">2</span> <span class="t">La IA lee; la regla decide</span> <span class="d">La IA interpreta el mensaje y una regla fija decide si el cambio de estatus procede.</span></li>
-          <li><span class="n">3</span> <span class="t">Si nadie contesta, Ruta insiste y escala</span> <span class="d">Si un chofer no reporta a tiempo en una etapa, Ruta le vuelve a escribir en el horario que definas, de día o las 24 horas. Si sigue sin contestar, le avisa a tu coordinador.</span></li>
-        </ol>
-      </div>
+<main>
+  <section class="hero" aria-label="Portada">
+    <canvas id="mapa" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <h1>Entérate antes que tu cliente.</h1>
+      <p class="lead">Ruta le escribe a cada chofer por WhatsApp y lee el GPS de la unidad. A tu equipo le avisa solo cuando algo se atora; si nadie confirma el aviso, le marca por teléfono a tu coordinador. De día o 24/7.</p>
+      <div class="acts"><a class="btn" href="https://calendar.app.google/7YaK8fVRpqXTHz6J9">Agenda 20&nbsp;minutos</a><a class="link" href="/mx/ruta#como-funciona">Cómo funciona Ruta</a></div>
+    </div>
+    <div class="ficha" id="ficha" aria-hidden="true">
+      <div class="h"><span>Aviso al coordinador</span><span class="num">12:20</span></div>
+      <b>NLD-2041, Nuevo Laredo a Monterrey</b><span class="q">Sin noticias del chofer desde las 10:05.</span>
     </div>
   </section>
 
-  <!-- ── PRODUCTOS ── -->
-  <section class="features" id="productos" aria-labelledby="products-heading" style="border-top:0.5px solid var(--border-hairline);">
-    <div class="features-inner">
-      <div class="features-header">
-        <p class="eyebrow" style="margin-bottom:20px;">Productos</p>
-        <h2 id="products-heading" style="max-width:560px;">
-          Hechos para un trabajo<br>operativo concreto.
-        </h2>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);max-width:640px;">
-
-        <div style="background:var(--surface-primary);padding:40px;">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;">
-            <p class="feature-number" style="margin:0;">Ruta</p>
-          </div>
-          <h3 class="feature-title" style="margin:0 0 16px;">Seguimiento de choferes para equipos de logística</h3>
-          <p class="feature-body text-secondary" style="margin:0 0 20px;">
-            Ruta le escribe a tus choferes por WhatsApp y Telegram, entiende sus respuestas
-            y actualiza el estatus de cada carga. Si alguien deja de contestar, insiste
-            y le avisa a tu coordinador.
-          </p>
-          <ul class="feature-list">
-            <li>Conversación con choferes por WhatsApp y Telegram</li>
-            <li>Entiende texto y notas de voz</li>
-            <li>Seguimiento y escalamiento por etapa, de día o 24/7</li>
-            <li>Lee la cuenta espejo de tu proveedor de GPS</li>
-            <li>Llama por teléfono al coordinador si nadie confirma el aviso</li>
-            <li>Historial de cada carga con sus cambios de estatus</li>
-          </ul>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="/mx/ruta" class="btn btn-primary" style="font-size:13px;padding:10px 20px;">
-              Conoce Ruta
-            </a>
-            <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-outline" style="font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:10px 16px;display:inline-flex;align-items:center;gap:8px;">
-              Agenda 20 minutos&nbsp;&nbsp;→
-            </a>
-          </div>
-        </div>
-
-      </div>
+  <section class="s">
+    <div class="wrap grid">
+      <div class="sec-h"><h2>Tus choferes siguen escribiendo como siempre</h2><p class="lead">El chofer contesta con un mensaje o una nota de voz. La IA lo interpreta, pero el cambio de estatus lo decide una regla fija, y tu equipo puede corregirlo desde el tablero.</p></div>
+      <ol class="dia">
+        <li><time>10:05</time><div><b>El chofer escribe</b><span>«Ya crucé, voy a Monterrey.»</span></div></li>
+        <li><time>10:35</time><div><b>Ruta le pregunta por WhatsApp</b><span>No hay respuesta. Le vuelve a preguntar a las&nbsp;11:10 y a las&nbsp;11:45.</span></div></li>
+        <li class="aviso"><time>12:20</time><div><b>Ruta le avisa a tu coordinador</b><span>Con el viaje, la etapa y desde cuándo no hay noticias. Si nadie confirma el aviso, le marca por teléfono; si tampoco contesta, a su respaldo.</span></div></li>
+      </ol>
+      <p class="nota dia-pie">Caso de ejemplo ensayado en el túnel de viento. Los tiempos de cada etapa se acuerdan contigo.</p>
     </div>
   </section>
 
-  <!-- ── PARA QUIÉN ── -->
-  <section id="para-quien" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="para-quien-heading">
-    <div class="section-inner">
-      <p class="eyebrow" style="margin-bottom:20px;">Para quién</p>
-      <h2 id="para-quien-heading" style="max-width:640px;margin-bottom:20px;">
-        Para quien responde por la carga, sea de quien sea el camión.
-      </h2>
-      <p class="text-secondary" style="max-width:640px;font-size:15px;line-height:1.7;margin:0 0 40px;">
-        Transportista, broker o 3PL: la unidad puede ser tuya o de una línea que contrataste ayer, y la llamada de tu cliente es para ti. Ruta le da seguimiento a cada viaje sin que el operador instale nada. En carga no se pregunta igual que en tránsito ni que en aduana: con la propuesta aceptada, configuramos contigo los tiempos de cada etapa y, antes de escribirle a nadie, los vemos correr en un día simulado, el <a href="#tunel" style="color:var(--text-primary);text-decoration:underline;">túnel de viento</a>.
-      </p>
-      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);margin-bottom:32px;">
-        <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">El operador, sea tuyo o de una línea</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Ruta le escribe por WhatsApp o Telegram al chofer de cada viaje: de tu flota, de una línea transportista o un hombre-camión. Solo necesita su teléfono; él no instala nada.</p>
-        </div>
-        <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">La madrugada, cubierta</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El seguimiento corre en el horario que definas por etapa, de día o 24/7. Ruta pregunta, insiste y le avisa a tu equipo solo cuando algo se atora. Si nadie confirma el aviso por WhatsApp, le marca por teléfono a tu coordinador.</p>
-        </div>
-        <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empiezas con tu Excel de siempre</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus embarques entran desde tu hoja de Excel exportada a CSV. Cada uno queda con su estatus y su historial en un tablero que ve todo tu equipo.</p>
-        </div>
-      </div>
-      <p class="text-secondary" style="max-width:640px;font-size:13px;line-height:1.7;margin:0;">Más detalle en <a href="/mx/ruta#para-quien" style="color:var(--text-primary);text-decoration:underline;">para quién es Ruta</a> y en <a href="/mx/blog/monitoreo-nocturno-embarques-24-7" style="color:var(--text-primary);text-decoration:underline;">cómo dar seguimiento nocturno sin un turno de noche</a>.</p>
+  <section class="s entra cubre">
+    <div class="wrap grid">
+      <div class="sec-h"><h2>La madrugada, cubierta</h2><p class="lead">El seguimiento corre en el horario que definas por etapa, de día o 24/7.</p></div>
+      <ul class="vias">
+        <li>De noche y en fin de semana.<small>Ruta pregunta, insiste y le avisa a tu equipo solo cuando algo se atora. Si nadie confirma el aviso por WhatsApp, le marca por teléfono a tu coordinador. Mira <a href="/mx/blog/monitoreo-nocturno-embarques-24-7">cómo dar seguimiento nocturno sin un turno de noche</a>.</small></li>
+        <li>Flota propia, subcontratada o las dos.<small>Transportista, broker o 3PL: la unidad puede ser tuya o de una línea que contrataste ayer, y la llamada de tu cliente es para ti. Ruta le escribe por WhatsApp o Telegram al chofer de cada viaje y lee la cuenta espejo del GPS; él no instala nada. Mira <a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7">seguimiento 24/7 con flota propia y subcontratada</a> y <a href="/mx/ruta#para-quien">para quién es Ruta</a>.</small></li>
+      </ul>
     </div>
   </section>
 
-  <!-- ── TÚNEL DE VIENTO ── -->
-  <section id="tunel" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="tunel-heading">
-    <div class="section-inner">
-      <p class="eyebrow" style="margin-bottom:20px;">Túnel de viento</p>
-      <h2 id="tunel-heading" style="max-width:640px;margin-bottom:20px;">
-        Sabes cómo actuará Ruta antes de activarla.
-      </h2>
-      <p class="text-secondary" style="max-width:640px;font-size:15px;line-height:1.7;margin:0 0 40px;">
-        Ponemos la lógica de Ruta a prueba en un día simulado: choferes que no contestan, respuestas a medias, noches sin noticias. Vemos contigo cuándo insistir y cuándo avisar, sin escribirle a nadie de verdad. Como en la F1: la pieza pasa por el túnel antes de salir a pista.
-      </p>
-      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);margin-bottom:32px;">
-        <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Tiempos y avisos, por escrito</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cuánto espera, cuántas veces pregunta y a quién avisa, por escrito.</p>
-        </div>
-        <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Situaciones difíciles</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El chofer que no contesta, el que solo dice «ok», la noche sin respuesta. Con casos de ejemplo del sector; los tuyos, cuando firmemos un acuerdo de datos.</p>
-        </div>
-        <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Sin sorpresas al cambiar algo</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cambiamos una sola regla, repetimos el mismo día y vemos qué se mueve antes de tocar nada real.</p>
-        </div>
-      </div>
-      <p class="text-secondary" style="max-width:640px;font-size:13px;line-height:1.7;margin:0 0 16px;">Empieza con 20 minutos: nos cuentas tu operación y te enseñamos Ruta con un caso de ejemplo. El ensayo con tus reglas es parte de la puesta en marcha, con la propuesta aceptada.</p>
-      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-outline" style="font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:10px 16px;display:inline-flex;align-items:center;gap:8px;">
-        Agenda 20 minutos&nbsp;&nbsp;→
-      </a>
+  <section class="s entra">
+    <div class="wrap grid">
+      <div class="sec-h"><h2>Tus embarques entran como ya trabajas</h2><p class="lead">Nadie los captura dos veces.</p></div>
+      <ul class="vias">
+        <li>Pon a Ruta en copia del correo.<small>Lee la orden de carga en PDF y crea el embarque. Lo que no puede comprobar queda en pausa hasta que tu equipo lo confirma.</small></li>
+        <li>Sube el Excel de tu TMS.<small>La exportación de siempre, en Excel o CSV. Cada embarque queda con su estatus y su historial en el tablero.</small></li>
+        <li>Pídeselo a tu IA.<small>Desde Claude o ChatGPT, con el conector de Ruta: un embarque, o todos los de la hoja de hoy.</small></li>
+      </ul>
     </div>
   </section>
 
-  <!-- ── CÓMO TRABAJAMOS ── -->
-  <section style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="why-heading">
-    <div class="section-inner">
-      <p class="eyebrow" style="margin-bottom:20px;">Cómo trabajamos</p>
-      <h2 id="why-heading" style="max-width:600px;margin-bottom:40px;">
-        Empezar con Ruta no cambia cómo trabajan tus choferes.
-      </h2>
-      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);">
-        <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Solo te avisa de lo que se atora</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Ruta le da seguimiento a cada chofer y le avisa a tu coordinador cuando algo necesita atención.</p>
-        </div>
-        <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Tus choferes no instalan nada</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Siguen en WhatsApp o Telegram, escribiendo o mandando notas de voz como siempre.</p>
-        </div>
-        <div style="background:var(--surface-primary);padding:32px 28px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empezamos por una llamada</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">En 20 minutos entendemos tu operación y te enseñamos Ruta con un caso de ejemplo. Con la propuesta aceptada, configuramos tus reglas y las ensayamos en el túnel.</p>
+  <section class="s ia" id="ia">
+    <div class="wrap grid">
+      <div class="sec-h"><h2>Ruta se conecta a la IA que ya usas</h2><p class="lead">Con el conector de Ruta, Claude o ChatGPT te contestan con lo que hay en Ruta. Si les pides dar de alta o cambiar algo, te lo muestran antes y esperan tu confirmación. Y si tu IA ya lee tu correo o tus Excel, se lo pides todo junto: «da de alta los embarques del correo de esta mañana y dime cuáles llegan después de su cita».</p></div>
+      <div class="chat obj-box" role="img" aria-label="Conversación de ejemplo con una IA conectada a Ruta.">
+        <div class="obj-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
+        <div class="hilo">
+          <p class="tu">¿Qué viajes van sin noticias hoy?</p>
+          <div class="ella"><span class="usa"><i></i>Consultado en Ruta</span><br>Uno: <b>NLD-2041</b>, Nuevo Laredo a Monterrey, en tránsito. Sin noticias del chofer desde las 10:05. Ruta le avisó a tu coordinador a las 12:20.</div>
+          <p class="tu">Da de alta los 12 embarques de este Excel.</p>
+          <div class="ella"><span class="usa"><i></i>Revisado en Ruta</span><br>Revisados los 12: <b>entran 11</b>. La fila 7 no trae el teléfono del chofer. ¿Confirmo los 11?</div>
         </div>
       </div>
+      <ul class="puede">
+        <li><b>Consultar</b>Qué viajes van en riesgo, el historial de uno y las cifras del periodo.</li><li><b>Dar de alta</b>Un embarque o un lote entero, con las mismas validaciones que el tablero.</li>
+        <li><b>Corregir</b>Las citas de carga y de entrega, o el teléfono del chofer.</li><li><b>Pausar y reanudar</b>El seguimiento de un viaje, con motivo y fecha de fin.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- ── CTA ── -->
-  <section class="cta-section" aria-labelledby="cta-heading">
-    <div class="cta-inner">
-      <p class="eyebrow">Hablemos</p>
-      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo das seguimiento hoy.</h2>
-      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
-        En 20 minutos vemos cuántas cargas mueves, por qué canal y si Ruta te sirve. Escríbenos a hola@quelion.ai.
-      </p>
-      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
-        Agenda 20 minutos
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
-        </svg>
-      </a>
+  <section class="s" id="tunel">
+    <div class="wrap grid">
+      <div class="sec-h"><h2>Antes de escribirle a un chofer, Ruta ensaya un día entero con tus reglas</h2><p class="lead">Pasamos tus reglas por un día entero con choferes simulados: uno que deja de contestar a media tarde, otro que solo responde «ok». Vemos contigo cuándo insistir y cuándo avisar, sin escribirle a nadie de verdad. Ese ensayo es el túnel de viento.</p></div>
+      <div class="hoja obj-box">
+        <div class="obj-cab"><b>Reglas de seguimiento</b><span>Datos de ejemplo</span></div>
+        <table class="tabla">
+          <thead><tr><th>Etapa</th><th class="n">Espera sin noticias</th><th class="n">Veces que pregunta</th><th class="opc">Después avisa a</th></tr></thead>
+          <tbody>
+            <tr><td>En carga</td><td class="n">30&nbsp;min</td><td class="n">2</td><td class="opc">Coordinador</td></tr>
+            <tr><td>En tránsito</td><td class="n">30&nbsp;min</td><td class="n">3</td><td class="opc">Coordinador, y luego a su respaldo</td></tr>
+            <tr><td>Descargando</td><td class="n">45&nbsp;min</td><td class="n">2</td><td class="opc">Coordinador</td></tr>
+          </tbody>
+        </table>
+        <p class="pie">La tuya la recibes por escrito antes de que Ruta le escriba a nadie.</p>
+      </div>
+      <dl class="preg">
+        <div><dt>¿Con qué casos se ensaya?</dt><dd>Con casos de ejemplo del sector; con los tuyos, cuando firmemos un acuerdo de datos.</dd></div>
+        <div><dt>¿Y si una regla no convence?</dt><dd>Se cambia esa sola y se repite el mismo día para ver qué varía.</dd></div>
+      </dl>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
-        <p class="footer-tagline">
-          Productos de IA para operaciones de logística.
-        </p>
-      </div>
-      <div>
-        <p class="footer-col-title">Productos</p>
-        <nav class="footer-links" aria-label="Enlaces de productos">
-          <a href="/mx/ruta"    class="footer-link">Ruta</a>
-          <a href="/ruta-en" class="footer-link" hreflang="en" lang="en">Ruta (English)</a>
-          <a href="/" class="footer-link" hreflang="es-ES" lang="es-ES">España</a>
-          <a href="/mx/blog/"    class="footer-link">Blog</a>
-        </nav>
-      </div>
-      <div>
-        <p class="footer-col-title">Contacto</p>
-        <nav class="footer-links" aria-label="Enlaces de contacto">
-          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
-          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
-        </nav>
-      </div>
+  <section class="s firma">
+    <div class="wrap grid">
+      <p class="frase">Que tu cliente no sea quien te avise de que un embarque va tarde.</p>
+      <p class="quien">Quelion.</p>
+      <p class="cond">El precio depende de cuántos embarques mueves al mes y va en la propuesta, antes de configurar nada.</p>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
-    </div>
-  </footer>
+  </section>
 
-  <script src="/assets/js/main.js?v=20260926"></script>
+  <section class="s cta">
+    <div class="wrap grid">
+      <h2>Cuéntanos cómo das seguimiento hoy</h2>
+      <p class="lead">En 20&nbsp;minutos vemos cuántos embarques mueves, por qué canal y si Ruta te sirve.</p>
+      <div class="acts"><a class="btn" href="https://calendar.app.google/7YaK8fVRpqXTHz6J9">Agenda 20&nbsp;minutos</a><a class="link" href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta">hola@quelion.ai</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap grid">
+    <div class="a"><a class="logo" href="/mx/" aria-label="Quelion, inicio"><svg width="48" height="43" viewBox="4 4 36 32" fill="none" aria-hidden="true"><circle cx="19" cy="20" r="12.5" stroke="currentColor" stroke-width="0.75"/><line x1="27.8" y1="20" x2="37" y2="20" stroke="currentColor" stroke-width="0.75"/></svg><span style="color:var(--text)">QUELION</span></a><p>Monitoreo de embarques 24/7 por WhatsApp y GPS. Hecho en México.</p></div>
+    <div class="b"><span>Producto</span><ul><li><a href="/mx/ruta">Ruta</a></li><li><a href="#ia">Conector para tu IA</a></li><li><a href="#tunel">Túnel de viento</a></li><li><a href="/mx/blog/">Blog</a></li><li><a href="/ruta-en" hreflang="en" lang="en">Ruta (English)</a></li></ul></div>
+    <div class="c"><span>Contacto</span><ul><li><a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta">hola@quelion.ai</a></li><li><a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9">Agenda 20&nbsp;minutos</a></li><li><a href="https://ruta.quelion.ai">Iniciar sesión</a></li><li><a href="/" hreflang="es-ES" lang="es-ES">España</a></li></ul></div>
+    <p class="fin">© 2026 Quelion</p>
+  </div>
+</footer>
+
+<script>
+const REGION = {"lat0":24,"C":{"Monterrey":[25.67,-100.31],"Nuevo Laredo":[27.48,-99.52],"CDMX":[19.43,-99.13],"Guadalajara":[20.67,-103.35],"Querétaro":[20.59,-100.39],"Saltillo":[25.42,-101],"San Luis Potosí":[22.15,-100.98],"Puebla":[19.04,-98.2],"Veracruz":[19.17,-96.13],"León":[21.12,-101.68],"Torreón":[25.54,-103.42],"Chihuahua":[28.63,-106.07],"Ciudad Juárez":[31.69,-106.42],"Tijuana":[32.51,-117.04],"Hermosillo":[29.07,-110.96],"Nogales":[31.31,-110.94],"Reynosa":[26.09,-98.28],"Culiacán":[24.81,-107.39],"Mazatlán":[23.25,-106.41],"Manzanillo":[19.05,-104.32],"Lázaro Cárdenas":[17.96,-102.19],"Mérida":[20.97,-89.62],"Aguascalientes":[21.88,-102.29],"Altamira":[22.39,-97.94]},"R":[["Nuevo Laredo","Monterrey"],["Monterrey","Saltillo"],["Saltillo","San Luis Potosí"],["San Luis Potosí","Querétaro"],["Querétaro","CDMX"],["CDMX","Puebla"],["Puebla","Veracruz"],["León","Querétaro"],["Guadalajara","León"],["Guadalajara","Manzanillo"],["Guadalajara","CDMX"],["Torreón","Saltillo"],["Chihuahua","Torreón"],["Ciudad Juárez","Chihuahua"],["Hermosillo","Nogales"],["Culiacán","Hermosillo"],["Mazatlán","Culiacán"],["Guadalajara","Mazatlán"],["Tijuana","Hermosillo"],["Reynosa","Monterrey"],["Altamira","San Luis Potosí"],["Lázaro Cárdenas","CDMX"],["Mérida","Veracruz"],["Aguascalientes","León"],["Aguascalientes","San Luis Potosí"],["Monterrey","Torreón"]],"rotulos":["Monterrey","Nuevo Laredo","CDMX","Guadalajara","Querétaro","Ciudad Juárez","Tijuana","Veracruz","Mérida","Manzanillo"],"rotulosMovil":["Monterrey","Nuevo Laredo","CDMX","Ciudad Juárez","Tijuana","Mérida"],"foco":["Nuevo Laredo","Monterrey"]};
+const reducido = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const nav = document.getElementById('nav');
+const alBajar = () => nav.classList.toggle('baja', window.scrollY > 48);
+addEventListener('scroll', alBajar, { passive: true }); alBajar();
+
+/* Mapa vivo: proyección equirrectangular de las ciudades reales; rutas en línea fina; cargas como puntos. */
+(() => {
+  const { lat0, C, R, rotulos, rotulosMovil, foco } = REGION;
+  const cv = document.getElementById('mapa'), ficha = document.getElementById('ficha'), cx = cv.getContext('2d');
+  let W = 0, H = 0, raf = 0, t0 = 0, P = {}, visible = true;
+  const cargas = R.map((r, i) => ({ r: i, v: 0.035 + (i * 37 % 11) / 400, f: (i * 0.37) % 1, d: i % 2 ? 1 : -1 }));
+  const iFoco = R.findIndex((r) => r[0] === foco[0] && r[1] === foco[1]);
+  function medir() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const k = Math.cos(lat0 * Math.PI / 180), xs = [], ys = [];
+    for (const n in C) { xs.push(C[n][1] * k); ys.push(-C[n][0]); }
+    const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+    const caja = W <= 900 ? { x: W * 0.07, y: 96, w: W * 0.80, h: Math.min(H * 0.30, 230) } : { x: W * 0.42, y: H * 0.14, w: W * 0.49, h: H * 0.70 };
+    const s = Math.min(caja.w / (x1 - x0), caja.h / (y1 - y0));
+    const ox = caja.x + (caja.w - (x1 - x0) * s) / 2, oy = caja.y + (caja.h - (y1 - y0) * s) / 2;
+    P = {}; for (const n in C) P[n] = [ox + (C[n][1] * k - x0) * s, oy + (-C[n][0] - y0) * s];
+  }
+  function pinta(ts) {
+    if (!t0) t0 = ts; const t = (ts - t0) / 1000;
+    cx.clearRect(0, 0, W, H);
+    cx.lineWidth = 1; cx.strokeStyle = 'rgba(242,239,232,0.2)';
+    for (const [a, b] of R) { cx.beginPath(); cx.moveTo(P[a][0], P[a][1]); cx.lineTo(P[b][0], P[b][1]); cx.stroke(); }
+    cx.fillStyle = 'rgba(242,239,232,0.55)';
+    for (const n in P) { cx.beginPath(); cx.arc(P[n][0], P[n][1], 1.6, 0, 6.3); cx.fill(); }
+    cx.font = '12px Inter, sans-serif'; cx.fillStyle = 'rgba(184,179,168,0.75)';
+    for (const n of (W <= 900 ? rotulosMovil : rotulos)) { const w = cx.measureText(n).width; const izq = P[n][0] + 8 + w > W - 6; cx.fillText(n, izq ? P[n][0] - 8 - w : P[n][0] + 8, P[n][1] + 4); }
+    cargas.forEach((c, i) => {
+      const [a, b] = R[c.r];
+      let f = (c.f + t * c.v) % 1; if (c.d < 0) f = 1 - f;
+      if (i === iFoco) f = Math.min(0.62, 0.18 + t * 0.075);
+      const x = P[a][0] + (P[b][0] - P[a][0]) * f, y = P[a][1] + (P[b][1] - P[a][1]) * f;
+      if (i === iFoco) {
+        if (t > 6) { const q = ((t - 6) % 2.4) / 2.4; cx.beginPath(); cx.arc(x, y, 5 + q * 22, 0, 6.3); cx.strokeStyle = 'rgba(242,239,232,' + (0.5 * (1 - q)) + ')'; cx.stroke(); }
+        cx.beginPath(); cx.arc(x, y, 4, 0, 6.3); cx.fillStyle = '#F2EFE8'; cx.fill();
+        ficha.classList.toggle('ver', t > 9);
+      } else { cx.beginPath(); cx.arc(x, y, 2.2, 0, 6.3); cx.fillStyle = 'rgba(242,239,232,0.9)'; cx.fill(); }
+    });
+    if (!reducido && visible) raf = requestAnimationFrame(pinta);
+  }
+  function arrancar() { cancelAnimationFrame(raf); medir(); if (reducido) { t0 = -12000; pinta(0); } else raf = requestAnimationFrame(pinta); }
+  addEventListener('resize', arrancar);
+  // Fuera de pantalla no gasta batería.
+  if ('IntersectionObserver' in window) new IntersectionObserver((e) => { const v = e[0].isIntersecting; if (v && !visible) { visible = true; raf = requestAnimationFrame(pinta); } else if (!v) { visible = false; cancelAnimationFrame(raf); } }).observe(cv);
+  arrancar();
+})();
+</script>
 </body>
 </html>

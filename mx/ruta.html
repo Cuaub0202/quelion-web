@@ -11,6 +11,11 @@
   <link rel="alternate" hreflang="en" href="https://quelion.ai/ruta-en">
   <link rel="alternate" hreflang="x-default" href="https://quelion.ai/ruta">
   <meta property="og:title" content="Ruta · Entérate antes que tu cliente">
+  <meta property="og:image" content="https://quelion.ai/assets/og/og-ruta-mx.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ruta, de Quelion. Entérate antes que tu cliente.">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:description" content="Seguimiento de cada embarque por WhatsApp, Telegram y cuenta espejo, de día o 24/7, con escalamiento a tu equipo cuando algo se sale de lo normal.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quelion.ai/mx/ruta">
@@ -19,9 +24,10 @@
   <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="/favicon-192.png">
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260926">
-  <link rel="stylesheet" href="/assets/css/global.css?v=20260926">
-  <link rel="stylesheet" href="/assets/css/components.css?v=20260926">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20261121">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20261121">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20261121">
+  <link rel="stylesheet" href="/assets/css/ruta.css?v=20261123">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,7 +63,7 @@
         "name": "¿Ruta reemplaza mi TMS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga. Tus órdenes activas entran desde un archivo CSV."
+          "text": "No, trabaja a su lado. Ruta se ocupa de la conversación con el chofer y del estatus de cada embarque. Los embarques le llegan con la exportación en Excel de tu TMS, por correo con el PDF de la orden o desde tu IA con el conector."
         }
       },
       {
@@ -73,7 +79,7 @@
         "name": "¿Funciona en grupos de WhatsApp?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hoy no. Ruta conversa uno a uno con cada chofer."
+          "text": "Ruta conversa uno a uno con cada chofer, no en grupos: cada respuesta queda en el historial de su embarque."
         }
       },
       {
@@ -110,10 +116,18 @@
       },
       {
         "@type": "Question",
+        "name": "¿Qué hace Ruta hoy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ruta les escribe a tus choferes por WhatsApp o Telegram, sean de tu flota, de una línea subcontratada o permisionarios, y entiende lo que le contestan, también en notas de voz. Con la cuenta espejo de tu proveedor de GPS o la de la línea, le pregunta al chofer cuando algo no cuadra. Si un chofer no reporta, le insiste. Si sigue sin contestar, le avisa a tu equipo y, si nadie confirma el aviso, le marca a quien esté de guardia y después a su respaldo. Al chofer nunca le marca; solo le escribe. Si lo activas, le avisa a tu cliente cuando la unidad sale, cruza, llega y se entrega. Cada etapa tiene su horario, de día o 24/7, y tu coordinador sigue cada carga en un panel. Tus órdenes activas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus embarques, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada chofer, no en grupos."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "¿Cuánto cuesta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada."
+          "text": "Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada. La implementación se cotiza aparte, en la misma propuesta."
         }
       }
     ]
@@ -130,6 +144,7 @@
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="#ia" class="nav-link">Conéctalo a tu IA</a>
         <a href="#pricing"       class="nav-link">Cómo empezar</a>
         <a href="#faq"           class="nav-link">Preguntas</a>
         <a href="/mx/blog/"          class="nav-link">Blog</a>
@@ -151,10 +166,11 @@
   </nav>
 
   <!-- ── HERO ── -->
-  <section class="hero" aria-labelledby="hero-headline">
+  <section class="hero rp-hero" aria-labelledby="hero-headline">
+    <canvas id="mapa" aria-hidden="true"></canvas>
     <div class="hero-content">
-      <p class="eyebrow hero-eyebrow">Ruta · de Quelion</p>
       <h1 id="hero-headline" class="hero-headline">
+        <span class="rp-kicker">Ruta · Monitoreo de embarques 24/7 por WhatsApp y GPS</span>
         Entérate antes que tu cliente.
       </h1>
       <p class="lede hero-lede">
@@ -167,17 +183,20 @@
           Agenda 20 minutos
         </a>
         <a href="#como-funciona" class="btn btn-ghost" style="font-size:15px;color:var(--text-secondary);">
-          Cómo funciona&nbsp;&nbsp;→
+          Cómo funciona
         </a>
       </div>
       <p class="hero-contact">Sin app para tus choferes &nbsp;·&nbsp; o escríbenos a hola@quelion.ai</p>
     </div>
+    <div class="rp-ficha" id="ficha" aria-hidden="true">
+      <div class="h"><span>Aviso al coordinador</span><span>12:20</span></div>
+      <b>NLD-2041, Nuevo Laredo a Monterrey</b><span class="q">Sin noticias del chofer desde las 10:05.</span>
+    </div>
   </section>
 
   <!-- ── PROBLEMA ── -->
-  <section style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="problem-heading">
+  <section style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="problem-heading">
     <div class="section-inner">
-      <p class="eyebrow" style="margin-bottom:20px;">El problema</p>
       <h2 id="problem-heading" style="max-width:640px;margin-bottom:32px;">
         El seguimiento de cada carga vive en el chat de tu coordinador.
       </h2>
@@ -190,17 +209,16 @@
   </section>
 
   <!-- ── CÓMO FUNCIONA ── -->
-  <section id="como-funciona" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="how-heading">
+  <section id="como-funciona" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="how-heading">
     <div class="section-inner">
-      <p class="eyebrow" style="margin-bottom:20px;">Cómo funciona</p>
       <h2 id="how-heading" style="max-width:560px;margin-bottom:56px;">
         Tus choferes siguen escribiendo como siempre.
       </h2>
-      <div style="display:flex;flex-direction:column;gap:0;border:0.5px solid var(--border-hairline);">
+      <div style="display:flex;flex-direction:column;gap:0;border:1px solid var(--border-hairline);">
 
-        <div style="display:grid;grid-template-columns:72px 1fr;background:var(--surface-primary);border-bottom:0.5px solid var(--border-hairline);">
+        <div style="display:grid;grid-template-columns:72px 1fr;background:var(--surface-primary);border-bottom:1px solid var(--border-hairline);">
           <div style="display:flex;align-items:flex-start;justify-content:center;padding-top:36px;">
-            <span style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;">01</span>
+            <span style="font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--text-tertiary);font-variant-numeric:tabular-nums;">01</span>
           </div>
           <div style="padding:32px 28px 32px 0;">
             <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">El chofer contesta como siempre</h3>
@@ -211,9 +229,9 @@
           </div>
         </div>
 
-        <div style="display:grid;grid-template-columns:72px 1fr;background:var(--surface-primary);border-bottom:0.5px solid var(--border-hairline);">
+        <div style="display:grid;grid-template-columns:72px 1fr;background:var(--surface-primary);border-bottom:1px solid var(--border-hairline);">
           <div style="display:flex;align-items:flex-start;justify-content:center;padding-top:36px;">
-            <span style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;">02</span>
+            <span style="font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--text-tertiary);font-variant-numeric:tabular-nums;">02</span>
           </div>
           <div style="padding:32px 28px 32px 0;">
             <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">La IA lee; la regla decide</h3>
@@ -226,7 +244,7 @@
 
         <div style="display:grid;grid-template-columns:72px 1fr;background:var(--surface-primary);">
           <div style="display:flex;align-items:flex-start;justify-content:center;padding-top:36px;">
-            <span style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;">03</span>
+            <span style="font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--text-tertiary);font-variant-numeric:tabular-nums;">03</span>
           </div>
           <div style="padding:32px 28px 32px 0;">
             <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">Si nadie contesta, Ruta insiste y escala</h3>
@@ -241,14 +259,40 @@
     </div>
   </section>
 
-  <!-- ── QUÉ INCLUYE ── -->
-  <section id="features" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="features-heading">
+  <!-- ── CONECTOR PARA TU IA ── -->
+  <section id="ia" class="rp-ia" aria-labelledby="ia-heading">
     <div class="section-inner">
-      <p class="eyebrow" style="margin-bottom:20px;">Qué incluye</p>
+      <div class="rp-ia-grid">
+        <div>
+          <h2 id="ia-heading">Ruta se conecta a la IA que ya usas.</h2>
+          <p class="rp-lede">Con el conector de Ruta, Claude o ChatGPT te contestan con lo que hay en Ruta. Si les pides dar de alta o cambiar algo, te lo muestran antes y esperan tu confirmación. Y si tu IA ya lee tu correo o tus Excel, se lo pides todo junto: «da de alta los embarques del correo de esta mañana y dime cuáles llegan después de su cita».</p>
+          <ul class="rp-puede">
+            <li><b>Consultar</b>Qué viajes van en riesgo, el historial de uno y las cifras del periodo.</li>
+            <li><b>Dar de alta</b>Un embarque o un lote entero, con las mismas validaciones que el panel.</li>
+            <li><b>Corregir</b>Las citas de carga y de entrega, o el teléfono del chofer.</li>
+            <li><b>Pausar y reanudar</b>El seguimiento de un viaje, con motivo y fecha de fin.</li>
+          </ul>
+        </div>
+        <div class="rp-chat" role="img" aria-label="Conversación de ejemplo con una IA conectada a Ruta.">
+          <div class="rp-chat-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
+          <div class="rp-hilo">
+            <p class="tu">¿Qué viajes van sin noticias hoy?</p>
+            <div class="ella"><span class="usa"><i></i>Consultado en Ruta</span><br>Uno: <b>NLD-2041</b>, Nuevo Laredo a Monterrey, en tránsito. Sin noticias del chofer desde las 10:05. Ruta le avisó a tu coordinador a las 12:20.</div>
+            <p class="tu">Da de alta los 12 embarques de este Excel.</p>
+            <div class="ella"><span class="usa"><i></i>Revisado en Ruta</span><br>Revisados los 12: <b>entran 11</b>. La fila 7 no trae el teléfono del chofer. ¿Confirmo los 11?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUÉ INCLUYE ── -->
+  <section id="features" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="features-heading">
+    <div class="section-inner">
       <h2 id="features-heading" style="max-width:560px;margin-bottom:56px;">
         Hecho para coordinadores de tráfico, no para equipos de software.
       </h2>
-      <div class="cols-2" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);">
+      <div class="cols-2" style="display:grid;gap:1px;background:var(--border-hairline);border:1px solid var(--border-hairline);">
 
         <div style="background:var(--surface-primary);padding:36px 32px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">WhatsApp y Telegram</h3>
@@ -286,9 +330,9 @@
         </div>
 
         <div style="background:var(--surface-primary);padding:36px 32px;">
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Carga de órdenes por CSV</h3>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Cuatro formas de dar de alta órdenes</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Tus órdenes activas entran desde tu hoja de Excel exportada a CSV.
+            Desde tu Excel o CSV, con las columnas de tu plantilla; a mano en el panel; reenviando a tu dirección de Ruta el PDF de la orden de embarque, que Ruta lee y convierte en orden; o pidiéndoselo a Claude o ChatGPT con el conector de Ruta. Lo que Ruta no puede comprobar en un PDF queda pendiente hasta que tu coordinador lo confirma.
           </p>
         </div>
 
@@ -297,16 +341,15 @@
   </section>
 
   <!-- ── PARA QUIÉN ── -->
-  <section id="para-quien" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="para-quien-heading">
+  <section id="para-quien" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="para-quien-heading">
     <div class="section-inner">
-      <p class="eyebrow" style="margin-bottom:20px;">Para quién</p>
       <h2 id="para-quien-heading" style="max-width:640px;margin-bottom:20px;">
         Para quien responde por la carga, sea de quien sea el camión.
       </h2>
       <p class="text-secondary" style="max-width:640px;font-size:15px;line-height:1.7;margin:0 0 40px;">
         Transportista, broker o 3PL: tu cliente no distingue si la unidad es tuya o de un tercero, te marca a ti. Ruta le da seguimiento a cada viaje sin que el operador instale nada. En carga no se pregunta igual que en tránsito ni que en aduana: con la propuesta aceptada, configuramos contigo los tiempos de cada etapa y, antes de escribirle a nadie, los vemos correr en un día simulado, el <a href="/mx/#tunel" style="color:var(--text-primary);text-decoration:underline;">túnel de viento</a>. Lo que hoy hace tu equipo lo hace Ruta, y le sumamos nuestro protocolo.
       </p>
-      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);margin-bottom:32px;">
+      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:1px solid var(--border-hairline);margin-bottom:32px;">
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">El operador, sea tuyo o de una línea</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Das de alta el viaje con el teléfono del chofer y Ruta le escribe por WhatsApp o Telegram: el operador de tu tractocamión, el de una línea transportista o un hombre-camión. Con la cuenta espejo de tu proveedor de GPS también lee la posición; si aún no está conectada, la integramos contigo.</p>
@@ -317,7 +360,7 @@
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empiezas con tu Excel de siempre</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus embarques entran desde tu hoja de Excel exportada a CSV. Cada uno queda con su estatus y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus embarques entran desde tu Excel o CSV. Cada uno queda con su estatus y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
         </div>
       </div>
       <p class="text-secondary" style="max-width:640px;font-size:13px;line-height:1.7;margin:0;">Sobre cubrir la noche: <a href="/mx/blog/monitoreo-nocturno-embarques-24-7" style="color:var(--text-primary);text-decoration:underline;">monitoreo nocturno de embarques</a>. Sobre la cuenta espejo: <a href="/mx/blog/seguimiento-gps-transportista" style="color:var(--text-primary);text-decoration:underline;">seguimiento con la cuenta espejo del transportista</a>. Con flota propia y subcontratada: <a href="/mx/blog/ia-seguimiento-operadores-whatsapp-24-7" style="color:var(--text-primary);text-decoration:underline;">seguimiento 24/7 de operadores por WhatsApp</a>.</p>
@@ -325,25 +368,24 @@
   </section>
 
   <!-- ── CÓMO EMPEZAR (ancla #pricing conservada para enlaces antiguos) ── -->
-  <section id="pricing" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="pricing-heading">
+  <section id="pricing" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="pricing-heading">
     <div class="section-inner">
-      <p class="eyebrow" style="margin-bottom:20px;">Cómo empezar</p>
       <h2 id="pricing-heading" style="max-width:520px;margin-bottom:40px;">Empezamos con una llamada de 20 minutos.</h2>
-      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:0.5px solid var(--border-hairline);">
+      <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:1px solid var(--border-hairline);">
         <div style="background:var(--surface-primary);padding:32px 28px;">
-          <p style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;margin-bottom:12px;">01</p>
+          <p style="font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--text-tertiary);font-variant-numeric:tabular-nums;margin-bottom:12px;">01</p>
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Nos cuentas tu operación</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cómo das seguimiento hoy, cuántos viajes mueves y por qué canal hablas con tus choferes. En la misma llamada te enseñamos Ruta con un caso de ejemplo.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
-          <p style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;margin-bottom:12px;">02</p>
+          <p style="font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--text-tertiary);font-variant-numeric:tabular-nums;margin-bottom:12px;">02</p>
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Te mandamos la propuesta</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Con el precio, que depende de cuántas operaciones manejas al mes, y lo que incluye. Lo sabes antes de configurar nada.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
-          <p style="font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-quiet);letter-spacing:0.1em;margin-bottom:12px;">03</p>
+          <p style="font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--text-tertiary);font-variant-numeric:tabular-nums;margin-bottom:12px;">03</p>
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Con la propuesta aceptada, lo configuramos contigo</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus reglas, tus contactos y tus tiempos de seguimiento, ensayados en el túnel de viento antes de que Ruta le escriba al primer chofer. La puesta en marcha va incluida.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus reglas, tus contactos y tus tiempos de seguimiento, ensayados en el túnel de viento antes de que Ruta le escriba al primer chofer. La implementación se cotiza aparte, en la misma propuesta.</p>
         </div>
       </div>
       <p style="font-size:13px;color:var(--text-quiet);margin-top:20px;">¿Prefieres escribir? <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" style="color:var(--text-primary);text-decoration:underline;">hola@quelion.ai</a></p>
@@ -351,14 +393,13 @@
   </section>
 
   <!-- ── FAQ ── -->
-  <section id="faq" style="border-top:0.5px solid var(--border-hairline);padding:80px 0;" aria-labelledby="faq-heading">
+  <section id="faq" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="faq-heading">
     <div class="section-inner section-inner-narrow">
-      <p class="eyebrow" style="margin-bottom:20px;">Preguntas</p>
       <h2 id="faq-heading" style="margin-bottom:48px;">Preguntas frecuentes</h2>
 
-      <div style="display:flex;flex-direction:column;gap:0;border:0.5px solid var(--border-hairline);">
+      <div style="display:flex;flex-direction:column;gap:0;border:1px solid var(--border-hairline);">
 
-        <details style="border-bottom:0.5px solid var(--border-hairline);">
+        <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Mis choferes tienen que instalar algo?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
@@ -368,17 +409,17 @@
           </p>
         </details>
 
-        <details style="border-bottom:0.5px solid var(--border-hairline);">
+        <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Ruta reemplaza mi TMS?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            No. Ruta se ocupa de la conversación con el chofer y del estatus de cada carga. Tus órdenes activas entran desde un archivo CSV.
+            No, trabaja a su lado. Ruta se ocupa de la conversación con el chofer y del estatus de cada embarque. Los embarques le llegan con la exportación en Excel de tu TMS, por correo con el PDF de la orden o desde tu IA con el conector.
           </p>
         </details>
 
-        <details style="border-bottom:0.5px solid var(--border-hairline);">
+        <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Qué pasa si la IA entiende mal un mensaje?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
@@ -388,17 +429,17 @@
           </p>
         </details>
 
-        <details style="border-bottom:0.5px solid var(--border-hairline);">
+        <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Funciona en grupos de WhatsApp?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Hoy no. Ruta conversa uno a uno con cada chofer.
+            Ruta conversa uno a uno con cada chofer, no en grupos: cada respuesta queda en el historial de su embarque.
           </p>
         </details>
 
-        <details style="border-bottom:0.5px solid var(--border-hairline);">
+        <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Da seguimiento de noche y en fin de semana?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
@@ -408,7 +449,7 @@
           </p>
         </details>
 
-        <details style="border-bottom:0.5px solid var(--border-hairline);">
+        <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Sirve si tengo flota propia?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
@@ -418,7 +459,7 @@
           </p>
         </details>
 
-        <details style="border-bottom:0.5px solid var(--border-hairline);">
+        <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Usa GPS?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
@@ -428,7 +469,7 @@
           </p>
         </details>
 
-        <details style="border-bottom:0.5px solid var(--border-hairline);">
+        <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Le avisa a mi cliente?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
@@ -438,13 +479,26 @@
           </p>
         </details>
 
+        <details style="border-bottom:0.5px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Qué hace Ruta hoy?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 12px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Ruta les escribe a tus choferes por WhatsApp o Telegram, sean de tu flota, de una línea subcontratada o permisionarios, y entiende lo que le contestan, también en notas de voz. Con la cuenta espejo de tu proveedor de GPS o la de la línea, le pregunta al chofer cuando algo no cuadra. Si un chofer no reporta, le insiste. Si sigue sin contestar, le avisa a tu equipo y, si nadie confirma el aviso, le marca a quien esté de guardia y después a su respaldo. Al chofer nunca le marca; solo le escribe. Si lo activas, le avisa a tu cliente cuando la unidad sale, cruza, llega y se entrega. Cada etapa tiene su horario, de día o 24/7, y tu coordinador sigue cada carga en un panel.
+          </p>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Tus órdenes activas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus embarques, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada chofer, no en grupos.
+          </p>
+        </details>
+
         <details>
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Cuánto cuesta?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada.
+            Depende de cuántas operaciones manejas al mes. Después de la llamada te enviamos la propuesta con el precio, antes de configurar nada. La implementación se cotiza aparte, en la misma propuesta.
           </p>
         </details>
 
@@ -455,16 +509,12 @@
   <!-- ── CTA ── -->
   <section class="cta-section" aria-labelledby="cta-heading">
     <div class="cta-inner">
-      <p class="eyebrow">Hablemos</p>
       <h2 id="cta-heading" style="max-width:480px;">Cuéntanos cómo das seguimiento hoy.</h2>
       <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
         En 20 minutos vemos cuántas cargas mueves, por qué canal y si Ruta te sirve. Escríbenos a hola@quelion.ai.
       </p>
       <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
         Agenda 20 minutos
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1" stroke-linecap="square"/>
-        </svg>
       </a>
     </div>
   </section>
@@ -475,7 +525,7 @@
       <div class="footer-brand">
         <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
         <p class="footer-tagline">
-          Productos de IA para operaciones de logística.
+          Seguimiento de cargas 24/7 por WhatsApp y GPS.
         </p>
       </div>
       <div>
@@ -503,6 +553,8 @@
     </div>
   </footer>
 
+  <script>window.MAPA_REGION = {"lat0":24,"C":{"Monterrey":[25.67,-100.31],"Nuevo Laredo":[27.48,-99.52],"CDMX":[19.43,-99.13],"Guadalajara":[20.67,-103.35],"Querétaro":[20.59,-100.39],"Saltillo":[25.42,-101],"San Luis Potosí":[22.15,-100.98],"Puebla":[19.04,-98.2],"Veracruz":[19.17,-96.13],"León":[21.12,-101.68],"Torreón":[25.54,-103.42],"Chihuahua":[28.63,-106.07],"Ciudad Juárez":[31.69,-106.42],"Tijuana":[32.51,-117.04],"Hermosillo":[29.07,-110.96],"Nogales":[31.31,-110.94],"Reynosa":[26.09,-98.28],"Culiacán":[24.81,-107.39],"Mazatlán":[23.25,-106.41],"Manzanillo":[19.05,-104.32],"Lázaro Cárdenas":[17.96,-102.19],"Mérida":[20.97,-89.62],"Aguascalientes":[21.88,-102.29],"Altamira":[22.39,-97.94]},"R":[["Nuevo Laredo","Monterrey"],["Monterrey","Saltillo"],["Saltillo","San Luis Potosí"],["San Luis Potosí","Querétaro"],["Querétaro","CDMX"],["CDMX","Puebla"],["Puebla","Veracruz"],["León","Querétaro"],["Guadalajara","León"],["Guadalajara","Manzanillo"],["Guadalajara","CDMX"],["Torreón","Saltillo"],["Chihuahua","Torreón"],["Ciudad Juárez","Chihuahua"],["Hermosillo","Nogales"],["Culiacán","Hermosillo"],["Mazatlán","Culiacán"],["Guadalajara","Mazatlán"],["Tijuana","Hermosillo"],["Reynosa","Monterrey"],["Altamira","San Luis Potosí"],["Lázaro Cárdenas","CDMX"],["Mérida","Veracruz"],["Aguascalientes","León"],["Aguascalientes","San Luis Potosí"],["Monterrey","Torreón"]],"rotulos":["Monterrey","Nuevo Laredo","CDMX","Guadalajara","Querétaro","Ciudad Juárez","Tijuana","Veracruz","Mérida","Manzanillo"],"rotulosMovil":["Monterrey","Nuevo Laredo","CDMX","Ciudad Juárez","Tijuana","Mérida"],"foco":["Nuevo Laredo","Monterrey"]};</script>
+  <script src="/assets/js/mapa-vivo.js?v=20261123" defer></script>
   <script src="/assets/js/main.js?v=20260926"></script>
 </body>
 </html>

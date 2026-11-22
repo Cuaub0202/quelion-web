@@ -136,6 +136,7 @@
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="#ia" class="nav-link">Conéctalo a tu IA</a>
         <a href="#pricing"       class="nav-link">Cómo empezar</a>
         <a href="#faq"           class="nav-link">Preguntas</a>
         <a href="/mx/blog/"          class="nav-link">Blog</a>
@@ -250,6 +251,33 @@
     </div>
   </section>
 
+  <!-- ── CONECTOR PARA TU IA ── -->
+  <section id="ia" class="rp-ia" aria-labelledby="ia-heading">
+    <div class="section-inner">
+      <div class="rp-ia-grid">
+        <div>
+          <h2 id="ia-heading">Ruta se conecta a la IA que ya usas.</h2>
+          <p class="rp-lede">Con el conector de Ruta, Claude o ChatGPT te contestan con lo que hay en Ruta. Si les pides dar de alta o cambiar algo, te lo muestran antes y esperan tu confirmación. Y si tu IA ya lee tu correo o tus Excel, se lo pides todo junto: «da de alta los embarques del correo de esta mañana y dime cuáles llegan después de su cita».</p>
+          <ul class="rp-puede">
+            <li><b>Consultar</b>Qué viajes van en riesgo, el historial de uno y las cifras del periodo.</li>
+            <li><b>Dar de alta</b>Un embarque o un lote entero, con las mismas validaciones que el panel.</li>
+            <li><b>Corregir</b>Las citas de carga y de entrega, o el teléfono del chofer.</li>
+            <li><b>Pausar y reanudar</b>El seguimiento de un viaje, con motivo y fecha de fin.</li>
+          </ul>
+        </div>
+        <div class="rp-chat" role="img" aria-label="Conversación de ejemplo con una IA conectada a Ruta.">
+          <div class="rp-chat-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
+          <div class="rp-hilo">
+            <p class="tu">¿Qué viajes van sin noticias esta mañana?</p>
+            <div class="ella"><span class="usa"><i></i>Consultado en Ruta</span><br>Uno: <b>NLD-2041</b>, Aceros del Bajío, en tránsito. Sin noticias del chofer desde las 10:05. Ruta le avisó a tu coordinador a las 12:20.</div>
+            <p class="tu">Da de alta los 12 embarques de este Excel.</p>
+            <div class="ella"><span class="usa"><i></i>Revisado en Ruta</span><br>Revisados los 12: <b>entran 11</b>. La fila 7 no trae el teléfono del chofer. ¿Confirmo los 11?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── QUÉ INCLUYE ── -->
   <section id="features" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="features-heading">
     <div class="section-inner">
@@ -331,33 +359,6 @@
     </div>
   </section>
 
-  <!-- ── CONECTOR PARA TU IA ── -->
-  <section id="ia" class="rp-ia" aria-labelledby="ia-heading">
-    <div class="section-inner">
-      <div class="rp-ia-grid">
-        <div>
-          <h2 id="ia-heading">Ruta se conecta a la IA que ya usas.</h2>
-          <p class="rp-lede">Con el conector de Ruta, Claude o ChatGPT consultan tu operación y actúan sobre ella con tu permiso. Y si tu IA ya tiene conectados tu correo, tu calendario o tus hojas, puedes pedirle cosas que lo cruzan todo: «da de alta los embarques del correo de esta mañana y dime cuáles llegan después de su cita».</p>
-          <ul class="rp-puede">
-            <li><b>Consultar</b>Qué viajes van en riesgo, el historial de uno y las cifras del periodo.</li>
-            <li><b>Dar de alta</b>Un embarque o un lote entero, con las mismas validaciones que el tablero.</li>
-            <li><b>Corregir</b>Las citas de carga y de entrega, o el teléfono del chofer.</li>
-            <li><b>Pausar y reanudar</b>El seguimiento de un viaje, con motivo y fecha de fin.</li>
-          </ul>
-        </div>
-        <div class="rp-chat" role="img" aria-label="Conversación de ejemplo con una IA conectada a Ruta.">
-          <div class="rp-chat-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
-          <div class="rp-hilo">
-            <p class="tu">¿Qué viajes van sin noticias esta mañana?</p>
-            <div class="ella"><span class="usa"><i></i>Ruta, resumen de la operación</span><br>Uno: <b>NLD-2041</b>, Aceros del Bajío, en tránsito. Sin noticias del chofer desde las 10:05. Ruta le avisó a tu coordinador a las 12:20.</div>
-            <p class="tu">Da de alta los 12 embarques de este Excel.</p>
-            <div class="ella"><span class="usa"><i></i>Ruta, revisar un lote</span><br>Revisados los 12: <b>entran 11</b>. La fila 7 no trae el teléfono del chofer. ¿Confirmo los 11?</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── CÓMO EMPEZAR (ancla #pricing conservada para enlaces antiguos) ── -->
   <section id="pricing" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="pricing-heading">
     <div class="section-inner">
@@ -376,7 +377,7 @@
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <p style="font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--text-tertiary);font-variant-numeric:tabular-nums;margin-bottom:12px;">03</p>
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Con la propuesta aceptada, lo configuramos contigo</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus reglas, tus contactos y tus tiempos de seguimiento, ensayados en el túnel de viento antes de que Ruta le escriba al primer chofer. La puesta en marcha se cotiza aparte, en la misma propuesta.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus reglas, tus contactos y tus tiempos de seguimiento, ensayados en el túnel de viento antes de que Ruta le escriba al primer chofer. La implementación se cotiza aparte, en la misma propuesta.</p>
         </div>
       </div>
       <p style="font-size:13px;color:var(--text-quiet);margin-top:20px;">¿Prefieres escribir? <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" style="color:var(--text-primary);text-decoration:underline;">hola@quelion.ai</a></p>

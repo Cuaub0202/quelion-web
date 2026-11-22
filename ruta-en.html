@@ -11,10 +11,10 @@
   <link rel="alternate" hreflang="en" href="https://quelion.ai/ruta-en">
   <link rel="alternate" hreflang="x-default" href="https://quelion.ai/ruta">
   <meta property="og:title" content="Ruta · Stop chasing drivers">
-  <meta property="og:image" content="https://quelion.ai/assets/og/og-ruta.png">
+  <meta property="og:image" content="https://quelion.ai/assets/og/og-ruta-en.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ruta, de Quelion. Entérate antes que tu cliente.">
+  <meta property="og:image:alt" content="Ruta, by Quelion. Stop chasing drivers.">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:description" content="Driver follow-up on WhatsApp and Telegram, plus your carrier's GPS when shared, with escalation to your desk when something looks off.">
   <meta property="og:type" content="website">
@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css?v=20261121">
   <link rel="stylesheet" href="assets/css/global.css?v=20261121">
   <link rel="stylesheet" href="assets/css/components.css?v=20261121">
+  <link rel="stylesheet" href="assets/css/ruta.css?v=20261121">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -123,7 +124,8 @@
   </nav>
 
   <!-- ── HERO ── -->
-  <section class="hero" aria-labelledby="hero-headline">
+  <section class="hero rp-hero" aria-labelledby="hero-headline">
+    <canvas id="mapa" aria-hidden="true"></canvas>
     <div class="hero-content">
       <p class="eyebrow hero-eyebrow">Ruta · by Quelion</p>
       <h1 id="hero-headline" class="hero-headline">
@@ -143,6 +145,10 @@
         </a>
       </div>
       <p class="hero-contact">No app for your drivers &nbsp;·&nbsp; or email hola@quelion.ai</p>
+    </div>
+    <div class="rp-ficha" id="ficha" aria-hidden="true">
+      <div class="h"><span>Alert to your desk</span><span>12:20</span></div>
+      <b>NLD-2041, Nuevo Laredo to Monterrey</b><span class="q">No word from the driver since 10:05.</span>
     </div>
   </section>
 
@@ -261,6 +267,33 @@
           </p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI CONNECTOR ── -->
+  <section id="ai" class="rp-ia" aria-labelledby="ai-heading">
+    <div class="section-inner">
+      <div class="rp-ia-grid">
+        <div>
+          <h2 id="ai-heading">Ruta connects to the AI you already use.</h2>
+          <p class="rp-lede">With the Ruta connector, Claude or ChatGPT can look up your operation and act on it with your permission. And if your AI is already connected to your email, your calendar or your spreadsheets, you can ask for things that cut across all of them: “create the loads from this morning's emails and tell me which ones will arrive after their appointment.”</p>
+          <ul class="rp-puede">
+            <li><b>Look up</b>Which loads are at risk, the history of one, and the numbers for the period.</li>
+            <li><b>Create</b>One load or a whole batch, with the same checks as the dashboard.</li>
+            <li><b>Correct</b>Pickup and delivery appointments, or the driver's phone number.</li>
+            <li><b>Pause and resume</b>Follow-up on a load, with a reason and an end date.</li>
+          </ul>
+        </div>
+        <div class="rp-chat" role="img" aria-label="Sample conversation with an AI assistant connected to Ruta.">
+          <div class="rp-chat-cab"><b>Your AI assistant</b><span>Sample conversation</span></div>
+          <div class="rp-hilo">
+            <p class="tu">Which loads have gone quiet this morning?</p>
+            <div class="ella"><span class="usa"><i></i>Ruta, operation summary</span><br>One: <b>NLD-2041</b>, Aceros del Bajío, in transit. No word from the driver since 10:05. Ruta alerted your desk at 12:20.</div>
+            <p class="tu">Create the 12 loads in this spreadsheet.</p>
+            <div class="ella"><span class="usa"><i></i>Ruta, review a batch</span><br>Checked all 12: <b>11 are ready</b>. Row 7 is missing the driver's phone number. Should I confirm the 11?</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -397,6 +430,8 @@
     </div>
   </footer>
 
+  <script>window.MAPA_REGION = {"lat0":24,"C":{"Monterrey":[25.67,-100.31],"Nuevo Laredo":[27.48,-99.52],"CDMX":[19.43,-99.13],"Guadalajara":[20.67,-103.35],"Querétaro":[20.59,-100.39],"Saltillo":[25.42,-101],"San Luis Potosí":[22.15,-100.98],"Puebla":[19.04,-98.2],"Veracruz":[19.17,-96.13],"León":[21.12,-101.68],"Torreón":[25.54,-103.42],"Chihuahua":[28.63,-106.07],"Ciudad Juárez":[31.69,-106.42],"Tijuana":[32.51,-117.04],"Hermosillo":[29.07,-110.96],"Nogales":[31.31,-110.94],"Reynosa":[26.09,-98.28],"Culiacán":[24.81,-107.39],"Mazatlán":[23.25,-106.41],"Manzanillo":[19.05,-104.32],"Lázaro Cárdenas":[17.96,-102.19],"Mérida":[20.97,-89.62],"Aguascalientes":[21.88,-102.29],"Altamira":[22.39,-97.94]},"R":[["Nuevo Laredo","Monterrey"],["Monterrey","Saltillo"],["Saltillo","San Luis Potosí"],["San Luis Potosí","Querétaro"],["Querétaro","CDMX"],["CDMX","Puebla"],["Puebla","Veracruz"],["León","Querétaro"],["Guadalajara","León"],["Guadalajara","Manzanillo"],["Guadalajara","CDMX"],["Torreón","Saltillo"],["Chihuahua","Torreón"],["Ciudad Juárez","Chihuahua"],["Hermosillo","Nogales"],["Culiacán","Hermosillo"],["Mazatlán","Culiacán"],["Guadalajara","Mazatlán"],["Tijuana","Hermosillo"],["Reynosa","Monterrey"],["Altamira","San Luis Potosí"],["Lázaro Cárdenas","CDMX"],["Mérida","Veracruz"],["Aguascalientes","León"],["Aguascalientes","San Luis Potosí"],["Monterrey","Torreón"]],"rotulos":["Monterrey","Nuevo Laredo","CDMX","Guadalajara","Querétaro","Ciudad Juárez","Tijuana","Veracruz","Mérida","Manzanillo"],"rotulosMovil":["Monterrey","Nuevo Laredo","CDMX","Ciudad Juárez","Tijuana","Mérida"],"foco":["Nuevo Laredo","Monterrey"]};</script>
+  <script src="assets/js/mapa-vivo.js?v=20261121" defer></script>
   <script src="assets/js/main.js?v=20260926"></script>
 </body>
 </html>

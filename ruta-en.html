@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ruta · WhatsApp check calls for loads into Mexico | Quelion</title>
-  <meta name="description" content="Ruta runs check calls with your drivers in Mexico on WhatsApp and Telegram, in Spanish, reads your carrier's GPS when shared, and alerts your desk when a load crossing at Laredo goes quiet.">
+  <meta name="description" content="Ruta runs check calls with your drivers in Mexico on WhatsApp and Telegram, in Spanish, reads your carrier's GPS when shared, and alerts your team when a load crossing at Laredo goes quiet.">
   <link rel="canonical" href="https://quelion.ai/ruta-en">
   <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/ruta">
   <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/ruta">
@@ -16,7 +16,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Ruta, by Quelion. Stop chasing drivers.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:description" content="Check calls with your drivers in Mexico on WhatsApp and Telegram, in Spanish, plus your carrier's GPS when shared, with escalation to your desk when a load goes quiet.">
+  <meta property="og:description" content="Check calls with your drivers in Mexico on WhatsApp and Telegram, in Spanish, plus your carrier's GPS when shared, with escalation to your team when a load goes quiet.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quelion.ai/ruta-en">
   <meta property="og:locale" content="en_US">
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css?v=20261121">
   <link rel="stylesheet" href="assets/css/global.css?v=20261121">
   <link rel="stylesheet" href="assets/css/components.css?v=20261121">
-  <link rel="stylesheet" href="assets/css/ruta.css?v=20261121">
+  <link rel="stylesheet" href="assets/css/ruta.css?v=20261122">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,7 +63,7 @@
         "name": "Is the dashboard in English?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It's in Spanish, like the driver messages and the alerts to your desk: the language your drivers and carriers work in. From Claude or ChatGPT you can ask about your loads in English."
+          "text": "It's in Spanish, like the driver messages and the alerts to your team: the language your drivers and carriers work in. From Claude or ChatGPT you can ask about your loads in English."
         }
       },
       {
@@ -87,7 +87,7 @@
         "name": "What does Ruta do today?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ruta messages your drivers on WhatsApp or Telegram, in Spanish, whether they're your own drivers, a carrier's drivers or owner-operators, and understands their replies, voice notes included. With read-only access to the truck's GPS, yours or the carrier's, it asks the driver when something looks off. If a driver goes quiet, it follows up. If there's still no answer, it alerts your desk and, if nobody acknowledges the alert, calls whoever's on call, then their backup. Drivers only get messages, never calls. If you turn it on, it updates your customer on WhatsApp when the truck departs, crosses, arrives and delivers, with a link to follow the load. Each stage has its own hours, daytime or 24/7, and your team tracks every load on a dashboard. Loads come in from your Excel or CSV file, the dashboard, the order PDF emailed to your Ruta address, or Claude or ChatGPT through the Ruta connector, which also lets you check on your loads, fix an appointment or pause follow-up. Ruta talks one-to-one with each driver, not in group chats."
+          "text": "Ruta messages your drivers on WhatsApp or Telegram, in Spanish, whether they're your own drivers, a carrier's drivers or owner-operators, and understands their replies, voice notes included. With read-only access to the truck's GPS, yours or the carrier's, it asks the driver when something looks off. If a driver goes quiet, it follows up. If there's still no answer, it alerts your team and, if nobody acknowledges the alert, calls whoever's on call, then their backup. Drivers only get messages, never calls. If you turn it on, it updates your customer on WhatsApp when the truck departs, crosses, arrives and delivers, with a link to follow the load. Each stage has its own hours, daytime or 24/7, and your team tracks every load on a dashboard. Loads come in from your Excel or CSV file, the dashboard, the order PDF emailed to your Ruta address, or Claude or ChatGPT through the Ruta connector, which also lets you check on your loads, fix an appointment or pause follow-up. Ruta talks one-to-one with each driver, not in group chats."
         }
       },
       {
@@ -136,13 +136,13 @@
   <section class="hero rp-hero" aria-labelledby="hero-headline">
     <canvas id="mapa" aria-hidden="true"></canvas>
     <div class="hero-content">
-      <p class="eyebrow hero-eyebrow">Ruta · by Quelion</p>
       <h1 id="hero-headline" class="hero-headline">
+        <span class="rp-kicker">Ruta · WhatsApp check calls for loads into Mexico</span>
         Stop chasing drivers.
       </h1>
       <p class="lede hero-lede">
         Ruta follows up on WhatsApp and Telegram, in Spanish, with the drivers hauling your loads into Mexico.
-        It updates the status of each load, from the Laredo crossing to delivery, and escalates to your desk only
+        It updates the status of each load, from the Laredo crossing to delivery, and escalates to your team only
         when a driver goes silent.
       </p>
       <div class="hero-ctas">
@@ -156,7 +156,7 @@
       <p class="hero-contact">No app for your drivers &nbsp;·&nbsp; or email hola@quelion.ai</p>
     </div>
     <div class="rp-ficha" id="ficha" aria-hidden="true">
-      <div class="h"><span>Alert to your desk</span><span>12:20</span></div>
+      <div class="h"><span>Alert to your team</span><span>12:20</span></div>
       <b>LRD-2041, Laredo to Monterrey</b><span class="q">No word from the driver since 10:05.</span>
     </div>
   </section>
@@ -168,7 +168,7 @@
         Status on every load lives in someone's WhatsApp.
       </h2>
       <p style="font-size:15px;color:var(--text-secondary);max-width:640px;line-height:1.7;">
-        “¿Ya saliste?”, “¿cómo vas?”, “¿a qué hora llegas?”. Someone on your desk writes every one of
+        “¿Ya saliste?”, “¿cómo vas?”, “¿a qué hora llegas?”. Someone on your team writes every one of
         those messages, in Spanish, and the answers stay in a chat nobody else sees. Ruta asks
         those questions for your team and keeps the replies in the history of the load.
       </p>
@@ -217,7 +217,7 @@
             <h3 style="font-size:16px;font-weight:600;margin-bottom:10px;">If nobody answers, Ruta follows up and escalates</h3>
             <p style="font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
               If a driver misses a check-in at a given stage, Ruta writes again during the hours you set, daytime or around the clock.
-              If there is still no answer, it alerts your coordinator. Timing is set per stage.
+              If there is still no answer, it alerts your team and, if nobody acknowledges the alert, calls whoever is on call. Timing is set per stage.
             </p>
           </div>
         </div>
@@ -244,7 +244,7 @@
           <div class="rp-chat-cab"><b>Your AI assistant</b><span>Sample conversation</span></div>
           <div class="rp-hilo">
             <p class="tu">Which loads have gone quiet this morning?</p>
-            <div class="ella"><span class="usa"><i></i>Checked in Ruta</span><br>One: <b>LRD-2041</b>, Laredo to Monterrey, in transit. No word from the driver since 10:05. Ruta alerted your desk at 12:20.</div>
+            <div class="ella"><span class="usa"><i></i>Checked in Ruta</span><br>One: <b>LRD-2041</b>, Laredo to Monterrey, in transit. No word from the driver since 10:05. Ruta alerted your team at 12:20.</div>
             <p class="tu">Create the 12 loads in this spreadsheet.</p>
             <div class="ella"><span class="usa"><i></i>Reviewed in Ruta</span><br>Checked all 12: <b>11 are ready</b>. Row 7 is missing the driver's phone number. Should I confirm the 11?</div>
           </div>
@@ -314,7 +314,7 @@
       <div class="cols-3" style="display:grid;gap:1px;background:var(--border-hairline);border:1px solid var(--border-hairline);">
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <p style="font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--text-tertiary);font-variant-numeric:tabular-nums;margin-bottom:12px;">01</p>
-          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">You walk us through your desk</h3>
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">You walk us through your operation</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">How you track your loads today, how many loads you run and how you reach your drivers.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
@@ -355,7 +355,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            It's in Spanish, like the driver messages and the alerts to your desk: the language your drivers and carriers work in. From Claude or ChatGPT you can ask about your loads in English.
+            It's in Spanish, like the driver messages and the alerts to your team: the language your drivers and carriers work in. From Claude or ChatGPT you can ask about your loads in English.
           </p>
         </details>
 
@@ -385,7 +385,7 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 12px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Ruta messages your drivers on WhatsApp or Telegram, in Spanish, whether they're your own drivers, a carrier's drivers or owner-operators, and understands their replies, voice notes included. With read-only access to the truck's GPS, yours or the carrier's, it asks the driver when something looks off. If a driver goes quiet, it follows up. If there's still no answer, it alerts your desk and, if nobody acknowledges the alert, calls whoever's on call, then their backup. Drivers only get messages, never calls. If you turn it on, it updates your customer on WhatsApp when the truck departs, crosses, arrives and delivers, with a link to follow the load. Each stage has its own hours, daytime or 24/7, and your team tracks every load on a dashboard.
+            Ruta messages your drivers on WhatsApp or Telegram, in Spanish, whether they're your own drivers, a carrier's drivers or owner-operators, and understands their replies, voice notes included. With read-only access to the truck's GPS, yours or the carrier's, it asks the driver when something looks off. If a driver goes quiet, it follows up. If there's still no answer, it alerts your team and, if nobody acknowledges the alert, calls whoever's on call, then their backup. Drivers only get messages, never calls. If you turn it on, it updates your customer on WhatsApp when the truck departs, crosses, arrives and delivers, with a link to follow the load. Each stage has its own hours, daytime or 24/7, and your team tracks every load on a dashboard.
           </p>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
             Loads come in from your Excel or CSV file, the dashboard, the order PDF emailed to your Ruta address, or Claude or ChatGPT through the Ruta connector, which also lets you check on your loads, fix an appointment or pause follow-up. Ruta talks one-to-one with each driver, not in group chats.

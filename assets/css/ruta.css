@@ -10,6 +10,7 @@
     linear-gradient(0deg, var(--surface-primary) 0%, rgb(12 11 10 / 0) 24%);
 }
 .rp-hero .hero-headline { font-weight: var(--weight-medium); }
+.rp-kicker { display: block; font-family: var(--font-sans); font-size: 15px; line-height: 1.4; font-weight: var(--weight-medium); letter-spacing: 0; color: var(--text-secondary); margin-bottom: var(--sp-24); }
 .rp-ficha {
   position: absolute; z-index: 3; right: var(--grid-margin); bottom: var(--sp-64); width: 310px;
   background: rgb(21 20 18 / .86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);

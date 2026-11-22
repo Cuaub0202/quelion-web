@@ -45,9 +45,9 @@
 .rp-hilo .usa i { width: 6px; height: 6px; border-radius: 50%; background: var(--text-secondary); }
 
 @media (max-width: 859px) {
-  .rp-hero .hero-content { padding-top: 460px; }
+  .rp-hero .hero-content { padding-top: 384px; }
   .rp-hero::after { background: linear-gradient(0deg, var(--surface-primary) 50%, rgb(12 11 10 / .5) 68%, rgb(12 11 10 / 0) 100%); }
-  .rp-ficha { left: var(--grid-margin); right: var(--grid-margin); width: auto; top: 360px; bottom: auto; }
+  .rp-ficha { left: var(--grid-margin); right: var(--grid-margin); width: auto; top: 328px; bottom: auto; }
   .rp-ia-grid { grid-template-columns: minmax(0, 1fr); gap: var(--sp-40); }
   .rp-puede { margin-top: var(--sp-32); }
 }

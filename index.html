@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500&family=JetBrains+Mono:wght@400&display=swap">
-  <link rel="stylesheet" href="/assets/css/home.css?v=20261122">
+  <link rel="stylesheet" href="/assets/css/home.css?v=20261123">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -116,7 +116,7 @@
       <div class="chat obj-box" role="img" aria-label="Conversación de ejemplo con una IA conectada a Ruta.">
         <div class="obj-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
         <div class="hilo">
-          <p class="tu">¿Qué cargas van sin noticias esta mañana?</p>
+          <p class="tu">¿Qué cargas van sin noticias hoy?</p>
           <div class="ella"><span class="usa"><i></i>Consultado en Ruta</span><br>Una: <b>VLC-2041</b>, Castellón a Zaragoza, en tránsito. Sin noticias del conductor desde las 10:05. Ruta avisó a tráfico a las 12:20.</div>
           <p class="tu">Da de alta las 12 cargas de este Excel.</p>
           <div class="ella"><span class="usa"><i></i>Revisado en Ruta</span><br>Revisadas las 12: <b>entran 11</b>. La fila 7 no trae el teléfono del conductor. ¿Confirmo las 11?</div>
@@ -138,7 +138,7 @@
           <thead><tr><th>Etapa</th><th class="n">Espera sin noticias</th><th class="n">Veces que pregunta</th><th class="opc">Después avisa a</th></tr></thead>
           <tbody>
             <tr><td>En carga</td><td class="n">30&nbsp;min</td><td class="n">2</td><td class="opc">Jefe de tráfico</td></tr>
-            <tr><td>En tránsito</td><td class="n">2&nbsp;h</td><td class="n">3</td><td class="opc">Jefe de tráfico, y luego a su respaldo</td></tr>
+            <tr><td>En tránsito</td><td class="n">30&nbsp;min</td><td class="n">3</td><td class="opc">Jefe de tráfico, y luego a su respaldo</td></tr>
             <tr><td>Descargando</td><td class="n">45&nbsp;min</td><td class="n">2</td><td class="opc">Jefe de tráfico</td></tr>
           </tbody>
         </table>
@@ -197,7 +197,7 @@ addEventListener('scroll', alBajar, { passive: true }); alBajar();
     const k = Math.cos(lat0 * Math.PI / 180), xs = [], ys = [];
     for (const n in C) { xs.push(C[n][1] * k); ys.push(-C[n][0]); }
     const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
-    const caja = W < 860 ? { x: W * 0.07, y: 96, w: W * 0.80, h: H * 0.30 } : { x: W * 0.42, y: H * 0.14, w: W * 0.49, h: H * 0.70 };
+    const caja = W <= 900 ? { x: W * 0.07, y: 96, w: W * 0.80, h: Math.min(H * 0.30, 230) } : { x: W * 0.42, y: H * 0.14, w: W * 0.49, h: H * 0.70 };
     const s = Math.min(caja.w / (x1 - x0), caja.h / (y1 - y0));
     const ox = caja.x + (caja.w - (x1 - x0) * s) / 2, oy = caja.y + (caja.h - (y1 - y0) * s) / 2;
     P = {}; for (const n in C) P[n] = [ox + (C[n][1] * k - x0) * s, oy + (-C[n][0] - y0) * s];
@@ -210,7 +210,7 @@ addEventListener('scroll', alBajar, { passive: true }); alBajar();
     cx.fillStyle = 'rgba(242,239,232,0.55)';
     for (const n in P) { cx.beginPath(); cx.arc(P[n][0], P[n][1], 1.6, 0, 6.3); cx.fill(); }
     cx.font = '12px Inter, sans-serif'; cx.fillStyle = 'rgba(184,179,168,0.75)';
-    for (const n of (W < 860 ? rotulosMovil : rotulos)) { const w = cx.measureText(n).width; const izq = P[n][0] + 8 + w > W - 6; cx.fillText(n, izq ? P[n][0] - 8 - w : P[n][0] + 8, P[n][1] + 4); }
+    for (const n of (W <= 900 ? rotulosMovil : rotulos)) { const w = cx.measureText(n).width; const izq = P[n][0] + 8 + w > W - 6; cx.fillText(n, izq ? P[n][0] - 8 - w : P[n][0] + 8, P[n][1] + 4); }
     cargas.forEach((c, i) => {
       const [a, b] = R[c.r];
       let f = (c.f + t * c.v) % 1; if (c.d < 0) f = 1 - f;

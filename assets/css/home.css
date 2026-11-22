@@ -1,4 +1,4 @@
-/* Portada de Quelion (España y México): mapa vivo. Generado desde _maqueta/_fuente/maqueta.css; no editar a mano. */
+/* Portada de Quelion (España y México): mapa vivo. */
 :root{
   /* Una sola materia: tinta cálida en capas. El papel solo aparece en botones y en un énfasis por pantalla. */
   --ink:#0C0B0A; --ink-2:#151412; --ink-3:#1E1C19; --ink-4:#272420;
@@ -142,7 +142,8 @@ footer .fin{grid-column:1/-1;margin-top:var(--s5)}
   .entra .sec-h{position:static}
   .nav ul,.nav .login{display:none}
   .hero::after{background:linear-gradient(0deg,var(--ink) 36%,rgb(12 11 10/.5) 60%,rgb(12 11 10/0) 100%)}
-  .ficha{left:var(--m);right:var(--m);width:auto;top:calc(84px + 40svh);bottom:auto}
+  .hero .wrap{padding-top:440px}
+  .ficha{left:var(--m);right:var(--m);width:auto;top:336px;bottom:auto}
   .hero .lead{margin-top:20px}
   .opc{display:none}
   .obj-cab{padding:12px 16px}

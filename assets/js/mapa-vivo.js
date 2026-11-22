@@ -15,7 +15,7 @@
     const k = Math.cos(lat0 * Math.PI / 180), xs = [], ys = [];
     for (const n in C) { xs.push(C[n][1] * k); ys.push(-C[n][0]); }
     const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
-    const caja = W < 860 ? { x: W * 0.07, y: 96, w: W * 0.80, h: Math.min(H * 0.30, 250) } : { x: W * 0.42, y: H * 0.14, w: W * 0.49, h: H * 0.70 };
+    const caja = W < 860 ? { x: W * 0.07, y: 96, w: W * 0.80, h: Math.min(H * 0.30, 220) } : { x: W * 0.42, y: H * 0.14, w: W * 0.49, h: H * 0.70 };
     const s = Math.min(caja.w / (x1 - x0), caja.h / (y1 - y0));
     const ox = caja.x + (caja.w - (x1 - x0) * s) / 2, oy = caja.y + (caja.h - (y1 - y0) * s) / 2;
     P = {}; for (const n in C) P[n] = [ox + (C[n][1] * k - x0) * s, oy + (-C[n][0] - y0) * s];

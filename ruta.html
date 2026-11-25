@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ruta: seguimiento 24/7 de conductores por WhatsApp | Quelion</title>
+  <title>Ruta de Quelion: seguimiento 24/7 de conductores por WhatsApp</title>
   <meta name="description" content="Ruta pregunta al conductor por WhatsApp, lee el GPS del camión y avisa solo de lo que se atasca; si nadie confirma, llama. Flota propia o subcontratada.">
   <link rel="canonical" href="https://quelion.ai/ruta">
   <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/ruta">
   <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/ruta">
   <link rel="alternate" hreflang="en" href="https://quelion.ai/ruta-en">
   <link rel="alternate" hreflang="x-default" href="https://quelion.ai/ruta">
-  <meta property="og:title" content="Ruta · Entérate antes que tu cliente">
+  <meta property="og:title" content="Ruta de Quelion · Entérate antes que tu cliente">
+  <meta property="og:site_name" content="Quelion">
   <meta property="og:image" content="https://quelion.ai/assets/og/og-ruta.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -33,7 +34,8 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": "https://quelion.ai/ruta#software",
-    "name": "Ruta",
+    "name": "Ruta de Quelion",
+    "alternateName": "Ruta",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://quelion.ai/ruta",
@@ -65,6 +67,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No, trabaja a su lado. Ruta se ocupa de la conversación con el conductor y del estado de cada carga. Las cargas le llegan con la exportación en Excel de tu TMS, por correo con el PDF de la orden o desde tu IA con el conector."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ruta trabaja con los transportistas que ya tengo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Ruta hace el seguimiento de las cargas que ya has asignado, con tus conductores o con los de los transportistas con los que ya trabajas. La contratación del transporte sigue en tus manos; Ruta empieza cuando la carga ya tiene quien la lleve."
         }
       },
       {
@@ -104,7 +114,7 @@
         "name": "¿Qué hace Ruta hoy?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ruta escribe a tus conductores por WhatsApp o Telegram, sean de tu flota, subcontratados o autónomos, y entiende lo que contestan, también en notas de voz. Con acceso de solo lectura al GPS del camión, sea tuyo o del transportista, le pregunta al conductor cuando algo no cuadra. Si un conductor no da novedades, le insiste. Si sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el aviso, llama por teléfono a quien esté de guardia y después a su respaldo. Al conductor solo le escribe. Si lo activas, avisa a tu cliente por WhatsApp cuando el camión sale, llega y entrega, con un enlace para ver su carga. Cada etapa tiene su horario, de día o 24/7, y tu equipo sigue cada carga en un panel. Las cargas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de carga o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus cargas, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada conductor, no en grupos."
+          "text": "Ruta escribe a tus conductores por WhatsApp o Telegram, sean de tu flota, subcontratados o autónomos, y entiende lo que contestan, también en notas de voz. Con acceso de solo lectura al GPS del camión, sea tuyo o del transportista, le pregunta al conductor cuando algo no cuadra. Si un conductor no da novedades, le insiste. Si sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el aviso, llama por teléfono a quien esté de guardia y después a su respaldo. Al conductor solo le escribe. Si lo activas, avisa a tu cliente por WhatsApp cuando el camión sale, llega y entrega, con un enlace para ver su carga. Cada etapa tiene su horario, de día o 24/7, y tu equipo sigue cada carga en un panel. Las cargas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de carga o desde Claude o ChatGPT con el conector MCP de Ruta, que también sirve para consultar tus cargas, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada conductor, no en grupos."
         }
       },
       {
@@ -251,14 +261,14 @@
       <div class="rp-ia-grid">
         <div>
           <h2 id="ia-heading">Ruta se conecta a la IA que ya usas.</h2>
-          <p class="rp-lede">Con el conector de Ruta, Claude o ChatGPT te contestan con lo que hay en Ruta. Si les pides dar de alta o cambiar algo, te lo enseñan antes y esperan tu confirmación. Y si tu IA ya lee tu correo o tus Excel, se lo pides todo junto: «da de alta las cargas del correo de esta mañana y dime cuáles llegan después de su cita».</p>
+          <p class="rp-lede">Con el conector MCP de Ruta, Claude o ChatGPT te contestan con lo que hay en Ruta. Si les pides dar de alta o cambiar algo, te lo enseñan antes y esperan tu confirmación. Y si tu IA ya lee tu correo o tus Excel, se lo pides todo junto: «da de alta las cargas del correo de esta mañana y dime cuáles llegan después de su cita».</p>
           <ul class="rp-puede">
             <li><b>Consultar</b>Qué cargas van en riesgo, el historial de una y las cifras del periodo.</li>
             <li><b>Dar de alta</b>Una carga o un lote entero, con las mismas validaciones que el panel.</li>
             <li><b>Corregir</b>Las citas de carga y de entrega, o el teléfono del conductor.</li>
             <li><b>Pausar y reanudar</b>El seguimiento de una carga, con motivo y fecha de fin.</li>
           </ul>
-          <p style="font-size:14px;margin:20px 0 0;"><a href="/ruta-chatgpt-claude" style="color:var(--text-primary);text-decoration:underline;">Conector de Ruta para ChatGPT y Claude: qué le puedes pedir</a></p>
+          <p style="font-size:14px;margin:20px 0 0;"><a href="/ruta-chatgpt-claude" style="color:var(--text-primary);text-decoration:underline;">Conector MCP de Ruta para ChatGPT y Claude: qué le puedes pedir</a></p>
         </div>
         <div class="rp-chat" role="img" aria-label="Conversación de ejemplo con una IA conectada a Ruta.">
           <div class="rp-chat-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
@@ -407,6 +417,16 @@
 
         <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Ruta trabaja con los transportistas que ya tengo?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Sí. Ruta hace el seguimiento de las cargas que ya has asignado, con tus conductores o con los de los transportistas con los que ya trabajas. La contratación del transporte sigue en tus manos; Ruta empieza cuando la carga ya tiene quien la lleve.
+          </p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Qué pasa si la IA entiende mal un mensaje?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
@@ -454,7 +474,7 @@
             Ruta escribe a tus conductores por WhatsApp o Telegram, sean de tu flota, subcontratados o autónomos, y entiende lo que contestan, también en notas de voz. Con acceso de solo lectura al GPS del camión, sea tuyo o del transportista, le pregunta al conductor cuando algo no cuadra. Si un conductor no da novedades, le insiste. Si sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el aviso, llama por teléfono a quien esté de guardia y después a su respaldo. Al conductor solo le escribe. Si lo activas, avisa a tu cliente por WhatsApp cuando el camión sale, llega y entrega, con un enlace para ver su carga. Cada etapa tiene su horario, de día o 24/7, y tu equipo sigue cada carga en un panel.
           </p>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Las cargas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de carga o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus cargas, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada conductor, no en grupos.
+            Las cargas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de carga o desde Claude o ChatGPT con el conector MCP de Ruta, que también sirve para consultar tus cargas, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada conductor, no en grupos.
           </p>
         </details>
 

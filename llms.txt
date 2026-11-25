@@ -12,8 +12,8 @@
 
 - [Ruta, España](https://quelion.ai/ruta): qué hace, cómo empezar y preguntas frecuentes
 - [Ruta, México](https://quelion.ai/mx/ruta): la versión para México
-- [Ruta en ChatGPT y Claude, España](https://quelion.ai/ruta-chatgpt-claude): el conector de Ruta, qué se le puede pedir, frases de ejemplo, permisos y cómo se conecta
-- [Ruta en ChatGPT y Claude, México](https://quelion.ai/mx/ruta-chatgpt-claude): la versión para México
+- [Conector MCP de Ruta para ChatGPT y Claude, España](https://quelion.ai/ruta-chatgpt-claude): el conector MCP de Ruta, de Quelion, qué se le puede pedir, frases de ejemplo, permisos y cómo se conecta
+- [Conector MCP de Ruta para ChatGPT y Claude, México](https://quelion.ai/mx/ruta-chatgpt-claude): la versión para México
 - [API de Ruta](https://ruta.quelion.ai/api/v1/docs): documentación pública para conectar un TMS (lectura de órdenes, historial y resumen)
 - [Ruta, English](https://quelion.ai/ruta-en): para equipos de EE. UU. que mueven carga hacia México
 - [Inicio](https://quelion.ai/)

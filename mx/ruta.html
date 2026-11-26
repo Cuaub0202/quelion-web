@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ruta · Seguimiento a operadores por WhatsApp, 24/7 | Quelion</title>
+  <title>Ruta de Quelion · Seguimiento a operadores por WhatsApp, 24/7</title>
   <meta name="description" content="Seguimiento de viajes y embarques por WhatsApp, Telegram y cuenta espejo. Si el chofer no contesta, Ruta insiste; si nadie confirma, llama al coordinador.">
   <link rel="canonical" href="https://quelion.ai/mx/ruta">
   <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/ruta">
   <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/ruta">
   <link rel="alternate" hreflang="en" href="https://quelion.ai/ruta-en">
   <link rel="alternate" hreflang="x-default" href="https://quelion.ai/ruta">
-  <meta property="og:title" content="Ruta · Entérate antes que tu cliente">
+  <meta property="og:title" content="Ruta de Quelion · Entérate antes que tu cliente">
+  <meta property="og:site_name" content="Quelion">
   <meta property="og:image" content="https://quelion.ai/assets/og/og-ruta-mx.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -33,7 +34,8 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": "https://quelion.ai/mx/ruta#software",
-    "name": "Ruta",
+    "name": "Ruta de Quelion",
+    "alternateName": "Ruta",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://quelion.ai/mx/ruta",
@@ -65,6 +67,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No, trabaja a su lado. Ruta se ocupa de la conversación con el chofer y del estatus de cada embarque. Los embarques le llegan con la exportación en Excel de tu TMS, por correo con el PDF de la orden o desde tu IA con el conector."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ruta trabaja con las líneas transportistas que ya tengo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Ruta le da seguimiento a los embarques que ya asignaste, con tus choferes o con las líneas y permisionarios con los que ya trabajas. Tú contratas el flete con quien quieras y Ruta le da seguimiento desde que lo asignas."
         }
       },
       {
@@ -120,7 +130,7 @@
         "name": "¿Qué hace Ruta hoy?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ruta les escribe a tus choferes por WhatsApp o Telegram, sean de tu flota, de una línea subcontratada o permisionarios, y entiende lo que le contestan, también en notas de voz. Con la cuenta espejo de tu proveedor de GPS o la de la línea, le pregunta al chofer cuando algo no cuadra. Si un chofer no reporta, le insiste. Si sigue sin contestar, le avisa a tu equipo y, si nadie confirma el aviso, le marca a quien esté de guardia y después a su respaldo. Al chofer nunca le marca; solo le escribe. Si lo activas, le avisa a tu cliente cuando la unidad sale, cruza, llega y se entrega. Cada etapa tiene su horario, de día o 24/7, y tu coordinador sigue cada carga en un panel. Tus órdenes activas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus embarques, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada chofer, no en grupos."
+          "text": "Ruta les escribe a tus choferes por WhatsApp o Telegram, sean de tu flota, de una línea subcontratada o permisionarios, y entiende lo que le contestan, también en notas de voz. Con la cuenta espejo de tu proveedor de GPS o la de la línea, le pregunta al chofer cuando algo no cuadra. Si un chofer no reporta, le insiste. Si sigue sin contestar, le avisa a tu equipo y, si nadie confirma el aviso, le marca a quien esté de guardia y después a su respaldo. Al chofer nunca le marca; solo le escribe. Si lo activas, le avisa a tu cliente cuando la unidad sale, cruza, llega y se entrega. Cada etapa tiene su horario, de día o 24/7, y tu coordinador sigue cada carga en un panel. Tus órdenes activas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector MCP de Ruta, que también sirve para consultar tus embarques, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada chofer, no en grupos."
         }
       },
       {
@@ -274,7 +284,7 @@
             <li><b>Corregir</b>Las citas de carga y de entrega, o el teléfono del chofer.</li>
             <li><b>Pausar y reanudar</b>El seguimiento de un viaje, con motivo y fecha de fin.</li>
           </ul>
-          <p style="font-size:14px;margin:20px 0 0;"><a href="/mx/ruta-chatgpt-claude" style="color:var(--text-primary);text-decoration:underline;">Conector de Ruta para ChatGPT y Claude: qué le puedes pedir</a></p>
+          <p style="font-size:14px;margin:20px 0 0;"><a href="/mx/ruta-chatgpt-claude" style="color:var(--text-primary);text-decoration:underline;">Conector MCP de Ruta para ChatGPT y Claude: qué le puedes pedir</a></p>
         </div>
         <div class="rp-chat" role="img" aria-label="Conversación de ejemplo con una IA conectada a Ruta.">
           <div class="rp-chat-cab"><b>Tu asistente de IA</b><span>Conversación de ejemplo</span></div>
@@ -424,6 +434,16 @@
 
         <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Ruta trabaja con las líneas transportistas que ya tengo?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Sí. Ruta le da seguimiento a los embarques que ya asignaste, con tus choferes o con las líneas y permisionarios con los que ya trabajas. Tú contratas el flete con quien quieras y Ruta le da seguimiento desde que lo asignas.
+          </p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Qué pasa si la IA entiende mal un mensaje?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
@@ -491,7 +511,7 @@
             Ruta les escribe a tus choferes por WhatsApp o Telegram, sean de tu flota, de una línea subcontratada o permisionarios, y entiende lo que le contestan, también en notas de voz. Con la cuenta espejo de tu proveedor de GPS o la de la línea, le pregunta al chofer cuando algo no cuadra. Si un chofer no reporta, le insiste. Si sigue sin contestar, le avisa a tu equipo y, si nadie confirma el aviso, le marca a quien esté de guardia y después a su respaldo. Al chofer nunca le marca; solo le escribe. Si lo activas, le avisa a tu cliente cuando la unidad sale, cruza, llega y se entrega. Cada etapa tiene su horario, de día o 24/7, y tu coordinador sigue cada carga en un panel.
           </p>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Tus órdenes activas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector de Ruta, que también sirve para consultar tus embarques, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada chofer, no en grupos.
+            Tus órdenes activas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de embarque o desde Claude o ChatGPT con el conector MCP de Ruta, que también sirve para consultar tus embarques, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada chofer, no en grupos.
           </p>
         </details>
 

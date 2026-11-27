@@ -17,8 +17,8 @@
 - [API de Ruta](https://ruta.quelion.ai/api/v1/docs): documentación pública para conectar un TMS (lectura de órdenes, historial y resumen)
 - [Ruta, English](https://quelion.ai/ruta-en): para equipos de EE. UU. que mueven carga hacia México
 - [Inicio](https://quelion.ai/)
-- [Qué hacer cuando el operador no reporta su estatus, México](https://quelion.ai/mx/blog/operador-no-reporta-estatus): pasos, llamada automática a quien está de guardia y a quién escalar
-- [Qué hacer cuando el conductor no contesta, España](https://quelion.ai/blog/conductor-no-contesta-seguimiento): pasos, llamada a la guardia de tráfico y a quién escalar
-- [¿GPS o seguimiento por WhatsApp para monitorear embarques?, México](https://quelion.ai/mx/blog/seguimiento-gps-transportista): qué ve el GPS, qué confirma el operador y cómo los combina Ruta
-- [¿GPS o seguimiento por WhatsApp?, España](https://quelion.ai/blog/seguimiento-gps-transportista): qué ve el GPS, qué confirma el conductor y cómo los combina Ruta
+- [Qué hacer cuando el operador no reporta su estatus de noche, México](https://quelion.ai/mx/blog/operador-no-reporta-estatus): seguimiento por WhatsApp, llamada automática a quien está de guardia y a quién escalar
+- [Qué hacer cuando el conductor no contesta, y cómo dejar de llamar para saber por dónde va cada carga, España](https://quelion.ai/blog/conductor-no-contesta-seguimiento): pasos, aviso a tráfico de la incidencia y llamada a la guardia
+- [¿GPS o seguimiento por WhatsApp para monitorear embarques? Cómo se combinan en México](https://quelion.ai/mx/blog/seguimiento-gps-transportista): qué ve el GPS, qué confirma el operador y cómo los combina Ruta
+- [¿GPS o seguimiento por WhatsApp para saber por dónde va cada carga?, España](https://quelion.ai/blog/seguimiento-gps-transportista): qué ve el GPS, qué confirma el conductor y cómo los combina Ruta
 - [Blog España](https://quelion.ai/blog/) · [Blog México](https://quelion.ai/mx/blog/)

@@ -19,6 +19,8 @@
 - [Inicio](https://quelion.ai/)
 - [Qué hacer cuando el operador no reporta su estatus de noche, México](https://quelion.ai/mx/blog/operador-no-reporta-estatus): seguimiento por WhatsApp, llamada automática a quien está de guardia y a quién escalar
 - [Qué hacer cuando el conductor no contesta, y cómo dejar de llamar para saber por dónde va cada carga, España](https://quelion.ai/blog/conductor-no-contesta-seguimiento): pasos, aviso a tráfico de la incidencia y llamada a la guardia
+- [Seguimiento por WhatsApp sin cambiar de TMS: cómo entran tus órdenes a Ruta, México](https://quelion.ai/mx/blog/como-entra-una-orden-desde-tu-tms): alta de órdenes desde el Excel o CSV que exporta el TMS, por correo con el PDF de la orden de embarque, en el panel o desde Claude y ChatGPT; qué valida Ruta, qué pasa con una orden incompleta y la API para que el TMS lea el estatus
+- [Seguimiento por WhatsApp sin cambiar de TMS: cómo entran tus cargas en Ruta, España](https://quelion.ai/blog/como-entra-una-orden-desde-tu-tms): alta de cargas desde el Excel o CSV que exporta el TMS, por correo con el PDF de la orden de carga, en el panel o desde Claude y ChatGPT; qué valida Ruta, qué pasa con una orden incompleta y la API para que el TMS lea el estado
 - [¿GPS o seguimiento por WhatsApp para monitorear embarques? Cómo se combinan en México](https://quelion.ai/mx/blog/seguimiento-gps-transportista): qué ve el GPS, qué confirma el operador y cómo los combina Ruta
 - [¿GPS o seguimiento por WhatsApp para saber por dónde va cada carga?, España](https://quelion.ai/blog/seguimiento-gps-transportista): qué ve el GPS, qué confirma el conductor y cómo los combina Ruta
 - [Blog España](https://quelion.ai/blog/) · [Blog México](https://quelion.ai/mx/blog/)

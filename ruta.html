@@ -95,6 +95,14 @@
       },
       {
         "@type": "Question",
+        "name": "¿Qué incidencias en tránsito detecta Ruta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un conductor que deja de contestar, un retraso del que avisa por WhatsApp, una hora estimada que se pasa sin noticias y, con el GPS del camión, una parada larga o un desvío de la ruta. Cada incidencia le llega a quien esté de guardia por WhatsApp, con la carga, la etapa y desde qué hora; si nadie la confirma, Ruta llama. Todo queda en el historial de la carga."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "¿Hace el seguimiento de noche y en fin de semana?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -123,6 +131,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Ruta escribe a tus conductores por WhatsApp o Telegram, sean de tu flota, subcontratados o autónomos, y entiende lo que contestan, también en notas de voz. Con acceso de solo lectura al GPS del camión, sea tuyo o del transportista, le pregunta al conductor cuando algo no cuadra. Si un conductor no da novedades, le insiste. Si sigue sin contestar, avisa a tu equipo de tráfico y, si nadie confirma el aviso, llama por teléfono a quien esté de guardia, después a su respaldo y luego al jefe de tráfico. Al conductor solo le escribe. Si lo activas, avisa a tu cliente por WhatsApp cuando el camión sale, llega y entrega, con un enlace para ver su carga. Cada etapa tiene su horario, de día o 24/7, y tu equipo sigue cada carga en un panel. Las cargas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de carga o desde Claude o ChatGPT con el conector MCP de Ruta, que también sirve para consultar tus cargas, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada conductor, no en grupos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Con qué hora trabaja Ruta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con la de tu empresa: la peninsular o, si tu tráfico trabaja desde allí, la de Canarias. Los horarios y los días de seguimiento de cada etapa se aplican en esa hora, también cuando la carga sale hacia Portugal, Francia o Marruecos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde se guardan mis datos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En la Unión Europea: las cargas, los mensajes de los conductores y el historial se guardan en un servidor y una base de datos en Fráncfort (Alemania). Ruta usa los modelos de IA por API de empresa, con la que los proveedores no entrenan sus modelos con lo que se envía. Tu equipo entra con su propio usuario y su rol, y cada cambio queda registrado con su hora."
         }
       },
       {
@@ -408,11 +432,36 @@
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Noches y fines de semana</h3>
-          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El horario y los días de seguimiento se definen por etapa y pueden ser 24/7. Tu equipo de tráfico recibe aviso por WhatsApp solo cuando un conductor deja de contestar o algo necesita atención. Si nadie lo confirma, Ruta llama por teléfono a quien esté de guardia, después a su respaldo y luego al jefe de tráfico.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El horario y los días de seguimiento se definen por etapa y pueden ser 24/7. Tu equipo de tráfico recibe aviso por WhatsApp cuando hay una incidencia en tránsito: un conductor deja de contestar, avisa de un retraso o se pasa la hora estimada. Si nadie lo confirma, Ruta llama por teléfono a quien esté de guardia, después a su respaldo y luego al jefe de tráfico.</p>
         </div>
         <div style="background:var(--surface-primary);padding:32px 28px;">
           <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Empiezas con tu Excel de siempre</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Tus cargas entran desde tu Excel o CSV. Cada una queda con su estado y un historial con la hora de cada cambio, a la vista de todo tu equipo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SEGURIDAD Y DATOS ── -->
+  <section id="seguridad" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="seguridad-heading">
+    <div class="section-inner">
+      <h2 id="seguridad-heading" style="max-width:640px;margin-bottom:40px;">Seguridad y datos: tus cargas se guardan en Fráncfort.</h2>
+      <div class="cols-2" style="display:grid;gap:1px;background:var(--border-hairline);border:1px solid var(--border-hairline);">
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">En la Unión Europea</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Las cargas, los mensajes de los conductores y el historial se guardan en un servidor y una base de datos en Fráncfort (Alemania).</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">La IA no entrena con tus datos</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Ruta usa los modelos de IA por API de empresa, con la que los proveedores no entrenan sus modelos con lo que se envía.</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Cada usuario, con su rol</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Administradores, personal de operaciones y un perfil de solo lectura. Cada cambio de estado queda registrado con su hora.</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Conexiones cifradas</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El panel, la API y el conector viajan por HTTPS. Claude y ChatGPT entran con OAuth 2.1 y tu usuario de Ruta, con sus mismos permisos.</p>
         </div>
       </div>
     </div>
@@ -502,6 +551,16 @@
 
         <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Qué incidencias en tránsito detecta Ruta?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Un conductor que deja de contestar, un retraso del que avisa por WhatsApp, una hora estimada que se pasa sin noticias y, con el GPS del camión, una parada larga o un desvío de la ruta. Cada incidencia le llega a quien esté de guardia por WhatsApp, con la carga, la etapa y desde qué hora; si nadie la confirma, Ruta llama. Todo queda en el historial de la carga.
+          </p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
             ¿Hace el seguimiento de noche y en fin de semana?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
@@ -540,6 +599,26 @@
           </p>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
             Las cargas entran desde tu Excel o CSV, desde el panel, reenviando a tu dirección de Ruta el PDF de la orden de carga o desde Claude o ChatGPT con el conector MCP de Ruta, que también sirve para consultar tus cargas, corregir una cita o pausar un seguimiento. Ruta conversa uno a uno con cada conductor, no en grupos.
+          </p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Con qué hora trabaja Ruta?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            Con la de tu empresa: la peninsular o, si tu tráfico trabaja desde allí, la de Canarias. Los horarios y los días de seguimiento de cada etapa se aplican en esa hora, también cuando la carga sale hacia Portugal, Francia o Marruecos.
+          </p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Dónde se guardan mis datos?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            En la Unión Europea: las cargas, los mensajes de los conductores y el historial se guardan en un servidor y una base de datos en Fráncfort (Alemania). Ruta usa los modelos de IA por API de empresa, con la que los proveedores no entrenan sus modelos con lo que se envía. Tu equipo entra con su propio usuario y su rol, y cada cambio queda registrado con su hora.
           </p>
         </details>
 

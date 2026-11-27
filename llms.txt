@@ -10,7 +10,7 @@
 
 ## Páginas
 
-- [Ruta, España](https://quelion.ai/ruta): qué hace, cómo empezar y preguntas frecuentes
+- [Ruta, España](https://quelion.ai/ruta): qué hace, incidencias en tránsito que detecta, qué canal usa en cada paso, seguridad y datos (servidor y base de datos en Fráncfort), cómo empezar y preguntas frecuentes
 - [Ruta, México](https://quelion.ai/mx/ruta): la versión para México
 - [Conector MCP de Ruta para ChatGPT y Claude, España](https://quelion.ai/ruta-chatgpt-claude): el conector MCP de Ruta, de Quelion, qué se le puede pedir, frases de ejemplo, permisos y cómo se conecta
 - [Conector MCP de Ruta para ChatGPT y Claude, México](https://quelion.ai/mx/ruta-chatgpt-claude): la versión para México

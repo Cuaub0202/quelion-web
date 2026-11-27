@@ -135,10 +135,18 @@
       },
       {
         "@type": "Question",
-        "name": "¿Funciona con la hora de Canarias?",
+        "name": "¿Sirve para cargas a Portugal o Francia?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Ruta trabaja con la hora de tu empresa, la peninsular o la de Canarias, y cambia sola al horario de verano. Los horarios y los días de seguimiento de cada etapa se aplican en esa hora."
+          "text": "Sí. Ruta sigue al conductor por WhatsApp o Telegram durante todo el viaje, también fuera de España, y avisa a tu tráfico igual que en un nacional. Los horarios de seguimiento y la guardia van en la hora de tu empresa y cambian solos al horario de verano."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde se guardan mis datos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En la Unión Europea. Ruta guarda las cargas, los mensajes de los conductores, las fotos de entrega y el historial en un servidor y una base de datos en Fráncfort (Alemania), con sus copias de seguridad. Para entender los mensajes usa los modelos de Anthropic y OpenAI por su API para empresas, que no entrenan con lo que reciben. Cada cambio de etapa queda registrado con su hora y con quién lo hizo."
         }
       },
       {
@@ -434,6 +442,31 @@
     </div>
   </section>
 
+  <!-- ── SEGURIDAD Y DATOS ── -->
+  <section id="seguridad" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="seguridad-heading">
+    <div class="section-inner">
+      <h2 id="seguridad-heading" style="max-width:640px;margin-bottom:40px;">Tus cargas se guardan en Fráncfort, dentro de la Unión Europea.</h2>
+      <div class="cols-2" style="display:grid;gap:1px;background:var(--border-hairline);border:1px solid var(--border-hairline);">
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">En la Unión Europea</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Ruta guarda las cargas, los mensajes de los conductores, las fotos de entrega y el historial en un servidor y una base de datos en Fráncfort (Alemania), con sus copias de seguridad.</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">La IA no entrena con tus datos</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Para entender los mensajes, Ruta usa los modelos de Anthropic y OpenAI por su API para empresas, que no entrenan con lo que reciben.</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Quién cambió qué y cuándo</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">Cada cambio de etapa de una carga queda registrado con su hora y con quién lo hizo.</p>
+        </div>
+        <div style="background:var(--surface-primary);padding:32px 28px;">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">Conexiones cifradas</h3>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;">El panel, la API y el conector van por HTTPS. Claude y ChatGPT entran con OAuth 2.1 y tu usuario de Ruta, con sus mismos permisos. Las credenciales de tu GPS se guardan cifradas y el acceso es de solo lectura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CÓMO EMPEZAR (ancla #pricing conservada para enlaces antiguos) ── -->
   <section id="pricing" style="border-top:1px solid var(--border-hairline);padding:80px 0;" aria-labelledby="pricing-heading">
     <div class="section-inner">
@@ -571,11 +604,21 @@
 
         <details style="border-bottom:1px solid var(--border-hairline);">
           <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
-            ¿Funciona con la hora de Canarias?
+            ¿Sirve para cargas a Portugal o Francia?
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Sí. Ruta trabaja con la hora de tu empresa, la peninsular o la de Canarias, y cambia sola al horario de verano. Los horarios y los días de seguimiento de cada etapa se aplican en esa hora.
+            Sí. Ruta sigue al conductor por WhatsApp o Telegram durante todo el viaje, también fuera de España, y avisa a tu tráfico igual que en un nacional. Los horarios de seguimiento y la guardia van en la hora de tu empresa y cambian solos al horario de verano.
+          </p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Dónde se guardan mis datos?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            En la Unión Europea. Ruta guarda las cargas, los mensajes de los conductores, las fotos de entrega y el historial en un servidor y una base de datos en Fráncfort (Alemania), con sus copias de seguridad. Para entender los mensajes usa los modelos de Anthropic y OpenAI por su API para empresas, que no entrenan con lo que reciben. Cada cambio de etapa queda registrado con su hora y con quién lo hizo.
           </p>
         </details>
 

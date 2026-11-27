@@ -98,7 +98,15 @@
         "name": "¿Da seguimiento de noche y en fin de semana?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta le marca por teléfono a quien esté de guardia, después a su respaldo y luego a tu gerente, hasta que alguien confirma el aviso con una tecla, ahí mismo en la llamada."
+          "text": "Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a quien esté de guardia cuando un chofer deja de reportar. Si nadie confirma el aviso por WhatsApp, Ruta le marca por teléfono a quien esté de guardia, después a su respaldo y luego a tu gerente, hasta que alguien confirma el aviso con una tecla, ahí mismo en la llamada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ruta llama por teléfono?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A tu equipo, sí. Si el chofer no reporta y nadie confirma el aviso por WhatsApp, Ruta le marca a quien esté de guardia, después a su respaldo y luego a tu gerente, hasta que alguien confirma con una tecla. Al chofer le escribe por WhatsApp o Telegram."
         }
       },
       {
@@ -267,6 +275,53 @@
           </div>
         </div>
 
+      </div>
+
+      <h3 id="canales" style="font-size:16px;font-weight:600;margin:56px 0 8px;">Qué canal usa Ruta en cada paso</h3>
+      <p style="font-size:14px;color:var(--text-secondary);margin:0 0 24px;line-height:1.7;max-width:640px;">Al chofer, Ruta le escribe. A tu equipo le escribe y, si nadie confirma, le marca.</p>
+      <div style="overflow-x:auto;border:1px solid var(--border-hairline);background:var(--surface-primary);">
+        <table style="width:100%;border-collapse:collapse;min-width:560px;">
+          <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Canal que usa Ruta en cada paso del seguimiento</caption>
+          <thead>
+            <tr>
+              <th scope="col" style="text-align:left;padding:12px 16px;font-size:12px;font-weight:500;color:var(--text-tertiary);border-bottom:1px solid var(--border-hairline);">Paso</th>
+              <th scope="col" style="text-align:left;padding:12px 16px;font-size:12px;font-weight:500;color:var(--text-tertiary);border-bottom:1px solid var(--border-hairline);">Con quién</th>
+              <th scope="col" style="text-align:left;padding:12px 16px;font-size:12px;font-weight:500;color:var(--text-tertiary);border-bottom:1px solid var(--border-hairline);">Canal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" style="padding:14px 16px;font-size:13px;color:var(--text-primary);font-weight:500;line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Pedir estatus</th>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">El chofer, o el tráfico de la línea si así trabajas con ella</td>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">WhatsApp o Telegram. Contesta con texto o con nota de voz, sin instalar nada.</td>
+            </tr>
+            <tr>
+              <th scope="row" style="padding:14px 16px;font-size:13px;color:var(--text-primary);font-weight:500;line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Insistir si no reporta</th>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">El chofer</td>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Otro mensaje por WhatsApp o Telegram, en el horario de esa etapa.</td>
+            </tr>
+            <tr>
+              <th scope="row" style="padding:14px 16px;font-size:13px;color:var(--text-primary);font-weight:500;line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Avisar a tu equipo</th>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Quien esté de guardia</td>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">WhatsApp con el embarque, desde qué hora no hay estatus y cuántas veces se le escribió al chofer.</td>
+            </tr>
+            <tr>
+              <th scope="row" style="padding:14px 16px;font-size:13px;color:var(--text-primary);font-weight:500;line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Si nadie confirma</th>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Quien esté de guardia, su respaldo y tu gerente, en ese orden</td>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Llamada de voz. Confirma oprimiendo una tecla, ahí mismo en la llamada.</td>
+            </tr>
+            <tr>
+              <th scope="row" style="padding:14px 16px;font-size:13px;color:var(--text-primary);font-weight:500;line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Avisar a tu cliente</th>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Tu cliente</td>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">WhatsApp con la salida, el cruce, la llegada y la entrega, y un enlace para ver su embarque en vivo.</td>
+            </tr>
+            <tr>
+              <th scope="row" style="padding:14px 16px;font-size:13px;color:var(--text-primary);font-weight:500;line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Consultar o dar de alta</th>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">Tu equipo</td>
+              <td style="padding:14px 16px;font-size:13px;color:var(--text-secondary);line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border-hairline);">El panel, o Claude y ChatGPT con el <a href="/mx/ruta-chatgpt-claude" style="color:var(--text-primary);text-decoration:underline;">conector MCP de Ruta</a>.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -468,7 +523,17 @@
             <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
           </summary>
           <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
-            Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a tu equipo solo cuando algo necesita atención. Si nadie confirma el aviso por WhatsApp, Ruta le marca por teléfono a quien esté de guardia, después a su respaldo y luego a tu gerente, hasta que alguien confirma el aviso con una tecla, ahí mismo en la llamada.
+            Sí. El horario, la frecuencia del seguimiento y el escalamiento se configuran por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue dando seguimiento de noche y le avisa a quien esté de guardia cuando un chofer deja de reportar. Si nadie confirma el aviso por WhatsApp, Ruta le marca por teléfono a quien esté de guardia, después a su respaldo y luego a tu gerente, hasta que alguien confirma el aviso con una tecla, ahí mismo en la llamada.
+          </p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border-hairline);">
+          <summary style="padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Ruta llama por teléfono?
+            <span style="font-family:var(--font-mono);color:var(--text-quiet);font-size:18px;margin-left:16px;">+</span>
+          </summary>
+          <p style="padding:0 24px 20px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.7;">
+            A tu equipo, sí. Si el chofer no reporta y nadie confirma el aviso por WhatsApp, Ruta le marca a quien esté de guardia, después a su respaldo y luego a tu gerente, hasta que alguien confirma con una tecla. Al chofer le escribe por WhatsApp o Telegram.
           </p>
         </details>
 

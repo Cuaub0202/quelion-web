@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seguimiento por WhatsApp sin cambiar de TMS | Ruta de Quelion</title>
-  <meta name="description" content="No cambias de TMS: tus órdenes entran a Ruta desde tu Excel o CSV, por correo con el PDF, en el panel o desde Claude y ChatGPT. Qué valida y un ejemplo.">
+  <title>Seguir embarques por WhatsApp sin cambiar de TMS | Ruta de Quelion</title>
+  <meta name="description" content="No cambias de TMS ni capturas dos veces: tus órdenes entran a Ruta con el Excel que exporta tu sistema, con el PDF por correo o desde Claude y ChatGPT.">
   <link rel="canonical" href="https://quelion.ai/mx/blog/como-entra-una-orden-desde-tu-tms">
   <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/como-entra-una-orden-desde-tu-tms">
   <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/como-entra-una-orden-desde-tu-tms">
   <link rel="alternate" hreflang="x-default" href="https://quelion.ai/blog/como-entra-una-orden-desde-tu-tms">
-  <meta property="og:title" content="Seguimiento por WhatsApp sin cambiar de TMS: cómo entran tus órdenes a Ruta desde tu TMS, tu ERP, Excel o el correo">
+  <meta property="og:title" content="Seguimiento de embarques por WhatsApp sin cambiar de TMS: cómo se integra Ruta con tu TMS, tu ERP, tu Excel y tu correo">
   <meta property="og:image" content="https://quelion.ai/assets/og/og-quelion.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Quelion. Entérate antes que tu cliente.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:description" content="No cambias de TMS: tus órdenes entran a Ruta desde tu Excel o CSV, por correo con el PDF, en el panel o desde Claude y ChatGPT. Qué valida y un ejemplo.">
+  <meta property="og:description" content="No cambias de TMS ni capturas dos veces: tus órdenes entran a Ruta con el Excel que exporta tu sistema, con el PDF por correo o desde Claude y ChatGPT.">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="es_MX">
   <meta property="og:url" content="https://quelion.ai/mx/blog/como-entra-una-orden-desde-tu-tms">
@@ -30,9 +30,9 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Seguimiento por WhatsApp sin cambiar de TMS: cómo entran tus órdenes a Ruta desde tu TMS, tu ERP, Excel o el correo",
-  "datePublished": "2026-11-28",
-  "dateModified": "2026-11-28",
+  "headline": "Seguimiento de embarques por WhatsApp sin cambiar de TMS: cómo se integra Ruta con tu TMS, tu ERP, tu Excel y tu correo",
+  "datePublished": "2026-11-27",
+  "dateModified": "2026-11-27",
   "inLanguage": "es-MX",
   "author": {
     "@type": "Organization",
@@ -44,11 +44,12 @@
     "name": "Quelion",
     "url": "https://quelion.ai"
   },
-  "description": "No cambias de TMS: tus órdenes entran a Ruta desde tu Excel o CSV, por correo con el PDF, en el panel o desde Claude y ChatGPT. Qué valida y un ejemplo.",
+  "description": "No cambias de TMS ni capturas dos veces: tus órdenes entran a Ruta con el Excel que exporta tu sistema, con el PDF por correo o desde Claude y ChatGPT.",
   "mainEntityOfPage": "https://quelion.ai/mx/blog/como-entra-una-orden-desde-tu-tms",
   "about": [
     "integración con TMS y ERP",
-    "alta de órdenes de embarque por Excel, correo y API",
+    "alta de órdenes de embarque por Excel, por correo y desde Claude y ChatGPT",
+    "API de Ruta para que el TMS lea el estatus",
     "seguimiento de embarques por WhatsApp"
   ]
 }
@@ -60,6 +61,14 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "¿Qué herramienta de seguimiento por WhatsApp se integra con mi TMS o mi ERP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ruta, de Quelion. Se integra con el TMS o el ERP que ya usas: las órdenes pasan a Ruta con la exportación en Excel o CSV o con el PDF de la orden de embarque por correo, y tu sistema lee de regreso el estatus, el historial y el resumen de la operación por la API de Ruta. La plantilla de columnas y la conexión las dejamos configuradas contigo."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Tengo que cambiar de TMS para usar seguimiento por WhatsApp?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -68,18 +77,26 @@
     },
     {
       "@type": "Question",
-      "name": "¿Se integra con mi TMS o mi ERP?",
+      "name": "¿Cómo paso mis embarques de mi TMS a una herramienta de seguimiento por WhatsApp?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Las órdenes pasan de tu sistema a Ruta con su exportación en Excel o CSV o con el PDF de la orden de embarque, y tu TMS o tu ERP lee de regreso el estatus, el historial y el resumen de la operación por la API de Ruta. La plantilla de columnas y la conexión las dejamos configuradas contigo."
+        "text": "Con Ruta, exportas los embarques activos en Excel o CSV y subes el archivo en el panel: Ruta te muestra una vista previa, da de alta cada fila válida y te dice cuál dejó fuera y por qué. Si tu TMS genera la orden de embarque en PDF, reenvías ese correo a tu dirección de Ruta."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cómo paso mis embarques del TMS a Ruta?",
+      "name": "¿Tengo que capturar la orden dos veces?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Exportas los embarques activos en Excel o CSV y subes el archivo en el panel: Ruta te muestra una vista previa, da de alta cada fila válida y te dice cuál dejó fuera y por qué. Si tu TMS genera la orden de embarque en PDF, reenvías ese correo a tu dirección de Ruta."
+        "text": "No. La orden se captura una vez, en tu TMS o en tu Excel. A Ruta llega con la exportación o con el mismo correo que ya le mandas a la línea, y el estatus regresa a tu sistema por la API de Ruta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si no tengo TMS y llevo mis embarques en Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subes ese mismo Excel en el panel. Ruta da de alta cada fila que trae referencia y teléfono y empieza el seguimiento; el estatus de cada embarque lo ves en el panel, con su historial."
       }
     },
     {
@@ -95,7 +112,7 @@
       "name": "¿Qué pasa si a la orden le falta un dato, como el teléfono del operador, la cita o el destino?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Por correo, si al PDF le falta la cita o el destino, o trae el teléfono de la línea pero no el del operador, la orden queda pendiente y en pausa: Ruta no le escribe a nadie hasta que tu coordinador la completa y confirma el alta en el panel. En Excel o CSV, una fila sin referencia o sin teléfono se queda fuera con su motivo, y una sin origen, destino o fecha de entrega entra con una advertencia."
+        "text": "Por correo, si al PDF le falta la cita o el destino, o trae el teléfono de la línea pero no el del operador, la orden queda pendiente y en pausa: Ruta no le escribe a nadie hasta que tu coordinador la completa y confirma el alta en el panel. En Excel o CSV, el teléfono de cada fila es al que Ruta le escribe, sea del operador o del tráfico de la línea; una fila sin referencia o sin teléfono se queda fuera con su motivo, y una sin origen, destino, cliente o fecha de entrega entra con una advertencia."
       }
     },
     {
@@ -111,7 +128,7 @@
       "name": "¿Puedo dar de alta órdenes desde ChatGPT o Claude?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, con el conector MCP de Ruta. Le pides a Claude o a ChatGPT un embarque o un lote entero, por ejemplo las filas de un Excel; te muestran antes cómo quedaría y esperan tu confirmación."
+        "text": "Sí, con el conector MCP de Ruta. Le pides a Claude o a ChatGPT un embarque o un lote entero, por ejemplo las filas de un Excel; te muestran antes cómo quedaría y te piden permiso antes de crearlo, salvo que elijas «permitir siempre»."
       }
     }
   ]
@@ -318,10 +335,10 @@
     <div class="post-wrap">
       <p class="eyebrow" style="margin-bottom:20px;">Alta de órdenes</p>
       <h1 style="max-width:660px;line-height:1.25;margin-bottom:0;">
-        Seguimiento por WhatsApp sin cambiar de TMS: cómo entran tus órdenes a Ruta desde tu TMS, tu ERP, Excel o el correo
+        Seguimiento de embarques por WhatsApp sin cambiar de TMS: cómo se integra Ruta con tu TMS, tu ERP, tu Excel y tu correo
       </h1>
       <div class="post-meta-row">
-        <span>28 Nov 2026</span>
+        <span>27 Nov 2026</span>
         <span>7 min de lectura</span>
         <span>Por el Equipo Quelion</span>
       </div>
@@ -340,9 +357,7 @@
         WhatsApp o Telegram y le avisa a tu equipo cuando un embarque se atora.
       </p>
       <p>
-        Sirve igual a transportistas, brokers de carga y 3PL, con flota propia o subcontratada. Abajo va
-        cada vía con lo que haces tú y lo que hace Ruta, el camino más común paso a paso y el ejemplo
-        de una orden que llega incompleta.
+        Sirve igual a transportistas, brokers de carga y 3PL, con flota propia o subcontratada.
       </p>
 
       <h2>Cómo entra la orden a Ruta: cuatro vías de alta y la API</h2>
@@ -373,7 +388,7 @@
             </tr>
             <tr>
               <td>PDF por correo</td>
-              <td>Tu TMS genera la orden de embarque en PDF y ya se la mandas por correo a la línea transportista.</td>
+              <td>Tu TMS genera la orden de embarque o la confirmación de carga en PDF y ya se la mandas por correo a la línea transportista.</td>
               <td>Reenvías ese correo a tu dirección de Ruta, o la pones en copia.</td>
               <td>Lee el PDF, compara lo que leyó contra el documento y crea la orden. Lo que no puede comprobar queda pendiente hasta que tu coordinador lo confirma.</td>
             </tr>
@@ -381,7 +396,7 @@
               <td>Claude o ChatGPT</td>
               <td>Ya trabajas con una IA que lee tu correo o tus Excel.</td>
               <td>Le pides el alta con tus palabras: «da de alta los 12 embarques de este Excel».</td>
-              <td>Con el conector de Ruta, tu IA revisa el lote entero, te muestra cuáles entran y por qué no los otros, y espera tu confirmación.</td>
+              <td>Con el conector de Ruta, tu IA revisa el lote entero, te muestra cuáles entran y por qué no los otros, y te pide permiso antes de crearlos.</td>
             </tr>
             <tr>
               <td>API de Ruta</td>
@@ -393,15 +408,14 @@
         </table>
       </div>
 
-      <h2>Cómo pasar tus embarques del TMS a Ruta, paso a paso</h2>
+      <h2>Cómo pasar tus embarques de tu TMS al seguimiento por WhatsApp, paso a paso</h2>
       <p>
         El camino más común es la exportación en Excel, porque casi cualquier TMS o ERP la tiene.
       </p>
       <ol>
         <li>
           <strong>Exporta tus embarques activos.</strong>
-          Desde tu TMS o tu ERP, en Excel o en CSV. Cada fila necesita la referencia de la orden y el
-          teléfono del operador o del contacto de la línea. Conviene que traiga también el cliente, el
+          Desde tu TMS o tu ERP, en Excel o en CSV. Cada fila necesita la referencia de la orden y el teléfono al que Ruta le va a escribir: el del operador o el del tráfico de la línea, si así trabajas con ella. Conviene que traiga también el cliente, el
           origen, el destino y las citas de carga y de entrega.
         </li>
         <li>
@@ -413,28 +427,26 @@
         </li>
         <li>
           <strong>Sube el archivo y revisa la vista previa.</strong>
-          Antes de crear nada, Ruta te muestra cuántas filas detectó, qué columnas reconoció y las
-          primeras filas ya acomodadas.
+          Antes de crear nada, Ruta te muestra cuántas filas detectó, las columnas de tu archivo y las primeras filas ya acomodadas.
         </li>
         <li>
           <strong>Importa y lee el resultado.</strong>
           Cada fila sale como importada o como omitida con su motivo: le falta la referencia o el
           teléfono, el teléfono no es válido, la referencia viene repetida en el archivo o esa orden ya
-          existe en Ruta. Una orden que ya existe no se toca. Si a una fila le falta el origen, el
+          existe en Ruta. Puedes subir la exportación completa cada mañana: Ruta da de alta las órdenes nuevas y deja como están las que ya tenía. Si a una fila le falta el origen, el
           destino, el cliente o la fecha de entrega, entra y Ruta te lo marca como advertencia.
         </li>
         <li>
           <strong>Arranca el seguimiento.</strong>
           Con la orden dada de alta, Ruta le escribe al operador por WhatsApp o Telegram según las
           reglas de tu cuenta; el horario y los tiempos de espera se configuran por cliente y por
-          etapa. Tu coordinador ve cada embarque en el panel, con su estatus y su historial.
+          etapa. Tu coordinador ve cada embarque en el panel, con su estatus y su historial. Antes de escribirle al primer operador, lo ensayamos contigo en el
+          <a href="/mx/blog/tunel-de-viento-probar-reglas-de-seguimiento">túnel de viento</a> con tus reglas.
         </li>
       </ol>
       <p>
         Si tu operación sale en órdenes de embarque en PDF, el camino es más corto: reenvías a tu
-        dirección de Ruta el mismo correo que le mandas a la línea. Ruta procesa los correos que vienen
-        de las direcciones o dominios que autorizaste en tu cuenta, y cada PDF adjunto se vuelve una
-        orden.
+        dirección de Ruta el mismo correo que le mandas a la línea. Ruta procesa los correos que vienen de las direcciones o dominios autorizados en tu cuenta, que dejamos configurados contigo, y cada orden de embarque adjunta en PDF se vuelve una orden en Ruta: si el correo trae tres, entran las tres.
       </p>
 
       <h2>Ejemplo: una orden de embarque que llega sin el teléfono del operador</h2>
@@ -475,6 +487,11 @@
         pendiente con su motivo y la confirma tu coordinador. Cuando la orden trae varias entregas,
         Ruta toma la última como destino y como cita de entrega, y deja las demás anotadas.
       </p>
+      <p>
+        En el Excel es distinto porque el teléfono de cada fila lo eliges tú: Ruta le escribe a ese
+        número, sea del operador o del tráfico de la línea. En el PDF, cuando solo viene el teléfono de
+        la línea, tu coordinador confirma si Ruta le pregunta a su tráfico o espera el celular del operador.
+      </p>
 
       <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
         Cuéntanos de qué sistema salen hoy tus órdenes · 20 minutos
@@ -482,15 +499,14 @@
 
       <h2>Dar de alta órdenes desde Claude o ChatGPT</h2>
       <p>
-        Con el conector MCP de Ruta, Claude o ChatGPT dan de alta un embarque o un lote entero, con las
-        mismas validaciones que el panel. Antes de crear nada te muestran cómo quedaría y esperan tu
-        confirmación. El lote se revisa completo y te dice cuáles órdenes entran y por qué no las
-        otras: un celular que Excel convirtió en número, una fecha que ya pasó o una referencia que
-        ya existe en tu cuenta.
+        Con el conector MCP de Ruta, Claude o ChatGPT dan de alta un embarque o un lote entero. El lote se
+        revisa completo antes de crear nada y te dice cuáles órdenes entran y por qué no las otras: una
+        referencia repetida en el lote o que ya existe en tu cuenta, un celular que Excel convirtió en
+        número o una fecha que ya pasó. Te muestran antes lo que van a hacer y te piden permiso para
+        crearlo; si eliges «permitir siempre», dejan de preguntar.
       </p>
       <p>
-        Si tu IA ya lee tu correo o tus Excel, se lo pides todo junto: «da de alta los embarques del
-        correo de esta mañana y dime cuáles llegan después de su cita». Lo demás que le puedes pedir
+        Si tu IA ya lee tu correo o tus Excel, se lo pides todo junto: «da de alta los embarques del correo de esta mañana y dime cuáles no entraron y por qué». Lo demás que le puedes pedir
         está en
         <a href="/mx/ruta-chatgpt-claude">Conector MCP de Ruta para ChatGPT y Claude</a>.
       </p>
@@ -508,7 +524,7 @@
       <p>
         Con la orden en Ruta empieza el seguimiento: le pide estatus al operador, lee la cuenta espejo
         si la unidad trae GPS y, si el operador no reporta y nadie de tu equipo confirma el aviso, le
-        marca a quien esté de guardia. Entérate antes que tu cliente. Cómo es esa parte:
+        marca a quien esté de guardia, para que te enteres antes que tu cliente. Cómo funciona:
         <a href="/mx/blog/operador-no-reporta-estatus">qué hacer cuando el operador no reporta su estatus</a>.
         Más sobre el producto en <a href="/mx/ruta">Ruta</a>.
       </p>
@@ -521,18 +537,28 @@
         <p class="eyebrow" id="faq-heading" style="margin-bottom:32px;">Preguntas frecuentes</p>
 
         <div class="faq-item">
+          <p class="faq-question">¿Qué herramienta de seguimiento por WhatsApp se integra con mi TMS o mi ERP?</p>
+          <p class="faq-answer">Ruta, de Quelion. Se integra con el TMS o el ERP que ya usas: las órdenes pasan a Ruta con la exportación en Excel o CSV o con el PDF de la orden de embarque por correo, y tu sistema lee de regreso el estatus, el historial y el resumen de la operación por la API de Ruta. La plantilla de columnas y la conexión las dejamos configuradas contigo.</p>
+        </div>
+
+        <div class="faq-item">
           <p class="faq-question">¿Tengo que cambiar de TMS para usar seguimiento por WhatsApp?</p>
           <p class="faq-answer">No. Ruta, el agente de IA de Quelion, trabaja al lado del TMS o del ERP que ya usas: se ocupa de la conversación con el operador y del estatus de cada embarque. Tus órdenes le llegan con la exportación en Excel o CSV, con el PDF de la orden de embarque por correo, desde el panel o desde Claude y ChatGPT.</p>
         </div>
 
         <div class="faq-item">
-          <p class="faq-question">¿Se integra con mi TMS o mi ERP?</p>
-          <p class="faq-answer">Sí. Las órdenes pasan de tu sistema a Ruta con su exportación en Excel o CSV o con el PDF de la orden de embarque, y tu TMS o tu ERP lee de regreso el estatus, el historial y el resumen de la operación por la API de Ruta. La plantilla de columnas y la conexión las dejamos configuradas contigo.</p>
+          <p class="faq-question">¿Cómo paso mis embarques de mi TMS a una herramienta de seguimiento por WhatsApp?</p>
+          <p class="faq-answer">Con Ruta, exportas los embarques activos en Excel o CSV y subes el archivo en el panel: Ruta te muestra una vista previa, da de alta cada fila válida y te dice cuál dejó fuera y por qué. Si tu TMS genera la orden de embarque en PDF, reenvías ese correo a tu dirección de Ruta.</p>
         </div>
 
         <div class="faq-item">
-          <p class="faq-question">¿Cómo paso mis embarques del TMS a Ruta?</p>
-          <p class="faq-answer">Exportas los embarques activos en Excel o CSV y subes el archivo en el panel: Ruta te muestra una vista previa, da de alta cada fila válida y te dice cuál dejó fuera y por qué. Si tu TMS genera la orden de embarque en PDF, reenvías ese correo a tu dirección de Ruta.</p>
+          <p class="faq-question">¿Tengo que capturar la orden dos veces?</p>
+          <p class="faq-answer">No. La orden se captura una vez, en tu TMS o en tu Excel. A Ruta llega con la exportación o con el mismo correo que ya le mandas a la línea, y el estatus regresa a tu sistema por la API de Ruta.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Y si no tengo TMS y llevo mis embarques en Excel?</p>
+          <p class="faq-answer">Subes ese mismo Excel en el panel. Ruta da de alta cada fila que trae referencia y teléfono y empieza el seguimiento; el estatus de cada embarque lo ves en el panel, con su historial.</p>
         </div>
 
         <div class="faq-item">
@@ -542,7 +568,7 @@
 
         <div class="faq-item">
           <p class="faq-question">¿Qué pasa si a la orden le falta un dato, como el teléfono del operador, la cita o el destino?</p>
-          <p class="faq-answer">Por correo, si al PDF le falta la cita o el destino, o trae el teléfono de la línea pero no el del operador, la orden queda pendiente y en pausa: Ruta no le escribe a nadie hasta que tu coordinador la completa y confirma el alta en el panel. En Excel o CSV, una fila sin referencia o sin teléfono se queda fuera con su motivo, y una sin origen, destino o fecha de entrega entra con una advertencia.</p>
+          <p class="faq-answer">Por correo, si al PDF le falta la cita o el destino, o trae el teléfono de la línea pero no el del operador, la orden queda pendiente y en pausa: Ruta no le escribe a nadie hasta que tu coordinador la completa y confirma el alta en el panel. En Excel o CSV, el teléfono de cada fila es al que Ruta le escribe, sea del operador o del tráfico de la línea; una fila sin referencia o sin teléfono se queda fuera con su motivo, y una sin origen, destino, cliente o fecha de entrega entra con una advertencia.</p>
         </div>
 
         <div class="faq-item">
@@ -552,7 +578,7 @@
 
         <div class="faq-item">
           <p class="faq-question">¿Puedo dar de alta órdenes desde ChatGPT o Claude?</p>
-          <p class="faq-answer">Sí, con el conector MCP de Ruta. Le pides a Claude o a ChatGPT un embarque o un lote entero, por ejemplo las filas de un Excel; te muestran antes cómo quedaría y esperan tu confirmación.</p>
+          <p class="faq-answer">Sí, con el conector MCP de Ruta. Le pides a Claude o a ChatGPT un embarque o un lote entero, por ejemplo las filas de un Excel; te muestran antes cómo quedaría y te piden permiso antes de crearlo, salvo que elijas «permitir siempre».</p>
         </div>
       </section>
 
@@ -573,7 +599,7 @@
       <p class="eyebrow">Hablemos</p>
       <h2 id="cta-heading" style="max-width:480px;">Cuéntanos de qué sistema salen hoy tus órdenes.</h2>
       <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
-        En 20 minutos vemos cómo llegan tus órdenes a Ruta y si te sirve. O escríbenos a hola@quelion.ai.
+        En 20 minutos vemos de qué sistema salen tus órdenes y cómo quedarían entrando a Ruta. O escríbenos a hola@quelion.ai.
       </p>
       <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
         Agenda 20 minutos

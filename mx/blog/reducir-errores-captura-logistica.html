@@ -32,7 +32,7 @@
     "@type": "BlogPosting",
     "headline": "Cómo reducir errores de captura en tu operación de transporte: el estatus ya no se pasa del chat a la hoja",
     "datePublished": "2026-11-17",
-    "dateModified": "2026-11-17",
+    "dateModified": "2026-11-27",
     "inLanguage": "es-MX",
     "author": { "@type": "Organization", "name": "Equipo Quelion", "url": "https://quelion.ai" },
     "publisher": { "@type": "Organization", "name": "Quelion", "url": "https://quelion.ai" },
@@ -58,7 +58,7 @@
         "name": "¿Qué registra Ruta y qué no?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ruta registra el estatus de cada etapa del viaje con su hora, a partir de lo que contesta el operador, y guarda sus respuestas en el historial de la carga. Las órdenes activas entran desde un CSV que exportas de tu Excel. Ruta no captura pesos, montos, sellos ni números de pedimento: esos datos siguen en tu sistema."
+          "text": "Ruta registra el estatus de cada etapa del viaje con su hora, a partir de lo que contesta el operador, y guarda sus respuestas en el historial de la carga. Las órdenes entran con tu Excel o CSV, con el PDF de la orden de embarque por correo, en el panel o desde Claude y ChatGPT. Los pesos, montos, sellos y números de pedimento siguen en tu sistema."
         }
       },
       {
@@ -82,7 +82,7 @@
         "name": "¿Ruta se conecta a mi TMS o a mi ERP?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, y no reemplaza un TMS. Tus órdenes activas entran desde un archivo CSV y Ruta se ocupa de la conversación con el operador y del estatus de cada carga."
+          "text": "Sí, y trabaja a su lado. Tus órdenes pasan a Ruta con la exportación en Excel o CSV o con el PDF de la orden de embarque por correo, y tu TMS o tu ERP lee de regreso el estatus y el historial por la API de Ruta. Ruta se ocupa de la conversación con el operador y del estatus de cada carga."
         }
       }
     ]
@@ -316,7 +316,7 @@
 
       <h2>El viaje a Silao, con el estatus tomado de la respuesta del operador</h2>
       <p>
-        Las órdenes del día entraron temprano desde el CSV que exportas de tu Excel. A las 6:30 el viaje
+        Las órdenes del día entraron temprano con tu Excel o CSV. A las 6:30 el viaje
         a Silao lleva en «en ruta» más tiempo del que definiste para esa etapa, y Ruta le escribe al
         operador: «¿Cómo vas?». Él contesta con una nota de voz: «Voy pasando San Felipe, como una hora».
         La respuesta queda en el historial de la carga, y tu coordinador ve a las 6:35 lo que antes se
@@ -349,10 +349,7 @@
         quien atiende al cliente con un perfil de solo lectura.
       </p>
       <p>
-        Lo demás sigue donde está. Ruta no captura pesos, montos, sellos ni números de pedimento. Las
-        órdenes entran por CSV porque Ruta no se conecta a tu TMS ni a tu ERP, ni lo reemplaza. Cuando el
-        cliente pregunta, tu equipo le contesta con el estatus del panel. Y Ruta habla uno a uno, no en
-        grupos de WhatsApp.
+        Lo demás sigue en tu sistema: pesos, montos, sellos y números de pedimento. Las órdenes pasan a Ruta con la exportación en Excel o CSV o con el PDF de la orden de embarque, y tu TMS lee el estatus de regreso por la API de Ruta. Cuando el cliente pregunta, tu equipo le contesta con el estatus del panel. Ruta habla uno a uno con cada operador.
       </p>
 
       <h2>Se configura a cómo llevas hoy el estatus</h2>
@@ -386,7 +383,7 @@
 
         <div class="faq-item">
           <p class="faq-question">¿Qué registra Ruta y qué no?</p>
-          <p class="faq-answer">Ruta registra el estatus de cada etapa del viaje con su hora, a partir de lo que contesta el operador, y guarda sus respuestas en el historial de la carga. Las órdenes activas entran desde un CSV que exportas de tu Excel. Ruta no captura pesos, montos, sellos ni números de pedimento: esos datos siguen en tu sistema.</p>
+          <p class="faq-answer">Ruta registra el estatus de cada etapa del viaje con su hora, a partir de lo que contesta el operador, y guarda sus respuestas en el historial de la carga. Las órdenes entran con tu Excel o CSV, con el PDF de la orden de embarque por correo, en el panel o desde Claude y ChatGPT. Los pesos, montos, sellos y números de pedimento siguen en tu sistema.</p>
         </div>
 
         <div class="faq-item">
@@ -401,7 +398,7 @@
 
         <div class="faq-item">
           <p class="faq-question">¿Ruta se conecta a mi TMS o a mi ERP?</p>
-          <p class="faq-answer">No, y no reemplaza un TMS. Tus órdenes activas entran desde un archivo CSV y Ruta se ocupa de la conversación con el operador y del estatus de cada carga.</p>
+          <p class="faq-answer">Sí, y trabaja a su lado. Tus órdenes pasan a Ruta con la exportación en Excel o CSV o con el PDF de la orden de embarque por correo, y tu TMS o tu ERP lee de regreso el estatus y el historial por la API de Ruta. Ruta se ocupa de la conversación con el operador y del estatus de cada carga.</p>
         </div>
       </section>
 

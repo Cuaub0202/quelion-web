@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguir cargas por WhatsApp sin cambiar de TMS | Ruta de Quelion</title>
+  <meta name="description" content="No cambias de TMS ni tecleas dos veces: tus cargas entran en Ruta con el Excel que exporta tu sistema, con el PDF por correo o desde Claude y ChatGPT.">
+  <link rel="canonical" href="https://quelion.ai/blog/como-entra-una-orden-desde-tu-tms">
+  <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/como-entra-una-orden-desde-tu-tms">
+  <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/como-entra-una-orden-desde-tu-tms">
+  <link rel="alternate" hreflang="x-default" href="https://quelion.ai/blog/como-entra-una-orden-desde-tu-tms">
+  <meta property="og:title" content="Seguimiento de cargas por WhatsApp sin cambiar de TMS: cómo se integra Ruta con tu TMS, tu ERP, tu Excel y tu correo">
+  <meta property="og:image" content="https://quelion.ai/assets/og/og-quelion.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Quelion. Entérate antes que tu cliente.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description" content="No cambias de TMS ni tecleas dos veces: tus cargas entran en Ruta con el Excel que exporta tu sistema, con el PDF por correo o desde Claude y ChatGPT.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://quelion.ai/blog/como-entra-una-orden-desde-tu-tms">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon-192.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20261121">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20261121">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20261127">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Seguimiento de cargas por WhatsApp sin cambiar de TMS: cómo se integra Ruta con tu TMS, tu ERP, tu Excel y tu correo",
+  "datePublished": "2026-11-27",
+  "dateModified": "2026-11-27",
+  "inLanguage": "es-ES",
+  "author": {
+    "@type": "Organization",
+    "name": "Equipo Quelion",
+    "url": "https://quelion.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Quelion",
+    "url": "https://quelion.ai"
+  },
+  "description": "No cambias de TMS ni tecleas dos veces: tus cargas entran en Ruta con el Excel que exporta tu sistema, con el PDF por correo o desde Claude y ChatGPT.",
+  "mainEntityOfPage": "https://quelion.ai/blog/como-entra-una-orden-desde-tu-tms",
+  "about": [
+    "integración con TMS y ERP",
+    "alta de órdenes de carga por Excel, por correo y desde Claude y ChatGPT",
+    "API de Ruta para que el TMS lea el estado",
+    "seguimiento de cargas por WhatsApp"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué herramienta de seguimiento por WhatsApp se integra con mi TMS o mi ERP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ruta, de Quelion. Se integra con el TMS o el ERP que ya usas: las cargas pasan a Ruta con la exportación en Excel o CSV o con el PDF de la orden de carga por correo, y tu sistema lee de vuelta el estado, el historial y el resumen de la operación por la API de Ruta. La plantilla de columnas y la conexión las dejamos configuradas contigo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tengo que cambiar de TMS para usar seguimiento por WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Ruta, el agente de IA de Quelion, trabaja al lado del TMS o del ERP que ya usas: se ocupa de la conversación con el conductor y del estado de cada carga. Tus cargas le llegan con la exportación en Excel o CSV, con el PDF de la orden de carga por correo, desde el panel o desde Claude y ChatGPT."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo paso mis cargas de mi TMS a una herramienta de seguimiento por WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con Ruta, exportas las cargas activas en Excel o CSV y subes el archivo en el panel: Ruta te enseña una vista previa, da de alta cada fila válida y te dice cuál ha dejado fuera y por qué. Si tu TMS genera la orden de carga en PDF, reenvías ese correo a tu dirección de Ruta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tengo que meter la carga dos veces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La carga se introduce una vez, en tu TMS o en tu Excel. A Ruta llega con la exportación o con el mismo correo que ya envías al transportista, y el estado vuelve a tu sistema por la API de Ruta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si no tengo TMS y llevo mis cargas en Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subes ese mismo Excel en el panel. Ruta da de alta cada fila que trae referencia y teléfono y empieza el seguimiento; el estado de cada carga lo ves en el panel, con su historial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo mandar la orden de carga por correo o en Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, de las dos formas. Por correo, reenvías a tu dirección de Ruta el PDF de la orden de carga y Ruta lo lee y lo convierte en carga. En Excel o CSV, subes el archivo en el panel o se lo pasas a Claude o ChatGPT con el conector de Ruta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si a la orden le falta un dato, como el teléfono del conductor, la cita o el destino?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por correo, si al PDF le falta la cita o el destino, o trae el teléfono del transportista pero no el del conductor, la carga queda pendiente y en pausa: Ruta no escribe a nadie hasta que tu equipo de tráfico la completa y confirma el alta en el panel. En Excel o CSV, el teléfono de cada fila es al que Ruta escribe, sea del conductor o del tráfico del transportista; una fila sin referencia o sin teléfono se queda fuera con su motivo, y una sin origen, destino, cliente o fecha de entrega entra con una advertencia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ruta tiene API?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La API de Ruta, de Quelion, sirve para conectar tu TMS o tu ERP: tu sistema lee el estado de cada carga, su historial y el resumen de la operación. La documentación es pública en ruta.quelion.ai/api/v1/docs y las claves las crea el administrador de tu cuenta en el panel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo dar de alta cargas desde ChatGPT o Claude?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, con el conector MCP de Ruta. Le pides a Claude o a ChatGPT una carga o un lote entero, por ejemplo las filas de un Excel; te enseñan antes cómo quedaría y te piden permiso antes de crearlo, salvo que elijas «permitir siempre»."
+      }
+    }
+  ]
+}
+  </script>
+  <style>
+    .post-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .post-header {
+      padding: 80px 0 56px;
+      border-top: 1px solid var(--border-hairline);
+    }
+    .post-meta-row {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .post-body {
+      padding: 56px 0 80px;
+      border-top: 1px solid var(--border-hairline);
+    }
+    .post-body h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+      line-height: 1.4;
+    }
+    .post-body h2:first-child { margin-top: 0; }
+    .post-body p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .post-body ul,
+    .post-body ol {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+    .post-body ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .post-body ol li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .post-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+      font-size: 13px;
+    }
+    .comparison-table caption {
+      caption-side: top;
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: var(--text-quiet);
+      line-height: 1.6;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .comparison-table th {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .comparison-table td {
+      padding: 14px 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      border-bottom: 1px solid var(--border-hairline);
+      vertical-align: top;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table td:first-child {
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+    .table-wrap {
+      border: 1px solid var(--border-hairline);
+      overflow-x: auto;
+      margin: 0 0 24px;
+    }
+    .inline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 1px solid var(--text-primary);
+      padding: 12px 20px;
+      margin: 32px 0 48px;
+      transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+    }
+    .inline-cta:hover {
+      background: var(--text-primary);
+      color: var(--surface-primary);
+    }
+    .faq-section {
+      border-top: 1px solid var(--border-hairline);
+      padding: 56px 0 0;
+      margin-top: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .author-box {
+      border-top: 1px solid var(--border-hairline);
+      padding: 40px 0 0;
+      margin-top: 56px;
+    }
+    .author-box p {
+      font-size: 13px;
+      color: var(--text-quiet);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .author-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .post-wrap { padding: 0 20px; }
+      .post-header { padding: 56px 0 40px; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Quelion, inicio">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/ruta" class="nav-link">Ruta</a>
+        <a href="/ruta#pricing" class="nav-link">Cómo empezar</a>
+        <a href="/blog" class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="/mx/blog/como-entra-una-orden-desde-tu-tms" class="nav-link" hreflang="es-MX" lang="es-MX">México</a>
+        <a href="/ruta-en" class="nav-link" hreflang="en" lang="en">English</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
+        <button class="nav-mobile-toggle" aria-label="Abrir o cerrar el menú" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="post-header">
+    <div class="post-wrap">
+      <p class="eyebrow" style="margin-bottom:20px;">Alta de cargas</p>
+      <h1 style="max-width:660px;line-height:1.25;margin-bottom:0;">
+        Seguimiento de cargas por WhatsApp sin cambiar de TMS: cómo se integra Ruta con tu TMS, tu ERP, tu Excel y tu correo
+      </h1>
+      <div class="post-meta-row">
+        <span>27 Nov 2026</span>
+        <span>7 min de lectura</span>
+        <span>Por el Equipo Quelion</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="post-body" aria-label="Contenido del artículo">
+    <div class="post-wrap">
+
+      <p>
+        No tienes que cambiar de TMS para hacer el seguimiento de tus cargas por WhatsApp. Ruta, el
+        agente de IA de Quelion, trabaja al lado del TMS o del ERP que ya usas: tus cargas le llegan
+        con la exportación en Excel o CSV, con el PDF de la orden de carga por correo, a mano en el
+        panel o desde Claude y ChatGPT. Con la carga dada de alta, Ruta pregunta al conductor por
+        WhatsApp o Telegram y avisa a tu equipo de tráfico cuando hay una incidencia con una carga.
+      </p>
+      <p>
+        Sirve igual a transportistas, agencias de transporte y operadores logísticos, con flota propia,
+        subcontratada o de autónomos.
+      </p>
+
+      <h2>Cómo entra la carga en Ruta: cuatro vías de alta y la API</h2>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <caption>Las cuatro primeras vías dan de alta cargas. Con la API, tu TMS o tu ERP lee de vuelta el estado.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Vía</th>
+              <th scope="col">Cuándo conviene</th>
+              <th scope="col">Qué haces tú</th>
+              <th scope="col">Qué hace Ruta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Excel o CSV</td>
+              <td>Tu TMS o tu ERP exporta las cargas del día o de la semana, o ya las llevas en una hoja.</td>
+              <td>Subes el archivo en el panel y revisas la vista previa.</td>
+              <td>Reconoce tus columnas, da de alta cada fila válida y te dice, fila por fila, cuál ha dejado fuera y por qué.</td>
+            </tr>
+            <tr>
+              <td>A mano en el panel</td>
+              <td>Una carga suelta o una urgente que todavía no está en tu sistema.</td>
+              <td>Rellenas la referencia, el teléfono del conductor, el origen, el destino y las citas.</td>
+              <td>Valida la referencia, el teléfono y las citas, y empieza el seguimiento.</td>
+            </tr>
+            <tr>
+              <td>PDF por correo</td>
+              <td>Tu TMS genera la orden de carga en PDF y ya se la envías por correo al transportista.</td>
+              <td>Reenvías ese correo a tu dirección de Ruta, o la pones en copia.</td>
+              <td>Lee el PDF, compara lo que ha leído con el documento y crea la carga. Lo que no puede comprobar queda pendiente hasta que tu equipo lo confirma.</td>
+            </tr>
+            <tr>
+              <td>Claude o ChatGPT</td>
+              <td>Ya trabajas con una IA que lee tu correo o tus Excel.</td>
+              <td>Le pides el alta con tus palabras: «da de alta las 12 cargas de este Excel».</td>
+              <td>Con el conector de Ruta, tu IA revisa el lote entero, te enseña cuáles entran y por qué no las otras, y te pide permiso antes de crearlas.</td>
+            </tr>
+            <tr>
+              <td>API de Ruta</td>
+              <td>Quieres ver el estado de cada carga dentro de tu TMS o tu ERP.</td>
+              <td>El administrador de tu cuenta crea una clave en el panel y tu sistema consulta.</td>
+              <td>Le entrega el estado de cada carga, su historial de etapas y el resumen de la operación.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Cómo pasar tus cargas de tu TMS al seguimiento por WhatsApp, paso a paso</h2>
+      <p>
+        El camino más habitual es la exportación en Excel, porque casi cualquier TMS o ERP la tiene.
+      </p>
+      <ol>
+        <li>
+          <strong>Exporta tus cargas activas.</strong>
+          Desde tu TMS o tu ERP, en Excel o en CSV. Cada fila necesita la referencia de la carga y el teléfono al que Ruta va a escribir: el del conductor o el del tráfico del transportista, si así trabajas con él. Conviene que traiga también el
+          cliente, el origen, el destino y las citas de carga y de entrega.
+        </li>
+        <li>
+          <strong>Deja lista tu plantilla de columnas.</strong>
+          Ruta reconoce encabezados como «referencia», «orden», «cliente», «origen», «destino»,
+          «conductor», «telefono», «cita de carga» y «cita de descarga». Si tu sistema exporta con otros nombres,
+          la plantilla de tu cuenta se monta con los de tu exportación; eso lo dejamos hecho contigo en
+          la puesta en marcha. En el panel hay además una plantilla en CSV para descargar.
+        </li>
+        <li>
+          <strong>Sube el archivo y revisa la vista previa.</strong>
+          Antes de crear nada, Ruta te enseña cuántas filas ha detectado, las columnas de tu archivo y las primeras filas ya colocadas.
+        </li>
+        <li>
+          <strong>Importa y lee el resultado.</strong>
+          Cada fila sale como importada o como omitida con su motivo: le falta la referencia o el
+          teléfono, el teléfono no es válido, la referencia está repetida en el archivo o esa carga ya
+          existe en Ruta. Puedes subir la exportación completa cada mañana: Ruta da de alta las cargas nuevas y deja como están las que ya tenía. Si a una fila le falta el origen, el
+          destino, el cliente o la fecha de entrega, entra y Ruta te lo marca como advertencia.
+        </li>
+        <li>
+          <strong>Empieza el seguimiento.</strong>
+          Con la carga dada de alta, Ruta escribe al conductor por WhatsApp o Telegram según las reglas
+          de tu cuenta; el horario y los tiempos de espera se configuran por cliente y por etapa. Tu
+          equipo de tráfico ve cada carga en el panel, con su estado y su historial. Antes de escribir al primer conductor, lo ensayamos contigo en el
+          <a href="/blog/tunel-de-viento-probar-reglas-de-seguimiento">túnel de viento</a> con tus reglas.
+        </li>
+      </ol>
+      <p>
+        Si trabajas con órdenes de carga en PDF, el camino es más corto: reenvías a tu dirección de
+        Ruta el mismo correo que envías al transportista. Ruta procesa los correos que llegan de las direcciones o dominios autorizados en tu cuenta, que dejamos configurados contigo, y cada orden de carga adjunta en PDF se convierte en una carga en Ruta: si el correo trae tres, entran las tres.
+      </p>
+
+      <h2>Ejemplo: una orden de carga que llega sin el teléfono del conductor</h2>
+      <p>
+        Logística Turia es una empresa ficticia. Un martes a las 17:40, su jefe de tráfico reenvía a su
+        dirección de Ruta el correo con el PDF de la orden LT-2768: de Valencia a Zaragoza, carga el
+        miércoles a las 08:00 y descarga el miércoles a las 15:00. El transportista subcontratado
+        todavía no ha asignado conductor, así que el PDF trae el teléfono de su tráfico y ningún móvil
+        de conductor.
+      </p>
+      <ol>
+        <li>
+          <strong>Ruta lee el PDF y lo comprueba.</strong>
+          Compara la referencia, las fechas, las horas y los teléfonos que ha leído con el texto del
+          documento.
+        </li>
+        <li>
+          <strong>Mira si la carga puede entrar sola.</strong>
+          Para eso necesita la referencia, una cita de carga con fecha y hora que todavía no ha pasado,
+          una descarga con fecha y hora posterior a la carga y el teléfono del conductor. A la LT-2768
+          le falta el teléfono.
+        </li>
+        <li>
+          <strong>La crea, pendiente y en pausa.</strong>
+          La carga queda en el panel con sus citas y con el tráfico del transportista como contacto,
+          marcada como pendiente de revisión y con el motivo anotado. Mientras está así, Ruta no
+          escribe a nadie por esa carga.
+        </li>
+        <li>
+          <strong>Tu equipo la completa.</strong>
+          A las 19:10 el transportista envía el nombre y el móvil del conductor. El jefe de tráfico
+          abre la carga, pulsa «Confirmar alta», escribe el móvil y la LT-2768 entra en el seguimiento.
+          Si el transportista prefiere que se pregunte a su tráfico, confirma sin cambiar el contacto.
+        </li>
+      </ol>
+      <p>
+        Ocurre lo mismo con una cita de carga que ya ha pasado, con una descarga que trae hora anterior
+        a la carga y con un PDF escaneado en el que Ruta no puede comparar lo que ha leído: la carga
+        queda pendiente con su motivo y la confirma tu equipo. Cuando la orden trae varias descargas,
+        Ruta toma la última como destino y como cita de descarga, y deja las demás anotadas.
+      </p>
+      <p>
+        En el Excel es distinto porque el teléfono de cada fila lo eliges tú: Ruta escribe a ese número,
+        sea del conductor o del tráfico del transportista. En el PDF, cuando solo viene el teléfono del
+        transportista, tu equipo confirma si Ruta pregunta a su tráfico o espera el móvil del conductor.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Cuéntanos de qué sistema salen hoy tus cargas · 20 minutos
+      </a>
+
+      <h2>Dar de alta cargas desde Claude o ChatGPT</h2>
+      <p>
+        Con el conector MCP de Ruta, Claude o ChatGPT dan de alta una carga o un lote entero. El lote se
+        revisa completo antes de crear nada y te dice qué cargas entran y por qué no las otras: una
+        referencia repetida en el lote o que ya existe en tu cuenta, un móvil que Excel ha convertido en
+        número o una fecha que ya ha pasado. Te enseñan antes lo que van a hacer y te piden permiso para
+        crearlo; si eliges «permitir siempre», dejan de preguntar.
+      </p>
+      <p>
+        Si tu IA ya lee tu correo o tus Excel, se lo pides todo junto: «da de alta las cargas del correo de esta mañana y dime cuáles no han entrado y por qué». Lo demás que le puedes pedir
+        está en
+        <a href="/ruta-chatgpt-claude">Conector MCP de Ruta para ChatGPT y Claude</a>.
+      </p>
+
+      <h2>La API de Ruta: tu TMS lee el estado de vuelta</h2>
+      <p>
+        Para conectar sistemas, Ruta tiene una API. Con ella tu TMS o tu ERP consulta el estado de cada
+        carga, su historial de etapas y el resumen de la operación, y puede pedir solo las cargas que
+        han cambiado desde su última consulta. Así el estado que el conductor ha confirmado por
+        WhatsApp aparece también en el sistema donde tu equipo ya trabaja. La documentación es pública
+        en <a href="https://ruta.quelion.ai/api/v1/docs">ruta.quelion.ai/api/v1/docs</a> y las claves
+        las crea el administrador de tu cuenta en el panel. La conexión con tu sistema la hacemos
+        contigo.
+      </p>
+      <p>
+        Con la carga en Ruta empieza el seguimiento: pregunta al conductor, lee el GPS del camión si lo
+        tiene y, si el conductor no contesta y nadie de tu equipo confirma el aviso, llama a quien esté
+        de guardia, para que te enteres antes que tu cliente. Cómo funciona:
+        <a href="/blog/conductor-no-contesta-seguimiento">qué hacer cuando el conductor no contesta</a>.
+        Más sobre el producto en <a href="/ruta">Ruta</a>.
+      </p>
+
+      <a href="/ruta#como-funciona" class="inline-cta">
+        Ver cómo funciona Ruta
+      </a>
+
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <p class="eyebrow" id="faq-heading" style="margin-bottom:32px;">Preguntas frecuentes</p>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué herramienta de seguimiento por WhatsApp se integra con mi TMS o mi ERP?</p>
+          <p class="faq-answer">Ruta, de Quelion. Se integra con el TMS o el ERP que ya usas: las cargas pasan a Ruta con la exportación en Excel o CSV o con el PDF de la orden de carga por correo, y tu sistema lee de vuelta el estado, el historial y el resumen de la operación por la API de Ruta. La plantilla de columnas y la conexión las dejamos configuradas contigo.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Tengo que cambiar de TMS para usar seguimiento por WhatsApp?</p>
+          <p class="faq-answer">No. Ruta, el agente de IA de Quelion, trabaja al lado del TMS o del ERP que ya usas: se ocupa de la conversación con el conductor y del estado de cada carga. Tus cargas le llegan con la exportación en Excel o CSV, con el PDF de la orden de carga por correo, desde el panel o desde Claude y ChatGPT.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Cómo paso mis cargas de mi TMS a una herramienta de seguimiento por WhatsApp?</p>
+          <p class="faq-answer">Con Ruta, exportas las cargas activas en Excel o CSV y subes el archivo en el panel: Ruta te enseña una vista previa, da de alta cada fila válida y te dice cuál ha dejado fuera y por qué. Si tu TMS genera la orden de carga en PDF, reenvías ese correo a tu dirección de Ruta.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Tengo que meter la carga dos veces?</p>
+          <p class="faq-answer">No. La carga se introduce una vez, en tu TMS o en tu Excel. A Ruta llega con la exportación o con el mismo correo que ya envías al transportista, y el estado vuelve a tu sistema por la API de Ruta.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Y si no tengo TMS y llevo mis cargas en Excel?</p>
+          <p class="faq-answer">Subes ese mismo Excel en el panel. Ruta da de alta cada fila que trae referencia y teléfono y empieza el seguimiento; el estado de cada carga lo ves en el panel, con su historial.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Puedo mandar la orden de carga por correo o en Excel?</p>
+          <p class="faq-answer">Sí, de las dos formas. Por correo, reenvías a tu dirección de Ruta el PDF de la orden de carga y Ruta lo lee y lo convierte en carga. En Excel o CSV, subes el archivo en el panel o se lo pasas a Claude o ChatGPT con el conector de Ruta.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué pasa si a la orden le falta un dato, como el teléfono del conductor, la cita o el destino?</p>
+          <p class="faq-answer">Por correo, si al PDF le falta la cita o el destino, o trae el teléfono del transportista pero no el del conductor, la carga queda pendiente y en pausa: Ruta no escribe a nadie hasta que tu equipo de tráfico la completa y confirma el alta en el panel. En Excel o CSV, el teléfono de cada fila es al que Ruta escribe, sea del conductor o del tráfico del transportista; una fila sin referencia o sin teléfono se queda fuera con su motivo, y una sin origen, destino, cliente o fecha de entrega entra con una advertencia.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Ruta tiene API?</p>
+          <p class="faq-answer">Sí. La API de Ruta, de Quelion, sirve para conectar tu TMS o tu ERP: tu sistema lee el estado de cada carga, su historial y el resumen de la operación. La documentación es pública en ruta.quelion.ai/api/v1/docs y las claves las crea el administrador de tu cuenta en el panel.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Puedo dar de alta cargas desde ChatGPT o Claude?</p>
+          <p class="faq-answer">Sí, con el conector MCP de Ruta. Le pides a Claude o a ChatGPT una carga o un lote entero, por ejemplo las filas de un Excel; te enseñan antes cómo quedaría y te piden permiso antes de crearlo, salvo que elijas «permitir siempre».</p>
+        </div>
+      </section>
+
+      <!-- ── AUTHOR BOX ── -->
+      <div class="author-box">
+        <p>
+          Escrito por el Equipo Quelion. Construimos productos de IA para equipos de logística.
+          Preguntas: <a href="mailto:hola@quelion.ai">hola@quelion.ai</a>
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos de qué sistema salen hoy tus cargas.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos de qué sistema salen tus cargas y cómo quedarían entrando en Ruta. O escríbenos a hola@quelion.ai.
+      </p>
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
+        Agenda 20 minutos
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
+        <p class="footer-tagline">
+          Seguimiento de cargas 24/7 por WhatsApp y GPS.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Productos</p>
+        <nav class="footer-links" aria-label="Enlaces de productos">
+          <a href="/ruta"    class="footer-link">Ruta</a>
+          <a href="/ruta-en" class="footer-link" hreflang="en" lang="en">Ruta (English)</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Recursos</p>
+        <nav class="footer-links" aria-label="Enlaces de recursos">
+          <a href="/blog" class="footer-link">Blog</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js?v=20261127"></script>
+</body>
+</html>

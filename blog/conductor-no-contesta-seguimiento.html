@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qué hacer cuando el conductor no contesta | Quelion</title>
+  <meta name="description" content="Si el conductor no contesta, Ruta insiste por WhatsApp, avisa a tráfico y, si nadie confirma, llama por teléfono a tu guardia. Pasos y un ejemplo.">
+  <link rel="canonical" href="https://quelion.ai/blog/conductor-no-contesta-seguimiento">
+  <link rel="alternate" hreflang="es-ES" href="https://quelion.ai/blog/conductor-no-contesta-seguimiento">
+  <link rel="alternate" hreflang="es-MX" href="https://quelion.ai/mx/blog/operador-no-reporta-estatus">
+  <link rel="alternate" hreflang="x-default" href="https://quelion.ai/blog/conductor-no-contesta-seguimiento">
+  <meta property="og:title" content="Qué hacer cuando el conductor no contesta, y cómo dejar de llamar para saber por dónde va cada carga">
+  <meta property="og:image" content="https://quelion.ai/assets/og/og-quelion.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Quelion. Entérate antes que tu cliente.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description" content="Si el conductor no contesta, Ruta insiste por WhatsApp, avisa a tráfico y, si nadie confirma, llama por teléfono a tu guardia. Pasos y un ejemplo.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://quelion.ai/blog/conductor-no-contesta-seguimiento">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/svg/quelion-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon-192.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20261121">
+  <link rel="stylesheet" href="/assets/css/global.css?v=20261121">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20261127">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Qué hacer cuando el conductor no contesta, y cómo dejar de llamar para saber por dónde va cada carga",
+  "datePublished": "2026-11-27",
+  "dateModified": "2026-11-27",
+  "inLanguage": "es-ES",
+  "author": {
+    "@type": "Organization",
+    "name": "Equipo Quelion",
+    "url": "https://quelion.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Quelion",
+    "url": "https://quelion.ai"
+  },
+  "description": "Si el conductor no contesta, Ruta insiste por WhatsApp, avisa a tráfico y, si nadie confirma, llama por teléfono a tu guardia. Pasos y un ejemplo.",
+  "mainEntityOfPage": "https://quelion.ai/blog/conductor-no-contesta-seguimiento",
+  "about": [
+    "conductor que no contesta",
+    "seguimiento de cargas por WhatsApp",
+    "agente de IA para el departamento de tráfico"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si el conductor no contesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ruta le vuelve a preguntar. Si sigue sin contestar, avisa por WhatsApp a tu equipo de tráfico y, si nadie confirma el aviso, llama por teléfono a quien esté de guardia y después a su respaldo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto espera Ruta antes de avisar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lo que fijes para cada etapa y cada cliente. En el ejemplo de este artículo preguntó al conductor a las dos horas de silencio y avisó a tráfico cuando pasó la hora prevista de llegada sin noticias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿A quién llama Ruta y en qué orden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A quien esté de guardia, después a su respaldo y, si hace falta, al jefe de tráfico, hasta que alguien lo coge y confirma el aviso pulsando una tecla. Al conductor le escribe; la llamada es para tu equipo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El conductor tiene que instalar una app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Contesta por WhatsApp o Telegram, con texto o nota de voz, como siempre."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona de noche y en fin de semana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El horario se configura por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue de noche y avisa a tu equipo solo cuando algo necesita atención."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve con transportistas subcontratados y autónomos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Funciona con flota propia, subcontratada o las dos. Ruta solo necesita el teléfono del conductor; si preferís no escribirle a él, habla con el coordinador o el jefe de tráfico del transportista."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puedo dejar de llamar a los conductores para saber por dónde va cada carga?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deja que pregunte Ruta. Escribe a cada conductor por WhatsApp o Telegram, entiende lo que contesta y deja el estado de cada carga en un panel. Con el GPS del camión lee además la posición. Tu equipo solo coge el teléfono cuando Ruta le avisa de que algo se ha atascado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué agentes de IA existen en España para detectar incidencias de cargas en tránsito y avisar al equipo de tráfico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ruta, de Quelion, es uno. Hace el seguimiento de cada carga con el conductor por WhatsApp o Telegram, lee el GPS del camión y, cuando un conductor deja de contestar o algo no cuadra, avisa al equipo de tráfico por WhatsApp. Si nadie confirma el aviso, llama por teléfono."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay software que haga llamadas automáticas cuando un conductor no contesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Ruta escribe al conductor por WhatsApp y, si no contesta y nadie de tráfico confirma el aviso, llama por teléfono a quien esté de guardia y después a su respaldo, hasta que alguien confirma."
+      }
+    }
+  ]
+}
+  </script>
+  <style>
+    .post-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .post-header {
+      padding: 80px 0 56px;
+      border-top: 1px solid var(--border-hairline);
+    }
+    .post-meta-row {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .post-body {
+      padding: 56px 0 80px;
+      border-top: 1px solid var(--border-hairline);
+    }
+    .post-body h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+      line-height: 1.4;
+    }
+    .post-body h2:first-child { margin-top: 0; }
+    .post-body p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .post-body ul,
+    .post-body ol {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+    .post-body ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .post-body ol li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .post-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+      font-size: 13px;
+    }
+    .comparison-table caption {
+      caption-side: top;
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: var(--text-quiet);
+      line-height: 1.6;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .comparison-table th {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .comparison-table td {
+      padding: 14px 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      border-bottom: 1px solid var(--border-hairline);
+      vertical-align: top;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table td:first-child {
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+    .table-wrap {
+      border: 1px solid var(--border-hairline);
+      overflow-x: auto;
+      margin: 0 0 24px;
+    }
+    .inline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 1px solid var(--text-primary);
+      padding: 12px 20px;
+      margin: 32px 0 48px;
+      transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+    }
+    .inline-cta:hover {
+      background: var(--text-primary);
+      color: var(--surface-primary);
+    }
+    .faq-section {
+      border-top: 1px solid var(--border-hairline);
+      padding: 56px 0 0;
+      margin-top: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .author-box {
+      border-top: 1px solid var(--border-hairline);
+      padding: 40px 0 0;
+      margin-top: 56px;
+    }
+    .author-box p {
+      font-size: 13px;
+      color: var(--text-quiet);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .author-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .post-wrap { padding: 0 20px; }
+      .post-header { padding: 56px 0 40px; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Quelion, inicio">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="148" height="32">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/ruta" class="nav-link">Ruta</a>
+        <a href="/ruta#pricing" class="nav-link">Cómo empezar</a>
+        <a href="/blog" class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="/mx/blog/operador-no-reporta-estatus" class="nav-link" hreflang="es-MX" lang="es-MX">México</a>
+        <a href="/ruta-en" class="nav-link" hreflang="en" lang="en">English</a>
+        <a href="https://ruta.quelion.ai" class="nav-link nav-link-login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://ruta.quelion.ai" class="nav-login">Iniciar sesión</a>
+        <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn btn-primary nav-cta">Agenda 20 minutos</a>
+        <button class="nav-mobile-toggle" aria-label="Abrir o cerrar el menú" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+            <line x1="0" y1="0.5"  x2="18" y2="0.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="5.5"  x2="18" y2="5.5"  stroke="currentColor" stroke-width="1"/>
+            <line x1="0" y1="11.5" x2="18" y2="11.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="post-header">
+    <div class="post-wrap">
+      <p class="eyebrow" style="margin-bottom:20px;">Seguimiento por WhatsApp</p>
+      <h1 style="max-width:660px;line-height:1.25;margin-bottom:0;">
+        Qué hacer cuando el conductor no contesta, y cómo dejar de llamar para saber por dónde va cada carga
+      </h1>
+      <div class="post-meta-row">
+        <span>27 Nov 2026</span>
+        <span>5 min de lectura</span>
+        <span>Por el Equipo Quelion</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="post-body" aria-label="Contenido del artículo">
+    <div class="post-wrap">
+
+      <p>
+        Cuando un conductor no contesta, el orden es este: vuelve a preguntarle por escrito, avisa a
+        quien está de guardia en tráfico con el dato completo y, si nadie confirma el aviso, llama a tu
+        equipo hasta que alguien lo coja. Ruta, el agente de IA de Quelion, hace ese recorrido solo:
+        pregunta al conductor por WhatsApp, avisa a tu equipo de tráfico de la incidencia y, si nadie
+        confirma, llama por teléfono a quien esté de guardia y después a su respaldo.
+      </p>
+      <p>
+        Con eso tráfico deja de llamar a cada conductor para saber por dónde va: pregunta Ruta, y el
+        teléfono se coge cuando hay algo que atender. Abajo va el procedimiento paso a paso, que sirve
+        con Ruta o sin ella, y un ejemplo con sus horas. Por qué de noche pesa más un conductor que
+        calla lo contamos en
+        <a href="/blog/monitoreo-nocturno-embarques-24-7">seguimiento nocturno de camiones</a>.
+      </p>
+
+      <h2>Qué hacer, paso a paso</h2>
+      <ol>
+        <li>
+          <strong>Decide cuánto silencio es normal en cada etapa.</strong>
+          Dos horas sin noticias en autovía pueden ser lo de siempre. Media hora de más sobre la hora
+          de descarga ya es otra cosa. Sin ese número escrito, cada uno en tráfico se preocupa a su
+          manera.
+          <br><strong>Con Ruta:</strong> el tiempo de espera se configura por cliente y por etapa. En
+          el ejemplo de abajo son dos horas.
+        </li>
+        <li>
+          <strong>Vuelve a preguntar al conductor, por escrito y por donde ya contesta.</strong>
+          Un mensaje corto, que pueda responder con una línea o con una nota de voz.
+          <br><strong>Con Ruta:</strong> le escribe por WhatsApp o Telegram, sin que instale nada,
+          entiende texto y notas de voz e insiste si no contesta.
+        </li>
+        <li>
+          <strong>Si el camión es de un transportista subcontratado, pregunta también a su tráfico.</strong>
+          Con subcontratados y autónomos, muchas veces quien sabe por dónde va el camión es el
+          coordinador del transportista.
+          <br><strong>Con Ruta:</strong> si preferís no escribir al conductor, habla con el coordinador
+          o el jefe de tráfico del transportista. Con el
+          <a href="/blog/seguimiento-gps-transportista">GPS del camión</a> lee además la posición.
+        </li>
+        <li>
+          <strong>Avisa a quien está de guardia con el dato completo.</strong>
+          Qué carga es, cuánto lleva sin noticias y cuántas veces se ha preguntado al conductor. Un «no
+          contesta» a secas obliga a preguntarlo todo otra vez.
+          <br><strong>Con Ruta:</strong> ese aviso llega por WhatsApp a quien tengas de guardia, ya con
+          esos datos.
+        </li>
+        <li>
+          <strong>Si nadie confirma el aviso, llama; si no lo cogen, sube un nivel.</strong>
+          Un aviso sin confirmar es un aviso que quizá nadie ha visto. Ten escrito el orden: quien está
+          de guardia, su respaldo, el jefe de tráfico.
+          <br><strong>Con Ruta:</strong> llama por teléfono en ese orden, hasta que alguien lo coge y
+          confirma pulsando una tecla, sin colgar.
+        </li>
+        <li>
+          <strong>Apunta lo que ha pasado.</strong>
+          La hora de la última noticia, cuándo se preguntó al conductor, a quién se avisó y qué contestó
+          el conductor cuando reapareció. Es lo primero que te va a preguntar el cliente por la mañana.
+          <br><strong>Con Ruta:</strong> cada respuesta del conductor y cada cambio de estado quedan
+          registrados en la carga, a la vista de tu equipo en el panel.
+        </li>
+      </ol>
+
+      <h2>Una tarde y una noche de ejemplo, hora por hora</h2>
+      <p>
+        Este ejemplo sale de una simulación de Ruta: una carga de Coslada a Paterna de una empresa
+        ficticia, Logística Turia, con descarga prevista a las 22:00. Los nombres son inventados y las
+        horas y los tiempos son de ejemplo.
+      </p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <caption>Ejemplo basado en una simulación, con horas y tiempos de ejemplo. Cada empresa fija los suyos.</caption>
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Qué pasa</th>
+              <th>Quién se entera</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>18:30</td>
+              <td>Javier, el conductor, escribe que va por Tarancón y que llega a la hora prevista. Ruta lo apunta.</td>
+              <td>Queda registrado en la carga.</td>
+            </tr>
+            <tr>
+              <td>20:35</td>
+              <td>Dos horas sin noticias. Ruta pregunta a Javier cómo va.</td>
+              <td>Javier, por WhatsApp.</td>
+            </tr>
+            <tr>
+              <td>22:05</td>
+              <td>Ha pasado la hora prevista de llegada y Javier sigue sin contestar. Ruta le vuelve a preguntar y avisa a Lucía, que está de guardia en tráfico: qué carga es, desde qué hora no hay noticias y cuántas veces se ha preguntado.</td>
+              <td>Lucía, por WhatsApp.</td>
+            </tr>
+            <tr>
+              <td>22:15</td>
+              <td>Lucía no ha confirmado. Ruta repite el aviso y la llama. El teléfono suena y nadie lo coge.</td>
+              <td>Lucía, por WhatsApp y llamada.</td>
+            </tr>
+            <tr>
+              <td>22:25</td>
+              <td>Tercera pregunta a Javier.</td>
+              <td>Javier, por WhatsApp.</td>
+            </tr>
+            <tr>
+              <td>22:30</td>
+              <td>Otro aviso y segunda llamada a Lucía. Sin respuesta.</td>
+              <td>Lucía, por WhatsApp y llamada.</td>
+            </tr>
+            <tr>
+              <td>22:45</td>
+              <td>Ruta pasa al respaldo. Escribe a Sergio con lo ocurrido, incluido que a Lucía se la ha avisado y llamado dos veces, y le llama; también hace la cuarta pregunta a Javier. Sergio lo coge y pulsa 1 para confirmar que lo atiende.</td>
+              <td>Sergio, por WhatsApp y llamada. Lucía sigue recibiendo el aviso por WhatsApp.</td>
+            </tr>
+            <tr>
+              <td>23:00</td>
+              <td>Javier reaparece: ha estado parado por un accidente en la A-3, sin cobertura; está en Requena y llega en una hora. Ruta lo apunta, cierra la guardia y avisa al equipo de tráfico.</td>
+              <td>El equipo de tráfico, por WhatsApp.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Esa tarde nadie de tráfico llamó al conductor para saber por dónde iba. Ruta le preguntó cuatro
+        veces, llamó dos veces a quien estaba de guardia y siguió con el respaldo hasta que alguien
+        confirmó. Con una descarga con hora cerrada o con mercancía de valor esos tiempos se acortan: se
+        fijan por cliente y por etapa.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Cuéntanos qué hacéis hoy cuando un conductor no contesta · 20 minutos
+      </a>
+
+      <h2>La llamada, cuando nadie ve el WhatsApp</h2>
+      <p>
+        La llamada de Ruta va a tu equipo, que es quien puede hacer algo a esa hora: hablar con el
+        transportista, mover la descarga o avisar al cliente. Al conductor, Ruta le escribe.
+      </p>
+      <p>
+        El orden es el de tu guardia. Primero sale el WhatsApp a quien está de guardia. Si no lo
+        confirma, Ruta le llama; si tampoco lo coge, sigue con su respaldo y, si hace falta, con el jefe
+        de tráfico. Quien lo coge escucha qué carga es y qué ha pasado, y confirma pulsando una tecla,
+        sin colgar. En la simulación, la primera llamada decía:
+      </p>
+      <p>
+        «Hola Lucía, soy Ruta, el asistente de inteligencia artificial de Logística Turia. Según el
+        sistema, la hora estimada de la orden LT 2768 ya venció y no hay noticias del conductor. Te he
+        dejado el detalle en WhatsApp y en el panel. Pulsa 1 para confirmar que lo atiendes.»
+      </p>
+      <p>
+        Si nadie lo coge, Ruta vuelve a llamar y sube de nivel. Por defecto, la primera llamada sale a
+        los diez minutos del primer aviso, la segunda a los veinticinco, el respaldo entra a los
+        cuarenta y el jefe de tráfico a la hora. Son valores de partida y se ajustan a cómo trabajáis.
+        Cuando el conductor vuelve a dar noticias, Ruta cierra la guardia y avisa al equipo.
+      </p>
+      <p>
+        Nada de esto se estrena con tus conductores. Con la propuesta aceptada, tus tiempos y tu orden
+        de guardia corren primero en el
+        <a href="/blog/tunel-de-viento-probar-reglas-de-seguimiento">túnel de viento</a>, un día
+        simulado, y se ajusta lo que no encaje antes de que Ruta escriba a nadie. Más sobre el producto
+        en <a href="/ruta">Ruta</a>.
+      </p>
+
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="inline-cta">
+        Agenda 20 minutos
+      </a>
+
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <p class="eyebrow" id="faq-heading" style="margin-bottom:32px;">Preguntas frecuentes</p>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué pasa si el conductor no contesta?</p>
+          <p class="faq-answer">Ruta le vuelve a preguntar. Si sigue sin contestar, avisa por WhatsApp a tu equipo de tráfico y, si nadie confirma el aviso, llama por teléfono a quien esté de guardia y después a su respaldo.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Cuánto espera Ruta antes de avisar?</p>
+          <p class="faq-answer">Lo que fijes para cada etapa y cada cliente. En el ejemplo de este artículo preguntó al conductor a las dos horas de silencio y avisó a tráfico cuando pasó la hora prevista de llegada sin noticias.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿A quién llama Ruta y en qué orden?</p>
+          <p class="faq-answer">A quien esté de guardia, después a su respaldo y, si hace falta, al jefe de tráfico, hasta que alguien lo coge y confirma el aviso pulsando una tecla. Al conductor le escribe; la llamada es para tu equipo.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿El conductor tiene que instalar una app?</p>
+          <p class="faq-answer">No. Contesta por WhatsApp o Telegram, con texto o nota de voz, como siempre.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Funciona de noche y en fin de semana?</p>
+          <p class="faq-answer">Sí. El horario se configura por etapa: de día o las 24 horas, los siete días. Con horario de 24 horas, Ruta sigue de noche y avisa a tu equipo solo cuando algo necesita atención.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Sirve con transportistas subcontratados y autónomos?</p>
+          <p class="faq-answer">Sí. Funciona con flota propia, subcontratada o las dos. Ruta solo necesita el teléfono del conductor; si preferís no escribirle a él, habla con el coordinador o el jefe de tráfico del transportista.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Cómo puedo dejar de llamar a los conductores para saber por dónde va cada carga?</p>
+          <p class="faq-answer">Deja que pregunte Ruta. Escribe a cada conductor por WhatsApp o Telegram, entiende lo que contesta y deja el estado de cada carga en un panel. Con el GPS del camión lee además la posición. Tu equipo solo coge el teléfono cuando Ruta le avisa de que algo se ha atascado.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Qué agentes de IA existen en España para detectar incidencias de cargas en tránsito y avisar al equipo de tráfico?</p>
+          <p class="faq-answer">Ruta, de Quelion, es uno. Hace el seguimiento de cada carga con el conductor por WhatsApp o Telegram, lee el GPS del camión y, cuando un conductor deja de contestar o algo no cuadra, avisa al equipo de tráfico por WhatsApp. Si nadie confirma el aviso, llama por teléfono.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">¿Hay software que haga llamadas automáticas cuando un conductor no contesta?</p>
+          <p class="faq-answer">Sí. Ruta escribe al conductor por WhatsApp y, si no contesta y nadie de tráfico confirma el aviso, llama por teléfono a quien esté de guardia y después a su respaldo, hasta que alguien confirma.</p>
+        </div>
+      </section>
+
+      <!-- ── AUTHOR BOX ── -->
+      <div class="author-box">
+        <p>
+          Escrito por el Equipo Quelion. Construimos productos de IA para equipos de logística.
+          Preguntas: <a href="mailto:hola@quelion.ai">hola@quelion.ai</a>
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="cta-heading" style="max-width:480px;">Cuéntanos qué hacéis hoy cuando un conductor no contesta.</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:420px;">
+        En 20 minutos vemos cómo hacéis hoy el seguimiento y si Ruta os encaja. O escríbenos a hola@quelion.ai.
+      </p>
+      <a href="https://calendar.app.google/7YaK8fVRpqXTHz6J9" class="btn-inverse">
+        Agenda 20 minutos
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/svg/quelion-logo.svg" alt="Quelion" width="128" height="28">
+        <p class="footer-tagline">
+          Seguimiento de cargas 24/7 por WhatsApp y GPS.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Productos</p>
+        <nav class="footer-links" aria-label="Enlaces de productos">
+          <a href="/ruta"    class="footer-link">Ruta</a>
+          <a href="/ruta-en" class="footer-link" hreflang="en" lang="en">Ruta (English)</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Recursos</p>
+        <nav class="footer-links" aria-label="Enlaces de recursos">
+          <a href="/blog" class="footer-link">Blog</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <nav class="footer-links" aria-label="Enlaces de contacto">
+          <a href="mailto:hola@quelion.ai?subject=Agendar%2020%20minutos%20sobre%20Ruta" class="footer-link">hola@quelion.ai</a>
+          <a href="https://ruta.quelion.ai" class="footer-link">Iniciar sesión</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Quelion. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js?v=20261127"></script>
+</body>
+</html>

@@ -57,3 +57,13 @@
 @media (prefers-reduced-motion: reduce) {
   .rp-ficha { transition: none; }
 }
+
+/* Tabla de canales de la ficha: en móvil cada fila se apila */
+.canales{width:100%;border-collapse:collapse}
+@media (max-width:640px){
+  .canales thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .canales tr{display:block;padding:14px 16px;border-bottom:1px solid var(--border-hairline)}
+  .canales tr:last-child{border-bottom:0}
+  .canales th[scope=row],.canales td{display:block;width:auto !important;padding:0 !important;border:0 !important}
+  .canales td{margin-top:4px}
+}
